@@ -294,7 +294,7 @@
                             <h1><span class="uk-icon-bookmark uk-margin-small-left uk-margin-small-right"></span> PREVIOUS REMARKS / COMMENTS</h1>
                         </div>
                         <div class="los-content">
-                            <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top">
+                            <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
                                 <thead>
                                     <tr>
                                         <th width="5%">#</th>

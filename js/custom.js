@@ -64,15 +64,15 @@ $(document).ready(function() {
                    return '<input type="checkbox">'; 
                 }
             },
-            {'width': '5%', 'className': 'dt-center', 'data': 'OurBranchID'},
-            {'width': '5%', 'className': 'dt-center', 'data': 'GroupID'},
-            
+            {'width': '4%', 'className': 'dt-center', 'data': 'OurBranchID'},
+            {'width': '4%', 'className': 'dt-center', 'data': 'GroupID'},  
             {'width': '5%', 'className': 'dt-center', 'data': 'FileNo'},
-            {'width': '20%', 'data': 'ClientName'},
+            {'width': '15%', 'data': 'ClientName'},
             {'width': '5%', 'className': 'dt-center', 'data': 'ClientID'},
-            {'width': '5%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
+            {'width': '4%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
+            {'width': '4%', 'className': 'dt-center uk-text-bold', 'data': 'ProcessValue'},
             {'width': '4%', 'data': null, 'defaultContent': '<button class="uk-button uk-button-small uk-button-primary">View Profile</button>'},
-            {'visible': false, 'targets': 8, 'data': 'AsOfDate'}
+            {'visible': false, 'targets': 9, 'data': 'AsOfDate'}
         ],
         'iDisplayLength': 25,
         'oLanguage': {
@@ -86,9 +86,9 @@ $(document).ready(function() {
             var rows = api.rows({ page : 'current' }).nodes();
             var last = null;
             
-            api.column(8, { page : 'current' }).data().each( function(group, i) {       
+            api.column(9, { page : 'current' }).data().each( function(group, i) {       
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="8">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="9">' + group + '</td></tr>');
                     last = group;
                 }
             });
@@ -103,7 +103,7 @@ $(document).ready(function() {
         'bSort': false,
         'dom': '<"toolbar">frtip'
     });
-    tbl_los.order( [ 8, 'desc' ] ).draw();
+    tbl_los.order( [ 9, 'desc' ] ).draw();
 
     /* datatables content: view profile button */
     $('#tbl_los tbody').on('click', 'button', function() {

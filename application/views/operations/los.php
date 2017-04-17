@@ -30,7 +30,7 @@
                     <input id="txt_role"      class="uk-hidden" value="<?=$this->session->role_id?>" />
                     <input id="txt_datedata"  class="uk-hidden" value="<?=$this->session->datedata?>" />
                     
-                    <table id="tbl_los" class="cell-border stripe">
+                    <table id="tbl_los" class="cell-border stripe table-fix">
                         <thead>
                            <tr>
                                <th></th>
@@ -40,6 +40,7 @@
                                <th>Name</th>
                                <th>Client ID</th>
                                <th>Loan Type</th>
+                               <th>Action</th>
                                <th></th>
                                <th>AsOfDate</th>
                            </tr>

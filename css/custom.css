@@ -681,4 +681,14 @@ div.toolbar {
 .uk-margin-left-remove {
     margin-left: -4px
 }
+
+.table-fix {
+    table-layout: fixed;
+}
+
+.table-fix td {
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
 /* end */
