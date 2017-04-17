@@ -6,9 +6,9 @@
     <?php $this->load->view("templates/head", $data); ?>
     <body>
      <div class="page-wrap main-pagewrap">
-            <div class="site-header" style="height: 205px; margin-left: -15px;">
+            <div class="site-header">
                 <div class="uk-container uk-container-center" style="text-align: center;">
-                    <img src="<?=base_url()?>img/onepuhunan.png" style="height: 210px; padding: 15px 0px 10px 0px;" />
+                    <img src="<?=base_url()?>img/onepuhunan.png" style="height: 170px; padding: 15px 0px 10px 0px;" />
                 </div>
             </div>
             <div id="submain">
