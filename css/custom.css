@@ -10,28 +10,37 @@ html, body {
     /*min-height: 100vh;*/
     background-image: url("../img/bg.png");
     background-repeat: repeat-y;
-    background-position: 0px 5px; 
+    background-position: 0px 5px;
+    position: relative;
 }
 
-.page-wrap {
-    min-height: 100%;
-    margin-bottom: -20px;
-}
+/*.page-wrap {*/
+    /*min-height: 100%;*/
+    /*margin-bottom: -20px;*/
+/*}*/
 
     .page-wrap:after {
         content: "";
         display: block;
     }
 
-    .site-footer, .page-wrap:after {
-        height: 20px;
-    }
+    /*.site-footer, .page-wrap:after {*/
+        /*height: 20px;*/
+    /*}*/
+.page-wrap.main-pagewrap {
+    height: 100%;
+}
     
 .site-footer {
     background-color: #efefef;
     box-shadow: 0 -2px 8px #D0D0D0;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
+    margin-top: 50px;
+    min-height: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .site-header {
@@ -333,9 +342,9 @@ figcaption a {
     box-shadow: 0 2px 8px #D0D0D0;
 }
 
-.main-pagewrap {
-    min-height: 70%;
-}
+/*.main-pagewrap {*/
+    /*min-height:auto;*/
+/*}*/
 
 .fix-uk-margin {
     margin-left: 12px;

@@ -5,16 +5,16 @@
 <html lang="en">
     <?php $this->load->view("templates/head", $data); ?>
     <body>
-        <div class="site-header" style="height: 205px; margin-left: -15px;">
-            <div class="uk-container uk-container-center" style="text-align: center;">
-                <img src="<?=base_url()?>img/onepuhunan.png" style="height: 210px; padding: 15px 0px 10px 0px;" />
+     <div class="page-wrap main-pagewrap">
+            <div class="site-header" style="height: 205px; margin-left: -15px;">
+                <div class="uk-container uk-container-center" style="text-align: center;">
+                    <img src="<?=base_url()?>img/onepuhunan.png" style="height: 210px; padding: 15px 0px 10px 0px;" />
+                </div>
             </div>
-        </div>
-        <div class="page-wrap main-pagewrap">
             <div id="submain">
                 <span>MicroVentures Philippines Financing Company Inc.</span>
             </div>
-            <div class="uk-container uk-container-center"> 
+            <div class="uk-container uk-container-center onepuhunan-container">
                 <div class="uk-grid uk-margin-large-top fix-uk-margin">
                     <div class="uk-width-1-4">
                         <div class="uk-thumbnail">
@@ -61,9 +61,8 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
+             <?php $this->load->view("templates/footer"); ?>
         </div>
-        
-        <?php $this->load->view("templates/footer"); ?>
     </body>
 </html>
