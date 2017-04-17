@@ -1,6 +1,6 @@
 <nav class="site-header uk-navbar uk-navbar-attached">
     <div class="uk-container uk-container-center">
-        <a href="../onepuhunan/index.php" class="uk-navbar-brand uk-hidden-small">
+        <a href="../index.php" class="uk-navbar-brand uk-hidden-small">
             <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/opsp.png" alt="OnePuhunan" title="OnePuhunan" style="width:180px; height:80px;">
         </a>
         
