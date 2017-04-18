@@ -10,7 +10,7 @@ $data['title'] = 'OnePuhunan Service Portal';
         <img src="<?=base_url()?>img/onepuhunan.png"  class="img-header" />
     </div>
 </div>
-<div class="page-wrap main-pagewrap ">
+<div class="page-wrap main-pagewrap">
     <div id="submain">
         <span>MicroVentures Philippines Financing Company Incs.</span>
     </div>

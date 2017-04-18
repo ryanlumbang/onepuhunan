@@ -36,15 +36,19 @@ html, body {
 .img-header {
     height: 170px;
 }
-.fixed-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
 .page-wrap {
     min-height: 100%;
 }
 
+/*.page-wrap {*/
+    /*min-height: 100%;*/
+/*}*/
+.fixed-footer {
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 .site-header {
     right: 0;
     top: 0;
