@@ -121,14 +121,30 @@ $(document).ready(function() {
         $('#losbody div.toolbar').html(approve + reject + revert);
     };
     
+    var actionArray = new Array();
+    
     /* enabling/disabling a button */
     $('#tbl_los').on('change', 'input[type="checkbox"]', function() {
-       this.checked ? counterChecked++ : counterChecked--;
-       counterChecked > 0 ? $('#btn_approve').prop('disabled', false) : $('#btn_approve').prop('disabled', true);
-       counterChecked > 0 ? $('#btn_reject').prop('disabled', false) : $('#btn_reject').prop('disabled', true);
-       counterChecked > 0 ? $('#btn_revert').prop('disabled', false) : $('#btn_revert').prop('disabled', true);
-    });    
+        this.checked ? counterChecked++ : counterChecked--;
+        getAllCheckedItems();
         
+        if(actionArray.includes('REJ')) {
+            $('#btn_approve').prop('disabled', true);
+        } else {
+            counterChecked > 0 ? $('#btn_approve').prop('disabled', false) : $('#btn_approve').prop('disabled', true);  
+        }
+        counterChecked > 0 ? $('#btn_reject').prop('disabled', false) : $('#btn_reject').prop('disabled', true);
+        counterChecked > 0 ? $('#btn_revert').prop('disabled', false) : $('#btn_revert').prop('disabled', true);
+    });    
+    
+    function getAllCheckedItems() {
+        actionArray.splice(0, actionArray.length);
+        $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
+           var data = tbl_los.row($(this).parents('tr')).data();
+           actionArray[actionArray.length] = data.ProcessValue;
+        });
+    } 
+
     // checkbox: approve all selected entries.
     $('#btn_approve').click(function () {
         var branchId, groupId;
