@@ -78,4 +78,10 @@
             return $query->result_array();
         }
         
+        public function get_los_laf_tags($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_tags(?)", $input);
+            return $query->row_array();
+        }
+        
     }

@@ -15,6 +15,17 @@
                 <div class="uk-container uk-container-center" style="margin-bottom: -4px;">
                     <img id="los-info-pic" class="uk-border-rounded uk-thumbnail" src="<?=base_url()?>img/system_png/mvph-pic.png" alt="">
                     <span id="hrtitle" class="uk-margin-large-left"><?=$cl_info['C_Name']?></span>
+                    <span class="uk-badge uk-badge-success los-info-tags"><?=$cl_tags['DestProcess']?></span>
+                    <?php
+                        if($cl_tags['ProcessValue'] === 'APR') {
+                            echo '<span class="uk-badge uk-badge-success los-info-tags-2">APR</span>';
+                        } elseif($cl_tags['ProcessValue'] === 'REJ') {
+                            echo '<span class="uk-badge uk-badge-danger los-info-tags-2">REJ</span>';
+                        } elseif($cl_tags['ProcessValue'] === 'REV') {
+                            echo '<span class="uk-badge uk-badge-warning los-info-tags-2">REV</span>'; 
+                        }
+                    ?>
+                    
                 </div>
             </div>
             <div class="bg-middle bg-shadow2">
@@ -340,7 +351,12 @@
                     <!-- controls -->
                     <div class="los-container clear ctrl">
                         <div class="los-content">
-                            <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" />
+                            <?php if($cl_tags['ProcessValue'] !== 'REJ') { ?>
+                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" />
+                            <?php } else { ?>
+                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" disabled />
+                            <?php } ?>
+                            
                             <input type="submit" name="btn_reject"  value="Reject"  class="uk-button" form="los_form" />
                             <?php if($this->session->role_id != 'qa') { ?>
                                 <input type="submit" name="btn_revert"  value="Revert"  class="uk-button" form="los_form" />

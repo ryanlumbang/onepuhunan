@@ -21,7 +21,6 @@
                             <h3 class="uk-accordion-title uk-text-uppercase"><?=$row['BranchName']?> </h3>
                             <div class="uk-accordion-content">
                                 <table class="uk-table uk-table-striped uk-table-condensed">
-                                   
                                     <thead>
                                         <tr>
                                             <th>CENTER NAME</th>
@@ -38,17 +37,62 @@
                                        <?php 
                                             if(count($row['ln_status']) > 0) {
                                                 foreach((array) $row['ln_status'] as $status) {
+//                                                    $result = '<tr>'
+//                                                            . '<td><a  href="los/' . $status['DateData'] . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
+//                                                            . '<td class="uk-text-center">' . $status['AsOfDate'] . '</td>'
+//                                                            . '<td class="uk-text-center">' . $status['KYC']      . '</td>'
+//                                                            . '<td class="uk-text-center">' . $status['BMV']      . '</td>'
+//                                                            . '<td class="uk-text-center">' . $status['ALAF']     . '</td>'
+//                                                            . '<td class="uk-text-center">' . $status['TC']       . '</td>'
+//                                                            . '<td class="uk-text-center">' . $status['SANCTION'] . '</td>'
+//                                                            . '<td class="uk-text-center uk-text-bold">' . $status['Total'] . '</td>'
+//                                                            . '</tr>';
+//                                                    echo $result;
+                                                    
                                                     $result = '<tr>'
                                                             . '<td><a  href="los/' . $status['DateData'] . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
-                                                            . '<td class="uk-text-center"> ' . $status['AsOfDate'] . '</td>'
-                                                            . '<td class="uk-text-center">' . $status['KYC']      . '</td>'
-                                                            . '<td class="uk-text-center">' . $status['BMV']      . '</td>'
-                                                            . '<td class="uk-text-center">' . $status['ALAF']     . '</td>'
-                                                            . '<td class="uk-text-center">' . $status['TC']       . '</td>'
-                                                            . '<td class="uk-text-center">' . $status['SANCTION'] . '</td>'
-                                                            . '<td class="uk-text-center uk-text-bold">' . $status['Total'] . '</td>'
-                                                            . '</tr>';
+                                                            . '<td class="uk-text-center">' . $status['AsOfDate'] . '</td>';
+                                                 
+                                                    /* kyc */
+                                                    if($this->session->role_id === 'qa') {
+                                                        $result = $result . '<td class="uk-text-center highlight">' . $status['KYC'] . '</td>';
+                                                    } else {
+                                                        $result = $result . '<td class="uk-text-center">' . $status['KYC'] . '</td>';
+                                                    }
+                                                    
+                                                    /* bmv */
+                                                    if($this->session->role_id === 'bm') {
+                                                        $result = $result . '<td class="uk-text-center highlight">' . $status['BMV'] . '</td>';
+                                                    } else {
+                                                        $result = $result . '<td class="uk-text-center">' . $status['BMV'] . '</td>';
+                                                    }
+                                                    
+                                                    /* alaf */
+                                                    if($this->session->role_id === 'qa') {
+                                                        $result = $result . '<td class="uk-text-center highlight-2">' . $status['ALAF'] . '</td>';
+                                                    } else {
+                                                        $result = $result . '<td class="uk-text-center">' . $status['ALAF'] . '</td>';
+                                                    }
+                                                    
+                                                    /* tc */
+                                                    if($this->session->role_id === 'tc') {
+                                                        $result = $result . '<td class="uk-text-center highlight">' . $status['TC'] . '</td>';
+                                                    } else {
+                                                        $result = $result . '<td class="uk-text-center">' . $status['TC'] . '</td>';
+                                                    }
+                                                    
+                                                    /* sanction */
+                                                    if($this->session->role_id === 'cpu') {
+                                                        $result = $result . '<td class="uk-text-center highlight">' . $status['SANCTION'] . '</td>';
+                                                    } else {
+                                                        $result = $result . '<td class="uk-text-center">' . $status['SANCTION'] . '</td>';
+                                                    }
+                                                    
+                                                    $result = $result . '<td class="uk-text-center uk-text-bold">' . $status['Total'] . '</td>';
+                                                    $result = $result . '</tr>';
+                                                    
                                                     echo $result;
+                                                    
                                                 }
                                             } else {
                                                 $result = '<tr><td colspan="8" class="uk-text-center">--- Nothing ---</td></tr>';

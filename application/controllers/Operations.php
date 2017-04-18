@@ -76,7 +76,8 @@
                 "cl_info"    => $this->Operations_model->get_los_laf_details($input),
                 "cl_asset"   => $this->Operations_model->get_los_laf_asset_liabilities($input),
                 "cl_error"   => $this->Operations_model->get_los_laf_err($input),
-                "cl_remarks" => $this->Operations_model->get_los_laf_hist_remarks($input)
+                "cl_remarks" => $this->Operations_model->get_los_laf_hist_remarks($input),
+                "cl_tags"    => $this->Operations_model->get_los_laf_tags($input)
             );
 
             $this->load->view("operations/los_info", $data);
