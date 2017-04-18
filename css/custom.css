@@ -43,12 +43,7 @@ html, body {
 /*.page-wrap {*/
     /*min-height: 100%;*/
 /*}*/
-.fixed-footer {
-    clear: both;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+
 .site-header {
     right: 0;
     top: 0;
