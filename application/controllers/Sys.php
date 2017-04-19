@@ -15,6 +15,10 @@
             $this->load->view("sys/registration_request", $data); 
         }
         
+        public function tc_question() {
+            $this->load->view("sys/tc_question");
+        }
+        
         public function approve_user($input) {
             $this->load->model("System_model");
             
@@ -48,6 +52,12 @@
             $this->email->message($mail_body); 
             
             $this->email->send();
+        }
+        
+        public function get_tc_questions() {
+            $this->load->model("System_model");
+            $data["query"] = $this->System_model->get_tc_questions();
+            echo "{ \"data\" : " . json_encode($data["query"]) . "}";
         }
         
     }

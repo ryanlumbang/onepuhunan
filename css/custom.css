@@ -713,15 +713,6 @@ div.toolbar {
     top: 285px;
 }
 
-.los-info-tags-2 {
-    font-size: 15px;
-    padding: 5px 10px 5px 10px;
-    /*margin: 0 0 -60px -335px; */  
-    position: absolute;
-    left: 400px;
-    top: 285px;
-}
-
 .highlight {
     font-weight: bold;
     background: #606c88; /* Old browsers */
@@ -739,3 +730,12 @@ div.toolbar {
     background: linear-gradient(to bottom, rgba(147,206,222,1) 0%,rgba(117,189,209,1) 41%,rgba(73,165,191,1) 100%);
     color: white !important;
 }
+
+.width-51 {
+    width: 51px;
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+

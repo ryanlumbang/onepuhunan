@@ -169,8 +169,7 @@
             $data["query"] = $this->Operations_model->get_ln_branch();
             echo "{ \"data\" : " . json_encode($data["query"]) . "}";
         }
-        
-        
+
     }
     
     

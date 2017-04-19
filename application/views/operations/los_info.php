@@ -15,17 +15,7 @@
                 <div class="uk-container uk-container-center" style="margin-bottom: -4px;">
                     <img id="los-info-pic" class="uk-border-rounded uk-thumbnail" src="<?=base_url()?>img/system_png/mvph-pic.png" alt="">
                     <span id="hrtitle" class="uk-margin-large-left"><?=$cl_info['C_Name']?></span>
-                    <span class="uk-badge uk-badge-success los-info-tags"><?=$cl_tags['DestProcess']?></span>
-                    <?php
-                        if($cl_tags['ProcessValue'] === 'APR') {
-                            echo '<span class="uk-badge uk-badge-success los-info-tags-2">APR</span>';
-                        } elseif($cl_tags['ProcessValue'] === 'REJ') {
-                            echo '<span class="uk-badge uk-badge-danger los-info-tags-2">REJ</span>';
-                        } elseif($cl_tags['ProcessValue'] === 'REV') {
-                            echo '<span class="uk-badge uk-badge-warning los-info-tags-2">REV</span>'; 
-                        }
-                    ?>
-                    
+                    <span class="uk-badge los-info-tags"><?=$cl_tags['DestProcess']?></span>
                 </div>
             </div>
             <div class="bg-middle bg-shadow2">
@@ -298,48 +288,53 @@
                         </div>
                     </div>  
                     
-                    <!-- previous remarks -->
-                    <?php if (count($cl_remarks) > 0) { ?>
-                    <div class="los-container clear">
-                        <div class="los-header">
-                            <h1><span class="uk-icon-bookmark uk-margin-small-left uk-margin-small-right"></span> PREVIOUS REMARKS / COMMENTS</h1>
-                        </div>
-                        <div class="los-content">
-                            <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
-                                <thead>
-                                    <tr>
-                                        <th width="5%">#</th>
-                                        <th width="10%">Process</th>
-                                        <th width="10%">Action</th>
-                                        <th width="30%">Remarks</th>
-                                        <th width="10%">Date</th>
-                                        <th width="20%">Processor</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        foreach((array) $cl_remarks as $row) {
-                                            $result = '<tr>'
-                                                    . '<td>' . $row['ProcessNo'] . '</td>'
-                                                    . '<td>For ' . $row['DestProcess'] . '</td>'
-                                                    . '<td>' . $row['ProcessValue'] . '</td>'
-                                                    . '<td>' . $row['Remarks'] . '</td>'
-                                                    . '<td>' . $row['DateProcessed'] . '</td>'
-                                                    . '<td>' . $row['Processor'] . '</td>'
-                                                    . '</tr>';
-                                            echo $result;
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    
                     <div class="los-container clear">
                         <div class="los-header" style="border-radius: 0;">
                             <h1><span class="uk-icon-pencil uk-margin-small-left uk-margin-small-right"></span> REMARKS / COMMENTS</h1>
                         </div>
+                        <?php if (count($cl_remarks) > 0) { ?>
+                            <div class="los-content">
+                                <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
+                                    <thead>
+                                        <tr>
+                                            <th width="5%">#</th>
+                                            <th width="10%">Date Processed</th>
+                                            <th width="10%">Value</th>
+                                            <th width="40%">Remarks</th>
+                                            <th width="20%">Processed By</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            foreach((array) $cl_remarks as $row) {
+                                                $result = '<tr>'
+                                                        . '<td>' . $row['ProcessNo'] . '</td>'
+                                                        . '<td>' . $row['DateProcessed'] . '</td>';
+
+                                                $result = $result 
+                                                        . '<td>'
+                                                        . '<span class="uk-badge uk-badge-success width-51">' . $row['PrevProcess'] . '</span> '; 
+
+                                                if($row['ProcessValue'] === 'APR') {
+                                                    $result = $result . '<span class="uk-badge uk-badge-success">APR</span></td>';
+                                                } elseif($row['ProcessValue'] === 'REJ') {
+                                                    $result = $result . '<span class="uk-badge uk-badge-danger">REJ</span></td>';
+                                                } elseif($row['ProcessValue'] === 'REV') {
+                                                    $result = $result . '<span class="uk-badge uk-badge-warning">REV</span></td>';
+                                                }
+
+                                                $result = $result 
+                                                        . '<td><i>' . $row['Remarks'] . '</i></td>'
+                                                        . '<td>' . $row['Processor'] . '</td>'
+                                                        . '</tr>';
+
+                                                echo $result;
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <?php } ?>
                         <div class="los-content darkbg">
                             <form id="los_form" class="uk-form" style="margin-top: 3px" method="post" action="<?=$cl_info['LAF']?>/submit">
                                 <textarea name="txt_remarks" class="uk-width-1-1" cols="" rows="" placeholder="Enter Remarks/Comments Here"></textarea>

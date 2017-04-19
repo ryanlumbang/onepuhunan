@@ -238,7 +238,57 @@ $(document).ready(function() {
     accordion.find('[data-wrapper]').each(function () {
         accordion.toggleItem(UIkit.$(this), true, false); 
     });
-         
+    
+    // initialize tellecaller table
+    var tbl_tc = $('#tbl_tc').DataTable({
+       'ajax' : {
+           'url': baseUrl + '/sys/get_tc_questions'
+       },
+       'columns': [
+           {
+               'width': '10%',
+               'searchable': false,
+               'orderable': false,
+               'data': 'question_no'
+           },
+           {
+               'width': '60%',
+               'data': 'question'
+           },
+           {
+               'width': '10%',
+               'className': 'dt-center',
+               'searchable': false,
+               'orderable': false,
+               'render': function(data, type, full, meta) {
+                   return '<input type="checkbox">';
+               }
+           },
+           {
+               'width': '10%',
+               'className': 'dt-center',
+               'searchable': false,
+               'orderable': false,
+               'render': function(data, type, full, meta) {
+                   return '<input type="checkbox">';
+               }
+           },
+           {
+               'width': '10%',
+               'className': 'dt-center',
+               'searchable': false,
+               'orderable': false,
+               'render': function(data, type, full, meta) {
+                   return '<input type="checkbox">';
+               }
+           }
+       ],
+       'bSort': false,
+       'dom': '<"toolbar">frtip',
+       'searching': false
+    });
+    tbl_tc.order([0, 'asc']).draw();
+    
 });
 
 

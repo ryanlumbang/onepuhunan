@@ -25,10 +25,11 @@
                             <div class="uk-width-1-4 uk-text-center">
                             <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/system_png/system.png" width="100">
                             <h3>SYSTEM SETTINGS</h3>
-                            <p>View and approve all user registration request.</p>
+                            <p>View and manage system settings.</p>
                             <ul class="tm-ul">
                                 <li><a href="">View Users Catalog</a></li>
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
+                                <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                             </ul>
                             </div>   
                     <?php } ?>

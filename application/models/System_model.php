@@ -31,4 +31,10 @@
             return $qry->row_array();
         }
         
+        public function get_tc_questions() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_tc_questions()");
+            return $query->result_array();
+        }
+        
     }
