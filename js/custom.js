@@ -253,6 +253,7 @@ $(document).ready(function() {
            },
            {
                'width': '42%',
+               'className': 'uk-text-left',
                'data': 'question'
            },
            {
