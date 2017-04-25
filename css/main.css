@@ -344,6 +344,6 @@ a.back-to-top {
 @media (min-width: 1220px)
 {
     .op-container {
-        padding: 0px 50px !important;
+        padding: 0px 50px 10px!important;
     }
 }

@@ -4,7 +4,7 @@
     <p class="op-check">
         <label><input type="checkbox"> New Loan</label>
         <label><input type="checkbox"> Repeat Loan</label>
-        <label><input type="checkbox"> IS- Set</label>
+        <label><input type="checkbox"> Set for TC</label>
     </p>
     <input type="submit" value="SAVE" class="uk-button  succes-btn" />
 </form>
@@ -14,7 +14,7 @@
     <p class="op-check">
         <label><input type="checkbox"> New Loan</label>
         <label><input type="checkbox"> Repeat Loan</label>
-        <label><input type="checkbox"> IS- Set</label>
+        <label><input type="checkbox"> Set for TC</label>
     </p>
     <input type="submit" value="UPDATE" class="uk-button  succes-btn" />
 </form>
