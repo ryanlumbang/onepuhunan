@@ -116,8 +116,7 @@ table.dataTable.op-table thead th, table.dataTable.op-table thead td {
 .add-btn
 {
     box-shadow: 2px 2px rgba(95, 107, 97, 1);
-    position: absolute;
-    z-index: 1;
+    margin-bottom: 15px;
 }
 .op-search-box label input {
     -webkit-appearance: none;
@@ -296,7 +295,7 @@ body > .modal {
 }
 .add_form.modal a.close-modal {
     top: 5px;
-    right: 0;
+    right: 10px;
 }
 
 input.uk-button.succes-btn {
@@ -324,6 +323,23 @@ input.uk-button.succes-btn {
     line-height: 30px;
     padding-left: 5px;
     text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+}
+a:hover.back-to-top {
+    background-color: #000;
+}
+a.back-to-top {
+    display: none;
+    width: 60px;
+    height: 60px;
+    text-indent: -9999px;
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    background: #27AE61 url(../img/up-arrow.png) no-repeat center 43%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
 }
 @media (min-width: 1220px)
 {

@@ -3,40 +3,44 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <?php $this->load->view("templates/head", $data); ?>
-    <body id="losbody" class="uk-height-1-1">
-        <?php $this->load->view("templates/header"); ?>
-        <div class="page-wrap">
+    <?php $this->load->view("templates/op-head", $data); ?>
+    <body id="losbody">
+        <div id="page-wrapper">
+            <?php $this->load->view("templates/op-header"); ?>
             <?php $this->load->view("templates/subheader"); ?>
-            <div class="bg-middle" style="padding-top: 100px;">
-                <div class="uk-container uk-container-center" style="margin-bottom: -4px;">
-                    <span id="hrtitle" class="uk-margin-large-left">SYSTEM SETTINGS</span>
-                </div>
-            </div>
-            <div class="bg-middle bg-shadow2">
-                <div class="uk-container uk-container-center bg-lower">
-                    <div class="los-container margin-top-50 clear">
-                        <div class="los-header">
-                            <h1><span class="uk-icon-tags uk-margin-small-left uk-margin-small-right"></span> MANAGE TELLECALLER QUESTIONS</h1>
-                        </div>
-                        <div class="los-content">
-                            <table id="tbl_tc" class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Question</th>
-                                        <th>New Loan</th>
-                                        <th>Repeat Loan</th>
-                                        <th>Set for TC</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
+            <div class="header-bg">
+                <div class="header-banner">
+                    <div class="uk-container op-container">
+                        <h2>SYSTEM SETTINGS</h2>
                     </div>
-                    
                 </div>
             </div>
+            <section id="main-section">
+
+
+                <div class="uk-container table-wrap op-container">  <!-- Modal HTML embedded directly into document -->
+
+                    <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE TELLECALLER QUESTIONS</h1></div>
+
+                    <!-- Trigger/Open The Modal -->
+                    <a href="#btnAdd" rel="modal:open"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD QUESTION</span></button> </a>
+
+                    <table id="tbl_tc" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
+                        <thead class="css3gradient">
+                        <tr>
+                            <th>ID</th>
+                            <th>QUESTION</th>
+                            <th>NEW LOAN</th>
+                            <th>REPEAT LOAN</th>
+                            <th>SET FOR TC</th>
+                            <th>ACTION</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </section>
+            <?php $this->load->view("templates/footer"); ?>
+            <?php $this->load->view("templates/modal"); ?>
         </div>
-        <?php $this->load->view("templates/footer"); ?>
     </body>
 </html>

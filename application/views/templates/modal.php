@@ -1,4 +1,4 @@
-<form action="" class="add_form modal" id="ex2" style="display:none;">
+<form action="" class="add_form modal" id="btnAdd" style="display:none;">
     <h3>Add Question</h3>
     <p><label>Question:</label><input type="text" /></p>
     <p class="op-check">
@@ -8,7 +8,7 @@
     </p>
     <input type="submit" value="SAVE" class="uk-button  succes-btn" />
 </form>
-<form action="" class="add_form modal" id="myBtnEdit" style="display:none;">
+<form action="" class="add_form modal" id="btnEdit" style="display:none;">
     <h3>Add Question</h3>
     <p><label>Question:</label><input type="text" /></p>
     <p class="op-check">
