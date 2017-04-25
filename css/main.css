@@ -289,7 +289,7 @@ body > .modal {
 .add_form.modal p label { float: left; font-weight: bold; color: #333; font-size: 13px; line-height: 22px; }
 .add_form.modal p input[type="text"] {
     font: normal 12px/18px "Lucida Grande", Verdana;
-    padding: 10px;
+    padding: 10px 0;
     border: 1px solid #ddd;
     width: 100%;
 }
