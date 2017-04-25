@@ -29,7 +29,7 @@ footer {
     padding: 1rem 0;
     text-align: center;
 }
-header { color: #333333; line-height: 108px; }
+header { color: #333333; line-height:70px; }
 
 header nav a {
     color: #333; margin: 0 5px;
@@ -341,9 +341,6 @@ a.back-to-top {
     -moz-border-radius: 30px;
     border-radius: 30px;
 }
-@media (min-width: 1220px)
-{
-    .op-container {
-        padding: 0px 50px 10px!important;
-    }
+.op-container {
+    padding-bottom: 10px;
 }

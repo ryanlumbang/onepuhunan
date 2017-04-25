@@ -1,5 +1,5 @@
 <header class="header-wrap">
-    <div class="header uk-container op-container">
+    <div class="header uk-container">
         <div class="sub-nav">
             <a href="../onepuhunan/index.php">
                 <img class="uk-margin uk-margin-remove op-logo-page" src="<?=base_url()?>img/opsp.png" alt="OnePuhunan" title="OnePuhunan">

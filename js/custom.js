@@ -312,7 +312,32 @@ $(document).ready(function() {
 
     $('div.dataTables_filter ').addClass('op-search-box');
     $('div.dataTables_filter label').addClass('uk-icon-search');
-    
+
+    /* Create new question */
+    $(".crud-submit").click(function(e){
+        e.preventDefault();
+        var form_action = $("#create-item").find("form").attr("action");
+        var title = $("#create-item").find("input[name='title']").val();
+        var description = $("#create-item").find("textarea[name='description']").val();
+
+        if(title != '' && description != ''){
+            $.ajax({
+                dataType: 'json',
+                type:'POST',
+                url: url + form_action,
+                data:{title:title, description:description}
+            }).done(function(data){
+                $("#create-item").find("input[name='title']").val('');
+                $("#create-item").find("textarea[name='description']").val('');
+                getPageData();
+                $(".modal").modal('hide');
+                toastr.success('Item Created Successfully.', 'Success Alert', {timeOut: 5000});
+            });
+        }else{
+            alert('You are missing title or description.')
+        }
+
+    });
 });
 
 
