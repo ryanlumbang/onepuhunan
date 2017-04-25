@@ -106,7 +106,7 @@ table.dataTable.op-table thead th, table.dataTable.op-table thead td {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('http://localhost/onepuhunan_practice/img/bg.jpg');
+    background-image: url('../img/bg.jpg');
     background-attachment: fixed;
 }
 .op-btn {
