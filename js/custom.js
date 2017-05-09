@@ -269,11 +269,12 @@ $(document).ready(function() {
                'data': 'question_no'
            },
            {
-               'width': '60%',
+               'width': '42%',
+               'className': 'uk-text-left',
                'data': 'question'
            },
            {
-               'width': '10%',
+               'width': '12%',
                'className': 'dt-center',
                'searchable': false,
                'orderable': false,
@@ -282,7 +283,7 @@ $(document).ready(function() {
                }
            },
            {
-               'width': '10%',
+               'width': '12%',
                'className': 'dt-center',
                'searchable': false,
                'orderable': false,
@@ -291,21 +292,70 @@ $(document).ready(function() {
                }
            },
            {
-               'width': '10%',
+               'width': '12%',
                'className': 'dt-center',
                'searchable': false,
                'orderable': false,
                'render': function(data, type, full, meta) {
                    return '<input type="checkbox">';
                }
-           }
+           },
+           {
+               'width': '12%',
+               'className': 'dt-center',
+               'searchable': false,
+               'orderable': false,
+               'render': function(data, type, full, meta) {
+                   return '<a href="#btnEdit" rel="modal:open"> <i class="uk-icon-edit"></i> EDIT </a>';
+               }
+           },
        ],
        'bSort': false,
        'dom': '<"toolbar">frtip',
-       'searching': false
+       'searching': false,
+        "bLengthChange": false,
+        columnDefs: [ {
+            orderable: false,
+            targets:   0
+        } ],
+        aoColumnDefs: [
+            {
+                bSortable: false,
+                aTargets: [ -1,-2 ,-3,-4]
+            }
+        ],
+        order: [[ 0, 'asc' ]],
     });
     tbl_tc.order([0, 'asc']).draw();
-    
+
+    $('div.dataTables_filter ').addClass('op-search-box');
+    $('div.dataTables_filter label').addClass('uk-icon-search');
+
+    /* Create new question */
+    $(".crud-submit").click(function(e){
+        e.preventDefault();
+        var form_action = $("#create-item").find("form").attr("action");
+        var title = $("#create-item").find("input[name='title']").val();
+        var description = $("#create-item").find("textarea[name='description']").val();
+
+        if(title != '' && description != ''){
+            $.ajax({
+                dataType: 'json',
+                type:'POST',
+                url: url + form_action,
+                data:{title:title, description:description}
+            }).done(function(data){
+                $("#create-item").find("input[name='title']").val('');
+                $("#create-item").find("textarea[name='description']").val('');
+                getPageData();
+                $(".modal").modal('hide');
+                toastr.success('Item Created Successfully.', 'Success Alert', {timeOut: 5000});
+            });
+        }else{
+            alert('You are missing title or description.')
+        }
+
+    });
 });
 
 

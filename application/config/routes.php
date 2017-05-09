@@ -73,6 +73,11 @@ $route['operations/client_info']    = "operations/client_info";
 $route['sys/registration_request'] = "sys/index";
 //$route['sys/approver_user'] = "sys/approver_user";
 
+
+/* audit */
+$route['audit/audit_extraction']="audit/index";
+$route['audit/audit_import']="audit/import";
+
 /* hr */
 //$route['hr/bulletin'] = 'hr/index';
 $route['hr'] = "hr/index";
