@@ -50,11 +50,12 @@
                             <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top">
                                 <thead>
                                     <tr>
-                                        <th width="16.7%">LAF</th>
-                                        <th width="16.7%">Applied Loan Amount</th>
-                                        <th width="16.7%">Application Date</th>
-                                        <th width="16.6%">Client ID</th>
-                                        <th width="16.6%">Branch ID</th>
+                                        <th width="10%">LAF</th>
+                                        <th width="12%">Applied Loan Amount</th>
+                                        <th width="12%">Application Date</th>
+                                        <th width="12%">Client ID</th>
+                                        <th width="12%">BRNET Client ID</th>
+                                        <th width="12%">Branch ID</th>
                                         <th width="16.7%">Branch Name</th>
                                     </tr>
                                 </thead>
@@ -64,6 +65,7 @@
                                         <td>&#8369; <?=number_format($cl_info['AppliedLoanAmount'], 2, '.', ',')?></td>
                                         <td><?=$cl_info['ApplicationDate']?></td>
                                         <td><?=$cl_info['ClientID']?></td>
+                                        <td><?=$cl_info['BRNETClientID']?></td>
                                         <td><?=$cl_info['BranchID']?></td>
                                         <td><?=$cl_info['BranchName']?> </td>
                                     </tr>
@@ -72,6 +74,44 @@
                         </div>
                     </div>
 
+                    <!-- repeat loan details  -->
+                    <?php if($cl_repeat['AccountID'] != NULL) { ?>
+                    <div class="los-container clear">
+                        <div class="los-header">
+                            <h1><span class="uk-icon-archive uk-margin-small-left uk-margin-small-right"></span> PREVIOUS ACCOUNT DETAILS</h1>
+                        </div>
+                        <div class="los-content">
+                            <dl class="uk-description-list-horizontal uk-margin-small-top">
+                                <dt>Account ID</dt>
+                                <dd>
+                                    <span><?=$cl_repeat['AccountID']?></span>
+                                    <span class="uk-text-bold">Attendance Ratio</span>
+                                    <span><?php echo ($cl_repeat['AttendanceCnt'] / $cl_repeat['MeetingCnt']) * 100 ?>%</span>
+                                </dd>
+                                
+                                <dt class="dt-even">No. of Arrear Days</dt>
+                                <dd class="dd-even">
+                                    <span><?=$cl_repeat['NoOfArrearDays']?></span>
+                                    <span class="uk-text-bold">Attendance Count</span>
+                                    <span><?=$cl_repeat['AttendanceCnt']?></span>
+                                </dd>
+                                <dt>Delayed Payments</dt>
+                                <dd>
+                                    <span><?=$cl_repeat['DelayedPymnt']?></span>
+                                    <span class="uk-text-bold">Meetings</span>
+                                    <span><?=$cl_repeat['MeetingCnt']?></span>
+                                </dd>
+                                <dt class="dt-even">Past Due Amount</dt>
+                                <dd class="dd-even">
+                                    <span>&#8369; <?=number_format($cl_repeat['PrinArrearAmount'], 2, '.', ',')?></span>
+                                    <span class="uk-text-bold">Outstanding Principal</span>
+                                    <span>&#8369; <?=number_format($cl_repeat['OutstandingPrincipal'], 2, '.', ',')?></span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <?php } ?>    
+                    
                     <!-- personal details -->
                     <div class="los-container clear">
                         <div class="los-header">
@@ -288,6 +328,75 @@
                         </div>
                     </div>  
                     
+                    <!-- tellecaller question -->
+                    <?php if($this->session->role_id == 'tc') { ?>
+                    <div class="los-container clear">
+                        <div class="los-header" style="background: #529B9C;">
+                            <h1><span class="uk-icon-phone uk-margin-small-left uk-margin-small-right"></span> TELLECALLER</h1>
+                        </div>
+                        <div class="los-content">
+                            <form id="los_tc_form" class="uk-form" method="post" action="<?=$cl_info['LAF']?>/submit">
+                                <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
+                                    <thead>
+                                        <tr>
+                                            <th>Questions</th>
+                                            <th>Answer</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                            foreach((array) $cl_tc as $row) {
+                                                $result = '<tr>'
+                                                        . '<td>' . $row['question'] . '</td>'
+                                                        . '<td class="uk-hidden"><input name="tc_q[]" type="text" value="' . $row['question'] . '"> </td>'
+                                                        . '<td>' . '<input name="tc[]" type="text" class="uk-form-small uk-form-width-large">' . '</td>'
+                                                        . '</tr>';
+                                                echo $result;
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                                <input name="txt_tc_fileno" type="text" class="uk-hidden" value="<?=$cl_info['LAF']?>" />
+                            </form>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    
+                    <!-- sanction (cpu) -->
+                    <?php if($this->session->role_id == 'cpu' && count($cl_tc_display) > 0) { ?>
+                    <div class="los-container clear">
+                        <div class="los-header">
+                            <h1><span class="uk-icon-phone uk-margin-small-left uk-margin-small-right"></span> TELLECALLER</h1>
+                        </div>
+                        <div class="los-content">
+                            <table class="uk-table uk-table-striped uk-table-condensed uk-margin-small-top table-fix">
+                                <thead>
+                                    <tr>
+                                        <th width="10%">Date Processed</th>
+                                        <th width="30%">Question</th>
+                                        <th width="20%">Value</th>
+                                        <th width="20%">Processed By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        foreach((array) $cl_tc_display as $row) {
+                                            $result = '<tr>'
+                                                    . '<td>' . $row['DateProcessed'] . '</td>'
+                                                    . '<td>' . $row['Question'] . '</td>'
+                                                    . '<td><i>' . $row['ProcessValue'] . '</i></td>'
+                                                    . '<td>' . $row['ProcessedBy'] . '</td>'
+                                                    . '</tr>';
+                                            echo $result;
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    
+                    
                     <div class="los-container clear">
                         <div class="los-header" style="border-radius: 0;">
                             <h1><span class="uk-icon-pencil uk-margin-small-left uk-margin-small-right"></span> REMARKS / COMMENTS</h1>
@@ -335,26 +444,28 @@
                                 </table>
                             </div>
                         <?php } ?>
+                        <?php if($this->session->role_id != 'tc') { ?>
                         <div class="los-content darkbg">
                             <form id="los_form" class="uk-form" style="margin-top: 3px" method="post" action="<?=$cl_info['LAF']?>/submit">
                                 <textarea name="txt_remarks" class="uk-width-1-1" cols="" rows="" placeholder="Enter Remarks/Comments Here"></textarea>
-                                <input name="txt_fileno" type="text" class="uk-hidden"  value="<?= $cl_info['LAF'] ?>" />
+                                <input name="txt_fileno" type="text" class="uk-hidden" value="<?=$cl_info['LAF']?>" />
                             </form>
                         </div>
+                        <?php } ?>
                     </div>
                     
                     <!-- controls -->
                     <div class="los-container clear ctrl">
                         <div class="los-content">
                             <?php if($cl_tags['ProcessValue'] !== 'REJ') { ?>
-                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" />
+                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php } else { ?>
                                     <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" disabled />
                             <?php } ?>
                             
-                            <input type="submit" name="btn_reject"  value="Reject"  class="uk-button" form="los_form" />
+                            <input type="submit" name="btn_reject"  value="Reject"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php if($this->session->role_id != 'qa') { ?>
-                                <input type="submit" name="btn_revert"  value="Revert"  class="uk-button" form="los_form" />
+                                <input type="submit" name="btn_revert"  value="Revert"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php } ?>
                         </div>
                     </div>

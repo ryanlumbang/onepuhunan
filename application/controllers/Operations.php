@@ -73,11 +73,14 @@
             $input = $this->uri->segment(6);
             
             $data = array(
-                "cl_info"    => $this->Operations_model->get_los_laf_details($input),
-                "cl_asset"   => $this->Operations_model->get_los_laf_asset_liabilities($input),
-                "cl_error"   => $this->Operations_model->get_los_laf_err($input),
-                "cl_remarks" => $this->Operations_model->get_los_laf_hist_remarks($input),
-                "cl_tags"    => $this->Operations_model->get_los_laf_tags($input)
+                "cl_info"       => $this->Operations_model->get_los_laf_details($input),
+                "cl_asset"      => $this->Operations_model->get_los_laf_asset_liabilities($input),
+                "cl_error"      => $this->Operations_model->get_los_laf_err($input),
+                "cl_remarks"    => $this->Operations_model->get_los_laf_hist_remarks($input),
+                "cl_tags"       => $this->Operations_model->get_los_laf_tags($input),
+                "cl_tc"         => $this->Operations_model->get_los_laf_tc_questions($input),
+                "cl_tc_display" => $this->Operations_model->get_los_laf_tc_display($input),
+                "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input)
             );
 
             $this->load->view("operations/los_info", $data);
@@ -88,33 +91,52 @@
             $this->load->model("Operations_model");
 
             $input = array();
+            $tc_input = array();
+            
             $header = "Submission Successful!";
             $content = "You have successfully submitted the application for the next processing.";
             
-            if (isset($_POST['btn_approve'])) {
+            if (isset($_POST['btn_approve'])) {               
                 $input = array(
-                    "FileNo"      => $this->input->post("txt_fileno"),
+                    "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "APR",
-                    "Remarks"     => $this->input->post("txt_remarks"),
+                    "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
-                );
-            } elseif (isset($_POST['btn_reject'])) {
+                );     
+            } elseif (isset($_POST['btn_reject'])) { 
                 $input = array(
-                    "FileNo"      => $this->input->post("txt_fileno"),
+                    "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REJ",
-                    "Remarks"     => $this->input->post("txt_remarks"),
+                    "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
                 );
             } else {
                 $input = array(
-                    "FileNo"      => $this->input->post("txt_fileno"),
+                    "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REV",
-                    "Remarks"     => $this->input->post("txt_remarks"),
+                    "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
-                );                
+                );  
             }
 
            $this->Operations_model->set_los_laf_approval($input);
+           
+           if($this->session->role_id == 'tc') {
+               $tc = $_POST['tc'];
+               $tc_q = $_POST['tc_q'];
+               
+               foreach($tc as $key => $n) {
+                   $tc_input = array(
+                       "QuestionNo"    => $tc_q[$key],
+                       "FileNo"        => $this->input->post("txt_tc_fileno"),
+                       "ProcessValue"  => $n,
+                       "ProcessedBy"   => $this->session->emp_id
+                   );
+                   $this->Operations_model->set_los_laf_tc_process($tc_input);
+                   unset($tc_input);
+               }
+           }
+           
            $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
            
            if($this->session->records_count - 1 == 0) {

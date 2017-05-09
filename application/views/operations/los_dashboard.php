@@ -1,5 +1,6 @@
 <?php
-    $data['title'] = 'OnePuhunan Service Portal | Loan Origination System';
+    $data['title'] = 'OnePuhunan Service Portal | Loan Origination System';	
+    ini_set('max_execution_time', 0)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +25,7 @@
                                     <thead>
                                         <tr>
                                             <th>CENTER NAME</th>
-                                            <th class="uk-text-center" width="15%">SUBMISSION DATE</th>
+                                            <th class="uk-text-center" width="15%"></th>
                                             <th class="uk-text-center" width="10%">KYC</th>
                                             <th class="uk-text-center" width="10%">BMV</th>
                                             <th class="uk-text-center" width="10%">ALAF</th>
@@ -49,10 +50,14 @@
 //                                                            . '</tr>';
 //                                                    echo $result;
                                                     
-                                                    $result = '<tr>'
+                                                   /* $result = '<tr>'
                                                             . '<td><a  href="los/' . $status['DateData'] . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
-                                                            . '<td class="uk-text-center">' . $status['AsOfDate'] . '</td>';
+                                                            . '<td class="uk-text-center">' . $status['AsOfDate'] . '</td>'; */
                                                  
+                                                    $result = '<tr>'
+                                                            . '<td><a  href="los/' . 'X' . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
+                                                            . '<td class="uk-text-center">' .  '</td>';
+                                                    
                                                     /* kyc */
                                                     if($this->session->role_id === 'qa') {
                                                         $result = $result . '<td class="uk-text-center highlight">' . $status['KYC'] . '</td>';

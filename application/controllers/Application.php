@@ -164,7 +164,7 @@
                 array(
                     "field" => "emp_id",
                     "label" => "Employee ID",
-                    "rules" => "trim|required|min_length[8]|max_length[10]",
+                    "rules" => "trim|required|min_length[6]|max_length[10]",
                     "errors" => array(
                         "required" => "The <b>\"%s\"</b> field is required.",
                         "min_length" => "The <b>\"%s\"</b> field must be at least %s characters in length.",
@@ -278,7 +278,7 @@
             for($x=0; $x < count($str1); $x++) {
                 $str2[$x] .= $str1[$x];
             }
-            
+            //var_dump(implode('', $str2));
             return implode('', $str2);
         }
         
