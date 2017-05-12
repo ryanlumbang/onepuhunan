@@ -32,13 +32,17 @@
         }
         
         public function get_ln_branch() {
-            $query = $this->db->query("SELECT * FROM sp_ln_branch() LIMIT 5");
+            //$query = $this->db->query("SELECT * FROM sp_ln_branch() LIMIT 5");
+            //return $query->result_array();
+            
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_usr_emp_branch(?)", $this->session->emp_id);
             return $query->result_array();
         }
 
         public function get_laf_pending($input) {
             $los_db = $this->load->database("LOS", true);
-            $query = $los_db->query("SELECT * FROM sp_los_laf_pending(?, ?, ?, ?)", $input);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_pending_rev(?, ?, ?, ?)", $input);
             return $query->result_array();
         }
         
@@ -68,7 +72,7 @@
         
         public function get_los_laf_status($input) {
             $los_db = $this->load->database("LOS", true);
-            $query = $los_db->query("SELECT * FROM sp_los_laf_status(?)", $input);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_status_rev(?)", $input);
             return $query->result_array();
         }
         
@@ -81,6 +85,30 @@
         public function get_los_laf_tags($input) {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_los_laf_tags(?)", $input);
+            return $query->row_array();
+        }
+        
+        public function get_los_laf_tc_questions($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_tc_question(?)", $input);
+            return $query->result_array();
+        }
+        
+        public function set_los_laf_tc_process($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT sp_los_laf_tc_process(?, ?, ?, ?)", $input);
+            return $query->row();
+        }
+        
+        public function get_los_laf_tc_display($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_tc_display(?)", $input);
+            return $query->result_array();
+        }
+        
+        public function get_los_laf_repeat_display($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_repeat_display(?)", $input);
             return $query->row_array();
         }
         

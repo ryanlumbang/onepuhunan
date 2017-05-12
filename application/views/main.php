@@ -12,7 +12,7 @@ $data['title'] = 'OnePuhunan Service Portal';
 </div>
 <div class="page-wrap main-pagewrap">
     <div id="submain">
-        <span>MicroVentures Philippines Financing Company Incs.</span>
+        <span>MicroVentures Philippines Financing Company Inc.</span>
     </div>
     <div class="uk-container uk-container-center">
         <div class="uk-grid uk-margin-large-top fix-uk-margin">

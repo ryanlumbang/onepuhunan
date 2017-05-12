@@ -9,6 +9,8 @@ $(document).ready(function() {
     var approve = '<button id="btn_approve" class="uk-button uk-button-small" disabled><i class="uk-icon-check"></i> Approve</button>';
     var reject  = '<button id="btn_reject"  class="uk-button uk-button-small" disabled><i class="uk-icon-times"></i> Reject</button>';
     var revert  = '<button id="btn_revert"  class="uk-button uk-button-small" disabled><i class="uk-icon-level-down"></i> Revert</button>';
+    var all = '<button id="btn_all" class="uk-button uk-button-small" disabled> Select All</button>';
+    var des = '<button id="btn_des" class="uk-button uk-button-small" disabled> Deselect All</button>'
         
     /* for enabling/disabling of button */
     var counterChecked = 0;
@@ -69,10 +71,11 @@ $(document).ready(function() {
             {'width': '5%', 'className': 'dt-center', 'data': 'FileNo'},
             {'width': '15%', 'data': 'ClientName'},
             {'width': '5%', 'className': 'dt-center', 'data': 'ClientID'},
+            {'width': '4%', 'className': 'dt-center', 'data': 'BRNETClientID'},
             {'width': '4%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
-            {'width': '4%', 'className': 'dt-center uk-text-bold', 'data': 'ProcessValue'},
+            {'visible': false, 'data': 'ProcessValue'},
             {'width': '4%', 'data': null, 'defaultContent': '<button class="uk-button uk-button-small uk-button-primary">View Profile</button>'},
-            {'visible': false, 'targets': 9, 'data': 'AsOfDate'}
+            {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
         'iDisplayLength': 25,
         'oLanguage': {
@@ -86,9 +89,9 @@ $(document).ready(function() {
             var rows = api.rows({ page : 'current' }).nodes();
             var last = null;
             
-            api.column(9, { page : 'current' }).data().each( function(group, i) {       
+            api.column(10, { page : 'current' }).data().each( function(group, i) {       
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="9">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="10">' + group + '</td></tr>');
                     last = group;
                 }
             });
@@ -103,7 +106,7 @@ $(document).ready(function() {
         'bSort': false,
         'dom': '<"toolbar">frtip'
     });
-    tbl_los.order( [ 9, 'desc' ] ).draw();
+    tbl_los.order( [ 10, 'desc' ] ).draw();
 
     /* datatables content: view profile button */
     $('#tbl_los tbody').on('click', 'button', function() {
@@ -116,9 +119,9 @@ $(document).ready(function() {
 
     /* sometimes it's working, sometimes not :P */
     if(role === 'qa') {
-        $('#losbody div.toolbar').html(approve + reject);
+        $('#losbody div.toolbar').html(approve + reject + all + des);
     } else {
-        $('#losbody div.toolbar').html(approve + reject + revert);
+        $('#losbody div.toolbar').html(approve + reject + revert + all + des);
     };
     
     var actionArray = new Array();
@@ -135,6 +138,8 @@ $(document).ready(function() {
         }
         counterChecked > 0 ? $('#btn_reject').prop('disabled', false) : $('#btn_reject').prop('disabled', true);
         counterChecked > 0 ? $('#btn_revert').prop('disabled', false) : $('#btn_revert').prop('disabled', true);
+        counterChecked > 0 ? $('#btn_all').prop('disabled', false) : $('#btn_all').prop('disabled', true);
+        counterChecked > 0 ? $('#btn_des').prop('disabled', false) : $('#btn_des').prop('disabled', true);
     });    
     
     function getAllCheckedItems() {
@@ -232,6 +237,18 @@ $(document).ready(function() {
             }
         });
     });    
+    
+    $('#btn_all').click(function() {
+        $('#tbl_los').find('input[type="checkbox"]').each(function() {
+            this.checked = true;
+        });
+    });
+    
+    $('#btn_des').click(function() {
+        $('#tbl_los').find('input[type="checkbox"]').each(function() {
+           this.checked = false; 
+        });
+    });
     
     // expand all accordion headers.
     var accordion = UIkit.accordion(UIkit.$('#los-accordion'), {collapse:false, showfirst: false});

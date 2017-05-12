@@ -39,10 +39,10 @@
                                <th>LAF #</th> 
                                <th>Name</th>
                                <th>Client ID</th>
-                               <th>Loan Type</th>
-                               <th>Action</th>
+                               <th>BRNET</th>
+                               <th>Loan Type</th>    
                                <th></th>
-                               <th>AsOfDate</th>
+                               <th></th>
                            </tr>
                         </thead>
                     </table>
