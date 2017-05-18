@@ -50,14 +50,6 @@
             
         <table id="table-details">
             <tr>
-                <td>Employee ID</td>
-                <td><?php echo $emp_id ?></td>
-            </tr>
-            <tr>
-                <td>Full Name</td>
-                <td><?php echo $name ?></td>
-            </tr>
-            <tr>
                 <td>Email Address</td>
                 <td><?php echo $email ?></td>
             </tr>

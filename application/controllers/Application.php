@@ -74,7 +74,83 @@
                 $this->load->view("login", $data);   
             }
         }
-        
+
+        public function confirmation() {
+            $this->load->library("form_validation");
+            $this->load->model("Application_model");
+
+            $config = array(
+                array(
+                    "field" => "emp_id",
+                    "label" => "Employee Id",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    )
+                )
+            );
+
+            $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+            $this->form_validation->set_rules($config);
+
+            if($this->form_validation->run() == FALSE) {
+                //$this->load->view("main");
+                $this->load->view("changepassword");
+            } else {
+                $input = array(
+                    "emp_id"  => $this->input->post("emp_id"),
+                    "password" => md5($this->merge_between( $this->input->post("emp_id"), '0n3Puhun@n'))
+                );
+
+                $data["sp_ua_confirm_validation"] = $this->Application_model->set_confirm_pass($input);
+                $this->load->view("changepassword", $data);
+            }
+
+        }
+        public function fpassword() {
+            $this->load->library("form_validation");
+            $this->load->model("Application_model");
+
+            $config = array(
+                array(
+                    "field" => "email",
+                    "label" => "Email Address",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    )
+                )
+            );
+
+            $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+            $this->form_validation->set_rules($config);
+
+            if($this->form_validation->run() == FALSE) {
+                //$this->load->view("main");
+                $this->load->view("forgot_password");
+            } else {
+                $input = array(
+                    "email"      => $this->input->post("email"),
+                );
+
+                $data["sp_ua_fgot_pass_validation"] = $this->Application_model->get_set_password($input);
+
+                if ( $data["sp_ua_fgot_pass_validation"] == 0 ) {
+                    $session = array(
+                        "email"  => $this->input->post("email"),
+                        "emp_name" => $data["sp_ua_fgot_pass_validation"]["last_name"]
+                    );
+                    $this->session->set_userdata($session);
+
+                    // send notifications
+                    $this->send_mail_fgot($session);
+
+                    $this->load->view("forgot_password", $data);
+                } else {
+                    $this->load->view("forgot_password", $data);
+                }
+            }
+        }
         public function logout() {
             //$user_data = $this->session->all_userdata();
             //$this->session->unset_userdata($user_data);
@@ -97,7 +173,7 @@
         public function dashboard() {
             $this->load->view("dashboard");
         }
-        
+
         public function signup() {
             $this->load->library("form_validation");
             $this->load->model("Application_model");
@@ -233,7 +309,19 @@
         public function success() {
             $this->load->view("success");
         }
-        
+        public function send_mail_fgot($session) {
+            $this->load->library("email");
+
+            $this->email->from("it.administrator@onepuhunan.com.ph", "OnePuhunan Service Portal")
+                ->to($this->input->post("email"))
+                ->subject("OnePuhunan Service Portal Registration");
+
+            $mail_body = $this->load->view("emails/reset_password", $session, TRUE);
+            $this->email->message($mail_body);
+
+            $this->email->send();
+        }
+
         public function send_mail($session) {
             $this->load->library("email");
             

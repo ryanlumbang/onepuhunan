@@ -154,7 +154,8 @@
             
             
         }
-        
+
+
         function merge_between($varstr1, $varstr2){
             //reference: http://www.jonasjohn.de/snippets/php/merge-two-strings.htm
            
