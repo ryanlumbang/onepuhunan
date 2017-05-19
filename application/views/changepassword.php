@@ -43,7 +43,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                                 . "   </div>";
                             break;
                         default:
-                            redirect(base_url()."success_password", "refresh");
+                            redirect(base_url()."success_password");
                             break;
                     }
                 }
