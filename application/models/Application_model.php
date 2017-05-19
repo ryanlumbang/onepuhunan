@@ -15,7 +15,24 @@
             $query = $this->db->get(" \"t_Department\" t1 ");
             return $query->result_array(); 
         }
-        
+        public function get_set_password($input) {
+            $query = $this->db->query("SELECT sp_ua_fgot_pass_validation( ? )", $input);
+            $row = $query->row();
+
+            if ( isset($row) ) {
+                return $row->sp_ua_fgot_pass_validation;
+            }
+        }
+
+        public function get_confirm($input) {
+            $query = $this->db->query("SELECT sp_ua_confirm_validation(?,?)", $input);
+            $row = $query->row();
+
+            if ( isset($row) ) {
+                return $row->sp_ua_confirm_validation;
+            }
+        }
+
         public function get_user_account($input) {
             $query = $this->db->query("SELECT sp_ua_login_validation( ?, ? )", $input);
             $row = $query->row();
@@ -24,7 +41,8 @@
                 return $row->sp_ua_login_validation;
             }
         }
-        
+
+
         public function set_user_logout($input) {
             $query = $this->db->query("SELECT sp_ua_logout_validation( ? )", $input);
             $row = $query->row();
@@ -65,6 +83,15 @@
                 return $row->sp_ua_upd_user_pass;
             }
         }
+
+        public function set_confirm_pass($input) {
+            $query = $this->db->query("SELECT sp_ua_upd_confirm_pass ( ?, ? )", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_ua_upd_confirm_pass;
+            }
+        }
         
         public function get_admin_list() {
             $where = "(t1.\"role_id\" = 'sa' OR t1.\"role_id\" = 'super')";
@@ -75,11 +102,11 @@
             $query = $this->db->get(" \"t_UserAccount\" t1 ");
             return $query->result_array();
         }
-        
         public function get_user_sess_login($input) {
             $qry = $this->db->query("SELECT emp_id, emp_name, role_id FROM sp_ua_sess_login( ? ) AS (emp_id text, emp_name text, role_id text)", $input);
             return $qry->row_array();
         }
+
 
     }
 

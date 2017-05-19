@@ -55,6 +55,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['opslogin']  = "application/opslogin";
 $route['mlogin']     = "application/mlogin";
+$route['forgotpassword']     = "application/fpassword";
+$route['confirmation']     = "application/confirmation";
 
 $route['signup']    = "application/signup";
 $route['success']   = "application/success";
