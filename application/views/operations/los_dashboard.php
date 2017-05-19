@@ -55,7 +55,7 @@
                                                             . '<td class="uk-text-center">' . $status['AsOfDate'] . '</td>'; */
                                                  
                                                     $result = '<tr>'
-                                                            . '<td><a  href="los/' . 'X' . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
+                                                            . '<td><a  href="los/' . base64_encode('X') . '/' . $row['BranchCode'] . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
                                                             . '<td class="uk-text-center">' .  '</td>';
                                                     
                                                     /* kyc */

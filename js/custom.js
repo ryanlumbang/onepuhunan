@@ -10,7 +10,7 @@ $(document).ready(function() {
     var reject  = '<button id="btn_reject"  class="uk-button uk-button-small" disabled><i class="uk-icon-times"></i> Reject</button>';
     var revert  = '<button id="btn_revert"  class="uk-button uk-button-small" disabled><i class="uk-icon-level-down"></i> Revert</button>';
     var all = '<button id="btn_all" class="uk-button uk-button-small" disabled> Select All</button>';
-    var des = '<button id="btn_des" class="uk-button uk-button-small" disabled> Deselect All</button>'
+    var des = '<button id="btn_des" class="uk-button uk-button-small" disabled> Deselect All</button>';
         
     /* for enabling/disabling of button */
     var counterChecked = 0;
@@ -66,14 +66,15 @@ $(document).ready(function() {
                    return '<input type="checkbox">'; 
                 }
             },
-            {'width': '4%', 'className': 'dt-center', 'data': 'OurBranchID'},
-            {'width': '4%', 'className': 'dt-center', 'data': 'GroupID'},  
-            {'width': '5%', 'className': 'dt-center', 'data': 'FileNo'},
-            {'width': '15%', 'data': 'ClientName'},
-            {'width': '5%', 'className': 'dt-center', 'data': 'ClientID'},
+            {'width': '3%', 'className': 'dt-center', 'data': 'OurBranchID'},
+            {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},  
+            {'width': '3%', 'className': 'dt-center', 'data': 'FileNo'},
+            {'width': '12%', 'data': 'ClientName'},
+            {'width': '3%', 'className': 'dt-center', 'data': 'ClientID'},
             {'width': '4%', 'className': 'dt-center', 'data': 'BRNETClientID'},
-            {'width': '4%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
+            {'width': '3%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
             {'visible': false, 'data': 'ProcessValue'},
+            {'width': '3%', 'className': 'dt-center uk-text-bold', 'data': 'Age'},
             {'width': '4%', 'data': null, 'defaultContent': '<button class="uk-button uk-button-small uk-button-primary">View Profile</button>'},
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
@@ -89,9 +90,9 @@ $(document).ready(function() {
             var rows = api.rows({ page : 'current' }).nodes();
             var last = null;
             
-            api.column(10, { page : 'current' }).data().each( function(group, i) {       
+            api.column(11, { page : 'current' }).data().each( function(group, i) {       
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="10">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="11">' + group + '</td></tr>');
                     last = group;
                 }
             });
@@ -106,7 +107,7 @@ $(document).ready(function() {
         'bSort': false,
         'dom': '<"toolbar">frtip'
     });
-    tbl_los.order( [ 10, 'desc' ] ).draw();
+    tbl_los.order( [ 11, 'desc' ] ).draw();
 
     /* datatables content: view profile button */
     $('#tbl_los tbody').on('click', 'button', function() {

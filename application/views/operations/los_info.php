@@ -107,6 +107,12 @@
                                     <span class="uk-text-bold">Outstanding Principal</span>
                                     <span>&#8369; <?=number_format($cl_repeat['OutstandingPrincipal'], 2, '.', ',')?></span>
                                 </dd>
+                                <dt>Maturity Date</dt>
+                                <dd>
+                                    <span><?=$cl_repeat['MaturityDate']?></span>
+                                    <span class="uk-text-bold">Closed Date</span>
+                                    <span><?=$cl_repeat['ClosedDate']?></span>
+                                </dd>
                             </dl>
                         </div>
                     </div>
@@ -464,8 +470,9 @@
                             <?php } ?>
                             
                             <input type="submit" name="btn_reject"  value="Reject"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
-                            <?php if($this->session->role_id != 'qa') { ?>
+                            <?php if(($this->session->role_id != 'qa') || ($cl_tags['DestProcess'] != 'KYC')) { ?>
                                 <input type="submit" name="btn_revert"  value="Revert"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                                
                             <?php } ?>
                         </div>
                     </div>

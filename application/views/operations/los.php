@@ -34,14 +34,15 @@
                         <thead>
                            <tr>
                                <th></th>
-                               <th>Branch ID</th>
-                               <th>Center ID</th>
+                               <th>Branch</th>
+                               <th>Center</th>
                                <th>LAF #</th> 
                                <th>Name</th>
                                <th>Client ID</th>
                                <th>BRNET</th>
-                               <th>Loan Type</th>    
+                               <th>Loan Type</th>
                                <th></th>
+                               <th>Loan Age</th>
                                <th></th>
                            </tr>
                         </thead>
