@@ -41,8 +41,12 @@
         $trimmed = trim($email, "@onepuhunan.com.ph");
         $name = str_replace(".", " ", $trimmed);
         echo ucwords($name);?></b>,
-       <br>
-    test forgot password only
+    <br><br><br>
+    You have submitted a password reset request at <b>OnePuhunan Service Portal</b>.
+    <br><br>
+    If it wasn't please disregard this email and make sure you can still login to your
+    account. If it was you, then confirm the password change by <a href="<?php echo site_url("confirmation"); ?>">clicking here.</a>
+
 
 <p>
     For more details, please send an email to <a href="mailto:it@onepuhunan.com.ph?">it@onepuhunan.com.ph</a>.

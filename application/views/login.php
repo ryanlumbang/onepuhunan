@@ -100,15 +100,16 @@
                             <div class="uk-form-row">
                                 <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-text-bold">LOGIN</button>
                             </div>
-                            <div class="uk-form-row">
+                            <div class="uk-form-row uk-text-center">
+                                <a href="<?php echo site_url("forgotpassword"); ?>" class="uk-text-center">FORGOT PASSWORD?</a>
+                            </div>
+                            <hr>
+                            <div class="uk-form-row uk-text-center">
                                 <label class="uk-form-label uk-text-small uk-text-bold">NEW TO SERVICE PORTAL?</label>
                                 <br/>
-                                <label class="uk-form-label uk-text-small">Sign up now to enjoy our services!</label> 
+                                <label class="uk-form-label uk-text-small">Sign up now to enjoy our services! |   <a class="uk-text-bold" href="<?php echo site_url("signup"); ?>">SIGN UP</a></label>
                             </div>
-                            <div class="uk-form-row">
-                                <a class="uk-width-1-1 uk-button uk-button-primary uk-text-bold" href="<?php echo site_url("signup"); ?>">SIGN UP</a>
-                            </div>
-                        <?=form_close();?>
+                            <?=form_close();?>
                     </div>
                 </div>
             </div>

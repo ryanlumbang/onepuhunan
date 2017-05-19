@@ -63,6 +63,9 @@ $route['success']   = "application/success";
 $route['dashboard'] = "application/dashboard";
 $route['logout']    = "application/logout";
 
+$route['confirm_password']    = "application/confirm_password";
+$route['success_password']    = "application/success_password";
+
 /* profile */
 $route['profile/userinfo']   = "profile/index";
 $route['profile/changepass'] = "profile/changepass";

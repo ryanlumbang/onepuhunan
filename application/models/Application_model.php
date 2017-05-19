@@ -33,6 +33,8 @@
             }
         }
 
+
+
         public function get_user_account($input) {
             $query = $this->db->query("SELECT sp_ua_login_validation( ?, ? )", $input);
             $row = $query->row();

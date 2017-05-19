@@ -14,13 +14,13 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                 <legend class="uk-margin-small-top uk-text-large uk-text-bold">CONFIRMATION</legend>
                 <?php echo validation_errors(); ?>
                 <?php
-                if ( isset($sp_ua_fgot_pass_validation) ) {
-                    switch( $sp_ua_fgot_pass_validation) {
+                if ( isset($sp_ua_confirm_validation) ) {
+                    switch( $sp_ua_confirm_validation) {
                         case 1:
                             echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
                                 . "      <span>"
                                 .           "<big class='uk-text-bold'>Authentication Failed</big><br>"
-                                .           "Sorry, we couldn't find an account with that email address. "
+                                .           "Sorry, we couldn't find an account with that Employee ID. "
                                 . "      </span>"
                                 . "   </div>";
                             break;
@@ -37,13 +37,13 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                             echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
                                 . "      <span>"
                                 .           "<big class='uk-text-bold'>Authentication Failed</big><br>"
-                                .           "Invalid Email Address. "
+                                .           "Invalid Employee ID. "
                                 .           "Please try again."
                                 . "      </span>"
                                 . "   </div>";
                             break;
                         default:
-                            redirect(base_url()."login");
+                            redirect(base_url()."success_password", "refresh");
                             break;
                     }
                 }

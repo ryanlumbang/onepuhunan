@@ -11,10 +11,11 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
         <div class="uk-align-right tm-padding">
             <div style="width: 350px;">
                 <?=form_open("", array("class" => "uk-form uk-margin-left uk-margin-right tm-box-shadow tm-form", "style" => "padding: 30px 25px;"));?>
-                <legend class="uk-margin-small-top uk-text-large uk-text-bold">FORGOT PASSWORD</legend>
+                <legend class="uk-margin-small-top uk-text-large uk-text-bold">HELP WITH MY ACCOUNT</legend>
+                <p class="text-form">Please enter the e-mail address associated with your account and we'll email you a link to recover your password.</p>
                 <?php echo validation_errors(); ?>
                 <?php
-                if ( isset($sp_ua_fgot_pass_validation) ) {
+                if ( isset($sp_ua_fgot_pass_validation)  ) {
                     switch( $sp_ua_fgot_pass_validation) {
                         case 1:
                             echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
@@ -43,14 +44,13 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                                 . "   </div>";
                             break;
                         default:
-                            redirect(base_url()."opslogin");
+                            redirect(base_url()."confirm_password", "refresh");
                             break;
                     }
                 }
                 ?>
-
                 <div class="uk-form-row uk-form-icon">
-                    <i class="uk-icon-user"></i>
+                    <i class="uk-icon-envelope"></i>
                     <?php
                     $email =  array(
                         "id"    => "email",
@@ -63,8 +63,10 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                     ?>
                 </div>
                 <div class="uk-form-row">
-                    <button type="submit" class="uk-width-1-1 uk-button uk-button-primary uk-text-bold">Submit</button>
-                    <button type="button" class="uk-width-1-1 uk-button uk-text-bold">Cancel</button>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2"><a href="<?php echo site_url("opslogin"); ?>" class="uk-width-1-1 uk-button uk-text-bold ">Cancel</a></div>
+                        <div class="uk-width-1-2"><button type="submit" id="btn-submit-fgot" class="uk-width-1-1 uk-button uk-button-primary uk-text-bold submit" >Submit</button></div>
+                    </div>
                 </div>
                 <?=form_close();?>
             </div>
