@@ -74,7 +74,64 @@ class Application extends CI_Controller {
             $this->load->view("login", $data);
         }
     }
+    public function aulogin() {
+        $this->load->library("form_validation");
+        $this->load->model("Application_model");
 
+        if(isset($_SESSION['logged_in'])) {
+            redirect(base_url()."audit");
+        }
+
+        $config = array(
+            array(
+                "field" => "u_empid",
+                "label" => "Employee ID",
+                "rules" => "trim|required",
+                "errors" => array(
+                    "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                )
+            ),
+            array(
+                "field" => "u_pass",
+                "label" => "Password",
+                "rules" => "trim|required",
+                "errors" => array(
+                    "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                )
+            )
+        );
+
+        $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+        $this->form_validation->set_rules($config);
+
+        if($this->form_validation->run() == FALSE) {
+            //$this->load->view("main");
+            $this->load->view("mlogin");
+        } else {
+            $input = array(
+                "emp_id"      => $this->input->post("u_empid"),
+                "password"    => $this->merge_between($this->input->post("u_empid"), $this->input->post("u_pass"))
+            );
+
+            $data["sp_ua_login_validation"] = $this->Application_model->get_user_account($input);
+
+            /* create user's session */
+            if ( $data["sp_ua_login_validation"] == 0 ) {
+                $data["query"] = $this->Application_model->get_user_sess_login(array_values($input)[0]);
+
+                $session = array(
+                    "emp_id"    => $data["query"]["emp_id"],
+                    "emp_name"  => $data["query"]["emp_name"],
+                    "role_id"   => $data["query"]["role_id"],
+                    "logged_in" => 1
+                );
+
+                $this->session->set_userdata($session);
+            }
+
+            $this->load->view("mlogin", $data);
+        }
+    }
     public function confirmation() {
         $this->load->library("form_validation");
         $this->load->model("Application_model");

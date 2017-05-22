@@ -54,7 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['opslogin']  = "application/opslogin";
-$route['mlogin']     = "application/mlogin";
+$route['aulogin']     = "application/aulogin";
 $route['forgotpassword']     = "application/fpassword";
 $route['confirmation']     = "application/confirmation";
 
