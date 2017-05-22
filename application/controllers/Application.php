@@ -376,7 +376,7 @@ class Application extends CI_Controller {
 
         $this->email->from("it.administrator@onepuhunan.com.ph", "OnePuhunan Service Portal")
             ->to($this->input->post("email"))
-            ->subject("OnePuhunan Service Portal Registration");
+            ->subject("OnePuhunan Service Portal Forgot Password");
 
         $mail_body = $this->load->view("emails/reset_password", $session, TRUE);
         $this->email->message($mail_body);

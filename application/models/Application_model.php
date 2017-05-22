@@ -106,7 +106,5 @@ class Application_model extends CI_Model {
         $qry = $this->db->query("SELECT emp_id, emp_name, role_id FROM sp_ua_sess_login( ? ) AS (emp_id text, emp_name text, role_id text)", $input);
         return $qry->row_array();
     }
-
-
 }
 
