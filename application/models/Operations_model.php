@@ -111,5 +111,16 @@
             $query = $los_db->query("SELECT * FROM sp_los_laf_repeat_display(?)", $input);
             return $query->row_array();
         }
+
+
+        public function set_branch_handle($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT sp_upd_emp_branch ( ?, ? )", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_upd_emp_branch;
+            }
+        }
         
     }

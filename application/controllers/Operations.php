@@ -192,6 +192,50 @@
             echo "{ \"data\" : " . json_encode($data["query"]) . "}";
         }
 
+
+        public function branch_handle() {
+            $this->load->library("form_validation");
+            $this->load->model("Operations_model");
+
+            $config = array(
+                array(
+                    "field" => "emp_id",
+                    "label" => "Employee Id",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    )
+                ),
+                array(
+                    "field" => "branch_ids",
+                    "label" => "Branch Ids",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    )
+                )
+            );
+
+            $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+            $this->form_validation->set_rules($config);
+
+            if($this->form_validation->run() == FALSE) {
+                $this->load->view("operations/branch_handle");
+            } else {
+                $input = array(
+                    "emp_id"  => $this->input->post("emp_id"),
+                    "branch_ids"  => $this->input->post("branch_ids")
+                );
+
+                $data["sp_upd_emp_branch"] = $this->Operations_model->set_branch_handle($input);
+                $this->load->view("operations/branch_handle", $data);
+            }
+
+        }
+        public function success_branch_assign() {
+            $this->load->view("validation/success_branch_assign");
+        }
+
     }
     
     

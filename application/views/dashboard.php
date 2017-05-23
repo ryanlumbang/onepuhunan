@@ -33,8 +33,7 @@
                             </ul>
                             </div>   
                     <?php } ?>
-                     
-                    
+
                     <div class="uk-width-1-4 uk-text-center">
                         <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/system_png/operations.png" width="100">
                         <h3>OPERATIONS</h3>
@@ -42,9 +41,12 @@
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                            <?php
+                            if($this->session->is_super = '1') { ?>
+                            <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
+                            <?php } ?>
                         </ul>
                     </div>
-                    <div class="uk-width-1-4"></div>
                 </div>
             </div>
         </div>

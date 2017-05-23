@@ -73,6 +73,8 @@ $route['profile/changepass'] = "profile/changepass";
 /* operations */
 $route['operations/client_catalog'] = "operations/index";
 $route['operations/client_info']    = "operations/client_info";
+$route['operations/branch_handle']    = "operations/branch_handle";
+$route['operations/success_branch_assign']    = "operations/success_branch_assign";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
