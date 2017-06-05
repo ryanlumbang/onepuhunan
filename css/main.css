@@ -344,3 +344,6 @@ a.back-to-top {
 .op-container {
     padding-bottom: 10px;
 }
+.uk-container.table-wrap.op-container.tc-container {
+    max-width: 100%;
+}

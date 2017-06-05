@@ -296,7 +296,7 @@ $(document).ready(function() {
                'width': '12%',
                'className': 'dt-center',
                'searchable': false,
-               'orderable': false,
+               'orderable': true,
                'render': function(data, type, full, meta) {
                    return '<input type="checkbox">';
                }

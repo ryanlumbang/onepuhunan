@@ -18,7 +18,7 @@
             <section id="main-section">
 
 
-                <div class="uk-container table-wrap op-container">  <!-- Modal HTML embedded directly into document -->
+                <div class="uk-container table-wrap op-container tc-container">  <!-- Modal HTML embedded directly into document -->
 
                     <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE TELLECALLER QUESTIONS</h1></div>
 
