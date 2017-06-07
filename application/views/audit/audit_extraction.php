@@ -1,4 +1,7 @@
 <?php
+if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super') { ?>
+
+<?php
 $data['title'] = 'OnePuhunan Service Portal | Registration Request';
 header("Cache-Control: max-age=0, must-revalidate");
 ?>
@@ -9,9 +12,6 @@ header("Cache-Control: max-age=0, must-revalidate");
 <?php $this->load->view("templates/header"); ?>
 <div class="page-wrap">
     <?php $this->load->view("templates/subheader"); ?>
-
-    <?php
-    if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super') { ?>
 
     <div class="uk-container uk-width-5-10 uk-container-center">
         <form class="uk-form"  id="tbl_form" name="tbl_form" method="post" action="<?php echo site_url("audit/csv"); ?>">
@@ -64,7 +64,6 @@ header("Cache-Control: max-age=0, must-revalidate");
         <hr class='uk-article-divider' style="margin-top: 15px; margin-bottom: 15px;">
     </div>
 
-
 </div>
 
 <div class="overlay">
@@ -101,7 +100,6 @@ header("Cache-Control: max-age=0, must-revalidate");
         </div>
     </div>
 </div>
-<?php } ?>
 <style>
     .extraction-success, .extraction-done{
         text-align: center;
@@ -185,8 +183,11 @@ header("Cache-Control: max-age=0, must-revalidate");
 </script>
 <?php $this->load->view("templates/footer"); ?>
 
-
-
-
 </body>
 </html>
+
+<?php } else{?>
+
+        <?php $this->load->view("errors/cli/forbidden_page"); ?>
+
+<?php }?>

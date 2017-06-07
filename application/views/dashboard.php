@@ -1,4 +1,12 @@
 <?php
+if($this->session->role_id == 'sa'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'tc'
+OR $this->session->role_id == 'qa'  OR $this->session->role_id == 'bm' OR $this->session->role_id == 'cpu'
+OR $this->session->role_id == 'ssuper'
+
+
+){?>
+
+<?php
     $data['title'] = 'OnePuhunan Service Portal | Dashboard';
 ?>
 <!DOCTYPE html>
@@ -55,3 +63,8 @@
     </body>
 </html>
 
+<?php } else{?>
+
+    <?php $this->load->view("errors/cli/forbidden_page"); ?>
+
+<?php }?>
