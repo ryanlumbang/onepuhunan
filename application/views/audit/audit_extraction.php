@@ -10,8 +10,11 @@ header("Cache-Control: max-age=0, must-revalidate");
 <div class="page-wrap">
     <?php $this->load->view("templates/subheader"); ?>
 
+    <?php
+    if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super') { ?>
+
     <div class="uk-container uk-width-5-10 uk-container-center">
-        <form class="uk-form"  id="tbl_form" name="tbl_form" method="post" action="../audit/csv">
+        <form class="uk-form"  id="tbl_form" name="tbl_form" method="post" action="<?php echo site_url("audit/csv"); ?>">
             <legend class="uk-text-muted uk-margin-large-top"><b>BRANCH</b> EXTRACTION OF DATA</legend>
             <div class="uk-form-row uk-margin-top-remove div">
                 <input type="text" id="branch_code" name="branch_code" class="uk-width-largeuk-width-largeuk-width-large uk-form-small branch-text" placeholder="Branch Code">
@@ -78,14 +81,14 @@ header("Cache-Control: max-age=0, must-revalidate");
                                                     <span class ="modal-body-text">
                                                         <div class="extraction-success">
                                                             <div class="loading">
-                                                                <img src="../img/system_png/loader.gif" class="loader"/>
+                                                                <img src="<?=base_url()?>img/system_png/loader.gif" class="loader"/>
                                                                 <p class="dot text-loading">Please Wait <span>.</span><span>.</span><span>.</span></p>
                                                             </div>
                                                         </div>
 
                                                          <div class="extraction-done">
                                                                 <div class="loading">
-                                                                    <img src="../img/system_png/done.gif" class="icon-done"/>
+                                                                    <img src="<?=base_url()?>img/system_png/done.gif" class="icon-done"/>
                                                                 </div>
                                                          </div>
 
@@ -98,7 +101,7 @@ header("Cache-Control: max-age=0, must-revalidate");
         </div>
     </div>
 </div>
-
+<?php } ?>
 <style>
     .extraction-success, .extraction-done{
         text-align: center;
@@ -117,7 +120,7 @@ header("Cache-Control: max-age=0, must-revalidate");
 
     .text-loading{
         font-size: 20px;
-        padding-top: px;
+        padding-top: 5px;
     }
 
     .text-done{
@@ -165,6 +168,7 @@ header("Cache-Control: max-age=0, must-revalidate");
 
         $("#test1").click(function() {
             $(".overlay").show();
+            $("body").css("overflow", "hidden");
 
             setTimeout(function() {
                 $(".extraction-success").hide();

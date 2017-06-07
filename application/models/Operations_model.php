@@ -122,5 +122,52 @@
                 return $row->sp_upd_emp_branch;
             }
         }
-        
+
+        public function get_kyc_today() {
+            $los_db = $this->load->database("LOS", true);
+            $date = $this->input->post("hidden_date");
+            $input = array(
+                "date" =>  $date
+            );
+                $query = $los_db->query("SELECT * FROM sp_report_kyc_today( ?)", $input);
+                return $query->result_array();
+        }
+
+        public function get_kyc_pending() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date");
+            $edate = $this->input->post("end_date");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_kyc_pending( ?, ?)", $input);
+            return $query->result_array();
+        }
+
+        public function get_qa_productivity() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("select_date_qa");
+            $input = array(
+                "sdate" =>  $sdate
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_qa_productivity( ?)", $input);
+            return $query->result_array();
+        }
+
+        public function get_alaf_report() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_report_alaf_pending()");
+            return $query->result_array();
+        }
+
+        public function get_tc_report() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("select_date_tc");
+            $input = array(
+                "sdate" =>  $sdate
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_tc_call( ?)", $input);
+            return $query->result_array();
+        }
     }

@@ -739,3 +739,18 @@ div.toolbar {
     margin-top: 50px;
 }
 
+/*START OF LOS REPORT CSS*/
+input#kyc_pending_start_date, #kyc_pending_end_date, #kyc_today_date, #qa_productivity_date, #tc_report_date {
+    text-align: center;
+}
+
+.report_text{
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+select#form_report {
+    width: 50%;
+}
+/*END OF CSS OF LOS REPORT*/

@@ -7,6 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
 <body>
 <?php $this->load->view("templates/header"); ?>
 <div class="page-wrap">
+    <?php $this->load->view("templates/subheader"); ?>
     <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
 
         <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>

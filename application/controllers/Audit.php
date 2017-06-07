@@ -23,73 +23,9 @@ class Audit extends CI_Controller {
 
     public function csv()
     {
-//        $this->load->model("Audit_model");
-//        $data["query"] = $this->Audit_model->get_branch_list();
-//
-//
-//        //$this->load->view("audit/audit_extraction", $data);
-//
-//
-//        $filename = "TXT_FILE".date("YmdH_i_s").'.csv';
-//
-//        header('Content-type:text/csv');
-//        header('Content-Disposition: attachment;filename='.$filename);
-//        header('Cache-Control: no-store, no-cache, must-revalidate');
-//        header('Pragma: no-cache');
-//        header('Expires:0');
-//
-//
-//
-//
-//        $handle = fopen('php://output','w');
-//
-//
-//        fputcsv($handle, array(
-//
-//            'OurBranchID',
-//            'ClientID',
-//            'Mobile',
-//            'Address1',
-//            'Address2',
-//            'City',
-//            'AccountID',
-//            'LoanAmount',
-//            'LoanPurpose',
-//            'SanctionedDate',
-//            'FirstDisbursementDate',
-//            'MaturityDate',
-//            'ClosedDate',
-//            'UtilDate',
-//
-//        ));
-//       // $objPHPExcel->getActiveSheet()->getStyle('A2')->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_NUMBER_COMMA_SEPARATED1);
-//        //$this->db->select('*');
-//        //$this->db->from('query');
-//        //$data['query'] = $this->Audit_model->get_branch_list();
-//
-//        //fputcsv($handle, $data);
-//
-//        //fputcsv($handle, array(
-//            //"OurBranchID" => $data["query"]["OurBranchID"]
-//        //));
-//
-//
-//
-//
-//        foreach ($data['query'] as $key => $row)
-//        {
-//            fputcsv($handle, $row);
-//
-//        }
-//        //$this->load->view("audit/audit_extraction", $data);
-////
-////        fclose($handle);
-////        exit;
-////        echo "<pre>";
-////        print_r ($data['query']);
-////        echo "</pre>";
-//
-//        //$this->load->view("audit/audit_extraction", $data);
+        $branch = $this->input->post("branch_code");
+        $date = $this->input->post("hidden_date");
+
         ini_set('memory_limit', '-1');
         set_time_limit(0);
 
@@ -192,7 +128,7 @@ class Audit extends CI_Controller {
         $objPHPExcel->getActiveSheet()->setCellValue('CC1','TOTALAPPORTIONEDVALUE');
 
 
-        $objPHPExcel->getActiveSheet()->getStyle('A1:U1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1:CC1')->getFont()->setBold(true);
 
         $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
         ->getStyle('A1:CC1')
@@ -205,32 +141,15 @@ class Audit extends CI_Controller {
         ->getAlignment()
         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
         $objPHPExcel->getActiveSheet()->freezePane('A2');
-        $objPHPExcel->getActiveSheet()
-            ->getStyle('A1:CC1')
-            ->getFill()
-            ->setFillType(PHPExcel_Style_Fill::FILL_SOLID)
-            ->getStartColor()
-            ->setARGB('FF808080');
 
-        for($col = 'A'; $col !== 'BZ'; $col++)
+        for($col = 'A'; $col !== 'CE'; $col++)
         {
             $objPHPExcel->getActiveSheet()
                 ->getColumnDimension($col)
                 ->setAutoSize(true);
         }
 
-        for($col = 'CA'; $col !== 'CD'; $col++)
-        {
-            $objPHPExcel->getActiveSheet()
-                ->getColumnDimension($col)
-                ->setWidth(0);
-        }
-
         $row = 2;
-
-//        echo "<pre>";
-//       print_r ($data['query']);
-//        echo "</pre>";
 
         foreach ($data["query"] as $item)
         {
@@ -320,8 +239,9 @@ class Audit extends CI_Controller {
 
             $row++;
         }
+        $this->session->set_flashdata('message', 'Data are imported successfully..');
 
-        $filename = "AUDIT_XLSX_".date("YmdH_i_s").'.xlsx';
+        $filename = "Audit - Loan Portfolio as of EOD ".$date."(".$branch.")".'.xlsx';
         $objPHPExcel->getActiveSheet()->setTitle("AUDIT_EXTRACTED");
         header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -330,7 +250,9 @@ class Audit extends CI_Controller {
 
         $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
         ob_end_clean();
+
         $writer->save('php://output');
+
         exit;
     }
 

@@ -42,8 +42,9 @@
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
                             <?php
-                            if($this->session->is_super = '1') { ?>
+                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
                             <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
+                            <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
                             <?php } ?>
                         </ul>
                     </div>

@@ -75,6 +75,7 @@ $route['operations/client_catalog'] = "operations/index";
 $route['operations/client_info']    = "operations/client_info";
 $route['operations/branch_handle']    = "operations/branch_handle";
 $route['operations/success_branch_assign']    = "operations/success_branch_assign";
+$route['operations/los_report']    = "operations/los_report";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
