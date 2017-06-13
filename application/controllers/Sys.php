@@ -119,7 +119,7 @@
                 $this->load->view("templates/update_tc");
             } else {
                 $input = array(
-                    "question_no"  => $this->session->post("question_no"),
+                    "question_no"  => $this->input->post("question_no"),
                     "question"  => $this->input->post("question"),
                     "is_new"  => $this->input->post("is_new"),
                     "is_repeat"  => $this->input->post("is_repeat"),
