@@ -79,7 +79,7 @@ class Application extends CI_Controller {
         $this->load->model("Application_model");
 
         if(isset($_SESSION['logged_in'])) {
-            redirect(base_url()."audit");
+            redirect(base_url()."aud_dashboard");
         }
 
         $config = array(
@@ -228,6 +228,10 @@ class Application extends CI_Controller {
 
     public function dashboard() {
         $this->load->view("dashboard");
+    }
+
+    public function audDashboard() {
+        $this->load->view("aud_dashboard");
     }
 
     public function signup() {

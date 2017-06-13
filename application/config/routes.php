@@ -61,6 +61,7 @@ $route['confirmation']     = "application/confirmation";
 $route['signup']    = "application/signup";
 $route['success']   = "application/success";
 $route['dashboard'] = "application/dashboard";
+$route['aud_dashboard'] = "application/audDashboard";
 $route['logout']    = "application/logout";
 
 $route['confirm_password']    = "application/confirm_password";

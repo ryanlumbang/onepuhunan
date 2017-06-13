@@ -95,7 +95,7 @@ header("Cache-Control: max-age=0, must-revalidate");
         </div>
         <div class="modal-footer">
             <button class="uk-button uk-button-success footer close">
-                <a href="<?php echo site_url("audit/index"); ?>" style="text-decoration: none; color: white;">OK</a>
+                <a href="<?php echo site_url("aud_dashboard"); ?>" style="text-decoration: none; color: white;">OK</a>
             </button>
         </div>
     </div>

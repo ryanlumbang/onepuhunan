@@ -65,7 +65,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                                 . "   </div>";
                             break;
                         default:
-                            redirect(base_url()."audit");
+                            redirect(base_url()."aud_dashboard");
                             break;
                     }
                 }
