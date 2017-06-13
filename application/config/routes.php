@@ -78,6 +78,9 @@ $route['operations/success_branch_assign']    = "operations/success_branch_assig
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
+$route['sys/tc_question/add']    = "sys/add_tc_questions";
+$route['sys/tc_question/update']    = "sys/update_tc_questions";
+$route['sys/telle']    = "sys/tc_question";
 //$route['sys/approver_user'] = "sys/approver_user";
 
 

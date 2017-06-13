@@ -117,6 +117,8 @@ table.dataTable.op-table thead th, table.dataTable.op-table thead td {
 {
     box-shadow: 2px 2px rgba(95, 107, 97, 1);
     margin-bottom: 15px;
+    position: absolute;
+    z-index: 1;
 }
 .op-search-box label input {
     -webkit-appearance: none;
@@ -297,12 +299,25 @@ body > .modal {
     top: 5px;
     right: 10px;
 }
+.modal a.close-modal {
+    display: none !important;
+}
 
 input.uk-button.succes-btn {
     margin: 10px;
     border: 1px solid #31775a;
     box-shadow: 2px 3px;
     color: #31775a;
+    float: right;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+input.uk-button.cancel-btn {
+    margin: 10px;
+    border: 1px solid #9b2f48;
+    box-shadow: 2px 3px;
+    color: #9b2f48;
     float: right;
     font-weight: bold;
     font-size: 12px;
