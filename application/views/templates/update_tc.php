@@ -60,6 +60,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         "placeholder" => "Please enter a question"
                     );
                     echo form_input($question);
+                    echo $_SESSION["quest"]
                     ?>
                 </div>
             </div>

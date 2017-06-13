@@ -38,6 +38,7 @@
                         </thead>
 
                         <?php
+
                         foreach((array) $tc_ques as $row) { ?>
                             <tr class="modal-update">
                             <td> <?php echo $row['question_no'] ?> </td>
@@ -45,7 +46,7 @@
                             <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_new'] ?>"></td>
                             <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_repeat'] ?>"></td>
                             <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_set'] ?>"></td>
-                            <td> <a href="<?php echo site_url("sys/tc_question/update?quest='".$row['question_no']."'"); ?>" data-question="<?php echo $row['question'] ?>" data-new="<?php echo $row['is_new'] ?>" data-repeat="<?php echo $row['is_repeat'] ?>" data-set="<?php echo $row['is_set'] ?>" class="open-AddBookDialog" id="editbtn"  data-seq="1"> <i class="uk-icon-edit"></i> EDIT </a></td>
+                            <td>  <a href="<?php echo site_url("sys/tc_question/update?quest='".$row['question_no']."'"); ?>" data-question="<?php $_SESSION["quest"] = $row['question']; echo $row['question'] ?>" data-new="<?php echo $row['is_new'] ?>" data-repeat="<?php echo $row['is_repeat'] ?>" data-set="<?php echo $row['is_set'] ?>" class="open-AddBookDialog" id="editbtn"  data-seq="1"> <i class="uk-icon-edit"></i> EDIT </a></td>
                             </tr>
                       <?php   }
 
