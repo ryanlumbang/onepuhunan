@@ -55,12 +55,11 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     $question =  array(
                         "id" => "question",
                         "name" => "question",
-                        "value" => set_value('question'),
+                        "value" =>  $_GET["quest"],
                         "class" => "uk-width-large uk-form-small",
                         "placeholder" => "Please enter a question"
                     );
                     echo form_input($question);
-                    echo $_GET["quest"];
                     ?>
                 </div>
             </div>
