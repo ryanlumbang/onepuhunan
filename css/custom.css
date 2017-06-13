@@ -752,5 +752,7 @@ input#kyc_pending_start_date, #kyc_pending_end_date, #kyc_today_date, #qa_produc
 
 select#form_report {
     width: 50%;
+    margin-top: -10px;
+    margin-bottom: 9px;
 }
 /*END OF CSS OF LOS REPORT*/

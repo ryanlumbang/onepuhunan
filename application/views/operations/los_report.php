@@ -17,8 +17,8 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
 
                             <div class="uk-form-row tm-label">
                                 <label class="uk-text-small">
-                                    <p>Choose what TYPE OF REPORT want to generate.<br/>
-                                        After chose what REPORT TYPE click <b>"GENERATE REPORT"</b>.
+                                    <p>Choose what TYPE OF REPORT you want to generate.<br/>
+                                        After you chose what REPORT TYPE click, <b>"EXTRACT REPORT"</b>.
                                     </p>
 
                                 </label>
@@ -47,7 +47,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                                         <input type="text" data-uk-datepicker="{format:'MMM DD, YYYY'}" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
 
                                     <div style="text-align: center; margin-top: 20px;">
-                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_today" id="kyc_today">Generate Report</button>
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_today" id="kyc_today">Extract Report</button>
                                     </div>
 
                                     <input type="text" class="input-text" name="hidden_date" id="kyc_today_input" placeholder="" value="">
@@ -70,7 +70,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                                     <input type="text" class="uk-margin-small-top" data-uk-datepicker="{format:'MMM DD, YYYY'}" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
 
                                     <div style="text-align: center; margin-top: 20px;">
-                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_pending" id="kyc_pending">Generate Report</button>
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
                                     </div>
 
                                     <input type="text" class="input-text" name="start_date" id="kyc_pending_start_input" placeholder="" value="">
@@ -94,7 +94,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                                     <input type="text" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="qa_productivity_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_qa_productivity()">
 
                                     <div style="text-align: center; margin-top: 20px;">
-                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_qa_productivity" id="qa">Generate Report</button>
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_qa_productivity" id="qa">Extract Report</button>
                                     </div>
 
                                     <input type="text" class="input-text" name="select_date_qa" id="qa_input" placeholder="" value="">
@@ -117,7 +117,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                                     Click <b>Generate Report</b> to generate EXCEL File.
 
                                     <div style="text-align: center; margin-top: 20px;">
-                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_alaf_report" id="alaf">Generate Report</button>
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_alaf_report" id="alaf">Extract Report</button>
                                     </div>
 
                                 </div>
@@ -137,7 +137,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                                     <input type="text" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="tc_report_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_tc_report()">
 
                                     <div style="text-align: center; margin-top: 20px;">
-                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_tc_report" id="tc">Generate Report</button>
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_tc_report" id="tc">Extract Report</button>
                                     </div>
 
                                     <input type="text" class="input-text" name="select_date_tc" id="tc_input" placeholder="" value="">
@@ -238,6 +238,10 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
 
                         .dot span:nth-child(3) {
                             animation-delay: .4s;
+                        }
+
+                        #form_kyc_today, #form_kyc_pending, #form_qa_productivity, #form_alaf_report, #form_tc_report{
+                            display: none;
                         }
                     </style>
 

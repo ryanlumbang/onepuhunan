@@ -118,20 +118,22 @@ class Audit extends CI_Controller {
         $objPHPExcel->getActiveSheet()->setCellValue('BS1','BUSEXPENSE');
         $objPHPExcel->getActiveSheet()->setCellValue('BT1','OTHERMONTHLYAMT');
         $objPHPExcel->getActiveSheet()->setCellValue('BU1','COMAKER');
-        $objPHPExcel->getActiveSheet()->setCellValue('BV1','NOMINEENAME');
-        $objPHPExcel->getActiveSheet()->setCellValue('BW1','NOMINEEDOB');
-        $objPHPExcel->getActiveSheet()->setCellValue('BX1','NOMINEEGENDER');
-        $objPHPExcel->getActiveSheet()->setCellValue('BY1','RELATIONSHIP');
-        $objPHPExcel->getActiveSheet()->setCellValue('BZ1','COLLATERALDESC');
-        $objPHPExcel->getActiveSheet()->setCellValue('CA1','TOTALCOLLATERALVALUE');
-        $objPHPExcel->getActiveSheet()->setCellValue('CB1','TOTALNETCOLLATERALVALUE');
-        $objPHPExcel->getActiveSheet()->setCellValue('CC1','TOTALAPPORTIONEDVALUE');
+        $objPHPExcel->getActiveSheet()->setCellValue('BV1','COMAKERDOB');
+        $objPHPExcel->getActiveSheet()->setCellValue('BW1','COMAKERGENDER');
+        $objPHPExcel->getActiveSheet()->setCellValue('BX1','NOMINEENAME');
+        $objPHPExcel->getActiveSheet()->setCellValue('BY1','NOMINEEDOB');
+        $objPHPExcel->getActiveSheet()->setCellValue('BZ1','NOMINEEGENDER');
+        $objPHPExcel->getActiveSheet()->setCellValue('CA1','RELATIONSHIP');
+        $objPHPExcel->getActiveSheet()->setCellValue('CB1','COLLATERALDESC');
+        $objPHPExcel->getActiveSheet()->setCellValue('CC1','TOTALCOLLATERALVALUE');
+        $objPHPExcel->getActiveSheet()->setCellValue('CD1','TOTALNETCOLLATERALVALUE');
+        $objPHPExcel->getActiveSheet()->setCellValue('CE1','TOTALAPPORTIONEDVALUE');
 
 
         $objPHPExcel->getActiveSheet()->getStyle('A1:CC1')->getFont()->setBold(true);
 
         $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
-        ->getStyle('A1:CC1')
+        ->getStyle('A1:CF1')
         ->getAlignment()
         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
@@ -142,7 +144,7 @@ class Audit extends CI_Controller {
         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
         $objPHPExcel->getActiveSheet()->freezePane('A2');
 
-        for($col = 'A'; $col !== 'CE'; $col++)
+        for($col = 'A'; $col !== 'CF'; $col++)
         {
             $objPHPExcel->getActiveSheet()
                 ->getColumnDimension($col)
@@ -227,24 +229,26 @@ class Audit extends CI_Controller {
             $objPHPExcel->getActiveSheet()->setCellValue('BS'.$row, $item['BusExpense']);
             $objPHPExcel->getActiveSheet()->setCellValue('BT'.$row, $item['OtherMonthlyAmt']);
             $objPHPExcel->getActiveSheet()->setCellValue('BU'.$row, $item['CoMaker']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BV'.$row, $item['NomineeName']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BW'.$row, $item['NomineeDOB']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BX'.$row, $item['NomineeGender']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BY'.$row, $item['Relationship']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BZ'.$row, $item['CollateralDesc']);
-            $objPHPExcel->getActiveSheet()->setCellValue('CA'.$row, $item['TotalCollateralValue']);
-            $objPHPExcel->getActiveSheet()->setCellValue('CB'.$row, $item['TotalNetCollateralValue']);
-            $objPHPExcel->getActiveSheet()->setCellValue('CC'.$row, $item['TotalApportionedValue']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BV'.$row, $item['CoMakerDateOfBirth']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BW'.$row, $item['CoMakerGender']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BX'.$row, $item['NomineeName']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BY'.$row, $item['NomineeDOB']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BZ'.$row, $item['NomineeGender']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CA'.$row, $item['Relationship']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CB'.$row, $item['CollateralDesc']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CC'.$row, $item['TotalCollateralValue']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CD'.$row, $item['TotalNetCollateralValue']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CE'.$row, $item['TotalApportionedValue']);
 
 
             $row++;
         }
-        $this->session->set_flashdata('message', 'Data are imported successfully..');
-
+//        $this->session->set_flashdata('message', 'Data are imported successfully..');
+//        redirect('audit');
         $filename = "Audit - Loan Portfolio as of EOD ".$date."(".$branch.")".'.xlsx';
         $objPHPExcel->getActiveSheet()->setTitle("AUDIT_EXTRACTED");
         header('Content-type:application/
-                        vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+                      vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="'.$filename.'"');
         header('Cache-Control: max-age=0');
 
@@ -252,8 +256,8 @@ class Audit extends CI_Controller {
         ob_end_clean();
 
         $writer->save('php://output');
-
         exit;
+
     }
 
 //    public function import_csv()

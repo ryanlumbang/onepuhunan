@@ -10,6 +10,8 @@ function toggleReport()
         document.getElementById("form_qa_productivity").style.display="none";
         document.getElementById("form_alaf_report").style.display="none";
         document.getElementById("form_tc_report").style.display="none";
+
+        document.getElementById("form_report").style.marginBottom="0px";
     }
     else if (choice == "02"){
         document.getElementById("form_kyc_pending").style.display="block";
@@ -17,6 +19,8 @@ function toggleReport()
         document.getElementById("form_qa_productivity").style.display="none";
         document.getElementById("form_alaf_report").style.display="none";
         document.getElementById("form_tc_report").style.display="none";
+
+        document.getElementById("form_report").style.marginBottom="0px";
     }
     else if (choice == "03"){
         document.getElementById("form_kyc_pending").style.display="none";
@@ -24,6 +28,8 @@ function toggleReport()
         document.getElementById("form_qa_productivity").style.display="block";
         document.getElementById("form_alaf_report").style.display="none";
         document.getElementById("form_tc_report").style.display="none";
+
+        document.getElementById("form_report").style.marginBottom="0px";
     }
     else if (choice == "04"){
         document.getElementById("form_kyc_pending").style.display="none";
@@ -31,6 +37,8 @@ function toggleReport()
         document.getElementById("form_qa_productivity").style.display="none";
         document.getElementById("form_alaf_report").style.display="block";
         document.getElementById("form_tc_report").style.display="none";
+
+        document.getElementById("form_report").style.marginBottom="0px";
     }
     else if (choice == "05"){
         document.getElementById("form_kyc_pending").style.display="none";
@@ -38,6 +46,8 @@ function toggleReport()
         document.getElementById("form_qa_productivity").style.display="none";
         document.getElementById("form_alaf_report").style.display="none";
         document.getElementById("form_tc_report").style.display="block";
+
+        document.getElementById("form_report").style.marginBottom="0px";
     }
 
     else{
@@ -49,13 +59,13 @@ function toggleReport()
     }
 }
 
-$(document).ready(function () {
-    document.getElementById("form_kyc_pending").style.display="none";
-    document.getElementById("form_kyc_today").style.display="none";
-    document.getElementById("form_qa_productivity").style.display="none";
-    document.getElementById("form_alaf_report").style.display="none";
-    document.getElementById("form_tc_report").style.display="none";
-});
+// $(document).ready(function () {
+//     document.getElementById("form_kyc_pending").style.display="none";
+//     document.getElementById("form_kyc_today").style.display="none";
+//     document.getElementById("form_qa_productivity").style.display="none";
+//     document.getElementById("form_alaf_report").style.display="none";
+//     document.getElementById("form_tc_report").style.display="none";
+// });
 
 
 //                        $("#kyc_pendi").rules('add', { greaterThan: "#StartDate" });
