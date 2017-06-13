@@ -47,6 +47,15 @@
                 return $row->sp_tc_add;
             }
         }
+        public function update_tc_qt($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT sp_tc_update ( ?, ?, ?, ?, ? )", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_tc_update;
+            }
+        }
         function get_question($question_id)
         {
             $los_db = $this->load->database("LOS", true);
@@ -62,13 +71,5 @@
             $los_db->update('SELECT * FROM sp_tc_questions()', $data);
         }
 
-        public function update_tc_qt($input) {
-            $los_db = $this->load->database("LOS", true);
-            $query = $los_db->query("SELECT sp_tc_update ( ?, ?, ?, ?, ? )", $input);
-            $row = $query->row();
 
-            if( isset($row) ) {
-                return $row->sp_tc_update;
-            }
-        }
     }

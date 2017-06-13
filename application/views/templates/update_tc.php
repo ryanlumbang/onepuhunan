@@ -47,6 +47,17 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     Once completed, please select the <b>"Update"</b> button.
                 </label>
             </div>
+            <?php
+            $question =  array(
+                "id" => "question_no",
+                "name" => "question_no",
+                "value" =>  $_GET["quest1"],
+                "class" => "uk-width-large uk-form-small",
+                "placeholder" => "Please enter a question",
+                "type" => "hidden",
+            );
+            echo form_input($question);
+            ?>
 
             <div class="uk-form-row">
                 <label class="uk-form-label uk-text-small uk-text-bold">Question<span class="tm-required-label">*</span></label>
@@ -69,8 +80,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     <?php
                     $new = array(
                         "id" => "is_new",
-                        "name" => "is_new",
-                        "value" => "1",
+                        "name" => "checkme",
+                        "value" =>  $_GET["new"],
                         "type" => "checkbox"
                     );
                     echo form_input($new);
@@ -82,8 +93,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     <?php
                     $repeat = array(
                         "id" => "is_repeat",
-                        "name" => "is_repeat",
-                        "value" => "1",
+                        "name" => "checkme",
+                        "value" =>  $_GET["repeat"],
                         "type" => "checkbox"
                     );
                     echo form_input($repeat);
@@ -95,8 +106,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     <?php
                     $set = array(
                         "id" => "is_set",
-                        "name" => "is_set",
-                        "value" => "1",
+                        "name" => "checkme",
+                        "value" =>  $_GET["set"],
                         "type" => "checkbox"
                     );
                     echo form_input($set);
@@ -104,7 +115,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </label>
             </p>
             <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Add</button>
+                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
             </div>
             <?=form_close();?>
