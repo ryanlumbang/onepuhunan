@@ -47,8 +47,23 @@
                 return $row->sp_tc_add;
             }
         }
-        public function update_tc_qt($input) {
+        public function update_tc_qt() {
             $los_db = $this->load->database("LOS", true);
+
+            $qno = $this->input->post("question_no");
+            $questions = $this->input->post("question");
+            $new = $this->input->post("new");
+            $rep = $this->input->post("rep");
+            $set = $this->input->post("set");
+
+            $input = array(
+                "qno" => $qno,
+                "questions" =>  $questions,
+                "new" => $new,
+                "rep" =>  $rep,
+                "set" => $set
+            );
+
             $query = $los_db->query("SELECT sp_tc_update ( ?, ?, ?, ?, ? )", $input);
             $row = $query->row();
 

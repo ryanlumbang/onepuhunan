@@ -114,6 +114,9 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     ?>Set for TC
                 </label>
             </p>
+            <input type="text" name="new" id="new" style="display: none"/>
+            <input type="text" name="rep" id="rep" style="display: none"/>
+            <input type="text" name="set" id="set" style="display: none"/>
             <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
@@ -123,6 +126,61 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
         </div>
 
     </section>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#is_new").ready(function() {
+                if($(this).prop("checked")) {
+                    $("#new").val(1);
+                } else {
+                    $("#new").val(0);
+                }
+            });
+
+            $("#is_repeat").ready(function() {
+                if($(this).prop("checked")) {
+                    $("#rep").val(1);
+                } else {
+                    $("#rep").val(0);
+                }
+            });
+
+            $("#is_set").ready(function() {
+                if($(this).prop("checked")) {
+                    $("#set").val(1);
+                } else {
+                    $("#set").val(0);
+                }
+            });
+
+        });
+
+        $("#is_new").change(function() {
+            if($(this).prop("checked")) {
+                $("#new").val(1);
+            } else {
+                $("#new").val(0);
+            }
+        });
+
+        $("#is_repeat").change(function() {
+            if($(this).prop("checked")) {
+                $("#rep").val(1);
+            } else {
+                $("#rep").val(0);
+            }
+        });
+
+        $("#is_set").change(function() {
+            if($(this).prop("checked")) {
+               $("#set").val(1);
+            } else {
+                $("#set").val(0);
+            }
+        });
+    </script>
+
     <?php $this->load->view("templates/footer"); ?>
     <?php $this->load->view("templates/modal"); ?>
 </div>
