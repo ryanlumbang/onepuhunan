@@ -44,7 +44,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
 
                                 <div style="text-align: center; margin-top: 20px;">
 
-                                        <input type="text" data-uk-datepicker="{format:'MMM DD, YYYY'}" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
+                                        <input type="text" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
 
                                     <div style="text-align: center; margin-top: 20px;">
                                         <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_today" id="kyc_today">Extract Report</button>
@@ -65,9 +65,9 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
 
                                 <div style="text-align: center; margin-top: 20px;">
 
-                                    <input type="text" data-uk-datepicker="{format:'MMM DD, YYYY'}" id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
+                                    <input type="text" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
                                     <br/>
-                                    <input type="text" class="uk-margin-small-top" data-uk-datepicker="{format:'MMM DD, YYYY'}" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
+                                    <input type="text" class="uk-margin-small-top" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
 
                                     <div style="text-align: center; margin-top: 20px;">
                                         <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
