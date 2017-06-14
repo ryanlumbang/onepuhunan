@@ -629,7 +629,7 @@
                 $row++;
             }
 
-            $filename = "ALAF Report ".date("M-D-Y s").'.xlsx';
+            $filename = "ALAF Report ".date("M-d-Y").'.xlsx';
             $objPHPExcel->getActiveSheet()->setTitle("ALAF_REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');

@@ -146,7 +146,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
                             </form>
 
                             <div class="uk-form">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-default uk-width-3-10 uk-margin-small-top">Cancel</a>
+                                <a href="<?php echo site_url("operations/dashboard"); ?>" class="uk-button uk-button-default uk-width-3-10 uk-margin-small-top">Cancel</a>
                             </div>
 
                         </div>
