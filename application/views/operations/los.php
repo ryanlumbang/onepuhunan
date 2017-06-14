@@ -42,7 +42,8 @@
                                <th>BRNET</th>
                                <th>Loan Type</th>
                                <th></th>
-                               <th>Loan Age</th>
+                               <th>Age</th>
+                               <th>Dest</th>
                                <th></th>
                            </tr>
                         </thead>

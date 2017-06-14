@@ -42,7 +42,7 @@
 
         public function get_laf_pending($input) {
             $los_db = $this->load->database("LOS", true);
-            $query = $los_db->query("SELECT * FROM sp_los_laf_pending_rev(?, ?, ?, ?)", $input);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_pending_rev_2(?, ?, ?, ?)", $input);
             return $query->result_array();
         }
         

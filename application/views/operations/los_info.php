@@ -86,7 +86,16 @@
                                 <dd>
                                     <span><?=$cl_repeat['AccountID']?></span>
                                     <span class="uk-text-bold">Attendance Ratio</span>
-                                    <span><?php echo ($cl_repeat['AttendanceCnt'] / $cl_repeat['MeetingCnt']) * 100 ?>%</span>
+                                    <span>
+                                        <?php
+                                            if($cl_repeat['MeetingCnt'] != 0 ) {
+                                                echo ($cl_repeat['AttendanceCnt'] / $cl_repeat['MeetingCnt']) * 100; 
+                                            } else {
+                                                echo 0;
+                                            }
+                                            
+                                        ?>%
+                                    </span>
                                 </dd>
                                 
                                 <dt class="dt-even">No. of Arrear Days</dt>
