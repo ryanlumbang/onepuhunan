@@ -34,7 +34,6 @@ OR $this->session->role_id == 'ssuper'){?>
                             <ul class="tm-ul">
                                 <li><a href="">View Users Catalog</a></li>
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
-                                <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                             </ul>
                             </div>   
                     <?php } ?>
@@ -49,6 +48,7 @@ OR $this->session->role_id == 'ssuper'){?>
                             <?php
                             if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
                             <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
+                            <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                             <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
                             <?php } ?>
                         </ul>
