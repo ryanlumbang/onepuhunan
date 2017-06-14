@@ -111,7 +111,7 @@ $(document).ready(function() {
             });
             
             last = null;
-            alert('Hello');
+            
             api.column(10, { page : 'current'}).data().each( function(group, i) {
                 if(role_id === 'qa' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
