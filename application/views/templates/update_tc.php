@@ -114,9 +114,9 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     ?>Set for TC
                 </label>
             </p>
-            <input type="text" name="new" id="new" />
-            <input type="text" name="rep" id="rep" />
-            <input type="text" name="set" id="set" />
+            <input type="text" name="new" id="new" style="display: none"/>
+            <input type="text" name="rep" id="rep" style="display: none"/>
+            <input type="text" name="set" id="set" style="display: none"/>
             <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
