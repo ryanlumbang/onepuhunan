@@ -320,7 +320,7 @@ class Audit extends CI_Controller {
                 while (($importdata = fgetcsv($file, 10000, ",")) !== FALSE)
                 {
                     $data = array(
-                        'AsofDay' => date("Y-m-d"),
+                        'AsofDate' => date("Y-m-d"),
                         'DateOfSampling' => date('Y-m-d', strtotime($importdata[0])),
                         'OurBranchID' => $importdata[1],
                         'ClientName' =>$importdata[2],
@@ -339,8 +339,7 @@ class Audit extends CI_Controller {
                 fclose($file);
                 $this->session->set_flashdata('message',
                     ' 
-                           <link rel="stylesheet" href="http://localhost/onepuhunan_practice/css/uikit.css">
-                           <link rel="stylesheet" href="http://localhost/onepuhunan_practice/css/custom.css">
+                           <link rel="stylesheet" href="http://localhost/onepuhunan/css/audit_extract.css">
                            
                 <div class="overlay">
                     <div class="modelBox">
@@ -361,15 +360,14 @@ class Audit extends CI_Controller {
                         </div>
                         </div>
                 </div>
-                      <script src="http://localhost/onepuhunan_practice/js/audit.js"></script>
+                      <script src="http://localhost/onepuhunan/js/audit_import.js"></script>
 
                         ');
                 redirect('audit/audit_import');
             }else{
                 $this->session->set_flashdata('message',
                     '
-                           <link rel="stylesheet" href="http://localhost/onepuhunan_practice/css/uikit.css">
-                           <link rel="stylesheet" href="http://localhost/onepuhunan_practice/css/custom.css">
+                           <link rel="stylesheet" href="http://localhost/onepuhunan/css/audit_extract.css">
                            
                 <div class="overlay">
                     <div class="modelBox">
@@ -389,7 +387,7 @@ class Audit extends CI_Controller {
                         </div>
                         </div>
                 </div>
-                      <script src="http://localhost/onepuhunan_practice/js/audit.js"></script>             
+                       <script src="http://localhost/onepuhunan/js/audit_import.js"></script>
                 ');
                 redirect('audit/audit_import');
             }
