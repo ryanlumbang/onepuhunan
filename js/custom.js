@@ -50,7 +50,7 @@ $(document).ready(function() {
     });
 
     /* LOS datatable initialization */
-    var tbl_los = $('#tbl_los').DataTable({
+  var tbl_los = $('#tbl_los').DataTable({
         //'serverSide': true,
         'ajax' : {
             'url': baseUrl + '/operations/ops_pending_app'
@@ -63,19 +63,24 @@ $(document).ready(function() {
                 'orderable': false,
                 'className': 'uk-text-center',
                 'render': function(data, type, full, meta) {
-                   return '<input type="checkbox">';
+                   return '<input type="checkbox">'; 
                 }
             },
             {'width': '3%', 'className': 'dt-center', 'data': 'OurBranchID'},
-            {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},
+            {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},  
             {'width': '3%', 'className': 'dt-center', 'data': 'FileNo'},
             {'width': '12%', 'data': 'ClientName'},
             {'width': '3%', 'className': 'dt-center', 'data': 'ClientID'},
             {'width': '4%', 'className': 'dt-center', 'data': 'BRNETClientID'},
             {'width': '3%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
             {'visible': false, 'data': 'ProcessValue'},
-            {'width': '3%', 'className': 'dt-center uk-text-bold', 'data': 'Age'},
-            {'width': '4%', 'data': null, 'defaultContent': '<button class="uk-button uk-button-small uk-button-primary">View Profile</button>'},
+            {'width': '2%', 'className': 'dt-center uk-text-bold', 'data': 'Age'},
+            {'width': '3%', 'className': 'dt-center uk-text-bold', 'data': 'DestProcess'},
+            {
+                'width': '2%', 
+                'data': null, 
+                'defaultContent':  '<button class="uk-button uk-button-small uk-button-primary">View</button>'
+            },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
         'iDisplayLength': 25,
@@ -89,19 +94,37 @@ $(document).ready(function() {
             var api  = this.api();
             var rows = api.rows({ page : 'current' }).nodes();
             var last = null;
-
-            api.column(11, { page : 'current' }).data().each( function(group, i) {
+            var role_id = $('#txt_role').val();
+            
+            api.column(12, { page : 'current' }).data().each( function(group, i) {       
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="11">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="12">' + group + '</td></tr>');
                     last = group;
                 }
             });
-
+            
             $('tbody').find('.group').each(function (i, v) {
                var rowCount = $(this).nextUntil('.group').length;
-               $(this).find('td:first').append($('<span />').append($('<b/>', {
-                   'text': ' (' + rowCount + ')'
+               $(this).find('td:first').append($('<span />').append($('<b/>', { 
+                   'text': ' (' + rowCount + ')' 
                })));
+            });
+            
+            last = null;
+            api.column(10, { page : 'current'}).data().each( function(group, i) {
+                if(role_id === 'qa' && group === 'KYC') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else if (role_id === 'bm' && group === 'BMV') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else if (role_id === 'qa' && group === 'ALAF') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else if (role_id === 'tc' && group === 'TC') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else if (role_id === 'cpu' && group === 'SANCTION') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else {
+                    $(rows).eq(i).find("input, button").attr("disabled", true);
+                }
             });
         },
         'bSort': false,
