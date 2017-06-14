@@ -12,6 +12,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
             <div style="width: 350px;">
                 <?=form_open("", array("class" => "uk-form uk-margin-left uk-margin-right tm-box-shadow tm-form", "style" => "padding: 30px 25px;"));?>
                 <legend class="uk-margin-small-top uk-text-large uk-text-bold">CONFIRMATION</legend>
+                <p>Enter the Employee ID to confirm.</p>
                 <?php echo validation_errors(); ?>
                 <?php
                 if ( isset($sp_ua_confirm_validation) ) {

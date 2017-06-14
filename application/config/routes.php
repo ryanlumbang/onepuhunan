@@ -54,13 +54,14 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['opslogin']  = "application/opslogin";
-$route['mlogin']     = "application/mlogin";
+$route['aulogin']     = "application/aulogin";
 $route['forgotpassword']     = "application/fpassword";
 $route['confirmation']     = "application/confirmation";
 
 $route['signup']    = "application/signup";
 $route['success']   = "application/success";
 $route['dashboard'] = "application/dashboard";
+$route['aud_dashboard'] = "application/audDashboard";
 $route['logout']    = "application/logout";
 
 $route['confirm_password']    = "application/confirm_password";
@@ -73,9 +74,15 @@ $route['profile/changepass'] = "profile/changepass";
 /* operations */
 $route['operations/client_catalog'] = "operations/index";
 $route['operations/client_info']    = "operations/client_info";
+$route['operations/branch_handle']    = "operations/branch_handle";
+$route['operations/success_branch_assign']    = "operations/success_branch_assign";
+$route['operations/los_report']    = "operations/los_report";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
+$route['sys/tc_question/add']    = "sys/add_tc_questions";
+$route['sys/tc_question/update']    = "sys/update_tc_questions";
+$route['sys/telle']    = "sys/tc_question";
 //$route['sys/approver_user'] = "sys/approver_user";
 
 

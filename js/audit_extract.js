@@ -127,6 +127,46 @@ function model(mContent)
         });
     });
 
+    $("#kyc_today").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
+    $("#kyc_pending").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
+    $("#qa").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
+    $("#alaf").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
+    $("#tc").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
 }
 
 var bac = "heading"

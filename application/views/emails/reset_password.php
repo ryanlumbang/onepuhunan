@@ -37,10 +37,7 @@
 </head>
 <body>
 <p>
-    <b>Dear <?php
-        $trimmed = trim($email, "@onepuhunan.com.ph");
-        $name = str_replace(".", " ", $trimmed);
-        echo ucwords($name);?></b>,
+    <b>Dear Maam/Sir</b>,
     <br><br><br>
     You have submitted a password reset request at <b>OnePuhunan Service Portal</b>.
     <br><br>

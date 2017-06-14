@@ -1,4 +1,9 @@
 <?php
+if($this->session->role_id == 'sa'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'tc'
+OR $this->session->role_id == 'qa'  OR $this->session->role_id == 'bm' OR $this->session->role_id == 'cpu'
+OR $this->session->role_id == 'ssuper'){?>
+
+<?php
     $data['title'] = 'OnePuhunan Service Portal | Dashboard';
 ?>
 <!DOCTYPE html>
@@ -33,8 +38,7 @@
                             </ul>
                             </div>   
                     <?php } ?>
-                     
-                    
+
                     <div class="uk-width-1-4 uk-text-center">
                         <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/system_png/operations.png" width="100">
                         <h3>OPERATIONS</h3>
@@ -42,9 +46,13 @@
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                            <?php
+                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
+                            <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
+                            <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
+                            <?php } ?>
                         </ul>
                     </div>
-                    <div class="uk-width-1-4"></div>
                 </div>
             </div>
         </div>
@@ -52,3 +60,8 @@
     </body>
 </html>
 
+<?php } else{?>
+
+    <?php $this->load->view("errors/cli/forbidden_page"); ?>
+
+<?php }?>
