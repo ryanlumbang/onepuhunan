@@ -245,14 +245,14 @@ class Audit extends CI_Controller {
         }
 //        $this->session->set_flashdata('message', 'Data are imported successfully..');
 //        redirect('audit');
-        $filename = "Audit - Loan Portfolio as of EOD ".$date."(".$branch.")".'.xlsx';
+        $filename = "Audit - Loan Portfolio as of EOD ".$date."(".$branch.")".'.xls';
         $objPHPExcel->getActiveSheet()->setTitle("AUDIT_EXTRACTED");
         header('Content-type:application/
                       vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="'.$filename.'"');
         header('Cache-Control: max-age=0');
 
-        $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+        $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
         ob_end_clean();
 
         $writer->save('php://output');
