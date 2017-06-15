@@ -77,12 +77,14 @@ $route['operations/client_info']    = "operations/client_info";
 $route['operations/branch_handle']    = "operations/branch_handle";
 $route['operations/success_branch_assign']    = "operations/success_branch_assign";
 $route['operations/los_report']    = "operations/los_report";
+$route['operations/client_search']    = "operations/client_search";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
 $route['sys/tc_question/add']    = "sys/add_tc_questions";
 $route['sys/tc_question/update']    = "sys/update_tc_questions";
 $route['sys/telle']    = "sys/tc_question";
+$route['sys/client_rejected']    = "sys/client_rejected";
 //$route['sys/approver_user'] = "sys/approver_user";
 
 

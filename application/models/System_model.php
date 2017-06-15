@@ -37,6 +37,12 @@
             return $query->result_array();
         }
 
+        public function get_client_rejected() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_get_rejected_client()");
+            return $query->result_array();
+        }
+
 
         public function add_tc_qt($input) {
             $los_db = $this->load->database("LOS", true);

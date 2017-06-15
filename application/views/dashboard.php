@@ -34,6 +34,7 @@ OR $this->session->role_id == 'ssuper'){?>
                             <ul class="tm-ul">
                                 <li><a href="">View Users Catalog</a></li>
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
+                                <li><a href="<?php echo site_url("sys/client_rejected"); ?>">Client Rejected</a></li>
                             </ul>
                             </div>   
                     <?php } ?>
@@ -45,11 +46,19 @@ OR $this->session->role_id == 'ssuper'){?>
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                        </ul>
+                    </div>
+                    <div class="uk-width-1-4 uk-text-center">
+                        <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/system_png/maintenance.png" width="100">
+                        <h3>LOS SETTINGS</h3>
+                        <p>View and manage LOS settings.</p>
+                        <ul class="tm-ul">
                             <?php
                             if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
-                            <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
-                            <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
-                            <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
+                                <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
+                                <li><a href="<?php echo site_url("operations/branch_handle"); ?>">LOS Client Search</a></li>
+                                <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
+                                <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
                             <?php } ?>
                         </ul>
                     </div>
