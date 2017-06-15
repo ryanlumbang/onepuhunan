@@ -347,7 +347,8 @@ $(document).ready(function() {
         window.location.reload();
         $(".add_form modal").hide();
     });
-
+    $('#c_rejected').DataTable();
+    $('#c_search').DataTable();
     tbl_tc.order([0, 'asc']).draw();
 
     $(".open-AddBookDialog").on("click", function() {

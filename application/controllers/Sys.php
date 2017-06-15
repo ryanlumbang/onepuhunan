@@ -23,6 +23,14 @@
             $this->load->view("sys/tc_question", $data);
         }
 
+        public function client_rejected() {
+            $this->load->model("System_model");
+            $data = array (
+                "rejected"       => $this->System_model->get_client_rejected()
+            );
+            $this->load->view("sys/client_rejected", $data);
+        }
+
         public function approve_user($input) {
             $this->load->model("System_model");
             
