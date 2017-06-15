@@ -331,14 +331,14 @@
                 $row++;
             }
 
-            $filename = "KYC Today Report ".$date."".'.xlsx';
+            $filename = "KYC Today Report ".$date."".'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("KYC_TODAY");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');
             header('Cache-Control: max-age=0');
 
-            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
             ob_end_clean();
 
             $writer->save('php://output');
@@ -438,14 +438,14 @@
                 $row++;
             }
 
-            $filename = "KYC Pending Report ".$sdate." to ".$edate."".'.xlsx';
+            $filename = "KYC Pending Report ".$sdate." to ".$edate."".'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("KYC_PENDING");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');
             header('Cache-Control: max-age=0');
 
-            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
             ob_end_clean();
 
             $writer->save('php://output');
@@ -528,14 +528,14 @@
                 $row++;
             }
 
-            $filename = "QA Productivity Report ".$sdate."".'.xlsx';
+            $filename = "QA Productivity Report ".$sdate."".'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("QA_PRODUCTIVITY_REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');
             header('Cache-Control: max-age=0');
 
-            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
             ob_end_clean();
 
             $writer->save('php://output');
@@ -629,14 +629,14 @@
                 $row++;
             }
 
-            $filename = "ALAF Report ".date("M-d-Y").'.xlsx';
+            $filename = "ALAF Report ".date("M-d-Y").'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("ALAF_REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');
             header('Cache-Control: max-age=0');
 
-            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
             ob_end_clean();
 
             $writer->save('php://output');
@@ -725,14 +725,14 @@
                 $row++;
             }
 
-            $filename = "TC Report ".$sdate."".'.xlsx';
+            $filename = "TC Report ".$sdate."".'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("TC_REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');
             header('Cache-Control: max-age=0');
 
-            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
             ob_end_clean();
 
             $writer->save('php://output');
