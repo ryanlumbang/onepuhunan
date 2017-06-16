@@ -326,8 +326,8 @@ $(document).ready(function() {
         'iDisplayLength': 100,
         'paging': false,
         "bInfo" : false,
-       'dom': '<"toolbar">frtip',
-       'searching': true,
+        'dom': '<"toolbar">frtip',
+        'searching': true,
         "bLengthChange": false,
         columnDefs: [ {
             orderable: false,

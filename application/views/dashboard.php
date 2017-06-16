@@ -46,6 +46,7 @@ OR $this->session->role_id == 'ssuper'){?>
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                            <li><a href="<?php echo site_url("operations/client_search"); ?>">LOS Client Search</a></li>
                         </ul>
                     </div>
                     <div class="uk-width-1-4 uk-text-center">
@@ -56,7 +57,6 @@ OR $this->session->role_id == 'ssuper'){?>
                             <?php
                             if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
                                 <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
-                                <li><a href="<?php echo site_url("operations/branch_handle"); ?>">LOS Client Search</a></li>
                                 <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                                 <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
                             <?php } ?>

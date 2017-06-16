@@ -25,6 +25,14 @@
                 return $row->sp_uc_upd_acct_approval;
             }
         }
+
+        public function reprocess_request($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT sp_los_laf_rev_rej( ? )", $input);
+            return $query->row_array();
+
+
+        }
         
         public function get_employee_name($input) {
             $qry = $this->db->query("SELECT emp_name, emp_email FROM sp_uc_sel_emp_name( ? ) AS (emp_name text, emp_email text)", $input);
@@ -42,7 +50,6 @@
             $query = $los_db->query("SELECT * FROM sp_get_rejected_client()");
             return $query->result_array();
         }
-
 
         public function add_tc_qt($input) {
             $los_db = $this->load->database("LOS", true);

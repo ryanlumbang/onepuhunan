@@ -23,13 +23,6 @@
             $this->load->view("sys/tc_question", $data);
         }
 
-        public function client_rejected() {
-            $this->load->model("System_model");
-            $data = array (
-                "rejected"       => $this->System_model->get_client_rejected()
-            );
-            $this->load->view("sys/client_rejected", $data);
-        }
 
         public function approve_user($input) {
             $this->load->model("System_model");
@@ -51,6 +44,19 @@
             $this->send_mail($session);
             //$this->index();
             redirect(base_url()."sys/registration_request");
+        }
+
+        public function client_rejected() {
+            $this->load->model("System_model");
+            $data["query"] = $this->System_model->get_client_rejected();
+            $data["number_of_rows"] = count($data["query"]);
+            $this->load->view("sys/client_rejected", $data);
+        }
+
+        public function reprocess_user($input) {
+            $this->load->model("System_model");
+            $this->System_model->reprocess_request($input);
+            redirect(base_url()."sys/client_rejected");
         }
         
         public function send_mail($session) {

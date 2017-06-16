@@ -23,26 +23,28 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
             <!-- Trigger/Open The Modal -->
 
-            <table id="c_rejected" class="display" cellspacing="0" width="100%">
+            <table id="c_rejected" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="dt-center" width="15%">BRANCH ID</th>
-                    <th class="uk-text-left" width="40%">CLIENT NAME</th>
-                    <th class="uk-text-left" width="35%">PROCESSOR</th>
-                    <th class="dt-center" width="10%">ACTION</th>
+                    <th class="dt-center" width="10%">BRANCH ID</th>
+                    <th class="dt-center" width="15%">FILE NO</th>
+                    <th class="uk-text-left" width="30%"> CLIENT NAME</th>
+                    <th class="uk-text-left" width="30%"> PROCESSOR</th>
+                    <th class="dt-center" width="15%">ACTION</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-
-                foreach((array) $rejected as $row) { ?>
-                <tr>
-                    <td class="dt-center"><?php echo $row['ourbranchid'] ?></td>
-                    <td><?php echo $row['clientid'] ?> - <?php echo $row['clientname'] ?></td>
-                    <td><?php echo $row['processor'] ?></td>
-                    <td class="dt-center"><button>REPROCESS</button></td>
-                </tr>
-                <?php   }
+                    foreach((array) $query as $item) {
+                    $result = "<tr>"
+                        . "<td class=\"dt-center\" width=\"10%\">" . $item["ourbranchid"] . "</td>"
+                        . "<td class=\"dt-center\" width=\"15%\">" . $item["fileno"] . "</td>"
+                        . "<td class=\"uk-text-left\" width=\"30%\">" . $item["clientid"] . " - " .$item["clientname"]."</td>"
+                        . "<td class=\"uk-text-left\" width=\"30%\">" . $item["processor"] . "</td>"
+                        . "<td class=\"dt-center\" width=\"15%\">" . "<a class=\"uk-button uk-button-small\" href='../sys/reprocess_user/" .$item["fileno"]. "'>Reprocess</a>" . "</td>"
+                        . "</tr>";
+                    echo $result;
+                 }
 
                 ?>
                 </tbody>
