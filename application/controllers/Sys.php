@@ -146,4 +146,14 @@
 
         }
 
+        public function assign_roles() {
+            $this->load->model("System_model");
+
+            $data["query"] = $this->System_model->get_userAccount();
+            echo "{ \"data\" : " . json_encode($data["query"]) . "}";
+
+            $this->load->view("sys/assign_role_id");
+        }
+
+
     }

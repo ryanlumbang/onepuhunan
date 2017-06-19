@@ -35,6 +35,7 @@ OR $this->session->role_id == 'ssuper'){?>
                                 <li><a href="">View Users Catalog</a></li>
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
                                 <li><a href="<?php echo site_url("sys/client_rejected"); ?>">Client Rejected</a></li>
+                                <li><a href="<?php echo site_url("sys/assign_role_id"); ?>">Assigning Roles</a></li>
                             </ul>
                             </div>   
                     <?php } ?>

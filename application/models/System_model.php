@@ -99,5 +99,10 @@
             $los_db->update('SELECT * FROM sp_tc_questions()', $data);
         }
 
+        function get_userAccount()
+        {
+            $query = $this->db->query("SELECT * FROM sp_user_account()");
+            return $query->result_array();
+        }
 
     }
