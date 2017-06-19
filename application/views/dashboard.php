@@ -1,7 +1,9 @@
 <?php
 if($this->session->role_id == 'sa'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'tc'
 OR $this->session->role_id == 'qa'  OR $this->session->role_id == 'bm' OR $this->session->role_id == 'cpu'
-OR $this->session->role_id == 'ssuper'){?>
+OR $this->session->role_id == 'ssuper'
+    OR $this->session->role_id == 'ram'
+){?>
 
 <?php
     $data['title'] = 'OnePuhunan Service Portal | Dashboard';
@@ -47,7 +49,7 @@ OR $this->session->role_id == 'ssuper'){?>
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
                             <?php
-                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'qa' OR $this->session->role_id == 'cpu' OR $this->session->role_id == 'sa' OR $this->session->role_id == 'tc') { ?>
+                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'qa' OR $this->session->role_id == 'cpu' OR $this->session->role_id == 'sa' OR $this->session->role_id == 'tc' OR $this->session->role_id == 'ram') { ?>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>">LOS Client Search</a></li>
                             <?php } ?>
                         </ul>
