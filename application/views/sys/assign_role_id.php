@@ -1,5 +1,5 @@
 <?php
-$data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
+$data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
             <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE ROLE ID</h1></div>
 
-            <table id="tbl_tc" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
+            <table id="tbl_rid" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
                 <thead class="css3gradient">
                 <tr>
                     <th>EMPLOYEE ID</th>
@@ -38,7 +38,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
                 <?php
 
-                foreach((array) $data as $row) { ?>
+                foreach((array) $query as $row) { ?>
                     <tr class="modal-update">
                         <td> <?php echo $row['emp_id'] ?> </td>
                         <td> <?php echo $row['fullname'] ?> </td>
@@ -47,8 +47,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         <td> <?php echo $row['role_id'] ?> </td>
                         <td> <?php echo $row['approved_by'] ?> </td>
                         <td> <?php echo $row['date_approve'] ?> </td>
-
-<!--                        <td>  <a href="--><?php //echo site_url("sys/tc_question/update?quest1=".$row['question_no']."&quest=".$row['question']."&new=".$row['is_new']."&repeat=".$row['is_repeat']."&set=".$row['is_set'].""); ?><!--" data-question="--><?php //echo $row['question'] ?><!--" data-new="--><?php //echo $row['is_new'] ?><!--" data-repeat="--><?php //echo $row['is_repeat'] ?><!--" data-set="--><?php //echo $row['is_set'] ?><!--" class="open-AddBookDialog" id="editbtn"  data-seq="1"> <i class="uk-icon-edit"></i> EDIT </a></td>-->
+                        <td>  <a href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" > <i class="uk-icon-edit"></i> EDIT </a></td>
                     </tr>
                 <?php   }
 
@@ -56,6 +55,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
 
             </table>
+
         </div>
     </section>
     <?php $this->load->view("templates/footer"); ?>

@@ -105,4 +105,22 @@
             return $query->result_array();
         }
 
+        public function update_role_id() {
+
+            $employee_id = $this->input->post("employee_id");
+            $role = $this->input->post("role");
+
+            $input = array(
+                "employee_id" => $employee_id,
+                "role" =>  $role
+            );
+
+            $query = $this->db->query("SELECT sp_upd_role_id ( ?, ?)", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_upd_role_id;
+            }
+        }
+
     }

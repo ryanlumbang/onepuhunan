@@ -150,9 +150,45 @@
             $this->load->model("System_model");
 
             $data["query"] = $this->System_model->get_userAccount();
-            echo "{ \"data\" : " . json_encode($data["query"]) . "}";
 
-            $this->load->view("sys/assign_role_id");
+            $this->load->view("sys/assign_role_id", $data);
+        }
+
+        public function update_role_id() {
+            $this->load->library("form_validation");
+            $this->load->model("System_model");
+
+            $config = array(
+                array(
+                    "field" => "role",
+                    "label" => "role",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    )
+                )
+            );
+
+            $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+            $this->form_validation->set_rules($config);
+
+            if($this->form_validation->run() == FALSE) {
+                $this->load->view("templates/update_role_id");
+            } else {
+                $input = array(
+                    "employee_id"  => $this->input->post("employee_id"),
+                    "role"  => $this->input->post("role")
+                );
+
+                $data["sp_upd_role_id"] = $this->System_model->update_role_id($input);
+                $this->load->view("templates/update_role_id", $data);
+            }
+
+        }
+
+        public function add_role_id() {
+
+            $this->load->view("sys/add_role_id");
         }
 
 
