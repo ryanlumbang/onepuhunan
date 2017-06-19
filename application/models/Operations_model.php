@@ -20,6 +20,19 @@
                 return $query->result_array();
             }
         }
+
+        public function get_client_search() {
+            $los_db = $this->load->database("LOS", true);
+            $name = $this->input->post("c_name");
+            if( trim($name) != "" ) {
+                if (filter_input(INPUT_POST, 'chk-spouse')) {
+                    $query = $los_db->query("SELECT * FROM sp_los_search_client( ?, 'true')", $name);
+                } else {
+                    $query = $los_db->query("SELECT * FROM sp_los_search_client( ?, 'false')", $name);
+                }
+                return $query->result_array();
+            }
+        }
         
         public function client_info($input) {
             $query = $this->db->query("SELECT * FROM sp_cc_user_info( ? )", $input);
@@ -170,4 +183,5 @@
             $query = $los_db->query("SELECT * FROM sp_report_tc_call( ?)", $input);
             return $query->result_array();
         }
+
     }
