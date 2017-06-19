@@ -339,7 +339,7 @@ class Audit extends CI_Controller {
                 fclose($file);
                 $this->session->set_flashdata('message',
                     ' 
-                           <link rel="stylesheet" href="http://localhost/onepuhunan/css/audit_extract.css">
+                           <link rel="stylesheet" href="../css/audit_extract.css">
                            
                 <div class="overlay">
                     <div class="modelBox">
@@ -360,14 +360,14 @@ class Audit extends CI_Controller {
                         </div>
                         </div>
                 </div>
-                      <script src="http://localhost/onepuhunan/js/audit_import.js"></script>
+                      <script src="../js/audit_import.js"></script>
 
                         ');
                 redirect('audit/audit_import');
             }else{
                 $this->session->set_flashdata('message',
                     '
-                           <link rel="stylesheet" href="http://localhost/onepuhunan/css/audit_extract.css">
+                           <link rel="stylesheet" href="../css/audit_extract.css">
                            
                 <div class="overlay">
                     <div class="modelBox">
@@ -387,7 +387,7 @@ class Audit extends CI_Controller {
                         </div>
                         </div>
                 </div>
-                       <script src="http://localhost/onepuhunan/js/audit_import.js"></script>
+                       <script src="../js/audit_import.js"></script>
                 ');
                 redirect('audit/audit_import');
             }
