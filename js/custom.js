@@ -348,8 +348,14 @@ $(document).ready(function() {
         $(".add_form modal").hide();
     });
     $('#c_rejected').DataTable();
-    $('#c_search').DataTable();
+    $('#c_search').dataTable( {
+        "searching": false,
+        "lengthChange": false
+    } );
     tbl_tc.order([0, 'asc']).draw();
+    $(".clear-table").on("click", function() {
+        $('#c_search').hide()
+    });
 
     $(".open-AddBookDialog").on("click", function() {
         var dataQuestNo = $(this).attr("data-question-no");

@@ -44,7 +44,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             <div class="uk-form-row tm-label">
                 <label class="uk-text-small">
                     Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
-                    Once completed, please select the <b>"Update"</b> button.
+                    Once completed, please select the <b>"Add"</b> button.
                 </label>
             </div>
             <div class="uk-form-row">

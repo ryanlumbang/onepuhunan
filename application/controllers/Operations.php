@@ -14,6 +14,13 @@
             $data["number_of_rows"] = count($data["query"]);
             $this->load->view("operations/client_catalog", $data);
         }
+
+        public function client_search() {
+            $this->load->model("Operations_model");
+            $data["query"] = $this->Operations_model->get_client_search();
+            $data["number_of_rows"] = count($data["query"]);
+            $this->load->view("operations/los_search_client", $data);
+        }
         
         public function client_info($input) {
             $this->load->model("Operations_model");
