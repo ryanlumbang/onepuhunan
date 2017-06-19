@@ -46,22 +46,25 @@ OR $this->session->role_id == 'ssuper'){?>
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                            <?php
+                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'qa' OR $this->session->role_id == 'cpu' OR $this->session->role_id == 'sa' OR $this->session->role_id == 'tc') { ?>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>">LOS Client Search</a></li>
+                            <?php } ?>
                         </ul>
                     </div>
+                    <?php
+                    if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
                     <div class="uk-width-1-4 uk-text-center">
                         <img class="uk-margin uk-margin-remove" src="<?=base_url()?>img/system_png/maintenance.png" width="100">
                         <h3>LOS SETTINGS</h3>
                         <p>View and manage LOS settings.</p>
                         <ul class="tm-ul">
-                            <?php
-                            if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super') { ?>
                                 <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
                                 <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                                 <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
-                            <?php } ?>
                         </ul>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

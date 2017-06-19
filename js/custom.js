@@ -354,7 +354,7 @@ $(document).ready(function() {
     } );
     tbl_tc.order([0, 'asc']).draw();
     $(".clear-table").on("click", function() {
-        $('#c_search_wrapper').hide()
+        $('#c_search').hide()
     });
 
     $(".open-AddBookDialog").on("click", function() {
