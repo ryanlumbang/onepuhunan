@@ -416,7 +416,7 @@ $(document).ready(function() {
     } );
     tbl_tc.order([0, 'asc']).draw();
     $(".clear-table").on("click", function() {
-        $('#c_search').hide()
+        $('#c_search_wrapper').hide()
     });
 
     $(".open-AddBookDialog").on("click", function() {
