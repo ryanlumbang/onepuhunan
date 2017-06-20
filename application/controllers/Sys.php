@@ -147,12 +147,12 @@
         }
 
         public function assign_roles() {
-            $this->load->model("System_model");
+        $this->load->model("System_model");
 
-            $data["query"] = $this->System_model->get_userAccount();
+        $data["query"] = $this->System_model->get_userAccount();
 
-            $this->load->view("sys/assign_role_id", $data);
-        }
+        $this->load->view("sys/assign_role_id", $data);
+    }
 
         public function update_role_id() {
             $this->load->library("form_validation");
@@ -176,7 +176,6 @@
                 $this->load->view("templates/update_role_id");
             } else {
                 $input = array(
-                    "employee_id"  => $this->input->post("employee_id"),
                     "role"  => $this->input->post("role")
                 );
 
@@ -188,7 +187,42 @@
 
         public function add_role_id() {
 
-            $this->load->view("sys/add_role_id");
+            $this->load->library("form_validation");
+            $this->load->model("System_model");
+
+            $config = array(
+                array(
+                    "field" => "role_id",
+                    "label" => "role_id",
+                    "rules" => "trim|required",
+                    "errors" => array(
+                        "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                    ),
+                    array(
+                        "field" => "role_name",
+                        "label" => "role_name",
+                        "rules" => "trim|required",
+                        "errors" => array(
+                            "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                        )
+                    )
+                )
+            );
+
+            $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+            $this->form_validation->set_rules($config);
+
+            if($this->form_validation->run() == FALSE) {
+                $this->load->view("sys/add_role_id");
+            } else {
+                $input = array(
+                    "role_id"  => $this->input->post("role_id"),
+                    "role_name"  => $this->input->post("role_name")
+                );
+
+                $data["sp_add_role_id"] = $this->System_model->set_role_id($input);
+                $this->load->view("sys/add_role_id", $data);
+            }
         }
 
 

@@ -103,9 +103,6 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                     </div>
                 </div>
 
-
-
-
             <div class="uk-form-row uk-margin-small-bottom">
                 <label class="uk-form-label uk-text-small uk-text-bold">Role ID<span class="tm-required-label">*</span></label>
                 <div class="uk-form-controls">
@@ -120,23 +117,6 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                     ?>
                 </div>
             </div>
-                <div class="uk-form-row">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Role <span class="tm-required-label">*</span></label>
-                    <select class="form-control">
-
-                        <?php
-
-                        foreach((array) $query as $row) { ?>
-                            <tr class="modal-update">
-                                <td> <?php echo $row['role_id'] ?> </td>
-                            </tr>
-                        <?php   }
-
-                        ?>
-
-                    </select>
-                </div>
-
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>

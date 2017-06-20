@@ -18,7 +18,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <section id="main-section">
 
 
-        <div class="uk-container table-wrap op-container tc-container">  <!-- Modal HTML embedded directly into document -->
+        <div class="uk-container table-wrap op-container tc-container">
 
             <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE ROLE ID</h1></div>
 
@@ -55,7 +55,6 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
 
             </table>
-
         </div>
     </section>
     <?php $this->load->view("templates/footer"); ?>

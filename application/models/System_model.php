@@ -123,4 +123,25 @@
             }
         }
 
+        public function set_role_id() {
+
+            $role_id = $this->input->post("role_id");
+            $role_name = $this->input->post("role_name");
+            $date = $this->input->post("date_added");
+
+
+            $input = array(
+                "role_id" => $role_id,
+                "role_name" =>  $role_name,
+                "date" =>  $date
+            );
+
+            $query = $this->db->query("SELECT sp_add_role_id ( ?, ?, ?)", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_add_role_id;
+            }
+        }
+
     }
