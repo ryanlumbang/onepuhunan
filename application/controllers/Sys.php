@@ -157,6 +157,10 @@
         public function update_role_id() {
             $this->load->library("form_validation");
             $this->load->model("System_model");
+            $employee_name = $this->input->post("employee_name");
+
+            $header = "Role ID Successfully Update!";
+            $content = "You have successfully changed Role ID of ".$employee_name;
 
             $config = array(
                 array(
@@ -171,13 +175,14 @@
 
             $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
             $this->form_validation->set_rules($config);
+            $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
 
             if($this->form_validation->run() == FALSE) {
                 $this->load->view("templates/update_role_id");
             } else {
                 $input = array(
                     "role"  => $this->input->post("role")
-                );
+            );
 
                 $data["sp_upd_role_id"] = $this->System_model->update_role_id($input);
                 $this->load->view("templates/update_role_id", $data);

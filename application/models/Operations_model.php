@@ -158,6 +158,18 @@
             return $query->result_array();
         }
 
+        public function get_kyc_remarks() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date_remarks");
+            $edate = $this->input->post("end_date_remarks");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_kyc_remarks( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");

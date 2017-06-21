@@ -28,9 +28,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                                 <option value="" disabled selected hidden>Type of Report</option>
                                 <option value="01">KYC Today</option>
                                 <option value="02">KYC Pending</option>
-                                <option value="03">QA Productivity</option>
-                                <option value="04">ALAF Report</option>
-                                <option value="05">TC Report</option>
+                                <option value="03">KYC Remarks</option>
+                                <option value="04">QA Productivity</option>
+                                <option value="05">ALAF Report</option>
+                                <option value="06">TC Report</option>
                             </select>
 
                             <!--KYC TODAY-->
@@ -75,6 +76,31 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                                     <input type="text" class="input-text" name="start_date" id="kyc_pending_start_input" placeholder="" value="">
                                     <input type="text" class="input-text" name="end_date" id="kyc_pending_end_input" placeholder="" value="">
+
+
+                                </div>
+                            </form>
+
+                            <!--KYC remarks-->
+
+                            <form class="uk-form" id="form_kyc_remarks" name="form_kyc_remarks" method="post" action="<?php echo site_url("operations/report_kyc_remarks"); ?>">
+
+                                <div style="text-align: center; margin-top: 20px; margin-bottom: -10px;">
+                                    <label class="report_text">KYC Remarks</>
+                                </div>
+
+                                <div style="text-align: center; margin-top: 20px;">
+
+                                    <input type="text" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_remarks()">
+                                    <br/>
+                                    <input type="text" class="uk-margin-small-top" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_remarks_end()">
+
+                                    <div style="text-align: center; margin-top: 20px;">
+                                        <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
+                                    </div>
+
+                                    <input type="text" class="" name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
+                                    <input type="text" class="" name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
 
 
                                 </div>
@@ -240,7 +266,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                             animation-delay: .4s;
                         }
 
-                        #form_kyc_today, #form_kyc_pending, #form_qa_productivity, #form_alaf_report, #form_tc_report{
+                        #form_kyc_today, #form_kyc_pending, #form_qa_productivity, #form_alaf_report, #form_tc_report, #form_kyc_remarks{
                             display: none;
                         }
                     </style>
@@ -315,6 +341,20 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                                     $(".modal-footer").show();
                                     $(".modal-header-done").show();
                                 }, 500);
+                            });
+
+
+                            $("#kyc_remarks").click(function() {
+                                $(".overlay").show();
+                                $("body").css("overflow", "hidden");
+
+                                setTimeout(function() {
+                                    $(".extraction-success").hide();
+                                    $(".modal-header").hide();
+                                    $(".extraction-done").show();
+                                    $(".modal-footer").show();
+                                    $(".modal-header-done").show();
+                                }, 10000);
                             });
                         });
                     </script>

@@ -167,6 +167,14 @@ function model(mContent)
         });
     });
 
+    $("#kyc_remarks").on('click',function () {
+        $( ".overlay" ).fadeIn();
+        $('.mText').html(mContent);
+        $( ".footer" ).on('click', function() {
+            $( ".overlay" ).fadeOut();
+        });
+    });
+
 }
 
 var bac = "heading"

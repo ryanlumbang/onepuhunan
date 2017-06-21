@@ -22,6 +22,24 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
             <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE ROLE ID</h1></div>
 
+            <?php
+            $msg = $this->session->flashdata('message');
+            if( !$msg == '' ) {
+                $flashdata = '<div class="uk-alert uk-alert-success los-alert" data-uk-alert>'
+                    . '<p class="uk-margin-bottom-remove">' . $msg . '</p>'
+                    . '</div>';
+                echo $flashdata;
+            }
+            ?>
+
+            <script>
+                $(document).ready(function(){
+                    setTimeout(function() {
+                        $('.uk-alert').fadeOut('fast');
+                    }, 10000); // <-- time in milliseconds
+                });
+            </script>
+
             <table id="tbl_rid" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
                 <thead class="css3gradient">
                 <tr>
@@ -52,7 +70,6 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 <?php   }
 
                 ?>
-
 
             </table>
         </div>
