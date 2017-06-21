@@ -81,7 +81,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                                 </div>
                             </form>
 
-                            <!--KYC remarks-->
+                            <!--KYC Remarks-->
 
                             <form class="uk-form" id="form_kyc_remarks" name="form_kyc_remarks" method="post" action="<?php echo site_url("operations/report_kyc_remarks"); ?>">
 
@@ -99,8 +99,8 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                                         <button type="submit" class="uk-button uk-button-primary uk-width-3-10" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
                                     </div>
 
-                                    <input type="text" class="" name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
-                                    <input type="text" class="" name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
+                                    <input type="text" class="input-text" name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
+                                    <input type="text" class="input-text" name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
 
 
                                 </div>

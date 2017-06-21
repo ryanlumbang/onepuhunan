@@ -740,7 +740,7 @@ div.toolbar {
 }
 
 /*START OF LOS REPORT CSS*/
-input#kyc_pending_start_date, #kyc_pending_end_date, #kyc_today_date, #qa_productivity_date, #tc_report_date {
+input#kyc_pending_start_date, #kyc_pending_end_date, #kyc_today_date, #qa_productivity_date, #tc_report_date, #kyc_remarks_start_date, #kyc_remarks_end_date {
     text-align: center;
 }
 
