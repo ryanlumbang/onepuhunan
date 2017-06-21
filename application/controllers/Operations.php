@@ -747,6 +747,17 @@
             exit;
         }
 
+        public function get_processor_pending() {
+            $this->load->model("Operations_model");
+            $data = array (
+                "pro_pending_qa"  => $this->Operations_model->get_pro_pending_qa(),
+                "pro_pending_bm"  => $this->Operations_model->get_pro_pending_bm(),
+                "pro_pending_tc"  => $this->Operations_model->get_pro_pending_tc(),
+                "pro_pending_sanction"  => $this->Operations_model->get_pro_pending_sanction(),
+            );
+            $this->load->view("operations/processor_pending", $data);
+        }
+
     }
     
     

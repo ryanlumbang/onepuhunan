@@ -78,6 +78,7 @@ $route['operations/branch_handle']    = "operations/branch_handle";
 $route['operations/success_branch_assign']    = "operations/success_branch_assign";
 $route['operations/los_report']    = "operations/los_report";
 $route['operations/client_search']    = "operations/client_search";
+$route['operations/processor_pending']    = "operations/get_processor_pending";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";

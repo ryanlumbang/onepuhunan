@@ -96,7 +96,7 @@ $(document).ready(function() {
             var last = null;
             var role_id = $('#txt_role').val();
             
-            api.column(12, { page : 'current' }).data().each( function(group, i) {       
+            api.column(12, { page : 'current' }).data().each( function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="12">' + group + '</td></tr>');
                     last = group;
@@ -105,11 +105,11 @@ $(document).ready(function() {
             
             $('tbody').find('.group').each(function (i, v) {
                var rowCount = $(this).nextUntil('.group').length;
-               $(this).find('td:first').append($('<span />').append($('<b/>', { 
-                   'text': ' (' + rowCount + ')' 
+               $(this).find('td:first').append($('<span />').append($('<b/>', {
+                   'text': ' (' + rowCount + ')'
                })));
             });
-            
+
             last = null;
             
             api.column(10, { page : 'current'}).data().each( function(group, i) {
@@ -341,6 +341,24 @@ $(document).ready(function() {
         ],
         order: [[ 0, 'asc' ]],
     });
+
+    var tbl_pp = $('#tbl_pp').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+    });
+    var tbl_pbm = $('#tbl_pbm').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+    });
+    var tbl_ptc = $('#tbl_ptc').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+    });
+    var tbl_ps = $('#tbl_ps').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+    });
+
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
     $(".cancel-btn").on('click', function () {

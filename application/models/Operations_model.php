@@ -184,4 +184,25 @@
             return $query->result_array();
         }
 
+        public function get_pro_pending_qa() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'KYC' AND NOT as_of_date = '0'");
+            return $query->result_array();
+        }
+        public function get_pro_pending_bm() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'BMV' AND NOT as_of_date = '0'");
+            return $query->result_array();
+        }
+        public function get_pro_pending_tc() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'TC' AND NOT as_of_date = '0'" );
+            return $query->result_array();
+        }
+        public function get_pro_pending_sanction() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'SANCTION' AND NOT as_of_date = '0'");
+            return $query->result_array();
+        }
+
     }

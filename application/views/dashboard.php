@@ -65,6 +65,7 @@ OR $this->session->role_id == 'ssuper'
                                 <li><a href="<?php echo site_url("operations/branch_handle"); ?>">Branch Assignment </a></li>
                                 <li><a href="<?php echo site_url("sys/tc_question"); ?>">Manage TelleCaller Questions</a></li>
                                 <li><a href="<?php echo site_url("operations/los_report"); ?>">LOS Report</a></li>
+                                <li><a href="<?php echo site_url("operations/processor_pending"); ?>">Processor Pending</a></li>
                         </ul>
                     </div>
                     <?php } ?>
