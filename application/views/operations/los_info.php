@@ -473,14 +473,14 @@
                     <div class="los-container clear ctrl">
                         <div class="los-content">
                             <?php if($cl_tags['ProcessValue'] !== 'REJ') { ?>
-                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                                    <input type="submit" name="btn_approve" value="Approve" id="BtnApprove" class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php } else { ?>
-                                    <input type="submit" name="btn_approve" value="Approve" class="uk-button" form="los_form" disabled />
+                                    <input type="submit" name="btn_approve" value="Approve"   id="BtnApprove" class="uk-button" form="los_form" disabled />
                             <?php } ?>
                             
-                            <input type="submit" name="btn_reject"  value="Reject"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                            <input type="submit" name="btn_reject"  value="Reject"  id="BtnReject"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php if(($this->session->role_id != 'qa') || ($cl_tags['DestProcess'] != 'KYC')) { ?>
-                                <input type="submit" name="btn_revert"  value="Revert"  class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                                <input type="submit" name="btn_revert"  value="Revert"  id="BtnRevert" class="uk-button" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                                 
                             <?php } ?>
                         </div>
