@@ -41,7 +41,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         . "<td class=\"dt-center\" width=\"15%\">" . $item["fileno"] . "</td>"
                         . "<td class=\"uk-text-left\" width=\"30%\">" . $item["clientid"] . " - " .$item["clientname"]."</td>"
                         . "<td class=\"uk-text-left\" width=\"30%\">" . $item["processor"] . "</td>"
-                        . "<td class=\"dt-center\" width=\"15%\">" . "<a class=\"uk-button uk-button-small\" href='../sys/reprocess_user/" .$item["fileno"]. "'>Reprocess</a>" . "</td>"
+                        . "<td class=\"dt-center\" width=\"15%\">" . "<a onclick=\"return confirm('Are you sure you want to reprocess this record?')\" class=\"uk-button uk-button-small\" href='../sys/reprocess_user/" .$item["fileno"]. "'>Reprocess</a>" . "</td>"
                         . "</tr>";
                     echo $result;
                  }

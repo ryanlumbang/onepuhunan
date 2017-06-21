@@ -20,7 +20,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
         <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
 
-            <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
+            <?=form_open("", array("id" => "add_form" ,"class" => "uk-form uk-form-horizontal"));?>
             <div class="op-title"><h1><i class="uk-icon-tags"></i> ADD TELLECALLER QUESTIONS</h1></div>
             <?php echo validation_errors(); ?>
             <?php
@@ -103,7 +103,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </label>
             </p>
             <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Add</button>
+                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" id="add_tc">Add</button>
                 <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
             </div>
             <?=form_close();?>

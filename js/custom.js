@@ -174,6 +174,11 @@ $(document).ready(function() {
            actionArray[actionArray.length] = data.ProcessValue;
         });
     }
+    //reprocess btn
+    function confirm_delete() {
+        return confirm('are you sure?');
+    }
+
     //remark approve
     $('#BtnApprove').click(function () {
         if (confirm("CLICK OK TO APPROVE?")){
