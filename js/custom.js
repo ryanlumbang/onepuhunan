@@ -174,9 +174,44 @@ $(document).ready(function() {
            actionArray[actionArray.length] = data.ProcessValue;
         });
     }
+    //remark approve
+    $('#BtnApprove').click(function () {
+        if (confirm("CLICK OK TO APPROVE?")){
+            $('form#los_form').submit();
+        }
+        else {
+            return false;
+        }
+    });
 
+    //remark reject
+    $('#BtnReject').click(function () {
+        if (confirm("CLICK OK TO REJECT?")){
+            $('form#los_form').submit();
+        }
+        else {
+            return false;
+        }
+    });
+
+    //remark reject
+    $('#BtnRevert').click(function () {
+        if (confirm("CLICK OK TO REVERT?")){
+            $('form#los_form').submit();
+        }
+        else {
+            return false;
+        }
+    });
     // checkbox: approve all selected entries.
     $('#btn_approve').click(function () {
+        if (confirm("CLICK OK TO APPROVE?")){
+            $('form#tbl_los').submit();
+        }
+        else {
+            return false;
+        }
+
         var branchId, groupId;
         var counter = 0;
         var xhrs = [];
@@ -206,6 +241,12 @@ $(document).ready(function() {
     });
 
     $('#btn_reject').click(function() {
+        if (confirm("CLICK OK TO REJECT?")){
+            $('form#tbl_los').submit();
+        }
+        else {
+            return false;
+        }
         var branchId, groupId;
         var counter = 0;
         var xhrs = [];
@@ -504,6 +545,9 @@ $(document).ready(function() {
         });
     });
     //END OF INPUT FIELD JS
+
+    //confirmation
+
 
 });
 
