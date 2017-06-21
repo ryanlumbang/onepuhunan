@@ -34,10 +34,10 @@ OR $this->session->role_id == 'ssuper'
                             <h3>SYSTEM SETTINGS</h3>
                             <p>View and manage system settings.</p>
                             <ul class="tm-ul">
-                                <li><a href="">View Users Catalog</a></li>
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
                                 <li><a href="<?php echo site_url("sys/client_rejected"); ?>">Client Rejected</a></li>
                                 <li><a href="<?php echo site_url("sys/assign_role_id"); ?>">Assigning Roles</a></li>
+                                <li><a href="<?php echo site_url("sys/add_role_id"); ?>">Manage Role ID's</a></li>
                             </ul>
                             </div>   
                     <?php } ?>

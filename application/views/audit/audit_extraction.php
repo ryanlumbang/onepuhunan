@@ -2,7 +2,7 @@
 if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super') { ?>
 
 <?php
-$data['title'] = 'OnePuhunan Service Portal | Registration Request';
+$data['title'] = 'OnePuhunan Service Portal | Audit Raw Data Extraction';
 header("Cache-Control: max-age=0, must-revalidate");
 ?>
 <!DOCTYPE html>

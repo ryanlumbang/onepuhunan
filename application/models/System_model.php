@@ -105,4 +105,43 @@
             return $query->result_array();
         }
 
+        public function update_role_id() {
+
+            $employee_id = $this->input->post("employee_id");
+            $role = $this->input->post("role");
+
+            $input = array(
+                "employee_id" => $employee_id,
+                "role" =>  $role
+            );
+
+            $query = $this->db->query("SELECT sp_upd_role_id ( ?, ?)", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_upd_role_id;
+            }
+        }
+
+        public function set_role_id() {
+
+            $role_id = $this->input->post("role_id");
+            $role_name = $this->input->post("role_name");
+            $date = $this->input->post("date_added");
+
+
+            $input = array(
+                "role_id" => $role_id,
+                "role_name" =>  $role_name,
+                "date" =>  $date
+            );
+
+            $query = $this->db->query("SELECT sp_add_role_id ( ?, ?, ?)", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_add_role_id;
+            }
+        }
+
     }
