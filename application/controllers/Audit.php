@@ -229,7 +229,7 @@ class Audit extends CI_Controller {
             $objPHPExcel->getActiveSheet()->setCellValue('BS'.$row, $item['BusExpense']);
             $objPHPExcel->getActiveSheet()->setCellValue('BT'.$row, $item['OtherMonthlyAmt']);
             $objPHPExcel->getActiveSheet()->setCellValue('BU'.$row, $item['CoMaker']);
-            $objPHPExcel->getActiveSheet()->setCellValue('BV'.$row, $item['CoMakerDateOfBirth']);
+            $objPHPExcel->getActiveSheet()->setCellValue('BV'.$row, $item['CoMakerDOB']);
             $objPHPExcel->getActiveSheet()->setCellValue('BW'.$row, $item['CoMakerGender']);
             $objPHPExcel->getActiveSheet()->setCellValue('BX'.$row, $item['NomineeName']);
             $objPHPExcel->getActiveSheet()->setCellValue('BY'.$row, $item['NomineeDOB']);

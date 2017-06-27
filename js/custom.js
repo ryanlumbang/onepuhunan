@@ -129,13 +129,12 @@ $(document).ready(function() {
 
             last = null;
 
-
             api.column(10, { page : 'current'}).data().each( function(group, i) {
                 if(role_id === 'qa' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
                 } else if (role_id === 'bm' && group === 'BMV') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'qa_new' && group === 'KYC') {
+                } else if (role_id === 'qa' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
                 } else if (role_id === 'qa' && group === 'ALAF') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
