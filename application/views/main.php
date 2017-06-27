@@ -65,5 +65,6 @@ $data['title'] = 'OnePuhunan Service Portal';
 </div>
 
 <div class="fixed-footer"><?php $this->load->view("templates/footer"); ?></div>
+
 </body>
 </html>

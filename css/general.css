@@ -1,0 +1,20 @@
+#page {
+    display: none;
+    height: 100%;
+}
+#loading {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    background-image: url("../img/system_png/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.table-los {
+    width: 100%!important;
+}

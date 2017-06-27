@@ -3,6 +3,7 @@ if($this->session->role_id == 'sa'  OR $this->session->role_id == 'super' OR $th
 OR $this->session->role_id == 'qa'  OR $this->session->role_id == 'bm' OR $this->session->role_id == 'cpu'
 OR $this->session->role_id == 'ssuper'
     OR $this->session->role_id == 'ram'
+    OR $this->session->role_id == 'qa_new'
 ){?>
 
 <?php
@@ -35,7 +36,6 @@ OR $this->session->role_id == 'ssuper'
                             <p>View and manage system settings.</p>
                             <ul class="tm-ul">
                                 <li><a href="<?php echo site_url("sys/registration_request"); ?>">View New User Registration Request</a></li>
-                                <li><a href="<?php echo site_url("sys/client_rejected"); ?>">Client Rejected</a></li>
                                 <li><a href="<?php echo site_url("sys/assign_role_id"); ?>">Assigning Roles</a></li>
                                 <li><a href="<?php echo site_url("sys/add_role_id"); ?>">Manage Role ID's</a></li>
                             </ul>
@@ -49,7 +49,7 @@ OR $this->session->role_id == 'ssuper'
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
                             <li><a href="<?php echo site_url("operations/client_rejected"); ?>">Client's Rejected</a></li>
-                            <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
+                            <li><a id="loader" href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
                             <?php
                             if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'qa' OR $this->session->role_id == 'cpu' OR $this->session->role_id == 'sa' OR $this->session->role_id == 'tc' OR $this->session->role_id == 'ram') { ?>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>">LOS Client Search</a></li>

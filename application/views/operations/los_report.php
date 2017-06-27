@@ -5,6 +5,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 <html lang="en">
 <?php $this->load->view("templates/head", $data); ?>
     <body>
+        <div id="page">
         <?php $this->load->view("templates/header"); ?>
             <div class="page-wrap">
                 <?php $this->load->view("templates/subheader"); ?>
@@ -365,5 +366,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
             </div>
         <?php $this->load->view("templates/footer"); ?>
+        </div>
+        <div id="loading"></div>
     </body>
 </html>

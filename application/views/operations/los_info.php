@@ -7,6 +7,7 @@
     <?php $this->load->view("templates/head", $data); ?>
 
     <body id="losbody" class="uk-height-1-1">
+    <div id="page">
         <?php $this->load->view("templates/header"); ?>
         
         <div class="page-wrap">
@@ -490,5 +491,7 @@
             </div>
         </div>
         <?php $this->load->view("templates/footer"); ?>
+        </div>
+        <div id="loading"></div>
     </body>
 </html>

@@ -11,6 +11,7 @@
    <link rel="stylesheet" href="<?=base_url()?>css/components/datepicker.css">
    
    <link rel="stylesheet" href="<?=base_url()?>css/custom.css">
+   <link rel="stylesheet" href="<?=base_url()?>css/general.css">
    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/audit_extract.css">
 

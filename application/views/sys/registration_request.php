@@ -6,6 +6,7 @@
 <html lang="en">
     <?php $this->load->view("templates/head", $data); ?>
     <body>
+    <div id="page">
         <?php $this->load->view("templates/header"); ?>
         <div class="page-wrap">
             <?php $this->load->view("templates/subheader"); ?>
@@ -64,5 +65,7 @@
             </div>
         </div>
         <?php $this->load->view("templates/footer"); ?>
+    </div>
+    <div id="loading"></div>
     </body>
 </html>

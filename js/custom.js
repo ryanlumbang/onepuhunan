@@ -1,4 +1,22 @@
 $(document).ready(function() {
+    function onReady(callback) {
+        var intervalID = window.setInterval(checkReady, 1000);
+        function checkReady() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+                window.clearInterval(intervalID);
+                callback.call(this);
+            }
+        }
+    }
+
+    function show(id, value) {
+        document.getElementById(id).style.display = value ? 'block' : 'none';
+    }
+
+    onReady(function () {
+        show('page', true);
+        show('loading', false);
+    });
     var amountScrolled = 250;
 
     /* for routing */
@@ -48,7 +66,6 @@ $(document).ready(function() {
     $('#hr-memo').DataTable({
         'order' : [[0, 'desc'], [1, 'asc']]
     });
-
     /* LOS datatable initialization */
   var tbl_los = $('#tbl_los').DataTable({
         //'serverSide': true,
@@ -85,7 +102,7 @@ $(document).ready(function() {
         ],
         'iDisplayLength': 25,
         'oLanguage': {
-            'sSearch': 'Search all columns:',
+            'sSearch': '',
             'sEmptyTable': 'No pending application'
         },
         'deferRender': true,
@@ -95,7 +112,7 @@ $(document).ready(function() {
             var rows = api.rows({ page : 'current' }).nodes();
             var last = null;
             var role_id = $('#txt_role').val();
-            
+
             api.column(12, { page : 'current' }).data().each( function(group, i) {
                 if (last !== group) {
                     $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="12">' + group + '</td></tr>');
@@ -111,11 +128,14 @@ $(document).ready(function() {
             });
 
             last = null;
-            
+
+
             api.column(10, { page : 'current'}).data().each( function(group, i) {
                 if(role_id === 'qa' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
                 } else if (role_id === 'bm' && group === 'BMV') {
+                    $(rows).eq(i).find("input, button").attr("disabled", false);
+                } else if (role_id === 'qa_new' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
                 } else if (role_id === 'qa' && group === 'ALAF') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
@@ -140,7 +160,7 @@ $(document).ready(function() {
     });
 
     /* get hidden field for currently logged user */
-    var role = $('#txt_role').val();;
+    var role = $('#txt_role').val();
 
     /* sometimes it's working, sometimes not :P */
     if(role === 'qa') {

@@ -6,6 +6,7 @@
 <html lang="en">
     <?php $this->load->view("templates/head", $data); ?>
     <body id="losbody" class="uk-height-1-1">
+    <div id="page">
         <?php $this->load->view("templates/header"); ?>
         <div class="page-wrap">
             <?php $this->load->view("templates/subheader"); ?>
@@ -59,7 +60,7 @@
                                                             . '<td class="uk-text-center">' .  '</td>';
                                                     
                                                     /* kyc */
-                                                    if($this->session->role_id === 'qa') {
+                                                    if($this->session->role_id === 'qa'  OR $this->session->role_id == 'qa_new' OR $this->session->role_id == 'qa_rpt') {
                                                         $result = $result . '<td class="uk-text-center highlight">' . $status['KYC'] . '</td>';
                                                     } else {
                                                         $result = $result . '<td class="uk-text-center">' . $status['KYC'] . '</td>';
@@ -73,7 +74,7 @@
                                                     }
                                                     
                                                     /* alaf */
-                                                    if($this->session->role_id === 'qa') {
+                                                    if($this->session->role_id === 'qa'  OR $this->session->role_id == 'qa_new' OR $this->session->role_id == 'qa_rpt') {
                                                         $result = $result . '<td class="uk-text-center highlight-2">' . $status['ALAF'] . '</td>';
                                                     } else {
                                                         $result = $result . '<td class="uk-text-center">' . $status['ALAF'] . '</td>';
@@ -114,5 +115,7 @@
             </div>
         </div>
         <?php $this->load->view("templates/footer"); ?>
+    </div>
+    <div id="loading"></div>
     </body>
 </html>

@@ -1,3 +1,4 @@
+
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 ?>
@@ -5,6 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 <html lang="en">
 <?php $this->load->view("templates/op-head", $data); ?>
 <body id="losbody">
+<div id="page">
 <div id="page-wrapper">
     <?php $this->load->view("templates/op-header"); ?>
     <?php $this->load->view("templates/subheader"); ?>
@@ -85,6 +87,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
     <?php $this->load->view("templates/footer"); ?>
     <?php $this->load->view("templates/modal"); ?>
 </div>
+</div>
+<div id="loading"></div>
 </body>
 </html>
 

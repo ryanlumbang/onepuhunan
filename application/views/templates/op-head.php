@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?=base_url()?>css/components/accordion.gradient.min.css">
 
     <link rel="stylesheet" href="<?=base_url()?>css/main.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/general.css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/select.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/jquery.modal.css">
