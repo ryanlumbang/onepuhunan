@@ -15,6 +15,10 @@
             $this->load->view("sys/registration_request", $data); 
         }
 
+        public function main_login() {
+            $this->load->view("main/login.php");
+        }
+
         public function tc_question() {
             $this->load->model("System_model");
             $data = array (

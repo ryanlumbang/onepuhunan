@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['opslogin']  = "application/opslogin";
+$route['login']  = "sys/main_login";
 $route['aulogin']     = "application/aulogin";
 $route['forgotpassword']     = "application/fpassword";
 $route['confirmation']     = "application/confirmation";
@@ -79,6 +80,7 @@ $route['operations/success_branch_assign']    = "operations/success_branch_assig
 $route['operations/los_report']    = "operations/los_report";
 $route['operations/client_search']    = "operations/client_search";
 $route['operations/processor_pending']    = "operations/get_processor_pending";
+$route['operations/client_rejected']    = "sys/client_rejected";
 
 /* system settings */
 $route['sys/registration_request'] = "sys/index";
@@ -87,7 +89,6 @@ $route['sys/tc_question/update']    = "sys/update_tc_questions";
 $route['sys/assign_role_id/update_role_id']    = "sys/update_role_id";
 $route['sys/add_role_id']    = "sys/add_role_id";
 $route['sys/telle']    = "sys/tc_question";
-$route['sys/client_rejected']    = "sys/client_rejected";
 $route['sys/assign_role_id']    = "sys/assign_roles";
 //$route['sys/approver_user'] = "sys/approver_user";
 

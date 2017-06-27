@@ -48,6 +48,7 @@ OR $this->session->role_id == 'ssuper'
                         <p>View and process loan applications received by the system.</p>
                         <ul class="tm-ul">
                             <li><a href="<?php echo site_url("operations/client_catalog"); ?>">Client's Catalog</a></li>
+                            <li><a href="<?php echo site_url("operations/client_rejected"); ?>">Client's Rejected</a></li>
                             <li><a href="<?php echo site_url("operations/los"); ?>">Loan Origination System</a></li>
                             <?php
                             if($this->session->role_id == 'ssuper'  OR $this->session->role_id == 'super' OR $this->session->role_id == 'qa' OR $this->session->role_id == 'cpu' OR $this->session->role_id == 'sa' OR $this->session->role_id == 'tc' OR $this->session->role_id == 'ram') { ?>
