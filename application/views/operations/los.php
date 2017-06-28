@@ -36,7 +36,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         <input id="txt_role"      class="uk-hidden" value="<?=$this->session->role_id?>" />
                         <input id="txt_datedata"  class="uk-hidden" value="<?=$this->session->datedata?>" />
 
-                        <table id="tbl_los" class="cell-border stripe table-fix table-los">
+                        <table id="tbl_los" class="cell-border stripe table-fix table-los op-table">
                             <thead>
                             <tr>
                                 <th></th>

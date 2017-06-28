@@ -115,7 +115,7 @@ $(document).ready(function() {
 
             api.column(12, { page : 'current' }).data().each( function(group, i) {
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold"><td colspan="12">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold" style="background:#dce6f0; color:#908686"><td colspan="12">' + group + '</td></tr>');
                     last = group;
                 }
             });
@@ -130,7 +130,7 @@ $(document).ready(function() {
             last = null;
 
             api.column(10, { page : 'current'}).data().each( function(group, i) {
-                if(role_id === 'qa' && group === 'KYC') {
+                if(role_id === 'qa_new' && group === 'KYC') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
                 } else if (role_id === 'bm' && group === 'BMV') {
                     $(rows).eq(i).find("input, button").attr("disabled", false);
