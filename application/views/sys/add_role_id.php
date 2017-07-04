@@ -119,7 +119,6 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
     </section>
 
     <?php $this->load->view("templates/footer"); ?>
-    <?php $this->load->view("templates/modal"); ?>
 </div>
 </div>
 <div id="loading"></div>

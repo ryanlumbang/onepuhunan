@@ -84,6 +84,21 @@ function typeLoan()
 
 }
 
+function branchList()
+{
+    var branch = document.getElementById("branchCode").value;
+
+    document.getElementById("branch_code").value = branch;
+
+}
+
+$(document).ready(function()
+{
+    var branch = document.getElementById("branchCode").value;
+
+    document.getElementById("branch_code").value = branch;
+});
+
 //END FOR EXPORT VALIDATION FOR MONTH
 
 //VALIDATION FOR CSV FILE

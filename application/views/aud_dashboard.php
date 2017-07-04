@@ -33,6 +33,8 @@ if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super'){?>
                                 if($this->session->role_id == 'super') { ?>
                                     <li><a href="<?php echo site_url("audit/audit_import"); ?>">Audit Uploading of Sampling</a></li>
                                 <?php } ?>
+                                <li><a href="<?php echo site_url("audit/aud_extraction_assign"); ?>">Audit Extraction For Auditor</a></li>
+                                <li><a href="<?php echo site_url("audit/assign_branch"); ?>">Assign Branch for Auditor</a></li>
                             </ul>
                      </div>
 

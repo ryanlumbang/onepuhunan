@@ -128,12 +128,13 @@ class Audit extends CI_Controller {
         $objPHPExcel->getActiveSheet()->setCellValue('CC1','TOTALCOLLATERALVALUE');
         $objPHPExcel->getActiveSheet()->setCellValue('CD1','TOTALNETCOLLATERALVALUE');
         $objPHPExcel->getActiveSheet()->setCellValue('CE1','TOTALAPPORTIONEDVALUE');
+        $objPHPExcel->getActiveSheet()->setCellValue('CF1','ASSIGNAUDITOR');
 
 
-        $objPHPExcel->getActiveSheet()->getStyle('A1:CC1')->getFont()->setBold(true);
+        $objPHPExcel->getActiveSheet()->getStyle('A1:CF1')->getFont()->setBold(true);
 
         $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
-        ->getStyle('A1:CF1')
+        ->getStyle('A1:CG1')
         ->getAlignment()
         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
@@ -144,7 +145,7 @@ class Audit extends CI_Controller {
         ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
         $objPHPExcel->getActiveSheet()->freezePane('A2');
 
-        for($col = 'A'; $col !== 'CF'; $col++)
+        for($col = 'A'; $col !== 'CG'; $col++)
         {
             $objPHPExcel->getActiveSheet()
                 ->getColumnDimension($col)
@@ -239,6 +240,7 @@ class Audit extends CI_Controller {
             $objPHPExcel->getActiveSheet()->setCellValue('CC'.$row, $item['TotalCollateralValue']);
             $objPHPExcel->getActiveSheet()->setCellValue('CD'.$row, $item['TotalNetCollateralValue']);
             $objPHPExcel->getActiveSheet()->setCellValue('CE'.$row, $item['TotalApportionedValue']);
+            $objPHPExcel->getActiveSheet()->setCellValue('CF'.$row, $this->session->emp_name);
 
 
             $row++;
@@ -396,6 +398,55 @@ class Audit extends CI_Controller {
         $this->load->view("audit/audit_import");
 
     }
+
+    public function assign_roles() {
+        $this->load->model("Audit_model");
+
+        $data['ln_branch'] = $this->Audit_model->get_ln_branch();
+
+        $this->load->view("audit/aud_extraction_assign", $data);
+    }
+
+    public function branch_handle() {
+        $this->load->library("form_validation");
+        $this->load->model("Audit_model");
+
+        $config = array(
+            array(
+                "field" => "emp_id",
+                "label" => "Employee Id",
+                "rules" => "trim|required",
+                "errors" => array(
+                    "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                )
+            ),
+            array(
+                "field" => "branch_ids",
+                "label" => "Branch Ids",
+                "rules" => "trim|required",
+                "errors" => array(
+                    "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                )
+            )
+        );
+
+        $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+        $this->form_validation->set_rules($config);
+
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view("audit/assign_branch");
+        } else {
+            $input = array(
+                "emp_id"  => $this->input->post("emp_id"),
+                "branch_ids"  => $this->input->post("branch_ids")
+            );
+
+            $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
+            $this->load->view("audit/assign_branch", $data);
+        }
+
+    }
+
 
     public function get_audit_result(){
 

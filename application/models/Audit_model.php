@@ -49,5 +49,27 @@ class Audit_model extends CI_Model
 
     }
 
+    function get_userAccount()
+    {
+        $query = $this->db->query("SELECT * FROM sp_assign_branch()");
+        return $query->result_array();
+    }
+
+
+    public function get_ln_branch() {
+
+        $query = $this->db->query("SELECT * FROM sp_sample_usr(?)" , $this->session->emp_id);
+        return $query->result_array();
+    }
+
+    public function set_branch_handle($input) {
+        $query = $this->db->query("SELECT sp_upd_assign_branch ( ?, ? )", $input);
+        $row = $query->row();
+
+        if( isset($row) ) {
+            return $row->sp_upd_assign_branch;
+        }
+    }
+
 
 }

@@ -39,6 +39,13 @@ select.month {
     margin-bottom: 5px;
 }
 
+select.branchcode {
+    position: relative;
+    top: 5px;
+    width: 20%;
+    margin-bottom: 5px;
+}
+
 select.year {
     position: relative;
     top: 10px;
