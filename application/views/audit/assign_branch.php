@@ -86,6 +86,19 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
                         );
                         echo form_input($branch_ids);
                         ?>
+
+                        <?php
+                        $branchID = array(
+                            "id" => "branchCode",
+                            "class" => "branchcode"
+                        );
+                        foreach((array) $ln_branch as $row) {
+                            $options[$row["BranchCode"]] = $row["BranchCode"];
+                        }
+                        echo form_dropdown("branchCode", $options, set_value("branchCode"), $branchID);
+                        ?>
+
+
                     </div>
                 </div>
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">

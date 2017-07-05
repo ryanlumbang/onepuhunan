@@ -407,9 +407,20 @@ class Audit extends CI_Controller {
         $this->load->view("audit/aud_extraction_assign", $data);
     }
 
+    public function branchList() {
+        $this->load->model("Audit_model");
+
+        $data['ln_branch'] = $this->Audit_model->get_branchCode();
+        $this->load->view("audit/assign_branch", $data);
+    }
+
+
+
     public function branch_handle() {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
+
+
 
         $config = array(
             array(
@@ -433,17 +444,22 @@ class Audit extends CI_Controller {
         $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
         $this->form_validation->set_rules($config);
 
+        $data['ln_branch'] = $this->Audit_model->get_branchCode();
+
         if($this->form_validation->run() == FALSE) {
+
             $this->load->view("audit/assign_branch");
         } else {
             $input = array(
-                "emp_id"  => $this->input->post("emp_id"),
-                "branch_ids"  => $this->input->post("branch_ids")
+                "emp_id"  => $this->input->post(""),
+                "branch_ids"  => $this->input->post("")
             );
 
             $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
             $this->load->view("audit/assign_branch", $data);
         }
+        //$this->load->view("audit/assign_branch", $data);
+
 
     }
 

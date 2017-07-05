@@ -71,5 +71,11 @@ class Audit_model extends CI_Model
         }
     }
 
+    function get_branchCode()
+    {
+        $query = $this->db->query('SELECT * FROM "t_Branch"');
+        return $query->result_array();
+    }
+
 
 }
