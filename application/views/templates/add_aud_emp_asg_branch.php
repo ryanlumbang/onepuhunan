@@ -74,9 +74,7 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                     $employee_id =  array(
                         "id" => "employee_id",
                         "name" => "employee_id",
-                        "class" => "uk-width-large uk-form-small",
-                        "readonly" => "true",
-                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
+                        "class" => "uk-width-large uk-form-small"
 
                     );
                     echo form_input($employee_id);
@@ -92,46 +90,89 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                         "id" => "branch_id",
                         "name" => "branch_id",
                         "class" => "uk-width-large uk-form-small",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
                     );
                     echo form_input($role);
                     ?>
-
-                    <?php
-                    $branchID = array(
-                        "id" => "branchCode",
-                        "class" => "uk-width-large uk-form-small branchcode",
-                        "onchange" => "myFunction()"
-                    );
-                    foreach((array) $ln_branch as $row) {
-                        $options[$row["BranchCode"]] = $row["BranchCode"];
-                    }
-                    echo form_dropdown("branchCode", $options, set_value("branchCode"), $branchID);
-                    ?>
-
-
-                    <script>
-                        var counter=false;
-                        function myFunction() {
-                            var x = document.getElementById("branchCode");
-                            var y = document.getElementById("branch_id");
-                            var option = document.createElement("option");
-                            option.text = document.getElementById("branchCode").value;
-
-
-                            if(counter == false){
-                                y.value=option.text;
-                                counter=true;
-                            }else{
-                                y.value=y.value + ', ' + option.text;
-                            }
-
-                        }
-                        </script>
-
-
-
                 </div>
             </div>
+
+                <div class="uk-form-row uk-margin-small-bottom">
+                    <label class="uk-form-label uk-text-small uk-text-bold">Select Branch</label>
+                    <div class="uk-form-controls">
+
+                        <?php
+                        $branchID = array(
+                            "id" => "branchCode",
+                            "class" => "uk-width-large uk-form-small branchcode",
+                            "onchange" => "myFunction()"
+                        );
+                        foreach((array) $ln_branch as $row) {
+                            $options[$row["BranchCode"]] = $row["BranchCode"];
+                        }
+
+                        echo form_dropdown("branchCode", $options, set_value("branchCode"), $branchID);
+                        ?>
+
+                        <script>
+                            var counter=false;
+                            var temp_array = [];
+                            var status = '';
+                            function myFunction() {
+                                var x = document.getElementById("branchCode");
+                                var y = document.getElementById("branch_id");
+                                var option = document.createElement("option");
+                                option.text = document.getElementById("branchCode").value;
+
+
+                                for(var i=0; i < temp_array.length; i++){
+                                    var name = temp_array[i];
+
+                                    if(name == option.text){
+                                        status = 'Exist';
+                                        break;
+                                    }else{
+                                        status = '';
+                                    }
+                                }
+
+                                if(status == ''){
+                                    if(counter == false){
+                                        y.value=option.text;
+                                        counter=true;
+                                    }else{
+                                        y.value=y.value + ', ' + option.text;
+                                    }
+
+
+                                    temp_array.push(option.text);
+                                }
+                            }
+                        </script>
+
+                    </div>
+                </div>
+
+
+                <div class="uk-form-row uk-margin-small-bottom">
+                    <label class="uk-form-label uk-text-small uk-text-bold">Select Employee</label>
+                    <div class="uk-form-controls">
+                        <select name="empname" id="getEmpCode" class = "uk-width-large uk-form-small branchcode">
+                            <?php  foreach($ln_employee as $row): ?>
+                            <option value="<?php echo $row['fullname'];?>" data-emp_id="<?php echo $row['emp_id'];?>"><?php echo $row['fullname'];?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <script>
+                    $('#getEmpCode').change(function () {
+                        $('#employee_id').val($(this).find(':selected').data('emp_id'));
+                    });
+                </script>
+
+
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("audit/assign_branch"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>

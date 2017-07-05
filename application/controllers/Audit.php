@@ -427,7 +427,16 @@ class Audit extends CI_Controller {
     public function branch_handle() {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
-        $data['ln_branch'] = $this->Audit_model->get_branchCode();
+
+
+        $data = array(
+            "ln_branch"       => $this->Audit_model->get_branchCode(),
+            "ln_employee"      => $this->Audit_model->get_EmpployeeName()
+        );
+
+
+//        $data['ln_branch'] = $this->Audit_model->get_branchCode();
+//        $data['ln_employee'] = $this->Audit_model->get_EmpployeeName();
 
 
         $config = array(

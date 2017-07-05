@@ -85,6 +85,12 @@ class Audit_model extends CI_Model
         return $query->result_array();
     }
 
+    function get_EmpployeeName()
+    {
+        $query = $this->db->query("SELECT * FROM sp_aud_list_employee()");
+        return $query->result_array();
+    }
+
     function get_assign_branch(){
 
             $query = $this->db->query("SELECT * FROM sp_aud_branch_assign()");
