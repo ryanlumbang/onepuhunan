@@ -97,7 +97,9 @@ $route['sys/assign_role_id']    = "sys/assign_roles";
 $route['audit/audit_extraction']    ="audit/index";
 $route['audit/audit_import']    ="audit/import";
 $route['audit/aud_extraction_assign']   ="audit/assign_roles";
-$route['audit/assign_branch']   ="audit/branch_handle";
+$route['audit/assign_branch']   ="audit/branch_assign";
+$route['audit/assign_branch/update_aud_branch_handle']    = "audit/update_branch_assign";
+$route['audit/add']    = "audit/branch_handle";
 
 /* hr */
 //$route['hr/bulletin'] = 'hr/index';

@@ -468,6 +468,56 @@ $(document).ready(function() {
         ],
         order: [[ 0, 'asc' ]],
     });
+
+    var tbl_aud_assign_branch = $('#tbl_aud_assign_branch').DataTable({
+
+        'columns': [
+            {
+                'width': '10%',
+                'className': 'dt-center'
+            },
+            {
+                'width': '35%',
+                'className': 'uk-text-left'
+            },
+            {
+                'width': '10%',
+                'className': 'dt-center',
+                'searchable': false
+            },
+            {
+                'width': '35%',
+                'className': 'dt-center',
+                'searchable': false
+
+            },
+            {
+                'width': '10%',
+                'className': 'dt-center',
+                'searchable': false
+            },
+        ],
+
+        "oLanguage": { "sSearch": "" },
+        'iDisplayLength': 10,
+        'paging': true,
+        "bInfo" : true,
+        'dom': '<"toolbar">frtip',
+        'searching': true,
+        "bLengthChange": true,
+        columnDefs: [ {
+            orderable: false,
+            targets:   0
+        } ],
+        aoColumnDefs: [
+            {
+                bSortable: false,
+                aTargets: [ -1,-2 ,-3,-4]
+            }
+        ],
+        order: [[ 0, 'asc' ]],
+    });
+
     var tbl_pp = $('#tbl_pp').DataTable({
         "oLanguage": { "sSearch": "" },
         'searching': true,

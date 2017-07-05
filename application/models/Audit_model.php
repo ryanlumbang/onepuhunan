@@ -62,7 +62,15 @@ class Audit_model extends CI_Model
         return $query->result_array();
     }
 
-    public function set_branch_handle($input) {
+    public function set_branch_handle() {
+        $employee_id = $this->input->post("employee_id");
+        $branch_id = $this->input->post("branch_id");
+
+        $input = array(
+            "employee_id" => $employee_id,
+            "branch_id" =>  $branch_id
+        );
+
         $query = $this->db->query("SELECT sp_upd_assign_branch ( ?, ? )", $input);
         $row = $query->row();
 
@@ -75,6 +83,13 @@ class Audit_model extends CI_Model
     {
         $query = $this->db->query('SELECT * FROM "t_Branch"');
         return $query->result_array();
+    }
+
+    function get_assign_branch(){
+
+            $query = $this->db->query("SELECT * FROM sp_aud_branch_assign()");
+            return $query->result_array();
+
     }
 
 

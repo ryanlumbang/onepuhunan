@@ -19,94 +19,59 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
         <section id="main-section">
 
 
-            <div class="uk-container table-wrap op-container tc-container">  <!-- Modal HTML embedded directly into document -->
-                <div class="uk-container uk-width-5-10 uk-container-center">
-                <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
-                <legend class="uk-text-muted uk-text-bold tm-form-legend">BRANCH HANDLE</legend>
-                <?php echo validation_errors(); ?>
+            <div class="uk-container table-wrap op-container tc-container">
+
+                <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE BRANCH HANDLE</h1></div>
+                <div>
+                    <a href="<?php echo site_url("audit/add"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW EMPLOYEE</span></button> </a>
+                </div>
+
+
                 <?php
-
-                $employee_id = $this->input->post("emp_id");
-                $branch_ids = $this->input->post("branch_ids");
-
-                if ( isset($sp_upd_assign_branch) ) {
-                    switch( $sp_upd_assign_branch) {
-                        case 1:
-                            echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
-                                . "      <span>"
-                                .           "<big class='uk-text-bold'>Authentication Failed</big><br>"
-                                .           "Sorry, we couldn't assign Branch in that Employee"
-                                . "      </span>"
-                                . "   </div>";
-                            break;
-                        default:
-                            echo "<div class='uk-alert uk-alert-success uk-text-small uk-text-justify' data-uk-alert>"
-                                . "      <span>"
-                                .           "<big class='uk-text-bold'>Branch Successfully Assign.!</big><br>"
-                                .           "Employee ".$employee_id." has now handled branch of the following: "
-                                .            $branch_ids
-                                . "      </span>"
-                                . "   </div>";
-                            break;
-                    }
+                $msg = $this->session->flashdata('message');
+                if( !$msg == '' ) {
+                    $flashdata = '<div class="uk-alert uk-alert-success los-alert" data-uk-alert>'
+                        . '<p class="uk-margin-bottom-remove">' . $msg . '</p>'
+                        . '</div>';
+                    echo $flashdata;
                 }
                 ?>
-                <br/>
-                <div class="uk-form-row tm-label">
-                    <label class="uk-text-small">
-                        Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
-                        Once completed, please select the <b>"Update"</b> button.
-                    </label>
-                </div>
-                <div class="uk-form-row">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Employee ID <span class="tm-required-label">*</span></label>
-                    <div class="uk-form-controls">
-                        <?php
-                        $emp_id =  array(
-                            "id" => "emp_id",
-                            "name" => "emp_id",
-                            "value" => set_value("emp_id"),
-                            "class" => "uk-width-large uk-form-small",
-                            "placeholder" => "Please enter employee id."
-                        );
-                        echo form_input($emp_id);
-                        ?>
-                    </div>
-                </div>
-                <div class="uk-form-row">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Branch ID's <span class="tm-required-label">*</span></label>
-                    <div class="uk-form-controls">
-                        <?php
-                        $branch_ids = array(
-                            "id" => "branch_ids",
-                            "name" => "branch_ids",
-                            "value" => set_value("branch_ids"),
-                            "class" => "uk-width-large uk-form-small",
-                            "placeholder" => "Please enter branch id's."
-                        );
-                        echo form_input($branch_ids);
-                        ?>
 
-                        <?php
-                        $branchID = array(
-                            "id" => "branchCode",
-                            "class" => "branchcode"
-                        );
-                        foreach((array) $ln_branch as $row) {
-                            $options[$row["BranchCode"]] = $row["BranchCode"];
-                        }
-                        echo form_dropdown("branchCode", $options, set_value("branchCode"), $branchID);
-                        ?>
+                <script>
+                    $(document).ready(function(){
+                        setTimeout(function() {
+                            $('.uk-alert').fadeOut('fast');
+                        }, 10000); // <-- time in milliseconds
+                    });
+                </script>
 
+                <table id="tbl_aud_assign_branch" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
+                    <thead class="css3gradient">
+                    <tr>
+                        <th>EMPLOYEE ID</th>
+                        <th>NAME</th>
+                        <th>JOB  TITLE</th>
+                        <th>BRANCH HANDLE</th>
+                        <th>ACTION</th>
+                    </tr>
+                    </thead>
 
-                    </div>
-                </div>
-                <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                    <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
-                    <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                </div>
-                <?=form_close();?>
-            </div>
+                    <?php
+
+                    foreach((array) $query as $row) { ?>
+                        <tr class="modal-update">
+                            <td> <?php echo $row['emp_id'] ?> </td>
+                            <td> <?php echo $row['fullname'] ?> </td>
+                            <td> <?php echo $row['job_title'] ?> </td>
+                            <td> <?php echo $row['branch_ids'] ?> </td>
+<!--                            <td> EDIT </td>-->
+                            <td>  <a href="<?php echo site_url("audit/assign_branch/update_aud_branch_handle?emp_id=".$row['emp_id']."&branch_ids=".$row['branch_ids']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" > <i class="uk-icon-edit"></i> EDIT </a></td>
+                        </tr>
+                    <?php   }
+
+                    ?>
+
+                </table>
             </div>
         </section>
         <?php $this->load->view("templates/footer"); ?>

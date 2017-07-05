@@ -414,12 +414,20 @@ class Audit extends CI_Controller {
         $this->load->view("audit/assign_branch", $data);
     }
 
+    public function branch_assign() {
+        $this->load->model("Audit_model");
+
+        $data["query"] = $this->Audit_model->get_assign_branch();
+
+        $this->load->view("audit/assign_branch", $data);
+    }
+
 
 
     public function branch_handle() {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
-
+        $data['ln_branch'] = $this->Audit_model->get_branchCode();
 
 
         $config = array(
@@ -444,11 +452,9 @@ class Audit extends CI_Controller {
         $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
         $this->form_validation->set_rules($config);
 
-        $data['ln_branch'] = $this->Audit_model->get_branchCode();
-
         if($this->form_validation->run() == FALSE) {
 
-            $this->load->view("audit/assign_branch");
+            $this->load->view("templates/add_aud_emp_asg_branch", $data);
         } else {
             $input = array(
                 "emp_id"  => $this->input->post(""),
@@ -456,12 +462,51 @@ class Audit extends CI_Controller {
             );
 
             $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
-            $this->load->view("audit/assign_branch", $data);
+            $this->load->view("templates/add_aud_emp_asg_branch", $data);
         }
         //$this->load->view("audit/assign_branch", $data);
 
 
     }
+
+
+    public function update_branch_assign() {
+        $this->load->library("form_validation");
+        $this->load->model("Audit_model");
+        $data['ln_branch'] = $this->Audit_model->get_branchCode();
+        $employee_name = $this->input->post("employee_name");
+
+        $header = "Branch Handle Successfully Update!";
+        $content = "You have successfully changed the Branches Handle of ".$employee_name;
+
+        $config = array(
+            array(
+                "field" => "branch_id",
+                "label" => "branch_id",
+                "rules" => "trim|required",
+                "errors" => array(
+                    "required" => "<big class='uk-text-bold'>Required Field</big><br>The <b>\"%s\"</b> field is required."
+                )
+            )
+        );
+
+        $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
+        $this->form_validation->set_rules($config);
+        $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
+
+        if($this->form_validation->run() == FALSE) {
+            $this->load->view("templates/update_aud_branch_handle", $data);
+        } else {
+            $input = array(
+                "branch_id"  => $this->input->post("branch_id")
+            );
+
+            $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
+            $this->load->view("templates/update_aud_branch_handle", $data);
+        }
+
+    }
+
 
 
     public function get_audit_result(){
