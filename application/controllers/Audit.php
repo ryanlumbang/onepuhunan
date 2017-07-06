@@ -428,20 +428,19 @@ class Audit extends CI_Controller {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
 
+        $employee_name = $this->input->post("employee_name");
+
+        $header = "Branch Handle Successfully Added!";
+        $content = "You have successfully Assigned the Branches Handle of ".$employee_name;
 
         $data = array(
             "ln_branch"       => $this->Audit_model->get_branchCode(),
             "ln_employee"      => $this->Audit_model->get_EmpployeeName()
         );
 
-
-//        $data['ln_branch'] = $this->Audit_model->get_branchCode();
-//        $data['ln_employee'] = $this->Audit_model->get_EmpployeeName();
-
-
         $config = array(
             array(
-                "field" => "emp_id",
+                "field" => "employee_id",
                 "label" => "Employee Id",
                 "rules" => "trim|required",
                 "errors" => array(
@@ -449,7 +448,7 @@ class Audit extends CI_Controller {
                 )
             ),
             array(
-                "field" => "branch_ids",
+                "field" => "branch_id",
                 "label" => "Branch Ids",
                 "rules" => "trim|required",
                 "errors" => array(
@@ -471,6 +470,7 @@ class Audit extends CI_Controller {
             );
 
             $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
+            $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
             $this->load->view("templates/add_aud_emp_asg_branch", $data);
         }
         //$this->load->view("audit/assign_branch", $data);
@@ -501,7 +501,6 @@ class Audit extends CI_Controller {
 
         $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
         $this->form_validation->set_rules($config);
-        $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
 
         if($this->form_validation->run() == FALSE) {
             $this->load->view("templates/update_aud_branch_handle", $data);
@@ -511,6 +510,7 @@ class Audit extends CI_Controller {
             );
 
             $data["sp_upd_assign_branch"] = $this->Audit_model->set_branch_handle($input);
+            $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
             $this->load->view("templates/update_aud_branch_handle", $data);
         }
 

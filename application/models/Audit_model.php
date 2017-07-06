@@ -44,21 +44,17 @@ class Audit_model extends CI_Model
         return $query->result_array();
     }
 
-    public function set_audit_excel() {
-
-
-    }
-
     function get_userAccount()
     {
-        $query = $this->db->query("SELECT * FROM sp_assign_branch()");
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_assign_branch()");
         return $query->result_array();
     }
 
 
     public function get_ln_branch() {
-
-        $query = $this->db->query("SELECT * FROM sp_sample_usr(?)" , $this->session->emp_id);
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_usr_assign_branch(?)" , $this->session->emp_id);
         return $query->result_array();
     }
 
@@ -71,7 +67,8 @@ class Audit_model extends CI_Model
             "branch_id" =>  $branch_id
         );
 
-        $query = $this->db->query("SELECT sp_upd_assign_branch ( ?, ? )", $input);
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT sp_upd_assign_branch ( ?, ? )", $input);
         $row = $query->row();
 
         if( isset($row) ) {
@@ -93,7 +90,8 @@ class Audit_model extends CI_Model
 
     function get_assign_branch(){
 
-            $query = $this->db->query("SELECT * FROM sp_aud_branch_assign()");
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_aud_branch_assign()");
             return $query->result_array();
 
     }

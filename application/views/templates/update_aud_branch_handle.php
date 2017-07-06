@@ -106,6 +106,7 @@ $data['title'] = 'OnePuhunan Service Portal | Update Branch Handle';
             <div class="uk-form-row uk-margin-small-bottom">
                 <label class="uk-form-label uk-text-small uk-text-bold">Assign Branch<span class="tm-required-label">*</span></label>
                 <div class="uk-form-controls">
+                    <div style="position: relative;"><i class="uk-icon-times-circle" style="position: absolute; top: 0px; bottom: 0; right: 0; margin-right: 5px; margin-top: 6px;" id="clear"></i></div>
                     <?php
                     $role =  array(
                         "id" => "branch_id",
@@ -117,6 +118,7 @@ $data['title'] = 'OnePuhunan Service Portal | Update Branch Handle';
                     );
                     echo form_input($role);
                     ?>
+
                 </div>
             </div>
 
@@ -135,13 +137,13 @@ $data['title'] = 'OnePuhunan Service Portal | Update Branch Handle';
                         }
 
                         echo form_dropdown("branchCode", $options, set_value("branchCode"), $branchID);
-                        echo form_input($row["BranchName"]);
                         ?>
 
 
                         <script>
-                            var counter=false;
-                            var temp_array = [];
+                            var string = "<?php echo $_GET["branch_ids"]; ?>";
+                            var array = string.split(', ');
+                            var temp_array = array;
                             var status = '';
                             function myFunction() {
                                 var x = document.getElementById("branchCode");
@@ -162,17 +164,21 @@ $data['title'] = 'OnePuhunan Service Portal | Update Branch Handle';
                                 }
 
                                 if(status == ''){
-                                    if(counter == false){
+                                    if(temp_array.length == 0){
                                         y.value=option.text;
-                                        counter=true;
                                     }else{
                                         y.value=y.value + ', ' + option.text;
                                     }
-
-
-                                    temp_array.push(option.text);
                                 }
+
+                                temp_array.push(option.text);
                             }
+
+                            $("#clear").click(function () {
+                                $('#branch_id').val('');
+                                temp_array=[];
+                            });
+
                         </script>
 
                     </div>

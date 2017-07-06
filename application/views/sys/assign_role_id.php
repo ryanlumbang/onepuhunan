@@ -41,6 +41,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 });
             </script>
 
+            <div>
+                <a href="<?php echo site_url("sys/add_role_id"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW ROLE</span></button> </a>
+            </div>
+
             <table id="tbl_rid" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
                 <thead class="css3gradient">
                 <tr>

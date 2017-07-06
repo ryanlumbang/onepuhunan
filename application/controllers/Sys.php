@@ -179,7 +179,6 @@
 
             $this->form_validation->set_error_delimiters("<div class='uk-alert uk-alert-danger uk-text-small' data-uk-alert>", "</div>");
             $this->form_validation->set_rules($config);
-            $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
 
             if($this->form_validation->run() == FALSE) {
                 $this->load->view("templates/update_role_id");
@@ -189,6 +188,7 @@
             );
 
                 $data["sp_upd_role_id"] = $this->System_model->update_role_id($input);
+                $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
                 $this->load->view("templates/update_role_id", $data);
             }
 
@@ -198,6 +198,11 @@
 
             $this->load->library("form_validation");
             $this->load->model("System_model");
+
+            $role_name = $this->input->post("role_name");
+
+            $header = "Role ID Successfully Added";
+            $content = "Role ID for ".$role_name." has been added in the database.";
 
             $config = array(
                 array(
@@ -230,6 +235,7 @@
                 );
 
                 $data["sp_add_role_id"] = $this->System_model->set_role_id($input);
+                $this->session->set_flashdata('message', '<i class="uk-icon-check-circle-o uk-icon-medium"></i>&nbsp;&nbsp;' . $header . '<br><small>' . $content . '</small>');
                 $this->load->view("sys/add_role_id", $data);
             }
         }

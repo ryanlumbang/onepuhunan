@@ -25,7 +25,6 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
             <div class="op-title"><h1><i class="uk-icon-tags"></i> ADD ROLE ID</h1></div>
             <?php echo validation_errors(); ?>
             <?php
-            $role_name = $this->input->post("role_name");
 
             if ( isset($sp_add_role_id) ) {
                 switch( $sp_add_role_id) {
@@ -38,12 +37,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
                             . "   </div>";
                         break;
                     default:
-                        echo "<div class='uk-alert uk-alert-success uk-text-small uk-text-justify' data-uk-alert>"
-                            . "      <span>"
-                            .           "<big class='uk-text-bold'>Role Successfull Added.!</big><br>"
-                            .           "Role ".$role_name." are now available in Login Roles."
-                            . "      </span>"
-                            . "   </div>";
+                        redirect(base_url()."sys/assign_role_id");
                         break;
                 }
             }
@@ -89,7 +83,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
                     </div>
                 </div>
 
-                <div class="uk-form-row uk-margin-small-bottom">
+                <div class="uk-form-row uk-margin-small-bottom" style="display: none;">
                     <label class="uk-form-label uk-text-small uk-text-bold">Date Added<span class="tm-required-label">*</span></label>
                     <div class="uk-form-controls">
                         <?php
@@ -108,7 +102,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
 
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                     <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">ADD Role</button>
-                    <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
                 </div>
                 <?=form_close();?>
 

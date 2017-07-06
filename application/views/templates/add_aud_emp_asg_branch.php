@@ -47,27 +47,29 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                     Once completed, please select the <b>"ADD"</b> button.
                 </label>
             </div>
-            <div class="uk-form-row">
-<!---->
-<!--                <div class="uk-form-row">-->
-<!--                    <label class="uk-form-label uk-text-small uk-text-bold">Employee Name</label>-->
-<!--                    <div class="uk-form-controls">-->
-<!--                        --><?php
-//                        $employee_name =  array(
-//                            "id" => "employee_name",
-//                            "name" => "employee_name",
-//                            "value" =>  $_GET["fullname"],
-//                            "class" => "uk-width-large uk-form-small",
-//                            "readonly" => "true",
-//                            "style"=>"background-color: #faffbd; border: 1px solid #ddd"
-//
-//                        );
-//                        echo form_input($employee_name);
-//                        ?>
-<!--                    </div>-->
-<!--                </div>-->
 
             <div class="uk-form-row">
+
+            <div class="uk-form-row uk-margin-small-bottom">
+                    <label class="uk-form-label uk-text-small uk-text-bold">Select Employee</label>
+                    <div class="uk-form-controls">
+                        <select name="empname" id="getEmpCode" class = "uk-width-large uk-form-small branchcode">
+                            <option value="" disabled selected hidden></option>
+                            <?php  foreach($ln_employee as $row): ?>
+                                <option value="<?php echo $row['fullname'];?>" data-emp_id="<?php echo $row['emp_id'];?>"><?php echo $row['fullname'];?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+            </div>
+
+                <script>
+                    $('#getEmpCode').change(function () {
+                        $('#employee_id').val($(this).find(':selected').data('emp_id'));
+                    });
+                </script>
+
+
+            <div class="uk-form-row" style="margin-top: 15px;">
                 <label class="uk-form-label uk-text-small uk-text-bold">Employee ID<span class="tm-required-label">*</span></label>
                 <div class="uk-form-controls">
                     <?php
@@ -85,13 +87,12 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
             <div class="uk-form-row uk-margin-small-bottom">
                 <label class="uk-form-label uk-text-small uk-text-bold">Assign Branch<span class="tm-required-label">*</span></label>
                 <div class="uk-form-controls">
+                    <div style="position: relative;"><i class="uk-icon-times-circle" style="position: absolute; top: 0px; bottom: 0; right: 0; margin-right: 5px; margin-top: 6px;" id="clear"></i></div>
                     <?php
                     $role =  array(
                         "id" => "branch_id",
                         "name" => "branch_id",
-                        "class" => "uk-width-large uk-form-small",
-                        "readonly" => "true",
-                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
+                        "class" => "uk-width-large uk-form-small"
                     );
                     echo form_input($role);
                     ?>
@@ -149,29 +150,16 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                                     temp_array.push(option.text);
                                 }
                             }
+
+                            $("#clear").click(function () {
+                                $('#branch_id').val('');
+                                temp_array=[];
+                            });
+
                         </script>
 
                     </div>
                 </div>
-
-
-                <div class="uk-form-row uk-margin-small-bottom">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Select Employee</label>
-                    <div class="uk-form-controls">
-                        <select name="empname" id="getEmpCode" class = "uk-width-large uk-form-small branchcode">
-                            <?php  foreach($ln_employee as $row): ?>
-                            <option value="<?php echo $row['fullname'];?>" data-emp_id="<?php echo $row['emp_id'];?>"><?php echo $row['fullname'];?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-
-                <script>
-                    $('#getEmpCode').change(function () {
-                        $('#employee_id').val($(this).find(':selected').data('emp_id'));
-                    });
-                </script>
-
 
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>

@@ -22,9 +22,6 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
             <div class="uk-container table-wrap op-container tc-container">
 
                 <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE BRANCH HANDLE</h1></div>
-                <div>
-                    <a href="<?php echo site_url("audit/add"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW EMPLOYEE</span></button> </a>
-                </div>
 
 
                 <?php
@@ -44,6 +41,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
                         }, 10000); // <-- time in milliseconds
                     });
                 </script>
+
+                <div>
+                    <a href="<?php echo site_url("audit/add"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW EMPLOYEE</span></button> </a>
+                </div>
 
                 <table id="tbl_aud_assign_branch" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
                     <thead class="css3gradient">
