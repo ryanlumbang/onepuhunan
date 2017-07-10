@@ -13,7 +13,6 @@
    <link rel="stylesheet" href="<?=base_url()?>css/custom.css">
    <link rel="stylesheet" href="<?=base_url()?>css/general.css">
    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>css/audit_extract.css">
 
        
    <?php 
@@ -36,5 +35,5 @@
    
    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
    <script src="<?=base_url()?>js/custom.js"></script>
-    <script src="<?=base_url()?>js/audit_extract.js"></script>
+
 </head>

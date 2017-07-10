@@ -178,7 +178,6 @@ $data['title'] = 'OnePuhunan Service Portal | Update Branch Handle';
                                 $('#branch_id').val('');
                                 temp_array=[];
                             });
-
                         </script>
 
                     </div>

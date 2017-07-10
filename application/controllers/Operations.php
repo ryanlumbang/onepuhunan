@@ -78,7 +78,8 @@
         public function los_info() {
             $this->load->model("Operations_model");
             $input = $this->uri->segment(6);
-            
+
+
             $data = array(
                 "cl_info"       => $this->Operations_model->get_los_laf_details($input),
                 "cl_asset"      => $this->Operations_model->get_los_laf_asset_liabilities($input),
@@ -89,7 +90,6 @@
                 "cl_tc_display" => $this->Operations_model->get_los_laf_tc_display($input),
                 "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input)
             );
-
             $this->load->view("operations/los_info", $data);
         }
                 
@@ -204,6 +204,8 @@
             $this->load->library("form_validation");
             $this->load->model("Operations_model");
 
+            $data['ln_branch'] = $this->Operations_model->get_branchCode();
+
             $config = array(
                 array(
                     "field" => "emp_id",
@@ -227,7 +229,7 @@
             $this->form_validation->set_rules($config);
 
             if($this->form_validation->run() == FALSE) {
-                $this->load->view("operations/branch_handle");
+                $this->load->view("operations/branch_handle", $data);
             } else {
                 $input = array(
                     "emp_id"  => $this->input->post("emp_id"),

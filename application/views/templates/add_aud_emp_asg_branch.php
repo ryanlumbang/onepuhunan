@@ -76,7 +76,9 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                     $employee_id =  array(
                         "id" => "employee_id",
                         "name" => "employee_id",
-                        "class" => "uk-width-large uk-form-small"
+                        "class" => "uk-width-large uk-form-small",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
                     );
                     echo form_input($employee_id);
@@ -92,7 +94,9 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                     $role =  array(
                         "id" => "branch_id",
                         "name" => "branch_id",
-                        "class" => "uk-width-large uk-form-small"
+                        "class" => "uk-width-large uk-form-small",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
                     );
                     echo form_input($role);
                     ?>
@@ -117,7 +121,6 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                         ?>
 
                         <script>
-                            var counter=false;
                             var temp_array = [];
                             var status = '';
                             function myFunction() {
@@ -139,30 +142,27 @@ $data['title'] = 'OnePuhunan Service Portal | Add Employee Branch Handle';
                                 }
 
                                 if(status == ''){
-                                    if(counter == false){
+                                    if(temp_array.length == 0){
                                         y.value=option.text;
-                                        counter=true;
                                     }else{
                                         y.value=y.value + ', ' + option.text;
                                     }
-
-
-                                    temp_array.push(option.text);
                                 }
+
+                                temp_array.push(option.text);
                             }
 
                             $("#clear").click(function () {
                                 $('#branch_id').val('');
                                 temp_array=[];
                             });
-
                         </script>
 
                     </div>
                 </div>
 
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
+                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Add</button>
                 <a href="<?php echo site_url("audit/assign_branch"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
             </div>
             <?=form_close();?>

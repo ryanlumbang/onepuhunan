@@ -26,7 +26,7 @@ class Audit_model extends CI_Model
         );
 
         if( trim($branch) != "") {
-            $query = $this->db->query("SELECT * FROM sp_audit_extract_data( ?, ?, ?)", $input);
+            $query = $this->db->query("SELECT * FROM sp_zyz( ?, ?, ?)", $input);
             return $query->result_array();
         }
 
