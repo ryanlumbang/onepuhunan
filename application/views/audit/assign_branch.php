@@ -1,5 +1,5 @@
 <?php
-$data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
+$data['title'] = 'OnePuhunan Service Portal | Manage Branch Hanndle';
 ?>
 <!DOCTYPE html>
 <html lang="en">
