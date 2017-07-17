@@ -431,7 +431,26 @@ class Audit extends CI_Controller {
         $this->load->view("audit/assign_branch", $data);
     }
 
+    public function aud_client() {
+        $this->load->model("Audit_model");
+        $data['ln_branch'] = $this->Audit_model->get_ln_branch();
 
+        $this->load->view("audit/aud_client", $data);
+    }
+
+    public function client() {
+        $this->load->model("Audit_model");
+        $data['query'] = $this->Audit_model->get_client($this->uri->segment(3));
+
+        $this->load->view("audit/client", $data);
+    }
+
+    public function aud_info() {
+        $this->load->model("Audit_model");
+
+        $data['query'] = $this->Audit_model->get_client_info($this->uri->segment(3));
+        $this->load->view("audit/aud_info", $data);
+    }
 
     public function branch_handle() {
         $this->load->library("form_validation");
@@ -487,7 +506,6 @@ class Audit extends CI_Controller {
 
     }
 
-
     public function update_branch_assign() {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
@@ -524,7 +542,6 @@ class Audit extends CI_Controller {
         }
 
     }
-
 
 
     public function get_audit_result(){

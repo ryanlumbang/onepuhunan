@@ -1,31 +1,48 @@
 <?php
-    $data['title'] = 'OnePuhunan Service Portal | Registration Request';
-    header("Cache-Control: max-age=0, must-revalidate");
-    ?>
+$data['title'] = 'OnePuhunan Service Portal | Manage Client';
+?>
 <!DOCTYPE html>
 <html lang="en">
-<?php $this->load->view("templates/head", $data); ?>
-<body>
-    <?php $this->load->view("templates/header"); ?>
-    <div class="page-wrap">
+<?php $this->load->view("templates/op-head", $data); ?>
+<body id="losbody">
+<div id="page">
+    <div id="page-wrapper">
+        <?php $this->load->view("templates/op-header"); ?>
         <?php $this->load->view("templates/subheader"); ?>
-
-        <div class="uk-container uk-width-5-10 uk-container-center">
-            <div class="uk-form" style="padding-top: 5%;">
-
-                <div class="uk-alert uk-alert-danger uk-margin-large-top text-align">
-                    <span class="error">ERROR 404!<span>
-                            <br/>
-                    <span class="error-text">Access is Forbidden!<span>
-
+        <div class="header-bg">
+            <div class="header-banner">
+                <div class="uk-container op-container">
+                    <h2>ACCESS IS FORBIDDEN</h2>
                 </div>
-
-                <div class="uk-form text-align">
-                    <a href="<?=base_url()?>" class="uk-button uk-button-default uk-width-3-10 uk-margin-small-top">Back to Homepage</a>
-                </div>
-
             </div>
         </div>
+        <section id="main-section">
+            <div class="uk-container table-wrap op-container tc-container">
+
+                <div class="op-title"><h1><i class="uk-icon-tags"></i> NO USER ACCESS ON THIS PAGE!</h1></div>
+                <div class="uk-container uk-width-5-10 uk-container-center">
+                    <div class="uk-form-row">
+
+                        <div class="uk-alert uk-alert-danger text-align" style="margin-top: 5%;">
+                            <span class="error">ERROR 404!<span>
+                                    <br/>
+                            <span class="error-text">Access is Forbidden!<span>
+                        </div>
+
+                        <div class="tm-label uk-margin-small-bottom" style="text-align: center;">
+                            <label class="uk-text-small">
+                                Contact System Administration <b>IT APPLICATION SUPPORT 01</b>.
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="uk-form-row uk-text-center uk-margin-small-top uk-margin-small-bottom">
+                    <a href="<?=base_url()?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                </div>
+
+        </section>
 
         <style>
 
@@ -43,45 +60,9 @@
             }
         </style>
 
+        <?php $this->load->view("templates/footer"); ?>
     </div>
-
-    <div class="overlay">
-        <div class="modelBox">
-            <div class="modal-header">
-                <h2 class="header">LOADING DATA!</h2>
-            </div>
-
-            <div class="modal-header-done">
-                <h2 class="header">SUCCESS!</h2>
-            </div>
-
-            <div class="modal-body">
-                                                    <span class ="modal-body-text">
-                                                        <div class="extraction-success">
-                                                            <div class="loading">
-                                                                <img src="<?=base_url()?>img/system_png/loader.gif" class="loader"/>
-                                                                <p class="dot text-loading">Please Wait <span>.</span><span>.</span><span>.</span></p>
-                                                            </div>
-                                                        </div>
-
-                                                         <div class="extraction-done">
-                                                                <div class="loading">
-                                                                    <img src="<?=base_url()?>img/system_png/done.gif" class="icon-done"/>
-                                                                </div>
-                                                         </div>
-
-                                                    </span>
-            </div>
-            <div class="modal-footer">
-                <button class="uk-button uk-button-success footer close">
-                    <a href="<?php echo site_url("audit/index"); ?>" style="text-decoration: none; color: white;">OK</a>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <?php $this->load->view("templates/footer"); ?>
+</div>
+<div id="loading"></div>
 </body>
 </html>
-
-

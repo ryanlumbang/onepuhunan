@@ -98,8 +98,11 @@ $route['audit/audit_extraction']    ="audit/index";
 $route['audit/audit_import']    ="audit/import";
 $route['audit/aud_extraction_assign']   ="audit/assign_roles";
 $route['audit/assign_branch']   ="audit/branch_assign";
+$route['audit/aud_client']   ="audit/aud_client";
 $route['audit/assign_branch/update_aud_branch_handle']    = "audit/update_branch_assign";
 $route['audit/add']    = "audit/branch_handle";
+$route['audit/client/(:num)']    = "audit/client/$1";
+$route['audit/client_info/(:any)']    = "audit/aud_info/$1";
 
 /* hr */
 //$route['hr/bulletin'] = 'hr/index';

@@ -23,7 +23,7 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
 
             <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
 
-                <form class="uk-form uk-form-horizontal"  method="post" action="<?php echo site_url("audit/csv"); ?>">
+                <form class="uk-form uk-form-horizontal"  method="post" action="<?php echo site_url("audit/csv"); ?>" target="_blank">
                     <div class="op-title"><h1><i class="uk-icon-tags"></i> EXTRACT OF RAW DATA</h1></div>
                     <br/>
                     <div class="uk-form-row tm-label">
@@ -110,10 +110,21 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
                         <input type="text" name="hidden_date" id="text" placeholder="" style="display: none;">
                         <input type="text" name="branch_code" id="branch_code" placeholder="" style="display: none;">
 
+                        <script>
+                            $(document).ready(function () {
+                                var branch = document.getElementById("branchcode").value;
+
+                                document.getElementById("branch_code").value = branch;
+                            });
+
+                        </script>
+
                         <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
                             <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Extract</button>
                             <a href="<?php echo site_url("aud_dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
                         </div>
+
+                    </div>
                 </form>
 
             </div>
@@ -145,20 +156,35 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
                         return xhr;
                     },
                     type: 'POST',
-                    url: "/",
-                    data: {},
+                    url: "<?php echo site_url("audit/csv"); ?>",
+                    data: $('form').serialize(),
                     success: function(data){
+                        console.log(data)
                         //Do something success-ish
                     }
                 });
             }
         </script>
+
         <?php $this->load->view("templates/footer"); ?>
     </div>
+
 </div>
 <div id="loading"></div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

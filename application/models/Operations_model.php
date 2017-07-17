@@ -170,6 +170,18 @@
             return $query->result_array();
         }
 
+        public function get_bmv_remarks() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date_bmv_remarks");
+            $edate = $this->input->post("end_date_bmv_remarks");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_remarks( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");
@@ -193,6 +205,18 @@
                 "sdate" =>  $sdate
             );
             $query = $los_db->query("SELECT * FROM sp_report_tc_call( ?)", $input);
+            return $query->result_array();
+        }
+
+        public function get_kyc_rvrt() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date_rvrt");
+            $edate = $this->input->post("end_date_rvrt");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_kyc_rvrtd_applctn( ?, ?)", $input);
             return $query->result_array();
         }
 

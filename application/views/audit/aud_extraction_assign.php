@@ -23,7 +23,7 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
 
             <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
 
-                <form class="uk-form uk-form-horizontal"  method="post" action="<?php echo site_url("audit/csv"); ?>">
+                <form class="uk-form uk-form-horizontal"  method="post" action="<?php echo site_url("audit/csv"); ?>" target="_blank">
                     <div class="op-title"><h1><i class="uk-icon-tags"></i> EXTRACT OF RAW DATA</h1></div>
                     <br/>
                     <div class="uk-form-row tm-label">
