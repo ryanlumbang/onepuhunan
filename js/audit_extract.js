@@ -92,12 +92,20 @@ function branchList()
 
 }
 
-$(document).ready(function()
+// $(document).ready(function()
+// {
+//     var branch = document.getElementById("branchCode").value;
+//
+//     document.getElementById("branch_code").value = branch;
+// });
+
+function branch_list()
 {
-    var branch = document.getElementById("branchCode").value;
+    var branch = document.getElementById("branchcode").value;
 
     document.getElementById("branch_code").value = branch;
-});
+
+}
 
 //END FOR EXPORT VALIDATION FOR MONTH
 

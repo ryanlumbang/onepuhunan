@@ -26,7 +26,7 @@ class Audit_model extends CI_Model
         );
 
         if( trim($branch) != "") {
-            $query = $this->db->query("SELECT * FROM sp_audit_extract_data( ?, ?, ?)", $input);
+            $query = $this->db->query("SELECT * FROM sp_zyz( ?, ?, ?)", $input);
             return $query->result_array();
         }
 
@@ -84,7 +84,8 @@ class Audit_model extends CI_Model
 
     function get_EmpployeeName()
     {
-        $query = $this->db->query("SELECT * FROM sp_aud_list_employee()");
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_aud_list_employee()");
         return $query->result_array();
     }
 
@@ -93,6 +94,22 @@ class Audit_model extends CI_Model
         $aud_db = $this->load->database("Audit", true);
         $query = $aud_db->query("SELECT * FROM sp_aud_branch_assign()");
             return $query->result_array();
+
+    }
+
+    function get_client($brnchID){
+
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_aud_client(?)",$brnchID);
+        return $query->result_array();
+
+    }
+
+    function get_client_info($accountid){
+
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_aud_client_info(?)",$accountid);
+        return $query->result_array();
 
     }
 

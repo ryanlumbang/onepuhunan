@@ -10,7 +10,14 @@ class Audit extends CI_Controller {
 
     public function index() {
         $this->load->model("Audit_model");
-        $data["query"] = $this->Audit_model->get_branch_list();
+
+        $data = array(
+            "ln_branch"       => $this->Audit_model->get_branchCode(),
+            "query"      => $this->Audit_model->get_branch_list()
+        );
+
+
+//        $data["query"] = $this->Audit_model->get_branch_list();
         $this->load->view("audit/audit_extraction", $data);
 
     }
@@ -245,8 +252,7 @@ class Audit extends CI_Controller {
 
             $row++;
         }
-//        $this->session->set_flashdata('message', 'Data are imported successfully..');
-//        redirect('audit');
+
         $filename = "Audit - Loan Portfolio as of EOD ".$date."(".$branch.")".'.xls';
         $objPHPExcel->getActiveSheet()->setTitle("AUDIT_EXTRACTED");
         header('Content-type:application/
@@ -256,8 +262,11 @@ class Audit extends CI_Controller {
 
         $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
         ob_end_clean();
+//        $this->session->set_flashdata('message', 'Data are imported successfully..');
+//        redirect('audit');
+        if($writer->save('php://output')){
 
-        $writer->save('php://output');
+        }
         exit;
 
     }
@@ -346,7 +355,7 @@ class Audit extends CI_Controller {
                 <div class="overlay">
                     <div class="modelBox">
                             <div class="modal-header">
-                                <h2 class="header">SUCCESS!</h2>
+                                <h2 class="header-aud">SUCCESS!</h2>
                             </div>
                             <div class="modal-body">
                                 <span class ="modal-body-text">                                    
@@ -358,7 +367,7 @@ class Audit extends CI_Controller {
                                 </span>
                             </div>
                         <div class="modal-footer">
-                            <button class="uk-button uk-button-success footer close">OK</button>
+                            <a href="../aud_dashboard" class="uk-button uk-button-success footer-aud close">OK</a>
                         </div>
                         </div>
                 </div>
@@ -374,7 +383,7 @@ class Audit extends CI_Controller {
                 <div class="overlay">
                     <div class="modelBox">
                             <div class="modal-header">
-                                <h2 class="header">ERROR!</h2>
+                                <h2 class="header-aud">ERROR!</h2>
                             </div>
                             <div class="modal-body">
                                 <span class ="modal-body-text">
@@ -385,7 +394,7 @@ class Audit extends CI_Controller {
                                 </span>
                             </div>
                         <div class="modal-footer">
-                            <button class="uk-button uk-button-danger footer close">OK</button>
+                            <a href="../aud_dashboard" class="uk-button uk-button-danger footer-aud close">OK</a>
                         </div>
                         </div>
                 </div>
@@ -422,7 +431,26 @@ class Audit extends CI_Controller {
         $this->load->view("audit/assign_branch", $data);
     }
 
+    public function aud_client() {
+        $this->load->model("Audit_model");
+        $data['ln_branch'] = $this->Audit_model->get_ln_branch();
 
+        $this->load->view("audit/aud_client", $data);
+    }
+
+    public function client() {
+        $this->load->model("Audit_model");
+        $data['query'] = $this->Audit_model->get_client($this->uri->segment(3));
+
+        $this->load->view("audit/client", $data);
+    }
+
+    public function aud_info() {
+        $this->load->model("Audit_model");
+
+        $data['query'] = $this->Audit_model->get_client_info($this->uri->segment(3));
+        $this->load->view("audit/aud_info", $data);
+    }
 
     public function branch_handle() {
         $this->load->library("form_validation");
@@ -478,7 +506,6 @@ class Audit extends CI_Controller {
 
     }
 
-
     public function update_branch_assign() {
         $this->load->library("form_validation");
         $this->load->model("Audit_model");
@@ -515,7 +542,6 @@ class Audit extends CI_Controller {
         }
 
     }
-
 
 
     public function get_audit_result(){

@@ -518,6 +518,52 @@ $(document).ready(function() {
         order: [[ 0, 'asc' ]],
     });
 
+    var tbl_consolidated = $('#tbl_consolidated').DataTable({
+
+        'columns': [
+            {
+                'width': '10%',
+                'className': 'dt-center'
+            },
+            {
+                'width': '20%',
+                'className': 'uk-text-left'
+            },
+            {
+                'width': '20%',
+                'className': 'dt-center'
+            },
+            {
+                'width': '40%',
+                'className': 'dt-center'
+
+            },
+            {
+                'width': '10%',
+                'className': 'dt-center'
+            },
+        ],
+
+        "oLanguage": { "sSearch": "" },
+        'iDisplayLength': 10,
+        'paging': true,
+        "bInfo" : true,
+        'dom': '<"toolbar">frtip',
+        'searching': true,
+        "bLengthChange": true,
+        columnDefs: [ {
+            orderable: false,
+            targets:   0
+        } ],
+        aoColumnDefs: [
+            {
+                bSortable: false,
+                aTargets: [ -1,-2 ,-3,-4]
+            }
+        ],
+        order: [[ 0, 'asc' ]],
+    });
+
     var tbl_pp = $('#tbl_pp').DataTable({
         "oLanguage": { "sSearch": "" },
         'searching': true,

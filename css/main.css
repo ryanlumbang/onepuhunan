@@ -232,23 +232,23 @@ table.dataTable.op-table thead th, table.dataTable.op-table thead td {
 
 
 
-.modal-header{
-    padding: 30px 50px 5px;
-    color: #fff;
-    background-color: #adc9d4;
-}
-.modal-header h3{
-    color:#444;
-}
-.modal-body {
-    padding: 30px 50px;
-}
-.modal-footer {
-    line-height:70px;
-    text-align: right;
-    padding: 0 50px;
-    border-top: 1px solid #adc9d4;
-}
+/*.modal-header{*/
+    /*padding: 30px 50px 5px;*/
+    /*color: #fff;*/
+    /*background-color: #adc9d4;*/
+/*}*/
+/*.modal-header h3{*/
+    /*color:#444;*/
+/*}*/
+/*.modal-body {*/
+    /*padding: 30px 50px;*/
+/*}*/
+/*.modal-footer {*/
+    /*line-height:70px;*/
+    /*text-align: right;*/
+    /*padding: 0 50px;*/
+    /*border-top: 1px solid #adc9d4;*/
+/*}*/
 .op-check {
     margin-top: 10px;
     text-align: center;

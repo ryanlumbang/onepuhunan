@@ -35,6 +35,7 @@ if($this->session->role_id == 'aud'  OR $this->session->role_id == 'super'){?>
                                 <?php } ?>
                                 <li><a href="<?php echo site_url("audit/aud_extraction_assign"); ?>">Audit Extraction For Auditor</a></li>
                                 <li><a href="<?php echo site_url("audit/assign_branch"); ?>">Manage Branch Assignment</a></li>
+                                <li><a href="<?php echo site_url("audit/aud_client"); ?>">Consolodated of Data</a></li>
                             </ul>
                      </div>
 

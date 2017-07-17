@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | make active.  By default there is only one group (the 'default' group).
 |
 | The $query_builder variables lets you determine whether or not to load
-| the query builder class test.
+| the query builder class.
 */
 $active_group = 'default';
 $query_builder = TRUE;
@@ -79,7 +79,7 @@ $db['default'] = array(
     'hostname' => '10.10.224.28',
 	'username' => 'root',
 	'password' => 'MVPh1l1pp1n35',
-	'database' => 'LoansCube_Prod',
+	'database' => 'LoansCube',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -102,7 +102,7 @@ $db['LOS'] = array(
     'hostname' => '10.10.224.28',
     'username' => 'root',
     'password' => 'MVPh1l1pp1n35',
-    'database' => 'LOSCube_Prod',
+    'database' => 'LOSCube',
     'dbdriver' => 'postgre',
     'dbprefix' => '',
     'pconnect' => FALSE,

@@ -170,6 +170,18 @@
             return $query->result_array();
         }
 
+        public function get_bmv_remarks() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date_bmv_remarks");
+            $edate = $this->input->post("end_date_bmv_remarks");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_remarks( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");
@@ -196,6 +208,18 @@
             return $query->result_array();
         }
 
+        public function get_kyc_rvrt() {
+            $los_db = $this->load->database("LOS", true);
+            $sdate = $this->input->post("start_date_rvrt");
+            $edate = $this->input->post("end_date_rvrt");
+            $input = array(
+                "sdate" =>  $sdate,
+                "edate" =>  $edate,
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_kyc_rvrtd_applctn( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_pro_pending_qa() {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'KYC' AND NOT as_of_date = '0'");
@@ -214,6 +238,12 @@
         public function get_pro_pending_sanction() {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_los_laf_loan_pending() WHERE process_name = 'SANCTION' AND NOT as_of_date = '0'");
+            return $query->result_array();
+        }
+
+        function get_branchCode()
+        {
+            $query = $this->db->query('SELECT * FROM "t_Branch"');
             return $query->result_array();
         }
 
