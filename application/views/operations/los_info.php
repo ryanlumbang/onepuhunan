@@ -271,15 +271,30 @@
                                     <span>&#8369; <?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></span>
                                     <span class="uk-text-bold">Debt Burden Ratio</span>
                                     <span><b>
-                                        <?php 
-                                            if($cl_info['DBR'] > 40) {
-                                                echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
-                                            } else {
-                                                echo $cl_info['DBR'] . '%';
-                                            }
+                                        <?php
+                                        if($cl_info['DBR'] > 40) {
+                                            echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
+                                        } else {
+                                            echo $cl_info['DBR'] . '%';
+                                        }
+                                        ?>
+
+                                    </b></span>
+                                </dd>
+                                <dd class="dd-even">
+                                    <span></span>
+                                    <span class="uk-text-bold">Debt Burden Ratio 2</span>
+                                    <span><b>
+                                        <?php
+                                        if($cl_info['DBR2'] > 40) {
+                                            echo $cl_info['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
+                                        } else {
+                                            echo $cl_info['DBR2'] . '%';
+                                        }
                                         ?>
                                     </b></span>
                                 </dd>
+
                             </dl>
                         </div>
                     </div>
