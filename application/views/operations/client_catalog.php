@@ -48,7 +48,7 @@
                                    . "</thead>"
                                    . "<tbody>";
                             echo $table;
-                            
+
                             foreach((array) $query as $item) {
                                 $result = "<tr>"
                                         . "<td class=\"uk-text-bold uk-width-1-10 uk-table-middle\">" . $item["RowNumber"] . "</td>"
@@ -69,10 +69,10 @@
                                    . "(" . $number_of_rows . " rows retrieved)</caption>"
                                    . "</table>";
                             echo $table;
-                        } 
-                    }     
-                ?> 
-            </div>  
+                        }
+                    }
+                ?>
+            </div>
         </div>
         <?php $this->load->view("templates/footer"); ?>
         </div>

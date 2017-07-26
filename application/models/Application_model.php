@@ -106,5 +106,12 @@ class Application_model extends CI_Model {
         $qry = $this->db->query("SELECT emp_id, emp_name, role_id FROM sp_ua_sess_login( ? ) AS (emp_id text, emp_name text, role_id text)", $input);
         return $qry->row_array();
     }
+
+    //    new theme
+    public function get_dashboard_general($input) {
+        $los_db = $this->load->database("LOS", true);
+        $query = $los_db->query("SELECT * FROM sp_los_laf_dashboard_general(?)", $input );
+        return $query->row_array();
+    }
 }
 

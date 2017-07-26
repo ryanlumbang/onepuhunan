@@ -64,7 +64,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                 </div>
                 <div class="uk-form-row">
                     <div class="uk-grid">
-                        <div class="uk-width-1-2"><a href="<?php echo site_url("opslogin"); ?>" class="uk-width-1-1 uk-button uk-text-bold ">Cancel</a></div>
+                        <div class="uk-width-1-2"><a href="<?php echo site_url("login"); ?>" class="uk-width-1-1 uk-button uk-text-bold ">Cancel</a></div>
                         <div class="uk-width-1-2"><button type="submit" id="btn-submit-fgot" class="uk-width-1-1 uk-button uk-button-primary uk-text-bold submit" >Submit</button></div>
                     </div>
                 </div>

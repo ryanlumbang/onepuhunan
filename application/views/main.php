@@ -55,7 +55,7 @@ $data['title'] = 'OnePuhunan Service Portal';
                         <img src="<?=base_url()?>img/system_png/rsz_ops1.png" width="200" height="200" alt="Image">
                         <img class="uk-overlay-panel uk-overlay-image" src="<?=base_url()?>img/system_png/rsz_ops2.png" width="200" height="200" alt="Image">
                         <figcaption class="uk-overlay-panel uk-overlay-background uk-overlay-bottom uk-overlay-slide-bottom">
-                            <a href="<?php echo site_url("opslogin"); ?>">Operations</a>
+                            <a href="<?php echo site_url("login"); ?>">Operations</a>
                         </figcaption>
                     </figure>
                 </div>
