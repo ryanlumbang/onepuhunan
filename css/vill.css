@@ -1,0 +1,37 @@
+#form-vill{
+    height: 200px;
+    overflow-y: scroll;
+}
+/*#form-vill .step > div > label {  
+    float: left;    
+    width: 50%;
+}
+#form-vill .step > div > div {
+    float: left;
+    width: 50%;
+}*/
+#form-vill .step {
+    display: none;
+}
+#form-vill .step.active {
+    display: block;
+}
+#form-vill input{
+    background-color: #faffbd;
+    border: 1px solid #ddd;
+}
+
+.step-paginate{
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+.step-paginate button{
+    width: 48%;
+    font-size: 18px;
+}
+#step-back{
+    float: left;
+}
+#step-next-save{
+    float: right;
+}
