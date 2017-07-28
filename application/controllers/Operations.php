@@ -494,16 +494,17 @@
             $objPHPExcel->getActiveSheet()->setCellValue('E1','FILE NO');
             $objPHPExcel->getActiveSheet()->setCellValue('F1','CLIENT ID');
             $objPHPExcel->getActiveSheet()->setCellValue('G1','CLIENT NAME');
-            $objPHPExcel->getActiveSheet()->setCellValue('H1','PROCESS VALUE');
-            $objPHPExcel->getActiveSheet()->setCellValue('I1','OFFICER ID');
-            $objPHPExcel->getActiveSheet()->setCellValue('J1','OFFICER NAME');
-            $objPHPExcel->getActiveSheet()->setCellValue('K1','REMARKS');
+            $objPHPExcel->getActiveSheet()->setCellValue('H1','LOAN TYPE');
+            $objPHPExcel->getActiveSheet()->setCellValue('I1','PROCESS VALUE');
+            $objPHPExcel->getActiveSheet()->setCellValue('J1','OFFICER ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('K1','OFFICER NAME');
+            $objPHPExcel->getActiveSheet()->setCellValue('L1','REMARKS');
 
 
-            $objPHPExcel->getActiveSheet()->getStyle('A1:L1')->getFont()->setBold(true);
+            $objPHPExcel->getActiveSheet()->getStyle('A1:M1')->getFont()->setBold(true);
 
             $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
-            ->getStyle('A1:L1')
+            ->getStyle('A1:M1')
             ->getAlignment()
             ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
@@ -514,7 +515,7 @@
             ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
             $objPHPExcel->getActiveSheet()->freezePane('A2');
 
-            for($col = 'A'; $col !== 'K'; $col++)
+            for($col = 'A'; $col !== 'M'; $col++)
             {
                 $objPHPExcel->getActiveSheet()
                     ->getColumnDimension($col)
@@ -538,10 +539,11 @@
                 $objPHPExcel->getActiveSheet()->setCellValue('E'.$row, $item['FileNo']);
                 $objPHPExcel->getActiveSheet()->setCellValue('F'.$row, $item['ClientID']);
                 $objPHPExcel->getActiveSheet()->setCellValue('G'.$row, $item['ClientName']);
-                $objPHPExcel->getActiveSheet()->setCellValue('H'.$row, $item['ProcessValue']);
-                $objPHPExcel->getActiveSheet()->setCellValue('I'.$row, $item['OfficerID']);
-                $objPHPExcel->getActiveSheet()->setCellValue('J'.$row, $item['OfficerName']);
-                $objPHPExcel->getActiveSheet()->setCellValue('K'.$row, $item['Remarks']);
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$row, $item['LOSLoanTypeID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$row, $item['ProcessValue']);
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$row, $item['OfficerID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$row, $item['OfficerName']);
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$row, $item['Remarks']);
 
 
                 $row++;
