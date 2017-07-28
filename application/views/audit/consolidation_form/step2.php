@@ -1,57 +1,49 @@
+<h5>BRANCH RESPONSE, ROOT, CAUSE, RECOMMENDATION AND ACTION TAKEN<span class="collapse-minus">-</span></h5>
 <div class="step">
-    <h2>Branch response, root cause, recommendation and action taken</h2>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">BRANCH RESPONSE</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CONTROLS THAT FAILED</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Branch response</label>
+            <div class="col-8">
+                <textarea  name="branch_response"  class="form-control" rows="2"></textarea>
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">ROOT CAUSE TO ADDRESS</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">RECOMMENDATION/ACTION PLAN & RESPONSIBLE PERSON</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Controls that failed</label>
+            <div class="col-8">
+                 <input type="text" name="controls_that_failed" class="form-control" required="true">
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">IMPLEMENTATION DATE</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Root cause to address</label>
+            <div class="col-8">
+                <textarea  name="root_cause_to_address"  class="form-control" rows="2"></textarea>
             </div>
         </div>
     </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Recommendation/action plan & responsible person</label>
+            <div class="col-8">
+                <textarea  name="recommendation"  class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Implementation date</label>
+            <div class="col-8">
+                <input type="text" name="implementation_date" class="datetimepicker form-control">
+            </div>
+        </div>
+    </div>
+</div>
 </div>

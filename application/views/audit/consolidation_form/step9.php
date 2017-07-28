@@ -1,96 +1,77 @@
+<h5>REGION, AREA AND BRANCH PERSONNEL DETAILS<span class="collapse-minus">-</span></h5>
 <div class="step">
-	<h2>Region, Area and branch personnel details</h2>
-
-<div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">REGIONAL MANAGER (Name)</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">AREA MANAGER (Name)</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">Regional manager</label>
+                <div class="col-6">
+                     <input type="text" name="regional_manager" class="form-control">
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">BRANCH MANAGER (Name)
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">Area manager</label>
+                <div class="col-6">
+                     <input type="text" name="area_manager" class="form-control">
                 </div>
             </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">RO 1 NAME
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">Branch manager</label>
+                <div class="col-6">
+                     <input type="text" name="branch_manager" class="form-control">
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">RO 2 NAME
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">RO 1</label>
+                <div class="col-6">
+                     <input type="text" name="ro1" class="form-control">
                 </div>
             </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">SOName
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">RO 2</label>
+                <div class="col-6">
+                     <input type="text" name="ro2" class="form-control">
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">SURVEY QUESTION A RESPONSE SCORE
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">REASON/S
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">SO Name</label>
+                <div class="col-6">
+                     <input type="text" name="so_name" class="form-control">
                 </div>
             </div>
         </div>
     </div>
-    
-
-
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">Survey question a response score</label>
+                <div class="col-6">
+                     <input type="text" name="survey_question_response_score" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group row">
+                <label class="col-6 col-form-label">Reason/s</label>
+                <div class="col-6">
+                    <textarea  name="Reasons"  class="form-control" rows="2"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

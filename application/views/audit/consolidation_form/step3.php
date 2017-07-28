@@ -1,58 +1,47 @@
+<h5>DETAILS OF AUDIT<span class="collapse-minus">-</span></h5>
 <div class="step">
-    <h2>Details of audit</h2>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">AUDITORS</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">DATE AUDITED</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Auditors</label>
+            <div class="col-8">
+                <input type="text" name="auditors" class="form-control">
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">TYPE OF AUDITED</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">DOCS REVIEWER</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+    <div class="col-3">
+        <div class="form-group row">
+            <label class="col-5 col-form-label">Date Audited</label>
+            <div class="col-7">
+                <input type="text" name="date_audited" class="datetimepicker form-control">
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">DOCS REVIEW RESULTS</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
+    <div class="col-3">
+        <div class="form-group row">
+            <label class="col-5 col-form-label">Type of Audit</label>
+            <div class="col-7">
+                <input type="text" name="type_of_audit" class="form-control">
             </div>
-            
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Docs reviewer</label>
+            <div class="col-8">
+                <input type="text" name="docs_reviewer" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Docs review results</label>
+            <div class="col-8">
+                <input type="text" name="docs_review_results" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
 </div>

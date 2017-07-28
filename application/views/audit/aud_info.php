@@ -6,6 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Consolidate Data';
 <?php $this->load->view("templates/op-head", $data); ?>
 <body id="losbody">
     <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap.css">
     <link rel="stylesheet" href="<?=base_url()?>css/vill.css">
 
     <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datetimepicker-standalone.min.css">
@@ -13,6 +14,8 @@ $data['title'] = 'OnePuhunan Service Portal | Consolidate Data';
     <script src="<?=base_url()?>js/transition.js"></script>
     <script src="<?=base_url()?>js/collapse.js"></script>
     <script src="<?=base_url()?>js/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?=base_url()?>js/tether.min.js"></script>
+    <script src="<?=base_url()?>js/bootstrap.js"></script>
 
     <script src="<?=base_url()?>js/vill.js"></script>
 <div id="page-wrapper">
@@ -25,181 +28,29 @@ $data['title'] = 'OnePuhunan Service Portal | Consolidate Data';
             </div>
         </div>
     </div>  
-    <section id="main-section" style="width: 80%;margin: auto;margin-top: 20px"> 
-    <?=form_open("", array("class" => "uk-form"));?>
-        <?php echo validation_errors(); ?>
-            <div class="op-title"><h1><i class="uk-icon-tags"></i></h1></div>
-            <div>
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">MONTH OF AUDIT</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="datepicker uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">YEAR</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold"># OF AUDIT</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="datepicker uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">Regional Desc</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">OurBranchID</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">Branch Name</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">OurBranchID</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">Branch Name</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">Name</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">GroupName</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">ClientID</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">AccountID</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-form-row">
-                    <div class="uk-grid">
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">LoanSeries</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>  
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2">
-                            <div class="uk-form">
-                                <label class="uk-form-label uk-text-small uk-text-bold">LoanAmount</label>
-                                <div class="uk-form-controls">
-                                    <input type="text" class="uk-width-large uk-form-small">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="border-bottom: 3px solid #757272;margin-top: 20px;margin-bottom: 20px;"></div>
-            <div id="form-vill">
-                <?php
-                    $this->load->view('audit/consolidation_form/step1');
-                    $this->load->view('audit/consolidation_form/step2'); 
-                    $this->load->view('audit/consolidation_form/step3');  
-                    $this->load->view('audit/consolidation_form/step4');  
-                    $this->load->view('audit/consolidation_form/step5');  
-                    $this->load->view('audit/consolidation_form/step6');  
-                    $this->load->view('audit/consolidation_form/step7');  
-                    $this->load->view('audit/consolidation_form/step8');  
-                    $this->load->view('audit/consolidation_form/step9');  
-                    $this->load->view('audit/consolidation_form/step10');  
-                    $this->load->view('audit/consolidation_form/step11');  
+    <br>
+    <div class="container">
+    <br>
+        <div class="consolidation_form">
+            <form id="consolidationForm" action="" method="post">
+                <?php 
+                $this->load->view('audit/consolidation_form/step1');
+                $this->load->view('audit/consolidation_form/step2'); 
+                $this->load->view('audit/consolidation_form/step3');  
+                $this->load->view('audit/consolidation_form/step4');  
+                $this->load->view('audit/consolidation_form/step5');  
+                $this->load->view('audit/consolidation_form/step6');  
+                $this->load->view('audit/consolidation_form/step7');  
+                $this->load->view('audit/consolidation_form/step8');  
+                $this->load->view('audit/consolidation_form/step9');  
+                $this->load->view('audit/consolidation_form/step10');  
+                $this->load->view('audit/consolidation_form/step11'); 
+                $this->load->view('audit/consolidation_form/consolidation_header'); 
                 ?>
-            </div>
-            <div class="step-paginate">
-                <button type="button" class="uk-button uk-button-default uk-button-small" id="step-back">Back</button>
-                <button type="button" class="uk-button uk-button-default uk-button-small" id="step-next-save">Next</button>
-            </div>
-        
-    <?=form_close();?>
-
+            </form>
+        </div>
+    </div>
+    <section id="main-section"> 
         <?php  foreach($query as $row): ?>
         <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center" style="display: none;">
 

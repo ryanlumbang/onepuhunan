@@ -1,26 +1,21 @@
-#form-vill{
+/*#form-vill{
     height: 200px;
     overflow-y: scroll;
 }
-/*#form-vill .step > div > label {  
+#form-vill .step > div > label {  
     float: left;    
     width: 50%;
 }
 #form-vill .step > div > div {
     float: left;
     width: 50%;
-}*/
+}
 #form-vill .step {
     display: none;
 }
 #form-vill .step.active {
     display: block;
 }
-#form-vill input{
-    background-color: #faffbd;
-    border: 1px solid #ddd;
-}
-
 .step-paginate{
     margin-top: 40px;
     padding-bottom: 60px;
@@ -34,4 +29,53 @@
 }
 #step-next-save{
     float: right;
+}*/
+/*.consolidation_form{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}*/
+.consolidation_form input{
+    /*background-color: #faffbd;*/
+    border: 1px solid #ddd;
+    height: 25px;
+    padding: 3px 10px;
+}
+.consolidation_form textarea{
+    /*background-color: #faffbd;*/
+    border: 1px solid #ddd;
+}
+/*.consolidation_form select{
+    height: 25px !important;
+}*/
+.consolidation_form label{
+    font-weight: bold;
+    font-size: 12px;
+}
+.consolidation_form h5{
+    background: #5f6b61;
+    color: white;
+    padding: 8px 20px;
+    margin:0;
+    margin-top: 20px;
+    border-radius: 4px 4px 0px 0px;
+    font-size: 14px;
+}
+.consolidation_form h5 span{
+    float: right;
+    cursor: pointer;
+}
+.consolidation_form .error {
+    color: red;
+}
+.consolidation_header{
+    margin-top: 20px;
+}
+.step{
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border: 1px solid #5f6b61;
+    border-radius: 0px 0px 4px 4px;
 }

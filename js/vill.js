@@ -1,7 +1,6 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     var counter = 0;
     last_counter = $('#form-vill .step').length -1;
-    $('.datepicker').datetimepicker();
 
     backNext(counter)
     function backNext(counter){
@@ -28,4 +27,26 @@ $(document).ready(function(){
         }
         backNext(counter); 
     });
+});*/
+
+$(document).ready(function(){
+    $(".datetimepicker").datetimepicker({
+        format: "dd MM yyyy",
+        autoclose: true,
+        todayBtn: true,
+        minView : 2,
+        pickerPosition: "bottom-left"
+    });
+
+    $('.collapse-minus').click(function(){
+        if($(this).text() == '-'){
+            $(this).parent().next('.step').hide();   
+            $(this).text('+'); 
+        }else{
+            $(this).parent().next('.step').show();
+            $(this).text('-');    
+        }
+    });
+
+    $("#consolidationForm").validate();
 });

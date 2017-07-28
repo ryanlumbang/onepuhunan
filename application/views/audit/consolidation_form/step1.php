@@ -1,123 +1,73 @@
+<h5>EXCEPTION/FINDING AND DETAILS<span class="collapse-minus">-</span></h5>
 <div class="step">
-    <h2>Exception/Finding and details</h2>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Finding Code</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CAA Sub-Category</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-3">
+        <div class="form-group">
+            <label>Finding Code</label>
+            <select name="finding_code" class="form-control">
+              <option></option>
+            </select>
         </div>
     </div>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CAA Process</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CAA Sub-Process</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label>CAA Sub-Category : Lorem Ipsum</label>
         </div>
     </div>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Category of findings</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Sub category</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>CAA Process : Lorem Ipsum</label>
         </div>
     </div>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Process</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Subprocess</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label>Category of findings : Lorem Ipsum</label>
         </div>
     </div>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Finding</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Details</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>Sub category : Lorem Ipsum</label>
         </div>
     </div>
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">NUMBER OF SAMPLE EXEMPTIONS (# OF CLIENTS)</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">IMPACT</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
-            </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label>Process : Lorem Ipsum</label>
         </div>
     </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>Subprocess : Lorem Ipsum</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label>Finding : Lorem Ipsum</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>Details : Lorem Ipsum</label>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group">
+            <label>Number of sample exeptions (# OF CLIENTS) : 1,000.00</label>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label>IMPACT : Lorem Ipsum</label>
+        </div>
+    </div>
+</div>
 </div>

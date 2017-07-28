@@ -1,24 +1,21 @@
+<h5>RESULTS OF CALL OUT<span class="collapse-minus">-</span></h5>
 <div class="step">
-	<h2>Result of call out</h2>
-
-	<div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CALL STATUS (UNSUCCESFEL)
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group row">
+                <label class="col-12 col-form-label">CALL STATUS (UNSUCCESFEL)</label>
+                <div class="col-12">
+                     <textarea  name="call_status"  class="form-control" rows="2"></textarea>
                 </div>
             </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Delinquency of Unsuccessful Client
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group row">
+                <label class="col-12 col-form-label">Delinquency of Unsuccessful Client</label>
+                <div class="col-12">
+                     <textarea  name="delinquency"  class="form-control" rows="2"></textarea>
                 </div>
             </div>
         </div>

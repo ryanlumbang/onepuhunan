@@ -1,24 +1,21 @@
+<h5>SAMPLE CATEGORIZATION<span class="collapse-minus">-</span></h5>
 <div class="step">
-	<h2>Sample categorization</h2>
-
-	<div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">SAMPLE CATEGORY</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">SAMPLE SUB-CATEGORY</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Process</label>
+            <div class="col-8">
+                <input type="text" name="process" class="form-control">
             </div>
         </div>
     </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Sample sub-category</label>
+            <div class="col-8">
+                <input type="text" name="sample_sub_category" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
 </div>

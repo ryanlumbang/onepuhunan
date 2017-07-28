@@ -37,4 +37,5 @@
     <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
     <script src="<?=base_url()?>js/jquery.modal.js"></script>
     <script src="<?=base_url()?>js/custom.js"></script>
+    <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
 </head>

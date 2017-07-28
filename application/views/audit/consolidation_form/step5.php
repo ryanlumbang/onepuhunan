@@ -1,95 +1,68 @@
+<h5>RESULT OF CLIENT VISIT<span class="collapse-minus">-</span></h5>
 <div class="step">
-	<h2>Result of client visit.</h2>
-
-	<div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">Client visit status
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">REASON FOR PARTIAL/UNSUCCESFUL/UNVISITED
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Client visit status</label>
+            <div class="col-8">
+                <input type="text" name="client_visit_status" class="form-control">
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">CROSS REFERENCE TO NEIGHBOORS OR RELATIVES - Y / N
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">NEIGHBORS KNOWS THE CLIENT AND THE CLIENT NAME EXIST - Y/N
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Reason for partial/unsuccesful/unvisited</label>
+            <div class="col-8">
+                <textarea  name="reason_for_partial"  class="form-control" rows="2"></textarea>
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">REMARKS IF CROSS REFERENCE HAS NEGATIVE RESULT
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">DAY VISITED
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Cross reference to neighboors or relatives - y / n</label>
+            <div class="col-8">
+                <input type="text" name="cross_reference" class="form-control">
             </div>
         </div>
     </div>
-
-    <div class="uk-form-row">
-        <div class="uk-grid">
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">VISITED BY
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>  
-                </div>
-            </div>
-            <div class="uk-width-1-2">
-                <div class="uk-form">
-                    <label class="uk-form-label uk-text-small uk-text-bold">DATE VISITED
-</label>
-                    <div class="uk-form-controls">
-                        <input type="text" class="uk-width-large uk-form-small">
-                    </div>
-                </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Neighbors knows the client and the client name exist - y/n</label>
+            <div class="col-8">
+                <input type="text" name="neighbors_knows" class="form-control">
             </div>
         </div>
     </div>
+</div>
+<div class="row">
+    <div class="col-6"></div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Remarks if cross reference has negative result</label>
+            <div class="col-8">
+                <textarea  name="remarks_if_cross_reference"  class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Date visited</label>
+            <div class="col-8">
+                <input type="text" name="date_visited" class="datetimepicker form-control">
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="form-group row">
+            <label class="col-4 col-form-label">Visited by</label>
+            <div class="col-8">
+                <input type="text" name="visited_by" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
 </div>
