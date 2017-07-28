@@ -23,7 +23,7 @@
         <div class="form-group row">
             <label class="col-4 col-form-label">Root cause to address</label>
             <div class="col-8">
-                <textarea  name="root_cause_to_address"  class="form-control" rows="2"></textarea>
+                <textarea  name="root_cause_to_address"  class="form-control" rows="2" required="true"></textarea>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
         <div class="form-group row">
             <label class="col-4 col-form-label">Recommendation/action plan & responsible person</label>
             <div class="col-8">
-                <textarea  name="recommendation"  class="form-control" rows="2"></textarea>
+                <textarea  name="recommendation"  class="form-control" rows="2" required="true"></textarea>
             </div>
         </div>
     </div>

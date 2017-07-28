@@ -52,6 +52,9 @@
     font-weight: bold;
     font-size: 12px;
 }
+.consolidation_form label span{
+    font-weight: normal;
+}
 .consolidation_form h5{
     background: #5f6b61;
     color: white;

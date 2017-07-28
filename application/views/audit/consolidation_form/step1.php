@@ -13,7 +13,7 @@
 <div class="row">
     <div class="col-6">
         <div class="form-group">
-            <label>CAA Sub-Category : Lorem Ipsum</label>
+            <label>CAA Sub-Category : <span>Lorem Ipsum</span></label>
         </div>
     </div>
     <div class="col-6">
