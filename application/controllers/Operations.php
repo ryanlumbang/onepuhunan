@@ -102,22 +102,22 @@
             
             $header = "Submission Successful!";
             $content = "You have successfully submitted the application for the next processing.";
-            
-            if (isset($_POST['btn_approve'])) {               
+
+            if($_POST['Approval_hidden'] == 'APR') {//if (isset($_POST['btn_approve'])) {
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "APR",
                     "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
-                );     
-            } elseif (isset($_POST['btn_reject'])) { 
+                );
+            }elseif($_POST['Approval_hidden'] == 'REJ') {//} elseif (isset($_POST['btn_reject'])) {
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REJ",
                     "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
                 );
-            } else {
+            }elseif($_POST['Approval_hidden'] == 'REV'){//} else {
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REV",

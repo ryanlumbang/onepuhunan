@@ -480,6 +480,7 @@
                             <form id="los_form" class="uk-form" style="margin-top: 3px" method="post" action="<?=$cl_info['LAF']?>/submit">
                                 <textarea name="txt_remarks" class="uk-width-1-1" cols="" rows="" placeholder="Enter Remarks/Comments Here"></textarea>
                                 <input name="txt_fileno" type="text" class="uk-hidden" value="<?=$cl_info['LAF']?>" />
+                                <input id="Approval_hidden" name="Approval_hidden" type="hidden" value="">
                             </form>
                         </div>
                         <?php } ?>

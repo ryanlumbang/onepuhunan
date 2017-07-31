@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/select.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/jquery.modal.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/sweetalert.css">
 
     <?php
     //        if (basename($_SERVER['REQUEST_URI']) !== "opslogin.php" AND basename($_SERVER['REQUEST_URI']) !== "index.php") {
@@ -37,5 +38,6 @@
     <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
     <script src="<?=base_url()?>js/jquery.modal.js"></script>
     <script src="<?=base_url()?>js/custom.js"></script>
+    <script src="<?=base_url()?>js/sweetalert.min.js"></script>
     <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
 </head>
