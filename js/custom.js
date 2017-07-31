@@ -203,43 +203,117 @@ $(document).ready(function() {
         return confirm('are you sure?');
     }
 
-    //remark approve
-    $('#BtnApprove').click(function () {
-        if (confirm("CLICK OK TO APPROVE?")){
-            $('form#los_form').submit();
-        }
-        else {
+    var $confirmation_nil = false;
+    $('#los_form').submit(function () {
+        if($confirmation_nil == false){
             return false;
         }
+    });
+
+    //remark approve
+    $('#BtnApprove').click(function () {
+        swal({
+            title: "CLICK OK TO APPROVE",
+            text: "",
+            type: "info",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Approved!", "Client has been approved", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+            }
+        });
     });
 
     //remark reject
     $('#BtnReject').click(function () {
-        if (confirm("CLICK OK TO REJECT?")){
-            $('form#los_form').submit();
-        }
-        else {
-            return false;
-        }
+        swal({
+            title: "CLICK OK TO REJECT",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+            cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Rejected!", "Client has been rejected", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+            }
+        });
     });
 
     //remark reject
     $('#BtnRevert').click(function () {
-        if (confirm("CLICK OK TO REVERT?")){
-            $('form#los_form').submit();
-        }
-        else {
-            return false;
-        }
+        swal({
+            title: "CLICK OK TO REVERT",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+            cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Reverted!", "Client has been reverted", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+            }
+        });
     });
     // checkbox: approve all selected entries.
     $('#btn_approve').click(function () {
-        if (confirm("CLICK OK TO APPROVE?")){
+        /*if (confirm("CLICK OK TO APPROVE?")){
             $('form#tbl_los').submit();
         }
         else {
             return false;
-        }
+        }*/
+        swal({
+            title: "CLICK OK TO APPROVE",
+            text: "",
+            type: "info",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+            cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Approved!", "Client has been approved", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+                return false;
+            }
+        });
 
         var branchId, groupId;
         var counter = 0;
@@ -270,12 +344,35 @@ $(document).ready(function() {
     });
 
     $('#btn_reject').click(function() {
-        if (confirm("CLICK OK TO REJECT?")){
+        /*if (confirm("CLICK OK TO REJECT?")){
             $('form#tbl_los').submit();
         }
         else {
             return false;
-        }
+        }*/
+        swal({
+            title: "CLICK OK TO REJECT",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+            cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Rejected!", "Client has been rejected", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+                return false;
+            }
+        });
+
         var branchId, groupId;
         var counter = 0;
         var xhrs = [];
@@ -305,6 +402,29 @@ $(document).ready(function() {
     });
 
     $('#btn_revert').click(function() {
+        swal({
+            title: "CLICK OK TO REVERT",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "uk-button uk-button-primary",
+            confirmButtonText: "OK",
+            cancelButtonClass: "uk-button uk-button-danger",
+            cancelButtonText: "CANCEL",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        },
+        function(isConfirm){
+            if (isConfirm){
+                $confirmation_nil = true;
+                //swal("Reverted!", "Client has been reverted", "success");
+                $('form#los_form').submit();
+            } else {
+                $confirmation_nil = false;
+                return false;
+            }
+        });
+
         var branchId, groupId;
         var counter = 0;
         var xhrs = [];
