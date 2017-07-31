@@ -10,7 +10,12 @@ $(document).ready(function() {
     }
 
     function show(id, value) {
-        document.getElementById(id).style.display = value ? 'block' : 'none';
+        try {
+            document.getElementById(id).style.display = value ? 'block' : 'none';
+        } catch (e) {
+            return undefined;
+        }
+        
     }
 
     onReady(function () {

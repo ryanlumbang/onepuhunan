@@ -5,6 +5,19 @@ $data['title'] = 'OnePuhunan Service Portal | Consolidate Data';
 <html lang="en">
 <?php $this->load->view("templates/op-head", $data); ?>
 <body id="losbody">
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/vill.css">
+
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datetimepicker-standalone.min.css">
+    <script src="<?=base_url()?>js/moment.js"></script>
+    <script src="<?=base_url()?>js/transition.js"></script>
+    <script src="<?=base_url()?>js/collapse.js"></script>
+    <script src="<?=base_url()?>js/bootstrap-datetimepicker.min.js"></script>
+    <script src="<?=base_url()?>js/tether.min.js"></script>
+    <script src="<?=base_url()?>js/bootstrap.js"></script>
+
+    <script src="<?=base_url()?>js/vill.js"></script>
 <div id="page-wrapper">
     <?php $this->load->view("templates/op-header"); ?>
     <?php $this->load->view("templates/subheader"); ?>
@@ -14,11 +27,32 @@ $data['title'] = 'OnePuhunan Service Portal | Consolidate Data';
                 <h2>COSOLIDATION OF DATA</h2>
             </div>
         </div>
+    </div>  
+    <br>
+    <div class="container">
+    <br>
+        <div class="consolidation_form">
+            <form id="consolidationForm" action="" method="post">
+                <?php 
+                $this->load->view('audit/consolidation_form/step1');
+                $this->load->view('audit/consolidation_form/step2'); 
+                $this->load->view('audit/consolidation_form/step3');  
+                $this->load->view('audit/consolidation_form/step4');  
+                $this->load->view('audit/consolidation_form/step5');  
+                $this->load->view('audit/consolidation_form/step6');  
+                $this->load->view('audit/consolidation_form/step7');  
+                $this->load->view('audit/consolidation_form/step8');  
+                $this->load->view('audit/consolidation_form/step9');  
+                $this->load->view('audit/consolidation_form/step10');  
+                $this->load->view('audit/consolidation_form/step11'); 
+                $this->load->view('audit/consolidation_form/consolidation_header'); 
+                ?>
+            </form>
+        </div>
     </div>
-    <section id="main-section">
+    <section id="main-section"> 
         <?php  foreach($query as $row): ?>
-
-        <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
+        <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center" style="display: none;">
 
             <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
             <div class="op-title"><h1><i class="uk-icon-tags"></i> <?=$row["Name"]?> - <?=$row["ClientID"]?></h1></div>

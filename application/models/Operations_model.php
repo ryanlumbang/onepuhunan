@@ -162,11 +162,14 @@
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("start_date_remarks");
             $edate = $this->input->post("end_date_remarks");
+            $loan_type = $this->input->post("loan_type");
+
             $input = array(
                 "sdate" =>  $sdate,
                 "edate" =>  $edate,
+                "loan_type" => $loan_type
             );
-            $query = $los_db->query("SELECT * FROM sp_report_kyc_remarks( ?, ?)", $input);
+            $query = $los_db->query("SELECT * FROM sp_report_kyc_remarks( ?, ?, ?)", $input);
             return $query->result_array();
         }
 
