@@ -3,7 +3,8 @@ $(document).ready(function (){
     $("#branch_form").validate({
         rules: {
             emp_id: {
-              required: true
+              required: true,
+                number: true
             },
             branch_ids: {
                 required: true
