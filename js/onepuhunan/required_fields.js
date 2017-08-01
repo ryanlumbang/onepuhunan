@@ -21,4 +21,34 @@ $(document).ready(function (){
         }
     });
 
+    /*Registration*/
+    $("#sign_up_form").validate({
+        rules: {
+            lname: {
+                required: true
+            },
+            fname: {
+                required: true
+            },
+            email: {
+                required: true
+            },
+            job_title: {
+                required: true
+            },
+            dept: {
+                required: true
+            },
+            emp_id: {
+                required: true
+            },
+            password: {
+                required: true
+            },
+            passconf: {
+                equalTo: "#password"
+            }
+        }
+    });
+
 });

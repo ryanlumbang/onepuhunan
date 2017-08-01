@@ -222,10 +222,9 @@ class Application extends CI_Controller {
             array(
                 "field" => "email",
                 "label" => "Email Address",
-                "rules" => "trim|required|valid_email",
+                "rules" => "trim|required",
                 "errors" => array(
-                    "required" => "The <b>\"%s\"</b> field is required.",
-                    "valid_email" => "The <b>\"%s\"</b> field must contain a valid email address."
+                    "required" => "The <b>\"%s\"</b> field is required."
                 )
             ),
             array(
@@ -287,7 +286,7 @@ class Application extends CI_Controller {
                 "last_name"   => $this->input->post("lname"),
                 "first_name"  => $this->input->post("fname"),
                 "middle_name" => $this->input->post("mname"),
-                "email"       => $this->input->post("email"),
+                "email"       => $this->input->post("email").$this->input->post("email_extension"),
                 "job_title"   => $this->input->post("job_title"),
                 "dept_id"     => $this->input->post("dept"),
                 "password"    => $this->merge_between($this->input->post("emp_id"), $this->input->post("password"))
@@ -299,7 +298,7 @@ class Application extends CI_Controller {
                 $session = array(
                     "emp_id" => $this->input->post("emp_id"),
                     "name"   => $this->input->post("fname"). " " . $this->input->post("lname"),
-                    "email"  => $this->input->post("email")
+                    "email"  => $this->input->post("email").$this->input->post("email_extension")
                 );
 
                 $this->session->set_userdata($session);

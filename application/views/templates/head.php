@@ -12,6 +12,7 @@
    
    <link rel="stylesheet" href="<?=base_url()?>css/custom.css">
    <link rel="stylesheet" href="<?=base_url()?>css/general.css">
+   <link rel="stylesheet" href="<?=base_url()?>css/onepuhunan/css/validate-error.css">
    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
        
@@ -32,7 +33,8 @@
    <script src="<?=base_url()?>js/components/tooltip.min.js"></script>
    <script src="<?=base_url()?>js/components/accordion.min.js"></script>
    <script src="<?=base_url()?>js/components/datepicker.js"></script>
-   
+    <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
+    <script src="<?=base_url()?>js/onepuhunan/required_fields.js"></script>
    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
    <script src="<?=base_url()?>js/custom.js"></script>
 
