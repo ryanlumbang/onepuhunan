@@ -1,0 +1,27 @@
+.no-margin{margin: 0}
+.default-margin{margin: 25px 0}
+.br-hide{
+    display: none;
+}
+h1.value{
+    color: #545454;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+@media screen and (max-width: 400px){
+    br.br-hide{display: block;}
+    .subnavbar .container > ul > li{
+        height:auto;
+        min-width: unset;
+        width:20%;
+    }
+    .subnavbar .container > ul > li a{
+        padding: 0 5px;
+    }
+    .subnavbar .container > ul > li > a > span,
+    .subnavbar .container > ul > li a .caret{
+        display: none;
+    }
+}

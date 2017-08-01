@@ -1,12 +1,11 @@
 <script src="<?=base_url()?>js/onepuhunan/js/main.js"></script>
-<script src="<?=base_url()?>static/js/jquery-1.7.2.min.js"></script>
+<script src="<?=base_url()?>static/js/jquery-3.2.1.min.js"></script>
 <script src="<?=base_url()?>static/js/excanvas.min.js"></script>
 <script src="<?=base_url()?>static/js/chart.min.js" type="text/javascript"></script>
-<script src="<?=base_url()?>static/js/bootstrap.js"></script>
-<script src="<?=base_url()?>js/custom.js"></script>
+<script src="<?=base_url()?>js/bootstrap.min.js"></script>z
+<!--<script src="--><?//=base_url()?><!--js/custom.js"></script>-->
 <script language="javascript" type="text/javascript" src="<?=base_url()?>static/js/full-calendar/fullcalendar.min.js"></script>
 
-<script src="<?=base_url()?>static/js/base.js"></script>
 <script src="<?=base_url()?>static/js/base.js"></script>
 <script src="<?=base_url()?>static/js/signin.js"></script>
 <script src="<?=base_url()?>js/datatable/jquery.dataTables.min.js"></script>

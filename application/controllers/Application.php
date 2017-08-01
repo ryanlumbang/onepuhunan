@@ -172,7 +172,8 @@ class Application extends CI_Controller {
     public function dashboard() {
         $this->load->model("Application_model");
         $data = array (
-            "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d"))
+            "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
+            "count"       => $this->Application_model->get_pending_count($this->session->emp_id)
         );
         $this->load->view("onepuhunan/dashboard", $data);
     }

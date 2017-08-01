@@ -113,5 +113,11 @@ class Application_model extends CI_Model {
         $query = $los_db->query("SELECT * FROM sp_los_laf_dashboard_general(?)", $input );
         return $query->row_array();
     }
+
+    public function get_pending_count($input) {
+        $los_db = $this->load->database("LOS", true);
+        $query = $los_db->query("SELECT * FROM sp_get_processor_pending(?)", $input );
+        return $query->row_array();
+    }
 }
 
