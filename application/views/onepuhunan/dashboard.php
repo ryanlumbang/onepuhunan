@@ -182,7 +182,7 @@
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'qa_sup') { ?>
-                    <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
+                    <h1></h1>
 
                     <div class="row">
                         <br>
@@ -276,6 +276,13 @@
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
+                        <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
+                        <h1><?php
+                            foreach ($user_branch as $branchList){
+                                echo $branchList['BranchName']."<br/>";
+                            }
+
+                            ?></h1>
                     </div>
                 <?php } ?>
                 <?php
