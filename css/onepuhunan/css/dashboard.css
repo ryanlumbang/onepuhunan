@@ -9,6 +9,21 @@ h1.value{
     font-weight: bold;
     line-height: 1em;
 }
+.nav > li > a:focus, .nav > li > a:hover,
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+@media screen and (max-width: 767px){
+    .navbar-nav .open .dropdown-menu{
+        background: #fff;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
 
 @media screen and (max-width: 400px){
     br.br-hide{display: block;}
