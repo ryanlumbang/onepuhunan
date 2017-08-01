@@ -16,6 +16,9 @@ h1.value{
     text-decoration: none;
 
 }
+.navbar-toggle span.icon-bar{
+    background: #fff;
+}
 @media screen and (max-width: 767px){
     .navbar-nav .open .dropdown-menu{
         background: #fff;
