@@ -9,7 +9,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="<?=base_url()?>static/css/font-awesome.css" rel="stylesheet">
     <link href="<?=base_url()?>static/css/style.css" rel="stylesheet">
-<!--    <link href="--><?//=base_url()?><!--static/css/pages/dashboard.css" rel="stylesheet">-->
     <link href="<?=base_url()?>static/css/pages/signin.css" rel="stylesheet" type="text/css">
     <link href="<?=base_url()?>css/general.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/jquery.dataTables.min.css">

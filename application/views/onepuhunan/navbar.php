@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
-                        <a  class="">
+                        <a class="">
                             <i class="icon-calendar"></i> <?php echo date("l") . ", " . date("d F Y") ?>
                         </a>
                     </li>
