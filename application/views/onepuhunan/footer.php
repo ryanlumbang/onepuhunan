@@ -12,6 +12,11 @@
 <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
 <script>
 
+    $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
     var lineChartData = {
         labels: ["January", "February", "March", "April", "May", "June", "July"],
         datasets: [

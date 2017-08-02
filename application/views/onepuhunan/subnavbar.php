@@ -11,7 +11,21 @@
                             <li><a href="<?php echo site_url("audit/audit_import"); ?>"><i class="icon-upload-alt"></i><span> Audit Uploading of Sampling</span></a></li>
                             <li><a href="<?php echo site_url("audit/aud_extraction_assign"); ?>"><i class="icon-download-alt"></i><span> Audit Extraction For Auditor</span></a></li>
                             <li><a href="<?php echo site_url("audit/assign_branch"); ?>"><i class="icon-align-justify"></i><span> Manage Branch Assignment</span></a></li>
-                            <li><a href="<?php echo site_url("audit/aud_client"); ?>"><i class="icon-list-alt"></i> <span> Consolidated of Data</span></a></li>
+<!--                            <li><a href="--><?php //echo site_url("audit/aud_client"); ?><!--">-->
+<!--                                    <i class="icon-list-alt"></i> <span> Consolidated of Data</span></a>-->
+<!--                            </li>-->
+                            <li class="dropdown-submenu">
+                                <a class="test" tabindex="-1" href="#"><i class="icon-list-alt"></i><span> Data Consolidated</span> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a tabindex="-1" href="<?php echo site_url("audit/aud_client"); ?>">
+                                            <i class="icon-list-alt"></i><span> Data Entry</span></a>
+                                    </li>
+                                    <li>
+                                        <a tabindex="-1" href="#"><i class="icon-list-alt"></i> Consolidation of Data</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> <b class="caret"></b></a>
@@ -133,11 +147,11 @@
                     <li><a href="<?php echo site_url("audit/assign_branch"); ?>"><i class="icon-align-justify"></i><span>Manage Branch Assignment</span></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-list-alt"></i><i class="icon-long-arrow-down"></i><span>Data Consolidated</span>
+                            <i class="icon-list-alt"></i><i class="icon-long-arrow-down"></i><span> Data Consolidated</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("audit/aud_client"); ?>">Data Entry</a></li>
-                            <li><a href="#">Consolidation of Data</a></li>
+                            <li><a href="<?php echo site_url("audit/aud_client"); ?>"><i class="icon-list-alt"></i><span> Data Entry</span></a></li>
+                            <li><a href="#"><i class="icon-list-alt"></i><span> Consolidation of Data</span></a></li>
                         </ul>
                     </li>
                 </ul>

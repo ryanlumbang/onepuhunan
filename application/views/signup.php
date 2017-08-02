@@ -52,7 +52,7 @@
                                     "id" => "lname", 
                                     "name" => "lname",
                                     "value" => set_value("lname"), 
-                                    "class" => "uk-width-large uk-form-small name_validate",
+                                    "class" => "uk-width-large uk-form-small",
                                     "placeholder" => "Please enter your last name."
                                 ); 
                                 echo form_input($lname); 
@@ -67,7 +67,7 @@
                                     "id" => "fname",
                                     "name" => "fname",
                                     "value" => set_value("fname"),
-                                    "class" => "uk-width-large uk-form-small name_validate",
+                                    "class" => "uk-width-large uk-form-small",
                                     "placeholder" => "Please enter your first name."
                                 );
                                 echo form_input($fname);
@@ -82,7 +82,7 @@
                                     "id" => "mname",
                                     "name" => "mname",
                                     "value" => set_value("mname"),
-                                    "class" => "uk-width-large uk-form-small name_validate",
+                                    "class" => "uk-width-large uk-form-small",
                                     "placeholder" => "Please enter your middle name."
                                 );
                                 echo form_input($mname);
@@ -126,7 +126,7 @@
                                     "id" => "job_title",
                                     "name" => "job_title",
                                     "value" => set_value("job_title"),
-                                    "class" => "uk-width-large uk-form-small alpha_only",
+                                    "class" => "uk-width-large uk-form-small",
                                     "placeholder" => "Please enter your job title."
                                 );
                                 echo form_input($job_title);
@@ -170,7 +170,7 @@
                                     "id" => "emp_id",
                                     "name" => "emp_id",
                                     "value" => set_value("emp_id"),
-                                    "class" => "uk-width-large uk-form-small number_only",
+                                    "class" => "uk-width-large uk-form-small",
                                     "placeholder" => "Please enter your employee id."
                                 );
                                 echo form_input($emp_id);
