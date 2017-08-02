@@ -15,7 +15,7 @@ $(document).ready(function() {
         } catch (e) {
             return undefined;
         }
-        
+
     }
 
     onReady(function () {
@@ -41,14 +41,14 @@ $(document).ready(function() {
     $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
 
     $(window).scroll(function() {
-       if( $(window).scrollTop() > amountScrolled ) {
-           $('a.back-to-top').fadeIn('slow');
-       } else {
-           $('a.back-to-top').fadeOut('slow');
-       }
+        if( $(window).scrollTop() > amountScrolled ) {
+            $('a.back-to-top').fadeIn('slow');
+        } else {
+            $('a.back-to-top').fadeOut('slow');
+        }
     });
 
-//    var tempScrollTop = $(window).scrollTop();    
+//    var tempScrollTop = $(window).scrollTop();
 //    $(window).scrolltop(tempScrollTop);
 //
 //    $(function() {
@@ -59,20 +59,20 @@ $(document).ready(function() {
 //       if(localStorage.scrollPosition) {
 //          $('#tbl_los').scrollTop(localStorage.getItem("scrollPosition"));
 //       }
-//    });  
+//    });
 
     $('a.back-to-top').click(function() {
-       $('html, body').animate({
-           scrollTop: 0
-       }, 700);
-       return false;
+        $('html, body').animate({
+            scrollTop: 0
+        }, 700);
+        return false;
     });
 
     $('#hr-memo').DataTable({
         'order' : [[0, 'desc'], [1, 'asc']]
     });
     /* LOS datatable initialization */
-  var tbl_los = $('#tbl_los').DataTable({
+    var tbl_los = $('#tbl_los').DataTable({
         //'serverSide': true,
         'ajax' : {
             'url': baseUrl + '/operations/ops_pending_app'
@@ -85,11 +85,11 @@ $(document).ready(function() {
                 'orderable': false,
                 'className': 'uk-text-center',
                 'render': function(data, type, full, meta) {
-                   return '<input type="checkbox">'; 
+                    return '<input type="checkbox">';
                 }
             },
             {'width': '3%', 'className': 'dt-center', 'data': 'OurBranchID'},
-            {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},  
+            {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},
             {'width': '3%', 'className': 'dt-center', 'data': 'FileNo'},
             {'width': '12%', 'data': 'ClientName'},
             {'width': '3%', 'className': 'dt-center', 'data': 'ClientID'},
@@ -99,8 +99,8 @@ $(document).ready(function() {
             {'width': '2%', 'className': 'dt-center uk-text-bold', 'data': 'Age'},
             {'width': '3%', 'className': 'dt-center uk-text-bold', 'data': 'DestProcess'},
             {
-                'width': '2%', 
-                'data': null, 
+                'width': '2%',
+                'data': null,
                 'defaultContent':  '<button class="uk-button uk-button-small uk-button-primary">View</button>'
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
@@ -124,12 +124,12 @@ $(document).ready(function() {
                     last = group;
                 }
             });
-            
+
             $('tbody').find('.group').each(function (i, v) {
-               var rowCount = $(this).nextUntil('.group').length;
-               $(this).find('td:first').append($('<span />').append($('<b/>', {
-                   'text': ' (' + rowCount + ')'
-               })));
+                var rowCount = $(this).nextUntil('.group').length;
+                $(this).find('td:first').append($('<span />').append($('<b/>', {
+                    'text': ' (' + rowCount + ')'
+                })));
             });
 
             last = null;
@@ -194,8 +194,8 @@ $(document).ready(function() {
     function getAllCheckedItems() {
         actionArray.splice(0, actionArray.length);
         $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
-           var data = tbl_los.row($(this).parents('tr')).data();
-           actionArray[actionArray.length] = data.ProcessValue;
+            var data = tbl_los.row($(this).parents('tr')).data();
+            actionArray[actionArray.length] = data.ProcessValue;
         });
     }
     //reprocess btn
@@ -203,134 +203,246 @@ $(document).ready(function() {
         return confirm('are you sure?');
     }
 
-    //remark approve
-    $('#BtnApprove').click(function () {
-        if (confirm("CLICK OK TO APPROVE?")){
-            $('form#los_form').submit();
-        }
-        else {
+    var $confirmation_nil = false;
+    $('#los_form').submit(function () {
+        if($confirmation_nil == false){
             return false;
         }
+    });
+
+    //remark approve
+    $('#BtnApprove').click(function () {
+        swal({
+                title: "CLICK OK TO APPROVE",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    $confirmation_nil = true;
+                    //swal("Approved!", "Client has been approved", "success");
+                    $('#Approval_hidden').val("APR");
+                    $('form#los_form').submit();
+                } else {
+                    $confirmation_nil = false;
+                }
+            });
     });
 
     //remark reject
     $('#BtnReject').click(function () {
-        if (confirm("CLICK OK TO REJECT?")){
-            $('form#los_form').submit();
-        }
-        else {
-            return false;
-        }
+        swal({
+                title: "CLICK OK TO REJECT",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    $confirmation_nil = true;
+                    //swal("Rejected!", "Client has been rejected", "success");
+                    $('#Approval_hidden').val("REJ");
+                    $('form#los_form').submit();
+                } else {
+                    $confirmation_nil = false;
+                }
+            });
     });
 
     //remark reject
     $('#BtnRevert').click(function () {
-        if (confirm("CLICK OK TO REVERT?")){
-            $('form#los_form').submit();
-        }
-        else {
-            return false;
-        }
+        swal({
+                title: "CLICK OK TO REVERT",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    $confirmation_nil = true;
+                    //swal("Reverted!", "Client has been reverted", "success");
+                    $('#Approval_hidden').val("REV");
+                    $('form#los_form').submit();
+                } else {
+                    $confirmation_nil = false;
+                }
+            });
     });
     // checkbox: approve all selected entries.
     $('#btn_approve').click(function () {
-        if (confirm("CLICK OK TO APPROVE?")){
+        /*if (confirm("CLICK OK TO APPROVE?")){
             $('form#tbl_los').submit();
         }
         else {
             return false;
-        }
+        }*/
+        swal({
+                title: "CLICK OK TO APPROVE",
+                text: "",
+                type: "info",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    var branchId, groupId;
+                    var counter = 0;
+                    var xhrs = [];
 
-        var branchId, groupId;
-        var counter = 0;
-        var xhrs = [];
+                    $('#tbl_los').find('input[type="checkbox"]:checked').each(function () {
+                        var data = tbl_los.row($(this).parents('tr')).data();
+                        var xhr = $.ajax({
+                            type: 'POST',
+                            url: baseUrl + '/operations/los_laf/' + data.FileNo + '/APR'
+                        });
+                        xhrs.push(xhr);
+                        branchId = data.OurBranchID;
+                        groupId  = data.GroupID;
+                        counter++;
+                    });
 
-        $('#tbl_los').find('input[type="checkbox"]:checked').each(function () {
-            var data = tbl_los.row($(this).parents('tr')).data();
-            var xhr = $.ajax({
-                          type: 'POST',
-                          url: baseUrl + '/operations/los_laf/' + data.FileNo + '/APR'
-                      });
-            xhrs.push(xhr);
-            branchId = data.OurBranchID;
-            groupId  = data.GroupID;
-            counter++;
-        });
+                    $.when.apply($, xhrs).done(function() {
+                        var row_count = $('#tbl_los tr').length - 2;
+                        var datedata  = $('#txt_datedata').val();
 
-        $.when.apply($, xhrs).done(function() {
-            var row_count = $('#tbl_los tr').length - 2;
-            var datedata  = $('#txt_datedata').val();
+                        if (row_count - counter === 0) {
+                            location.href = baseUrl + '/operations/los';
+                        } else {
+                            location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
 
-            if (row_count - counter === 0) {
-                location.href = baseUrl + '/operations/los';
-            } else {
-                location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
-            }
-        });
+
     });
 
     $('#btn_reject').click(function() {
-        if (confirm("CLICK OK TO REJECT?")){
+        /*if (confirm("CLICK OK TO REJECT?")){
             $('form#tbl_los').submit();
         }
         else {
             return false;
-        }
-        var branchId, groupId;
-        var counter = 0;
-        var xhrs = [];
+        }*/
+        swal({
+                title: "CLICK OK TO REJECT",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    var branchId, groupId;
+                    var counter = 0;
+                    var xhrs = [];
 
-        $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
-            var data = tbl_los.row($(this).parents('tr')).data();
-            var xhr = $.ajax({
-                          type: 'POST',
-                          url: baseUrl + '/operations/los_laf/' + data.FileNo + '/REJ'
-                      });
-            xhrs.push(xhr);
-            branchId = data.OurBranchID;
-            groupId = data.GroupID;
-            counter++;
-        });
+                    $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
+                        var data = tbl_los.row($(this).parents('tr')).data();
+                        var xhr = $.ajax({
+                            type: 'POST',
+                            url: baseUrl + '/operations/los_laf/' + data.FileNo + '/REJ'
+                        });
+                        xhrs.push(xhr);
+                        branchId = data.OurBranchID;
+                        groupId = data.GroupID;
+                        counter++;
+                    });
 
-        $.when.apply($, xhrs).done(function() {
-            var row_count = $('#tbl_los tr').length - 2;
-            var datedata = $('#txt_datedata').val();
+                    $.when.apply($, xhrs).done(function() {
+                        var row_count = $('#tbl_los tr').length - 2;
+                        var datedata = $('#txt_datedata').val();
 
-            if(row_count - counter === 0) {
-                location.href = baseUrl + '/operations/los';
-            } else {
-                location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
-            }
-        });
+                        if(row_count - counter === 0) {
+                            location.href = baseUrl + '/operations/los';
+                        } else {
+                            location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
     });
 
     $('#btn_revert').click(function() {
-        var branchId, groupId;
-        var counter = 0;
-        var xhrs = [];
+        swal({
+                title: "CLICK OK TO REVERT",
+                text: "",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    var branchId, groupId;
+                    var counter = 0;
+                    var xhrs = [];
 
-        $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
-            var data = tbl_los.row($(this).parents('tr')).data();
-            var xhr = $.ajax({
-                          type: 'POST',
-                          url: baseUrl + '/operations/los_laf/' + data.FileNo + '/REV'
-                      });
-            xhrs.push(xhr);
-            branchId = data.OurBranchID;
-            groupId = data.GroupID;
-            counter++;
-        });
+                    $('#tbl_los').find('input[type="checkbox"]:checked').each(function() {
+                        var data = tbl_los.row($(this).parents('tr')).data();
+                        var xhr = $.ajax({
+                            type: 'POST',
+                            url: baseUrl + '/operations/los_laf/' + data.FileNo + '/REV'
+                        });
+                        xhrs.push(xhr);
+                        branchId = data.OurBranchID;
+                        groupId = data.GroupID;
+                        counter++;
+                    });
 
-        $.when.apply($, xhrs).done(function() {
-            var row_count = $('#tbl_los tr').length - 2;
-            var datedata = $('#txt_datedata').val();
+                    $.when.apply($, xhrs).done(function() {
+                        var row_count = $('#tbl_los tr').length - 2;
+                        var datedata = $('#txt_datedata').val();
 
-            if(row_count - counter === 0) {
-                location.href = baseUrl + '/operations/los';
-            } else {
-                location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
-            }
-        });
+                        if(row_count - counter === 0) {
+                            location.href = baseUrl + '/operations/los';
+                        } else {
+                            location.href = baseUrl + '/operations/los/' + datedata + '/' + branchId + '/' + groupId;
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+
+
     });
 
     $('#btn_all').click(function() {
@@ -341,7 +453,7 @@ $(document).ready(function() {
 
     $('#btn_des').click(function() {
         $('#tbl_los').find('input[type="checkbox"]').each(function() {
-           this.checked = false;
+            this.checked = false;
         });
     });
 
@@ -356,41 +468,41 @@ $(document).ready(function() {
     $('#result').attr('checked',true);
     var tbl_tc = $('#tbl_tc').DataTable({
 
-       'columns': [
-           {
-               'width': '10%',
-               'searchable': false,
-               'orderable': false
-           },
-           {
-               'width': '42%',
-               'className': 'uk-text-left'
-           },
-           {
-               'width': '12%',
-               'className': 'dt-center',
-               'searchable': false,
-               'orderable': false
-           },
-           {
-               'width': '12%',
-               'className': 'dt-center',
-               'searchable': false,
-               'orderable': false
-           },
-           {
-               'width': '12%',
-               'className': 'dt-center',
-               'searchable': false,
-               'orderable': true
-           },
-           {
-               'width': '12%',
-               'className': 'dt-center',
-               'searchable': false,
-               'orderable': false
-           },
-       ],
+        'columns': [
+            {
+                'width': '10%',
+                'searchable': false,
+                'orderable': false
+            },
+            {
+                'width': '42%',
+                'className': 'uk-text-left'
+            },
+            {
+                'width': '12%',
+                'className': 'dt-center',
+                'searchable': false,
+                'orderable': false
+            },
+            {
+                'width': '12%',
+                'className': 'dt-center',
+                'searchable': false,
+                'orderable': false
+            },
+            {
+                'width': '12%',
+                'className': 'dt-center',
+                'searchable': false,
+                'orderable': true
+            },
+            {
+                'width': '12%',
+                'className': 'dt-center',
+                'searchable': false,
+                'orderable': false
+            },
+        ],
 
         "oLanguage": { "sSearch": "" },
         'iDisplayLength': 100,

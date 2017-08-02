@@ -9,6 +9,7 @@
    <link rel="stylesheet" href="<?=base_url()?>css/components/tooltip.gradient.min.css">
    <link rel="stylesheet" href="<?=base_url()?>css/components/accordion.gradient.min.css">
    <link rel="stylesheet" href="<?=base_url()?>css/components/datepicker.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/sweetalert.css">
    
    <link rel="stylesheet" href="<?=base_url()?>css/custom.css">
    <link rel="stylesheet" href="<?=base_url()?>css/general.css">
@@ -36,6 +37,7 @@
     <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
     <script src="<?=base_url()?>js/onepuhunan/required_fields.js"></script>
    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url()?>js/sweetalert.min.js"></script>
    <script src="<?=base_url()?>js/custom.js"></script>
 
 </head>
