@@ -9,6 +9,7 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -20,6 +21,7 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -31,6 +33,7 @@ function toggleReport()
         $form_kyc_remarks = "block";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -42,6 +45,7 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "block";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -53,6 +57,7 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "block";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -64,7 +69,8 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
-        $form_qa_productivity= "block"
+        $form_bmv_pending = "block";
+        $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
         $buts = "none";
@@ -75,8 +81,9 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
-        $form_qa_productivity= "none"
-        $form_alaf_report =  "block";
+        $form_bmv_pending = "none";
+        $form_qa_productivity= "block"
+        $form_alaf_report =  "none";
         $form_tc_report = "none";
         $buts = "none";
     }
@@ -86,6 +93,19 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
+        $form_qa_productivity= "none"
+        $form_alaf_report =  "block";
+        $form_tc_report = "none";
+        $buts = "none";
+    }
+    else if (choice == "09"){
+        $form_kyc_today = "none";
+        $form_kyc_pending = "none";
+        $form_kyc_remarks = "none";
+        $form_kyc_revert = "none";
+        $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "block";
@@ -98,6 +118,7 @@ function toggleReport()
         $form_kyc_remarks = "none";
         $form_kyc_revert = "none";
         $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
@@ -109,6 +130,7 @@ function toggleReport()
     document.getElementById("form_kyc_remarks").style.display=$form_kyc_remarks;
     document.getElementById("form_kyc_revert").style.display=$form_kyc_revert;
     document.getElementById("form_bmv_remarks").style.display=$form_bmv_remarks;
+    document.getElementById("form_bmv_pending").style.display=$form_bmv_pending;
     document.getElementById("form_qa_productivity").style.display=$form_qa_productivity;
     document.getElementById("form_alaf_report").style.display=$form_alaf_report;
     document.getElementById("form_tc_report").style.display=$form_tc_report;

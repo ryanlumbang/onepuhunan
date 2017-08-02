@@ -185,6 +185,12 @@
             return $query->result_array();
         }
 
+        public function get_bmv_pending() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_pending()");
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");
