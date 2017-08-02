@@ -1,3 +1,4 @@
+
 .no-margin{margin: 0}
 .default-margin{margin: 25px 0}
 .br-hide{
@@ -56,6 +57,20 @@ h1.value{
 }
 .subnavbar a.test + .dropdown-menu{
     left: 103%;
+}
+form button.form-control{
+    appearance: none;
+    outline: 0;
+    background-color: #fff;
+    border: 0;
+    padding: 10px 15px;
+    color: #004886;
+    cursor: pointer;
+    font-weight:bold;
+    transition-duration: 0.25s;
+}
+form button.form-control:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 @media screen and (max-width: 767px){
     .navbar-nav .open .dropdown-menu{
