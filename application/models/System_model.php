@@ -144,4 +144,10 @@
             }
         }
 
+        function get_roleID()
+        {
+            $query = $this->db->query('SELECT * FROM "t_LoginRoles"');
+            return $query->result_array();
+        }
+
     }

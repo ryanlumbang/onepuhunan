@@ -5,6 +5,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 <html lang="en">
 <?php $this->load->view("templates/op-head", $data); ?>
 <body id="losbody">
+<div id="page">
 <div id="page-wrapper">
     <?php $this->load->view("templates/op-header"); ?>
     <?php $this->load->view("templates/subheader"); ?>
@@ -103,20 +104,42 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                     </div>
                 </div>
 
-            <div class="uk-form-row uk-margin-small-bottom">
-                <label class="uk-form-label uk-text-small uk-text-bold">Role ID<span class="tm-required-label">*</span></label>
-                <div class="uk-form-controls">
-                    <?php
-                    $role =  array(
-                        "id" => "role",
-                        "name" => "role",
-                        "value" =>  $_GET["role"],
-                        "class" => "uk-width-large uk-form-small",
-                    );
-                    echo form_input($role);
-                    ?>
+
+
+                <div class="uk-form-row">
+                    <label class="uk-form-label uk-text-small uk-text-bold">Select Role:</label>
+                    <div class="uk-form-controls">
+                        <select name="rolename" id="getRoleID" class = "uk-width-large uk-form-small branchcode">
+                            <option value="" disabled selected hidden></option>
+                            <?php  foreach($ln_rolename as $row): ?>
+                                <option value="<?php echo $row['role_name'];?> " data-emp_id="<?php echo $row['role_id'];?>"><?php echo $row['role_name'];?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                 </div>
-            </div>
+
+                         <script>
+                    $('#getRoleID').change(function () {
+                        $('#role').val($(this).find(':selected').data('emp_id'));
+                    });
+                </script>
+
+                <div class="uk-form-row" style="margin-top: 15px;">
+                    <label class="uk-form-label uk-text-small uk-text-bold">Role ID</label>
+                    <div class="uk-form-controls">
+                        <?php
+                        $role =  array(
+                            "id" => "role",
+                            "name" => "role",
+                            "value" =>  $_GET["role"],
+                            "class" => "uk-width-large uk-form-small",
+                            "style"=>"background-color: #faffbd; border: 1px solid #ddd"
+                        );
+                        echo form_input($role);
+                        ?>
+                    </div>
+                </div>
+
                 <div class="uk-form-row uk-text-center uk-margin-large-bottom">
                 <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
                 <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
@@ -130,5 +153,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <?php $this->load->view("templates/footer"); ?>
     <?php $this->load->view("templates/modal"); ?>
 </div>
+</div>
+<div id="loading"></div>
+
 </body>
 </html>
