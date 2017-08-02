@@ -40,6 +40,7 @@ $(document).ready(function (){
                 required: true
             },
             emp_id: {
+                number: true,
                 required: true
             },
             password: {
@@ -51,4 +52,29 @@ $(document).ready(function (){
         }
     });
 
+
+    $(".name_validate").on("keypress", function (event) {
+        var regex = new RegExp("^[a-z-A-Z._'- ]*$");
+        validation(event, regex);
+    });
+
+    $(".alpha_only").on("keypress", function (event) {
+        var regex = new RegExp("^[a-z-A-Z ]*$");
+        validation(event, regex);
+    });
+
+    $(".number_only").on("keypress", function (event) {
+        var regex = new RegExp("^[a-z-A-Z ]*$");
+        validation(event, regex);
+    });
+
+    function validation(event, regex) {
+        if (event.charCode != 0) {
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!regex.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        }
+    }
 });
