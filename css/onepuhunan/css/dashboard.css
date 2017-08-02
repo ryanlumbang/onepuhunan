@@ -1,0 +1,45 @@
+.no-margin{margin: 0}
+.default-margin{margin: 25px 0}
+.br-hide{
+    display: none;
+}
+h1.value{
+    color: #545454;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1em;
+}
+.nav > li > a:focus, .nav > li > a:hover,
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+
+}
+.navbar-toggle span.icon-bar{
+    background: #fff;
+}
+@media screen and (max-width: 767px){
+    .navbar-nav .open .dropdown-menu{
+        background: #fff;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    br.br-hide{display: block;}
+    .subnavbar .container > ul > li{
+        height:auto;
+        min-width: unset;
+        width:20%;
+    }
+    .subnavbar .container > ul > li a{
+        padding: 0 5px;
+    }
+    .subnavbar .container > ul > li > a > span,
+    .subnavbar .container > ul > li a .caret{
+        display: none;
+    }
+}

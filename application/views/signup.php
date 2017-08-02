@@ -36,7 +36,7 @@
                         }
                     }
                  ?>
-                <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
+                <?=form_open("", array("class" => "uk-form uk-form-horizontal", "id" => "sign_up_form"));?>
                     <legend class="uk-text-muted uk-text-bold tm-form-legend">REGISTRATION</legend>
                     <div class="uk-form-row tm-label">
                         <label class="uk-text-small">
@@ -91,17 +91,25 @@
                     </div>
                     <div class="uk-form-row">
                         <label class="uk-form-label uk-text-small uk-text-bold">Email Address (OnePuhunan) <span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <?php
+                        <div class="uk-form-controls uk-grid temp-class">
+                            <div class="uk-width-1-2">
+                                <?php
                                 $email = array(
                                     "id" => "email",
                                     "name" => "email",
                                     "value" => set_value("email"),
-                                    "class" => "uk-width-large uk-form-small",
+                                    "class" => "uk-form-small uk-width-large",
                                     "placeholder" => "Please enter your email address."
                                 );
                                 echo form_input($email);
-                             ?>
+                                ?>
+                            </div>
+                            <div class="uk-width-1-2">
+                                <select id="email_extension" class="email_extension uk-form-small uk-width-large" name="email_extension">
+                                    <option value="@onepuhunan.com.ph">@onepuhunan.com.ph</option>
+                                    <option value="@gmail.com">@gmail.com</option>
+                                </select>
+                            </div>
                             
                         </div>
                     </div>

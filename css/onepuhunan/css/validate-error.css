@@ -1,3 +1,9 @@
 label.error{
     color: #ff0000;
+    display: block;
+}
+
+/*temporary css*/
+.temp-class > div{
+    padding:0;
 }
