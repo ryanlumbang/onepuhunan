@@ -39,14 +39,14 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Client';
         <div class="header-bg">
             <div class="header-banner">
                 <div class="uk-container op-container">
-                    <h2>CONSOLIDATION OF RAW DATA</h2>
+                    <h2>DATA ENTRY</h2>
                 </div>
             </div>
         </div>
         <section id="main-section">
             <div class="uk-container table-wrap op-container tc-container">
 
-                <div class="op-title"><h1><i class="uk-icon-tags"></i> CONSOLIDATE DATA</h1></div>
+                <div class="op-title"><h1><i class="uk-icon-tags"></i> DATA ENTRY</h1></div>
                 <div class="uk-container uk-width-5-10 uk-container-center">
                     <div class="uk-form-row tm-label">
                         <label class="uk-text-small">

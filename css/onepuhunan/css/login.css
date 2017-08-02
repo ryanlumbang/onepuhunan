@@ -63,8 +63,8 @@ body :-ms-input-placeholder {
 }
 .container h1 {
     font-size: 40px;
+    font-weight: bold;
     transition-duration: 1s;
-    font-weight: 200;
 }
 form {
     z-index: 2;
@@ -80,13 +80,11 @@ form a{
 form span {
     width:60%;
 }
-form input {
+form input.form-control {
     appearance: none;
     outline: 0;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(255, 255, 255, 0.2);
-    width:60%;
-    border-radius: 3px;
     padding: 10px 15px;
     margin: 0 auto 10px auto;
     display: block;
@@ -97,30 +95,43 @@ form input {
     transition-duration: 0.25s;
     font-weight: 300;
 }
-form input:hover {
+form input.form-control:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
-form input:focus {
+form input.form-control:focus {
     background-color: white;
-    width: 65%;
     color: #004886;
 }
-form button {
+form button.form-control, form a.form-control {
     appearance: none;
     outline: 0;
     background-color: white;
     border: 0;
     padding: 10px 15px;
     color: #004886;
-    border-radius: 3px;
-    width: 60%;
     cursor: pointer;
     font-size: 18px;
+    font-weight:bold;
     transition-duration: 0.25s;
 
 }
-form button:hover {
+form button.form-control:hover {
     background-color: #cbe8f7;
+}
+form a,form a:hover, form a:focus{
+    text-decoration: none;
+}
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff;
+}
+.form-control::-moz-placeholder { /* Firefox 19+ */
+    color: #fff;
+}
+.form-control:-ms-input-placeholder { /* IE 10+ */
+    color: #fff;
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+    color: #fff;
 }
 .bg-bubbles {
     position: absolute;
@@ -203,7 +214,7 @@ form button:hover {
 
 /*OnePuhunan*/
 .login-image {
-    width: 7em;
+    width: 17em;
 }
 
 @keyframes square {
@@ -220,5 +231,11 @@ form button:hover {
     }
     100% {
         transform: translateY(-700px) rotate(600deg);
+    }
+}
+
+@media screen and (max-width: 400px){
+    form{
+        width: 100%;
     }
 }

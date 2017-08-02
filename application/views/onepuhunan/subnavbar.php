@@ -131,7 +131,15 @@
                     <li><a href="<?php echo site_url("audit/audit_extraction"); ?>"><i class="icon-download-alt"></i><span>Audit Extraction of Raw Data</span></a></li>
                     <li><a href="<?php echo site_url("audit/aud_extraction_assign"); ?>"><i class="icon-download-alt"></i><span>Audit Extraction For Auditor</span></a></li>
                     <li><a href="<?php echo site_url("audit/assign_branch"); ?>"><i class="icon-align-justify"></i><span>Manage Branch Assignment</span></a></li>
-                    <li><a href="<?php echo site_url("audit/aud_client"); ?>"><i class="icon-list-alt"></i><span>Consolodated of Data</span></a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-list-alt"></i><i class="icon-long-arrow-down"></i><span>Data Consolidated</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo site_url("audit/aud_client"); ?>">Data Entry</a></li>
+                            <li><a href="#">Consolidation of Data</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <a href="/" class="pull-right" style="margin-top: 10px">
                     <i class="icon-chevron-left"></i>
