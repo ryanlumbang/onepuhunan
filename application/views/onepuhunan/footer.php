@@ -11,7 +11,10 @@
 <script src="<?=base_url()?>js/datatable/jquery.dataTables.min.js"></script>
 <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
 <script>
-
+    $('html').click(function() {
+        //your stuf
+        $('.dropdown-submenu a.test').next('ul').hide();
+    });
     $('.dropdown-submenu a.test').on("click", function(e){
         $(this).next('ul').toggle();
         e.stopPropagation();
