@@ -1,4 +1,8 @@
-
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
 .no-margin{margin: 0}
 .default-margin{margin: 25px 0}
 .br-hide{
