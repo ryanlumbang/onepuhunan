@@ -186,7 +186,6 @@
             );
             
             $data["query"] = $this->Operations_model->get_laf_pending($input); 
-            
             $session = array("records_count" => count($data['query']));
             $this->session->set_userdata($session);
             
