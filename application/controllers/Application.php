@@ -48,7 +48,7 @@ class Application extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
             //$this->load->view("main");
-            $this->load->view("onepuhunan/login");
+            $this->load->view("default/login");
         } else {
             $input = array(
                 "emp_id"      => $this->input->post("u_empid"),
@@ -71,7 +71,7 @@ class Application extends CI_Controller {
                 $this->session->set_userdata($session);
             }
 
-            $this->load->view("onepuhunan/login", $data);
+            $this->load->view("default/login", $data);
         }
     }
 
@@ -127,7 +127,7 @@ class Application extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
             //$this->load->view("main");
-            $this->load->view("forgot_password");
+            $this->load->view("default/forgot_password");
         } else {
             $input = array(
                 "email"      => $this->input->post("email"),
@@ -144,9 +144,9 @@ class Application extends CI_Controller {
                 // send notifications
                 $this->send_mail_fgot($session);
 
-                $this->load->view("forgot_password", $data);
+                $this->load->view("default/forgot_password", $data);
             } else {
-                $this->load->view("forgot_password", $data);
+                $this->load->view("default/forgot_password", $data);
             }
         }
     }
@@ -279,7 +279,7 @@ class Application extends CI_Controller {
         $this->form_validation->set_rules($config);
 
         if($this->form_validation->run() == FALSE) {
-            $this->load->view("signup", $data);
+            $this->load->view("default/signup", $data);
         } else {
             $input = array(
                 "emp_id"      => $this->input->post("emp_id"),
@@ -307,9 +307,9 @@ class Application extends CI_Controller {
                 $this->send_mail($session);
                 $this->send_mail_admin($session);
 
-                $this->load->view("signup", $data);
+                $this->load->view("default/signup", $data);
             } else {
-                $this->load->view("signup", $data);
+                $this->load->view("default/signup", $data);
             }
         }
     }
