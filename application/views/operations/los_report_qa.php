@@ -36,7 +36,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
 
                         <div  style="font-size: 13px; text-align: center;">
-                           Select Branch To Generate BMV Pending, After Selecting Branch Code<br/>
+                           Select Branch and Loan Type To Generate BMV Pending, After Selecting<br/>
                             Click <b>Generate Report</b> to generate EXCEL File.
                         </div>
 
@@ -61,10 +61,21 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <input type="text" name="branch_code" id="branch_code" placeholder="" style="display: none;">
 
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
+                        <div class="uk-form-row">
+                            <label class="uk-form-label uk-text-small uk-text-bold">Loan Type<span class="tm-required-label">*</span></label>
+                            <div class="uk-form-controls">
+                                <select class="uk-width-large uk-form-small" id="loan_type" name="loan_type">
+                                    <option value="" disabled selected hidden>Loan Type</option>
+                                    <option value="N">New Loan</option>
+                                    <option value="R">Repeat Loan</option>
+                                </select>
+                            </div>
+
+                            <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
+                                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                            </div>
+                         </div>
                     </div>
                 </form>
 

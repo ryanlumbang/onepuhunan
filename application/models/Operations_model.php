@@ -191,6 +191,18 @@
             return $query->result_array();
         }
 
+        public function get_bmv_pending_qa() {
+            $los_db = $this->load->database("LOS", true);
+            $branchcode = $this->input->post("branch_code");
+            $loan_type = $this->input->post("loan_type");
+            $input = array(
+                "branchcode" =>  $branchcode,
+                "loan_type" => $loan_type
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_pending_qa( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");
@@ -266,16 +278,6 @@
         public function get_asg_branch() {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_usr_emp_branch(?)" , $this->session->emp_id);
-            return $query->result_array();
-        }
-
-        public function get_bmv_pending_qa() {
-            $los_db = $this->load->database("LOS", true);
-            $branchcode = $this->input->post("branch_code");
-            $input = array(
-                "branchcode" =>  $branchcode
-            );
-            $query = $los_db->query("SELECT * FROM sp_report_bmv_pending_qa( ?)", $input);
             return $query->result_array();
         }
 
