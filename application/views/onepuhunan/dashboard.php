@@ -277,12 +277,12 @@
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
                         <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
-                        <h1><?php
+                        <p> <?php
                             foreach ($user_branch as $branchList){
                                 echo $branchList['BranchName']."<br/>";
-                            }
+                            }?>
+                        </p>
 
-                            ?></h1>
                     </div>
                 <?php } ?>
                 <?php
@@ -290,6 +290,12 @@
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
+                        <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
+                        <p> <?php
+                            foreach ($user_branch as $branchList){
+                                echo $branchList['BranchName']."<br/>";
+                            }?>
+                        </p>
                     </div>
                 <?php } ?>
                 <?php
@@ -297,6 +303,12 @@
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
+                        <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
+                        <p> <?php
+                            foreach ($user_branch as $branchList){
+                                echo $branchList['BranchName']."<br/>";
+                            }?>
+                        </p>
                     </div>
                 <?php } ?>
                 <?php
@@ -304,6 +316,12 @@
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
+                        <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
+                        <p> <?php
+                            foreach ($user_branch as $branchList){
+                                echo $branchList['BranchName']."<br/>";
+                            }?>
+                        </p>
                     </div>
                 <?php } ?>
                 <?php
