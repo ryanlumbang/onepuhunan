@@ -236,6 +236,12 @@ $(document).ready(function() {
         }
     });
 
+    $('#los_tc_form').submit(function () {
+        if($confirmation_nil == false){
+            return false;
+        }
+    });
+
     //remark approve
     $('#BtnApprove').click(function () {
         swal({
@@ -254,8 +260,14 @@ $(document).ready(function() {
                 if (isConfirm){
                     $confirmation_nil = true;
                     //swal("Approved!", "Client has been approved", "success");
-                    $('#Approval_hidden').val("APR");
-                    $('form#los_form').submit();
+                    $('.Approval_hidden').val("APR");
+
+                    var myElem = document.getElementById('los_tc_form');
+                    if (myElem === null) {
+                        $('form#los_form').submit();
+                    }else{
+                        $('form#los_tc_form').submit();
+                    }
                 } else {
                     $confirmation_nil = false;
                 }
@@ -280,8 +292,14 @@ $(document).ready(function() {
                 if (isConfirm){
                     $confirmation_nil = true;
                     //swal("Rejected!", "Client has been rejected", "success");
-                    $('#Approval_hidden').val("REJ");
-                    $('form#los_form').submit();
+                    $('.Approval_hidden').val("REJ");
+
+                    var myElem = document.getElementById('los_tc_form');
+                    if (myElem === null) {
+                        $('form#los_form').submit();
+                    }else{
+                        $('form#los_tc_form').submit();
+                    }
                 } else {
                     $confirmation_nil = false;
                 }
@@ -306,8 +324,15 @@ $(document).ready(function() {
                 if (isConfirm){
                     $confirmation_nil = true;
                     //swal("Reverted!", "Client has been reverted", "success");
-                    $('#Approval_hidden').val("REV");
-                    $('form#los_form').submit();
+                    $('.Approval_hidden').val("REV");
+
+
+                    var myElem = document.getElementById('los_tc_form');
+                    if (myElem === null) {
+                        $('form#los_form').submit();
+                    }else{
+                        $('form#los_tc_form').submit();
+                    }
                 } else {
                     $confirmation_nil = false;
                 }

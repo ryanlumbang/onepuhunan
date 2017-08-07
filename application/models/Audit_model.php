@@ -26,7 +26,7 @@ class Audit_model extends CI_Model
         );
 
         if( trim($branch) != "") {
-            $query = $this->db->query("SELECT * FROM sp_zyz( ?, ?, ?)", $input);
+            $query = $this->db->query("SELECT * FROM sp_audit_extract_data( ?, ?, ?)", $input);
             return $query->result_array();
         }
 
@@ -56,6 +56,14 @@ class Audit_model extends CI_Model
         $aud_db = $this->load->database("Audit", true);
         $query = $aud_db->query("SELECT * FROM sp_usr_assign_branch(?)" , $this->session->emp_id);
         return $query->result_array();
+    }
+
+    function get_assign_branch(){
+
+        $aud_db = $this->load->database("Audit", true);
+        $query = $aud_db->query("SELECT * FROM sp_aud_branch_assign()");
+        return $query->result_array();
+
     }
 
     public function set_branch_handle() {
@@ -89,13 +97,6 @@ class Audit_model extends CI_Model
         return $query->result_array();
     }
 
-    function get_assign_branch(){
-
-        $aud_db = $this->load->database("Audit", true);
-        $query = $aud_db->query("SELECT * FROM sp_aud_branch_assign()");
-            return $query->result_array();
-
-    }
 
     function get_client($brnchID){
 
