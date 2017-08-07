@@ -135,21 +135,47 @@ $(document).ready(function() {
             last = null;
 
             api.column(10, { page : 'current'}).data().each( function(group, i) {
-                if(role_id === 'qa_new' && group === 'KYC') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'bm' && group === 'BMV') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'qa' && group === 'KYC') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'qa' && group === 'ALAF') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'tc' && group === 'TC') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else if (role_id === 'cpu' && group === 'SANCTION') {
-                    $(rows).eq(i).find("input, button").attr("disabled", false);
-                } else {
-                    $(rows).eq(i).find("input, button").attr("disabled", true);
+                if(role_id === 'tc'){
+                    if(group === 'TC'){
+                        $(rows).eq(i).find("input, button").attr("disabled", false);
+                    } else {
+                        $(rows).eq(i).find("input, button").attr("disabled", true);
+                    }
+                } else if(role_id === 'qa'){
+                    if(group === 'KYC' || group === 'ALAF'){
+                        $(rows).eq(i).find("input").attr("disabled", true);
+                        $(rows).eq(i).find("button").attr("disabled", false);
+                    } else {
+                        $(rows).eq(i).find("input, button").attr("disabled", true);
+                    }
+                } else if(role_id === 'cpu'){
+                    if(group === 'SANCTION'){
+                        $(rows).eq(i).find("input").attr("disabled", true);
+                        $(rows).eq(i).find("button").attr("disabled", false);
+                    } else {
+                        $(rows).eq(i).find("input, button").attr("disabled", true);
+                    }
+                } else if(role_id === 'bm'){
+                    if(group === 'BMV'){
+                        $(rows).eq(i).find("input").attr("disabled", true);
+                        $(rows).eq(i).find("button").attr("disabled", false);
+                    } else {
+                        $(rows).eq(i).find("input, button").attr("disabled", true);
+                    }
                 }
+                //  if (role_id === 'bm' && group === 'BMV') {
+                //     $(rows).eq(i).find("input, button").attr("disabled", false);
+                // } else if (role_id === 'qa' && group === 'KYC') {
+                //     $(rows).eq(i).find("input, button").attr("disabled", false);
+                // } else if (role_id === 'qa' && group === 'ALAF') {
+                //     $(rows).eq(i).find("input, button").attr("disabled", false);
+                // } else if (role_id === 'tc' && group === 'TC') {
+                //     $(rows).eq(i).find("input, button").attr("disabled", false);
+                // } else if (role_id === 'cpu' && group === 'SANCTION') {
+                //     $(rows).eq(i).find("input, button").attr("disabled", false);
+                // } else {
+                //     $(rows).eq(i).find("input, button").attr("disabled", true);
+                // }
             });
         },
         'bSort': false,

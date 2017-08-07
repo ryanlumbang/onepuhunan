@@ -317,4 +317,5 @@
             </div>
         </div>
     </div>
+    <?php $this->load->view("onepuhunan/copyright"); ?>
     <?php $this->load->view("onepuhunan/footer"); ?>

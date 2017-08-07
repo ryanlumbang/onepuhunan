@@ -5,13 +5,17 @@
 <script src="<?=base_url()?>js/bootstrap.min.js"></script>
 <!--<script src="--><?//=base_url()?><!--js/custom.js"></script>-->
 <script language="javascript" type="text/javascript" src="<?=base_url()?>static/js/full-calendar/fullcalendar.min.js"></script>
-
+<script src="<?=base_url()?>js/jquery.validate.min.js"></script>
+<script src="<?=base_url()?>js/onepuhunan/required_fields.js"></script>
 <script src="<?=base_url()?>static/js/base.js"></script>
 <script src="<?=base_url()?>static/js/signin.js"></script>
 <script src="<?=base_url()?>js/datatable/jquery.dataTables.min.js"></script>
 <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
 <script>
-
+    $('html').click(function() {
+        //your stuf
+        $('.dropdown-submenu a.test').next('ul').hide();
+    });
     $('.dropdown-submenu a.test').on("click", function(e){
         $(this).next('ul').toggle();
         e.stopPropagation();
@@ -137,20 +141,7 @@
     });
 </script><!-- /Calendar -->
 <!--Dynamically creates analytics markup-->
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="container">
-            <div class="row">
-                <div class="span12">Copyright &copy; 2017 <a href="">MicroVentures Philippines Financing Company, Inc. - Information Technology Department. All Rights Reserved. </a>. </div>
-                <!-- /span12 -->
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /footer-inner -->
-</footer>
-<!-- /footer -->
+
 
 </body>
 

@@ -2,6 +2,9 @@ label.error{
     color: #ff0000;
     display: block;
 }
+.field-required{
+    color: #ff0000;
+}
 
 /*temporary css*/
 .temp-class > div{
