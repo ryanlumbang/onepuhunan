@@ -314,6 +314,40 @@
                     </div>
                 <?php } ?>
                 <!-- /row -->
+                <hr/>
+                <?php
+                foreach ($user_branch as $branchList){
+                    echo "<h2>".$branchList['BranchName']."</h2>";
+                    foreach ($count_branch_pending  as $pendingCount){
+                            foreach ($pendingCount as $byBranch){
+                                if($byBranch['ourbranchid'] == $branchList["BranchCode"] ){
+                                    if($this->session->role_id == 'qa'){
+
+                                        if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
+                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>";
+                                        }
+
+                                    } elseif ($this->session->role_id == 'bm'){
+
+                                        if($byBranch['destprocess'] == 'BMV'){
+                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>";
+                                        }
+                                    } elseif ($this->session->role_id == 'tc'){
+
+                                        if($byBranch['destprocess'] == 'TC'){
+                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>Z";
+                                        }
+                                    } else {
+
+                                    }
+                                }
+
+                            }
+
+                    }
+                }
+
+                ?>
             </div>
         </div>
     </div>

@@ -171,11 +171,23 @@ class Application extends CI_Controller {
 
     public function dashboard() {
         $this->load->model("Application_model");
+        $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
+        $count_pending = array();
+
+        foreach ($getBranch as $list){
+            $input= array(
+                '_emp_id' => $this->session->emp_id,
+                '_branch_id' => $list['BranchCode']);
+            $count = $this->Application_model->get_sp_usr_pending_branch($input);
+            $count_pending[] = $count;
+        }
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
             "count"       => $this->Application_model->get_pending_count($this->session->emp_id),
-            "user_branch"       => $this->Application_model->get_user_branch($this->session->emp_id)
+            "user_branch"       => $getBranch,
+            "count_branch_pending"       => $count_pending
         );
+
         $this->load->view("onepuhunan/dashboard", $data);
     }
 
