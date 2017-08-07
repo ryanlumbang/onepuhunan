@@ -81,6 +81,7 @@ $route['operations/success_branch_assign']    = "operations/success_branch_assig
 $route['operations/los_report']    = "operations/los_report";
 $route['operations/report']    = "operations/los_report_qa";
 $route['operations/client_search']    = "operations/client_search";
+$route['operations/client_upload']    = "operations/client_upload";
 $route['operations/processor_pending']    = "operations/get_processor_pending";
 $route['operations/client_rejected']    = "sys/client_rejected";
 

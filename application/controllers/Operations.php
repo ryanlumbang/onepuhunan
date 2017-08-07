@@ -21,6 +21,54 @@
             $data["number_of_rows"] = count($data["query"]);
             $this->load->view("operations/los_search_client", $data);
         }
+
+        public function client_upload()
+        {
+            $this->load->model('Operations_model');
+            $count = 0;
+
+            if(isset($_POST["import"]))
+            {
+                $filename=$_FILES["file"]["tmp_name"];
+                if($_FILES["file"]["size"] > 0)
+                {
+                    $file = fopen($filename, "r");
+                    fgetcsv($file);
+                    while (($importdata = fgetcsv($file, 10000, ",")) !== FALSE)
+                    {
+                        $data = array(
+                            'FileNo' => $importdata[0],
+                            'FileName' =>$importdata[1],
+                            'Branch' => $importdata[2],
+                            'ClientID' => $importdata[3],
+                            'Name' => $importdata[4],
+                            'Processor' => $importdata[5]
+
+
+                        );
+
+                        //$insert = $this->welcome->insertCSV($data);
+                        $this->Operations_model->update_sanction_waive($data);
+                        $count++;
+                    }
+                    fclose($file);
+                    redirect('operations/client_upload');
+                }else{
+                    redirect('operations/client_upload');
+                }
+            }
+            $data["query"] = $this->Operations_model->get_sanction_waive();
+            $data["number_of_rows"] = count($data["query"]);
+            $this->load->view("operations/los_upload",$data);
+
+        }
+//
+//    public function sanction_waive() {
+//        $this->load->model("Operations_model");
+//        $data["query"] = $this->Operations_model->get_sanction_waive();
+//        $data["number_of_rows"] = count($data["query"]);
+//        $this->load->view("sys/client_rejected", $data);
+//    }
         
         public function client_info($input) {
             $this->load->model("Operations_model");

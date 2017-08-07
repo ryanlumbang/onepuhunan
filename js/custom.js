@@ -755,7 +755,7 @@ $(document).ready(function() {
         window.location.reload();
         $(".add_form modal").hide();
     });
-    $('#c_rejected').DataTable();
+    $('#c_rejected, #c_sanction_waive').DataTable();
     $('#c_search').dataTable( {
         "searching": false,
         "lengthChange": false

@@ -281,4 +281,15 @@
             return $query->result_array();
         }
 
+        public function update_sanction_waive($data){
+            $los_db = $this->load->database("LOS", true);
+            $los_db->insert('"t_Sanction_Waive"', $data);
+        }
+
+        public function get_sanction_waive() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query('SELECT * FROM "t_Sanction_Waive"');
+            return $query->result_array();
+        }
+
     }
