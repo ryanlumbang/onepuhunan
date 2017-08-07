@@ -217,6 +217,13 @@
             return $query->result_array();
         }
 
+        public function get_sanction_report() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_report_sanction_pending()");
+            return $query->result_array();
+        }
+
+
         public function get_kyc_rvrt() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("start_date_rvrt");

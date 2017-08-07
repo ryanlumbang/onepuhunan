@@ -47,6 +47,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                             <option value="07">QA Productivity</option>
                             <option value="08">ALAF Report</option>
                             <option value="09">TC Report</option>
+                            <option value="10">Sanction Report</option>
                         </select>
                     </div>
                 </div>
@@ -207,7 +208,6 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                 </form>
 
-
                 <!--QA PRODUCTIVITY-->
                 <form class="uk-form uk-form-horizontal"  id="form_qa_productivity" name="form_qa_productivity" method="post" action="<?php echo site_url("operations/report_qa_productivity"); ?>" target="_blank">
                     <div class="uk-form-row">
@@ -243,7 +243,6 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                 </form>
 
-
                 <!--TC REPORT-->
                 <form class="uk-form uk-form-horizontal"  id="form_tc_report" name="form_tc_report" method="post" action="<?php echo site_url("operations/report_tc"); ?>" target="_blank">
                     <div class="uk-form-row">
@@ -262,13 +261,30 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                 </form>
 
+                <!--SANCTION REPORT-->
+                <form class="uk-form uk-form-horizontal" id="form_sanction_report" name="form_sanction_report" method="post" action="<?php echo site_url("operations/report_sanction"); ?>" target="_blank">
+                    <div class="uk-form-row">
+                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
+                            <label style="font-size: 20px; font-weight: bold;">SANCTION REPORT</label>
+                        </div>
+                        <div  style="font-size: 13px; text-align: center;">
+                            All data from SANCTION REPORT will be EXTRACTED. <br/>
+                            Click <b>Generate Report</b> to generate EXCEL File.
+                        </div>
+                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
+                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_sanction_report" id="sanction">Extract Report</button>
+                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+
                 <div style="text-align: center;">
                     <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10" id="buts">Cancel</a>
                 </div>
             </div>
 
             <style>
-                #form_kyc_today, #form_kyc_pending, #form_qa_productivity, #form_alaf_report, #form_tc_report, #form_kyc_remarks,  #form_kyc_revert, #form_bmv_remarks, #form_bmv_pending{
+                #form_kyc_today, #form_kyc_pending, #form_qa_productivity, #form_alaf_report, #form_tc_report, #form_kyc_remarks,  #form_kyc_revert, #form_bmv_remarks, #form_bmv_pending, #form_sanction_report{
                     display: none;
                 }
             </style>

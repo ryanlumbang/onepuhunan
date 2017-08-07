@@ -13,6 +13,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "02"){
@@ -25,6 +26,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "03"){
@@ -37,6 +39,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "04"){
@@ -49,6 +52,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "05"){
@@ -61,6 +65,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "06"){
@@ -73,6 +78,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "07"){
@@ -85,6 +91,7 @@ function toggleReport()
         $form_qa_productivity= "block"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "08"){
@@ -97,6 +104,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "block";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "none";
     }
     else if (choice == "09"){
@@ -109,6 +117,20 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "block";
+        $form_sanction_report = "none";
+        $buts = "none";
+    }
+    else if (choice == "10"){
+        $form_kyc_today = "none";
+        $form_kyc_pending = "none";
+        $form_kyc_remarks = "none";
+        $form_kyc_revert = "none";
+        $form_bmv_remarks = "none";
+        $form_bmv_pending = "none";
+        $form_qa_productivity= "none"
+        $form_alaf_report =  "none";
+        $form_tc_report = "none";
+        $form_sanction_report = "block";
         $buts = "none";
     }
 
@@ -122,6 +144,7 @@ function toggleReport()
         $form_qa_productivity= "none"
         $form_alaf_report =  "none";
         $form_tc_report = "none";
+        $form_sanction_report = "none";
         $buts = "block";
     }
 
@@ -134,6 +157,7 @@ function toggleReport()
     document.getElementById("form_qa_productivity").style.display=$form_qa_productivity;
     document.getElementById("form_alaf_report").style.display=$form_alaf_report;
     document.getElementById("form_tc_report").style.display=$form_tc_report;
+    document.getElementById("form_sanction_report").style.display=$form_sanction_report;
     document.getElementById("buts").style.display=$buts;
 }
 
