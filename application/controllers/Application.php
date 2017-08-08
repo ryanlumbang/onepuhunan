@@ -173,6 +173,7 @@ class Application extends CI_Controller {
         $this->load->model("Application_model");
         $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
         $count_pending = array();
+        $new_array =  array();
 
         foreach ($getBranch as $list){
             $input= array(
@@ -181,13 +182,25 @@ class Application extends CI_Controller {
             $count = $this->Application_model->get_sp_usr_pending_branch($input);
             $count_pending[] = $count;
         }
+
+
+        foreach ($count_pending  as $pendingCount) {
+            foreach ($pendingCount as $key => $byBranch) {
+                array_push($new_array, $byBranch);
+            }
+        }
+        $sum = array_reduce($new_array, function ($a, $b) {
+            isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
+            return $a;
+        });
+
+
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
-            "count"       => $this->Application_model->get_pending_count($this->session->emp_id),
+            "count"       => $sum,
             "user_branch"       => $getBranch,
-            "count_branch_pending"       => $count_pending
+            "count_branch_pending"       => $new_array
         );
-
         $this->load->view("onepuhunan/dashboard", $data);
     }
 

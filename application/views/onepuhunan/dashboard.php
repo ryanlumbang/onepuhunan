@@ -2,6 +2,27 @@
     <div class="main">
         <div class="main-inner">
             <div class="container">
+
+                <?php foreach ($count as $total)
+                    if($this->session->role_id == 'qa'){
+                        if($total['destprocess'] == 'KYC'){
+                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
+                        } elseif($total['destprocess'] == 'ALAF') {
+                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
+                        }
+
+                    } elseif ($this->session->role_id == 'bm'){
+
+                        if($total['destprocess'] == 'BMV'){
+                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
+                        }
+                    } elseif ($this->session->role_id == 'tc'){
+
+                        if($total['destprocess'] == 'TC'){
+                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
+                        }
+                    }
+                ?>
                 <?php
                 if($this->session->role_id == 'super') { ?>
                     <div class="row">
@@ -276,7 +297,6 @@
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
-                        <h1><?= $count['count_pending'] ? $count['count_pending'] : '0' ?></h1>
                         <h1><?php
                             foreach ($user_branch as $branchList){
                                 echo $branchList['BranchName']."<br/>";
@@ -316,37 +336,28 @@
                 <!-- /row -->
                 <hr/>
                 <?php
-                foreach ($user_branch as $branchList){
-                    echo "<h2>".$branchList['BranchName']."</h2>";
-                    foreach ($count_branch_pending  as $pendingCount){
-                            foreach ($pendingCount as $byBranch){
-                                if($byBranch['ourbranchid'] == $branchList["BranchCode"] ){
-                                    if($this->session->role_id == 'qa'){
-
-                                        if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
-                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>";
-                                        }
-
-                                    } elseif ($this->session->role_id == 'bm'){
-
-                                        if($byBranch['destprocess'] == 'BMV'){
-                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>";
-                                        }
-                                    } elseif ($this->session->role_id == 'tc'){
-
-                                        if($byBranch['destprocess'] == 'TC'){
-                                            echo "<h2><span>".$byBranch['destprocess']."</span> - <span>".$byBranch['sum']."</span></h2>Z";
-                                        }
-                                    } else {
-
+                    foreach ($user_branch as $branchList){
+                        echo "<h2>".$branchList['BranchName']."</h2>";
+                        foreach ($count_branch_pending as $key => $pendingCount){
+                            if($pendingCount['ourbranchid'] == $branchList["BranchCode"] ){
+                                if($this->session->role_id == 'qa'){
+                                    if($pendingCount['destprocess'] == 'KYC'){
+                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
+                                    } elseif($pendingCount['destprocess'] == 'ALAF') {
+                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
+                                    }
+                                } elseif ($this->session->role_id == 'bm'){
+                                    if($pendingCount['destprocess'] == 'BMV'){
+                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
+                                    }
+                                } elseif ($this->session->role_id == 'tc'){
+                                    if($pendingCount['destprocess'] == 'TC'){
+                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
                                     }
                                 }
-
                             }
-
+                        }
                     }
-                }
-
                 ?>
             </div>
         </div>
