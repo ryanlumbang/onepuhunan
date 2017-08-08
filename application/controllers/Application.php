@@ -194,7 +194,6 @@ class Application extends CI_Controller {
             return $a;
         });
 
-
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
             "count"       => $sum,

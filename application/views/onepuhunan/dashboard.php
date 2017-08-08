@@ -2,27 +2,131 @@
     <div class="main">
         <div class="main-inner">
             <div class="container">
+                <div class="row">
+                    <br/>
+                    <?php foreach ($count as $total)
+                         if($this->session->role_id == 'qa'){
+                             if($total['destprocess'] == 'KYC'){ ?>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="widget widget-nopad">
+                                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                                            <h3>TOTAL KYC</h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div class="text-center default-margin row">
+                                                <div class="col-xs-12">
+                                                    <h2><?=$total['destprocess'] ?></h2>
+                                                    <h1 class="value"><?=$total['sum'] ?></h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                <?php foreach ($count as $total)
-                    if($this->session->role_id == 'qa'){
-                        if($total['destprocess'] == 'KYC'){
-                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
-                        } elseif($total['destprocess'] == 'ALAF') {
-                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
-                        }
+                             <?php } elseif($total['destprocess'] == 'ALAF') { ?>
+                                 <div class="col-md-6 col-xs-12">
+                                     <div class="widget widget-nopad">
+                                         <div class="widget-header"> <i class="icon-list-alt"></i>
+                                             <h3>TOTAL ALAF</h3>
+                                         </div>
+                                         <div class="widget-content">
+                                             <div class="text-center default-margin row">
+                                                 <div class="col-xs-12">
+                                                     <h2><?=$total['destprocess'] ?></h2>
+                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
 
-                    } elseif ($this->session->role_id == 'bm'){
+                             <?php } ?>
+                        <?php } elseif ($this->session->role_id == 'bm'){ ?>
+                            <?php if($total['destprocess'] == 'BMV'){ ?>
+                                 <div class="col-md-6 col-xs-12">
+                                     <div class="widget widget-nopad">
+                                         <div class="widget-header"> <i class="icon-list-alt"></i>
+                                             <h3>TOTAL BMV</h3>
+                                         </div>
+                                         <div class="widget-content">
+                                             <div class="text-center default-margin row">
+                                                 <div class="col-xs-12">
+                                                     <h2><?=$total['destprocess'] ?></h2>
+                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                            <?php } ?>
+                        <?php } elseif ($this->session->role_id == 'tc'){ ?>
+                            <?php if($total['destprocess'] == 'TC'){ ?>
+                                 <div class="col-md-6 col-xs-12">
+                                     <div class="widget widget-nopad">
+                                         <div class="widget-header"> <i class="icon-list-alt"></i>
+                                             <h3>TOTAL TC</h3>
+                                         </div>
+                                         <div class="widget-content">
+                                             <div class="text-center default-margin row">
+                                                 <div class="col-xs-12">
+                                                     <h2><?=$total['destprocess'] ?></h2>
+                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                            <?php } ?>
+                    <?php } ?>
 
-                        if($total['destprocess'] == 'BMV'){
-                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
-                        }
-                    } elseif ($this->session->role_id == 'tc'){
+                    <?php foreach ($user_branch as $branchList){  ?>
+                        <div class="col-md-6 col-xs-12">
+                            <!-- sanction counter -->
+                            <div class="widget widget-nopad">
+                                <div class="widget-header"> <i class="icon-list-alt"></i>
+                                    <h3><?=$branchList['BranchName']?></h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="text-center default-margin row">
+                                        <?php foreach ($count_branch_pending as $key => $pendingCount){ ?>
+                                            <?php if($pendingCount['ourbranchid'] == $branchList["BranchCode"] ){ ?>
 
-                        if($total['destprocess'] == 'TC'){
-                            echo "<h2>Total ".$total['destprocess']."</span> - <span>".$total['sum']."</span></h2>";
-                        }
-                    }
-                ?>
+                                                <?php if($this->session->role_id == 'qa'){ ?>
+                                                    <?php if($pendingCount['destprocess'] == 'KYC'){ ?>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php } elseif($pendingCount['destprocess'] == 'ALAF') { ?>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php    }
+                                                } elseif ($this->session->role_id == 'bm'){
+                                                    if($pendingCount['destprocess'] == 'BMV'){ ?>
+                                                        <div class="col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php }  ?>
+                                                <?php } elseif ($this->session->role_id == 'tc'){
+                                                    if($pendingCount['destprocess'] == 'TC'){ ?>
+                                                        <div class="col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php    }  ?>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+
                 <?php
                 if($this->session->role_id == 'super') { ?>
                     <div class="row">
@@ -292,33 +396,32 @@
                         </div>
                     </div>
                 <?php } ?>
-                <?php
-                if($this->session->role_id == 'qa') { ?>
-                    <div class="row">
-                        <br>
-                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
-                        <h1><?php
-                            foreach ($user_branch as $branchList){
-                                echo $branchList['BranchName']."<br/>";
-                            }
-
-                            ?></h1>
-                    </div>
-                <?php } ?>
-                <?php
-                if($this->session->role_id == 'bm') { ?>
-                    <div class="row">
-                        <br>
-                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
-                    </div>
-                <?php } ?>
-                <?php
-                if($this->session->role_id == 'tc') { ?>
-                    <div class="row">
-                        <br>
-                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
-                    </div>
-                <?php } ?>
+<!--                --><?php
+//                if($this->session->role_id == 'qa') { ?>
+<!--                    <div class="row">-->
+<!--                        <br>-->
+<!--                        <h1>--><?php
+//                            foreach ($user_branch as $branchList){
+//                                echo $branchList['BranchName']."";
+//                            }
+//
+//                            ?><!--</h1>-->
+<!--                    </div>-->
+<!--                --><?php //} ?>
+<!--                --><?php
+//                if($this->session->role_id == 'bm') { ?>
+<!--                    <div class="row">-->
+<!--                        <br>-->
+<!--                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>-->
+<!--                    </div>-->
+<!--                --><?php //} ?>
+<!--                --><?php
+//                if($this->session->role_id == 'tc') { ?>
+<!--                    <div class="row">-->
+<!--                        <br>-->
+<!--                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>-->
+<!--                    </div>-->
+<!--                --><?php //} ?>
                 <?php
                 if($this->session->role_id == 'cpu') { ?>
                     <div class="row">
@@ -334,33 +437,9 @@
                     </div>
                 <?php } ?>
                 <!-- /row -->
-                <hr/>
                 <?php
-                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper')
-                    foreach ($user_branch as $branchList){
-                        echo "<h2>".$branchList['BranchName']."</h2>";
-                        foreach ($count_branch_pending as $key => $pendingCount){
-                            if($pendingCount['ourbranchid'] == $branchList["BranchCode"] ){
-                                if($this->session->role_id == 'qa'){
-                                    if($pendingCount['destprocess'] == 'KYC'){
-                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
-                                    } elseif($pendingCount['destprocess'] == 'ALAF') {
-                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
-                                    }
-                                } elseif ($this->session->role_id == 'bm'){
-                                    if($pendingCount['destprocess'] == 'BMV'){
-                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
-                                    }
-                                } elseif ($this->session->role_id == 'tc'){
-                                    if($pendingCount['destprocess'] == 'TC'){
-                                        echo "<h2><span>".$pendingCount['destprocess']."</span> - <span>".$pendingCount['sum']."</span></h2>";
-                                    }
-                                }
-                            }
-                        }
-                    }
+                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper')?>
 
-                ?>
             </div>
         </div>
     </div>
