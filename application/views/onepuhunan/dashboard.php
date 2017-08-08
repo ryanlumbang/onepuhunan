@@ -397,32 +397,6 @@
                         </div>
                     </div>
                 <?php } ?>
-<!--                --><?php
-//                if($this->session->role_id == 'qa') { ?>
-<!--                    <div class="row">-->
-<!--                        <br>-->
-<!--                        <h1>--><?php
-//                            foreach ($user_branch as $branchList){
-//                                echo $branchList['BranchName']."";
-//                            }
-//
-//                            ?><!--</h1>-->
-<!--                    </div>-->
-<!--                --><?php //} ?>
-<!--                --><?php
-//                if($this->session->role_id == 'bm') { ?>
-<!--                    <div class="row">-->
-<!--                        <br>-->
-<!--                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>-->
-<!--                    </div>-->
-<!--                --><?php //} ?>
-<!--                --><?php
-//                if($this->session->role_id == 'tc') { ?>
-<!--                    <div class="row">-->
-<!--                        <br>-->
-<!--                        <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>-->
-<!--                    </div>-->
-<!--                --><?php //} ?>
                 <?php
                 if($this->session->role_id == 'cpu') { ?>
                     <div class="row">
