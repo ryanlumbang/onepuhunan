@@ -203,7 +203,8 @@ class Application extends CI_Controller {
                 }
             }
         }
-
+//echo "<pre>";
+//        var_dump($new_array);
         $sum = array_reduce($new_array, function ($a, $b) {
             isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
             return $a;

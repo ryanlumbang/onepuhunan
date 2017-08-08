@@ -4,82 +4,83 @@
             <div class="container">
                 <div class="row">
                     <br/>
-                    <?php foreach ($count as $total)
-                         if($this->session->role_id == 'qa'){
-                             if($total['destprocess'] == 'KYC'){ ?>
-                                <div class="col-md-6 col-xs-12">
-                                    <div class="widget widget-nopad">
-                                        <div class="widget-header"> <i class="icon-list-alt"></i>
-                                            <h3>TOTAL KYC</h3>
-                                        </div>
-                                        <div class="widget-content">
-                                            <div class="text-center default-margin row">
-                                                <div class="col-xs-12">
-                                                    <h2><?=$total['destprocess'] ?></h2>
-                                                    <h1 class="value"><?=$total['sum'] ?></h1>
+                    <?php if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu') {?>
+                        <?php foreach ($count as $total)
+                             if($this->session->role_id == 'qa'){
+                                 if($total['destprocess'] == 'KYC'){ ?>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div class="widget widget-nopad">
+                                            <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                <h3>TOTAL KYC</h3>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="text-center default-margin row">
+                                                    <div class="col-xs-12">
+                                                        <h2><?=$total['destprocess'] ?></h2>
+                                                        <h1 class="value"><?=$total['sum'] ?></h1>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                             <?php } elseif($total['destprocess'] == 'ALAF') { ?>
-                                 <div class="col-md-6 col-xs-12">
-                                     <div class="widget widget-nopad">
-                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                             <h3>TOTAL ALAF</h3>
-                                         </div>
-                                         <div class="widget-content">
-                                             <div class="text-center default-margin row">
-                                                 <div class="col-xs-12">
-                                                     <h2><?=$total['destprocess'] ?></h2>
-                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                 <?php } elseif($total['destprocess'] == 'ALAF') { ?>
+                                     <div class="col-md-6 col-xs-12">
+                                         <div class="widget widget-nopad">
+                                             <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                 <h3>TOTAL ALAF</h3>
+                                             </div>
+                                             <div class="widget-content">
+                                                 <div class="text-center default-margin row">
+                                                     <div class="col-xs-12">
+                                                         <h2><?=$total['destprocess'] ?></h2>
+                                                         <h1 class="value"><?=$total['sum'] ?></h1>
+                                                     </div>
                                                  </div>
                                              </div>
                                          </div>
                                      </div>
-                                 </div>
 
-                             <?php } ?>
-                        <?php } elseif ($this->session->role_id == 'bm'){ ?>
-                            <?php if($total['destprocess'] == 'BMV'){ ?>
-                                 <div class="col-md-6 col-xs-12">
-                                     <div class="widget widget-nopad">
-                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                             <h3>TOTAL BMV</h3>
-                                         </div>
-                                         <div class="widget-content">
-                                             <div class="text-center default-margin row">
-                                                 <div class="col-xs-12">
-                                                     <h2><?=$total['destprocess'] ?></h2>
-                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                 <?php } ?>
+                            <?php } elseif ($this->session->role_id == 'bm'){ ?>
+                                <?php if($total['destprocess'] == 'BMV'){ ?>
+                                     <div class="col-md-6 col-xs-12">
+                                         <div class="widget widget-nopad">
+                                             <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                 <h3>TOTAL BMV</h3>
+                                             </div>
+                                             <div class="widget-content">
+                                                 <div class="text-center default-margin row">
+                                                     <div class="col-xs-12">
+                                                         <h2><?=$total['destprocess'] ?></h2>
+                                                         <h1 class="value"><?=$total['sum'] ?></h1>
+                                                     </div>
                                                  </div>
                                              </div>
                                          </div>
                                      </div>
-                                 </div>
-                            <?php } ?>
-                        <?php } elseif ($this->session->role_id == 'tc'){ ?>
-                            <?php if($total['destprocess'] == 'TC'){ ?>
-                                 <div class="col-md-6 col-xs-12">
-                                     <div class="widget widget-nopad">
-                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                             <h3>TOTAL TC</h3>
-                                         </div>
-                                         <div class="widget-content">
-                                             <div class="text-center default-margin row">
-                                                 <div class="col-xs-12">
-                                                     <h2><?=$total['destprocess'] ?></h2>
-                                                     <h1 class="value"><?=$total['sum'] ?></h1>
+                                <?php } ?>
+                            <?php } elseif ($this->session->role_id == 'tc'){ ?>
+                                <?php if($total['destprocess'] == 'TC'){ ?>
+                                     <div class="col-md-6 col-xs-12">
+                                         <div class="widget widget-nopad">
+                                             <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                 <h3>TOTAL TC</h3>
+                                             </div>
+                                             <div class="widget-content">
+                                                 <div class="text-center default-margin row">
+                                                     <div class="col-xs-12">
+                                                         <h2><?=$total['destprocess'] ?></h2>
+                                                         <h1 class="value"><?=$total['sum'] ?></h1>
+                                                     </div>
                                                  </div>
                                              </div>
                                          </div>
                                      </div>
-                                 </div>
-                            <?php } ?>
-                    <?php } ?>
-                    <?php if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu') {?>
-                        <?php foreach ($user_branch as $branchList){  ?>
+                                <?php } ?>
+                        <?php } ?>
+
+                        <?php foreach ($user_branch as $id => $branchList){  ?>
                             <div class="col-md-6 col-xs-12">
                                 <!-- sanction counter -->
                                 <div class="widget widget-nopad">
@@ -111,12 +112,13 @@
                                                     <?php } ?>
                                                 <?php } ?>
                                             <?php } ?>
-<!--                                            --><?php //if(count($branchList["BranchCode"]) != count($pendingCount['ourbranchid'])) { ?>
-<!--                                                <div class="col-xs-12">-->
-<!--                                                    <h2>--><?//= $pendingCount['destprocess'] ?><!--</h2>-->
-<!--                                                    <h1 class="value">0</h1>-->
-<!--                                                </div>-->
-<!--                                            --><?php //} ?>
+                                            <?php if ($key == 0 && $key != $id  ) { ?>
+                                                <div class="col-xs-12">
+                                                    <h2><?= $pendingCount['destprocess'] ?></h2>
+                                                    <h1 class="value">0</h1>
+                                                </div>
+                                            <?php } ?>
+
                                         </div>
                                     </div>
 
