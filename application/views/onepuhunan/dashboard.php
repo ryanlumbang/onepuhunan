@@ -336,6 +336,7 @@
                 <!-- /row -->
                 <hr/>
                 <?php
+                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper')
                     foreach ($user_branch as $branchList){
                         echo "<h2>".$branchList['BranchName']."</h2>";
                         foreach ($count_branch_pending as $key => $pendingCount){
@@ -358,6 +359,7 @@
                             }
                         }
                     }
+
                 ?>
             </div>
         </div>
