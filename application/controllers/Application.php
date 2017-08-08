@@ -186,9 +186,24 @@ class Application extends CI_Controller {
 
         foreach ($count_pending  as $pendingCount) {
             foreach ($pendingCount as $key => $byBranch) {
-                array_push($new_array, $byBranch);
+                $str = strtoupper($this->session->role_id);
+                if($str != $byBranch['destprocess'] ){
+                    if($str == 'QA'){
+                        if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
+                            array_push($new_array, $byBranch);
+                        }
+                    }elseif($str == 'BM'){
+                        if($byBranch['destprocess'] == 'BMV'){
+                            array_push($new_array, $byBranch);
+                        }
+                    }
+
+                }elseif($str == $byBranch['destprocess']){
+                    array_push($new_array, $byBranch);
+                }
             }
         }
+
         $sum = array_reduce($new_array, function ($a, $b) {
             isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
             return $a;

@@ -94,36 +94,29 @@
                                                 <?php if($pendingCount['ourbranchid'] == $branchList["BranchCode"] ){ ?>
 
                                                     <?php if($this->session->role_id == 'qa'){ ?>
-                                                        <?php if($pendingCount['destprocess'] == 'KYC'){ ?>
-                                                            <div class="col-md-6 col-xs-12">
-                                                                <h2><?=$pendingCount['destprocess'] ?></h2>
-                                                                <h1 class="value"><?=$pendingCount['sum'] ?></h1>
-                                                            </div>
-                                                        <?php } elseif($pendingCount['destprocess'] == 'ALAF') { ?>
-                                                            <div class="col-md-6 col-xs-12">
-                                                                <h2><?=$pendingCount['destprocess'] ?></h2>
-                                                                <h1 class="value"><?=$pendingCount['sum'] ?></h1>
-                                                            </div>
-                                                        <?php    }
-
-                                                    } elseif ($this->session->role_id == 'bm'){
-                                                        if($pendingCount['destprocess'] == 'BMV'){ ?>
-                                                            <div class="col-xs-12">
-                                                                <h2><?=$pendingCount['destprocess'] ?></h2>
-                                                                <h1 class="value"><?=$pendingCount['sum'] ?></h1>
-                                                            </div>
-                                                        <?php }  ?>
-                                                    <?php } elseif ($this->session->role_id == 'tc'){
-                                                        if($pendingCount['destprocess'] == 'TC'){ ?>
-                                                            <div class="col-xs-12">
-                                                                <h2><?=$pendingCount['destprocess'] ?></h2>
-                                                                <h1 class="value"><?=$pendingCount['sum'] ?></h1>
-                                                            </div>
-                                                        <?php    }  ?>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php } elseif ($this->session->role_id == 'bm'){ ?>
+                                                        <div class="col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
+                                                    <?php } elseif ($this->session->role_id == 'tc'){ ?>
+                                                        <div class="col-xs-12">
+                                                            <h2><?=$pendingCount['destprocess'] ?></h2>
+                                                            <h1 class="value"><?=$pendingCount['sum'] ?></h1>
+                                                        </div>
                                                     <?php } ?>
                                                 <?php } ?>
                                             <?php } ?>
-
+<!--                                            --><?php //if(count($branchList["BranchCode"]) != count($pendingCount['ourbranchid'])) { ?>
+<!--                                                <div class="col-xs-12">-->
+<!--                                                    <h2>--><?//= $pendingCount['destprocess'] ?><!--</h2>-->
+<!--                                                    <h1 class="value">0</h1>-->
+<!--                                                </div>-->
+<!--                                            --><?php //} ?>
                                         </div>
                                     </div>
 
