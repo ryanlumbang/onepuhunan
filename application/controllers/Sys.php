@@ -151,12 +151,47 @@
         }
 
         public function assign_roles() {
-        $this->load->model("System_model");
+            $this->load->model("System_model");
 
-        $data["query"] = $this->System_model->get_userAccount();
+            $data["query"] = $this->System_model->get_userAccount();
 
-        $this->load->view("sys/assign_role_id", $data);
-    }
+            $this->load->view("sys/assign_role_id", $data);
+        }
+
+        public function manage_resign() {
+            $this->load->model("System_model");
+
+            if(isset($_POST["employee_id"])){
+                $input = array(
+                    "emp_id" => $_POST["default_emp_id"],
+                    "role_id" =>  $_POST["rolename"]
+                );
+
+                if($_POST["rolename"] != 'rsg' ){
+                    $this->System_model->update_role_id($input);
+                } else {
+                    $this->System_model->update_resign_id($input);
+                }
+
+                $data["query"] = $this->System_model->get_userAccount();
+                $this->load->view("sys/assign_role_id", $data);
+            } else {
+
+                $emp_id = ($_GET["emp_id"]);
+                $result = $this->System_model->get_userAccountById($emp_id);
+                $data = array (
+                    'emp_id' => $result->emp_id,
+                    'full_name' => $result->last_name." ".$result->first_name,
+                    'email' => $result->email,
+                    'job_title' => $result->job_title,
+                    'role_id' => $result->role_id,
+                    "ln_rolename"       => $this->System_model->get_roleID(),
+
+                );
+                $this->load->view("sys/manage_resign", $data);
+            }
+
+        }
 
         public function update_role_id() {
             $this->load->library("form_validation");

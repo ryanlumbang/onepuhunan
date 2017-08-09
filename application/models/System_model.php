@@ -105,21 +105,28 @@
             return $query->result_array();
         }
 
-        public function update_role_id() {
+        function get_userAccountById($id)
+        {
+            $query = $this->db->query("SELECT * FROM \"t_UserAccount\" WHERE emp_id = (?)", $id);
+            return $query->row();
+        }
 
-            $employee_id = $this->input->post("employee_id");
-            $role = $this->input->post("role");
-
-            $input = array(
-                "employee_id" => $employee_id,
-                "role" =>  $role
-            );
-
+        public function update_role_id($input) {
             $query = $this->db->query("SELECT sp_upd_role_id ( ?, ?)", $input);
             $row = $query->row();
 
             if( isset($row) ) {
                 return $row->sp_upd_role_id;
+            }
+        }
+
+        public function update_resign_id($input) {
+
+            $query = $this->db->query("SELECT sp_upd_resign_id ( ?, ?)", $input);
+            $row = $query->row();
+
+            if( isset($row) ) {
+                return $row->sp_upd_resign_id;
             }
         }
 

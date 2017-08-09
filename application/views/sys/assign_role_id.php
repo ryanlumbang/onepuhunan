@@ -42,7 +42,11 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
             </script>
 
             <div>
-                <a href="<?php echo site_url("sys/add_role_id"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW ROLE</span></button> </a>
+                <a href="<?php echo site_url("sys/add_role_id"); ?>">
+                    <button class="uk-button add-btn" type="button">
+                        <span class="op-btn"><i class="uk-icon-plus"></i> ADD NEW ROLE</span>
+                    </button>
+                </a>
             </div>
 
             <table id="tbl_rid" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
@@ -70,7 +74,13 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         <td> <?php echo $row['role_id'] ?> </td>
                         <td> <?php echo $row['approved_by'] ?> </td>
                         <td> <?php echo $row['date_approve'] ?> </td>
-                        <td>  <a href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" > <i class="uk-icon-edit"></i> EDIT </a></td>
+                        <td>
+                            <a href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" >
+                                <i class="uk-icon-edit"></i> EDIT </a> &nbsp;&nbsp;&nbsp;
+
+                            <a href="<?php echo site_url("sys/assign_role_id/manage_resign?emp_id=".$row['emp_id'].""); ?>" >
+                                <i class="uk-icon-edit"></i> MANAGE RESIGN </a>
+                        </td>
                     </tr>
                 <?php   }
 

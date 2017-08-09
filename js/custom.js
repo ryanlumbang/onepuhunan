@@ -61,6 +61,20 @@ $(document).ready(function() {
 //       }
 //    });
 
+    /*temporary js for manage resign*/
+    $('#getRoleID').on('change', function () {
+        var role = $(this).val();
+        var temp_id = $('#default_emp_id').val();
+        var temp_email = $('#default_emp_email').val();
+        if( role == "rsg"){
+            $('#employee_id').val($('#employee_id').val() + "-RSG");
+            $('#employee_email').val("resigned@onepuhunan.com");
+        } else {
+            $('#employee_id').val(temp_id);
+            $('#employee_email').val(temp_email);
+        }
+    });
+
     $('a.back-to-top').click(function() {
         $('html, body').animate({
             scrollTop: 0
@@ -572,45 +586,37 @@ $(document).ready(function() {
                 aTargets: [ -1,-2 ,-3,-4]
             }
         ],
-        order: [[ 0, 'asc' ]],
+        order: [[ 0, 'asc' ]]
     });
     var tbl_rid = $('#tbl_rid').DataTable({
 
         'columns': [
             {
-                'width': '10%',
                 'className': 'dt-center'
             },
             {
-                'width': '20%',
                 'className': 'uk-text-left'
             },
             {
-                'width': '15%',
                 'className': 'dt-center'
             },
             {
-                'width': '10%',
                 'className': 'uk-text-left'
             },
             {
-                'width': '5%',
                 'className': 'dt-center'
             },
             {
-                'width': '10%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': false
             },
             {
-                'width': '10%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': true
             },
             {
-                'width': '10%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': false
@@ -623,16 +629,26 @@ $(document).ready(function() {
         "bInfo" : true,
         'dom': '<"toolbar">frtip',
         'searching': true,
+        "bAutoWidth": false,
         "bLengthChange": true,
         columnDefs: [ {
             orderable: false,
             targets:   0
-        } ],
+
+        }],
         aoColumnDefs: [
             {
                 bSortable: false,
                 aTargets: [ -1,-2 ,-3,-4]
-            }
+            },
+            { sWidth: '10%', targets: 0 },
+            { sWidth: '14%', targets: 1 },
+            { sWidth: '14%', targets: 2 },
+            { sWidth: '12%', targets: 3 },
+            { sWidth: '10%', targets: 4 },
+            { sWidth: '10%', targets: 5 },
+            { sWidth: '12%', targets: 6 },
+            { sWidth: '18%', targets: 7 }
         ],
         order: [[ 0, 'asc' ]],
     });
