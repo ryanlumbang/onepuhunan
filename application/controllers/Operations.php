@@ -21,6 +21,54 @@
             $data["number_of_rows"] = count($data["query"]);
             $this->load->view("operations/los_search_client", $data);
         }
+
+        public function client_upload()
+        {
+            $this->load->model('Operations_model');
+            $count = 0;
+
+            if(isset($_POST["import"]))
+            {
+                $filename=$_FILES["file"]["tmp_name"];
+                if($_FILES["file"]["size"] > 0)
+                {
+                    $file = fopen($filename, "r");
+                    fgetcsv($file);
+                    while (($importdata = fgetcsv($file, 10000, ",")) !== FALSE)
+                    {
+                        $data = array(
+                            'FileNo' => $importdata[0],
+                            'FileName' =>$importdata[1],
+                            'Branch' => $importdata[2],
+                            'ClientID' => $importdata[3],
+                            'Name' => $importdata[4],
+                            'Processor' => $importdata[5]
+
+
+                        );
+
+                        //$insert = $this->welcome->insertCSV($data);
+                        $this->Operations_model->update_sanction_waive($data);
+                        $count++;
+                    }
+                    fclose($file);
+                    redirect('operations/client_upload');
+                }else{
+                    redirect('operations/client_upload');
+                }
+            }
+            $data["query"] = $this->Operations_model->get_sanction_waive();
+            $data["number_of_rows"] = count($data["query"]);
+            $this->load->view("operations/los_upload",$data);
+
+        }
+//
+//    public function sanction_waive() {
+//        $this->load->model("Operations_model");
+//        $data["query"] = $this->Operations_model->get_sanction_waive();
+//        $data["number_of_rows"] = count($data["query"]);
+//        $this->load->view("sys/client_rejected", $data);
+//    }
         
         public function client_info($input) {
             $this->load->model("Operations_model");
@@ -103,22 +151,23 @@
             
             $header = "Submission Successful!";
             $content = "You have successfully submitted the application for the next processing.";
-            
-            if (isset($_POST['btn_approve'])) {               
+
+            if($_POST['Approval_hidden'] == 'APR') {//if (isset($_POST['btn_approve'])) {
+
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "APR",
                     "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
-                );     
-            } elseif (isset($_POST['btn_reject'])) { 
+                );
+            }elseif($_POST['Approval_hidden'] == 'REJ') {//} elseif (isset($_POST['btn_reject'])) {
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REJ",
                     "Remarks"     => ($this->session->role_id != 'tc' ? $this->input->post("txt_remarks") : ''),
                     "ProcessedBy" => $this->session->emp_id
                 );
-            } else {
+            }elseif($_POST['Approval_hidden'] == 'REV'){//} else {
                 $input = array(
                     "FileNo"      => ($this->session->role_id != 'tc' ? $this->input->post("txt_fileno") : $this->input->post("txt_tc_fileno")),
                     "Approval"    => "REV",
@@ -187,7 +236,6 @@
             );
             
             $data["query"] = $this->Operations_model->get_laf_pending($input); 
-            
             $session = array("records_count" => count($data['query']));
             $this->session->set_userdata($session);
             
@@ -199,7 +247,6 @@
             $data["query"] = $this->Operations_model->get_ln_branch();
             echo "{ \"data\" : " . json_encode($data["query"]) . "}";
         }
-
 
         public function branch_handle() {
             $this->load->library("form_validation");
@@ -242,12 +289,114 @@
             }
 
         }
+
         public function success_branch_assign() {
             $this->load->view("validation/success_branch_assign");
         }
 
         public function los_report() {
             $this->load->view("operations/los_report");
+        }
+
+        public function los_report_qa() {
+            $this->load->model("Operations_model");
+
+            $data['ln_branch'] = $this->Operations_model->get_asg_branch();
+
+
+            $this->load->view("operations/los_report_qa", $data);
+        }
+
+        public function report_bmv_pending_qa()
+        {
+
+            ini_set('memory_limit', '-1');
+            set_time_limit(0);
+
+            $branchcode = $this->input->post("branch_code");
+
+            $this->load->model("Operations_model");
+            $data["query"] = $this->Operations_model->get_bmv_pending_qa();
+
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel.php');
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+            $objPHPExcel = new PHPExcel();
+
+            $objPHPExcel->getProperties()->setCreator($this->session->emp_name);
+            $objPHPExcel->getProperties()->setLastModifiedBy("");
+            $objPHPExcel->getProperties()->setTitle("");
+            $objPHPExcel->getProperties()->setSubject("");
+            $objPHPExcel->getProperties()->setDescription("");
+
+            $objPHPExcel->setActiveSheetIndex(0);
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A1','AS OF DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('B1','BRANCH');
+            $objPHPExcel->getActiveSheet()->setCellValue('C1','CENTER');
+            $objPHPExcel->getActiveSheet()->setCellValue('D1','CLIENT ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('E1','FILE NO');
+            $objPHPExcel->getActiveSheet()->setCellValue('F1','CLIENT NAME');
+            $objPHPExcel->getActiveSheet()->setCellValue('G1','LOS TYPE');
+            $objPHPExcel->getActiveSheet()->setCellValue('H1','BRNET CLIENT ID');
+
+            $objPHPExcel->getActiveSheet()->getStyle('A1:I1')->getFont()->setBold(true);
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A1:I1')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+            $objPHPExcel->getActiveSheet()->freezePane('A2');
+
+            for($col = 'A'; $col !== 'I'; $col++)
+            {
+                $objPHPExcel->getActiveSheet()
+                    ->getColumnDimension($col)
+                    ->setAutoSize(true);
+            }
+
+            $row = 2;
+
+//            echo "<pre>";
+//            print_r ($data['query']);
+//            echo "</pre>";
+
+            foreach ($data["query"] as $item)
+            {
+                //var_dump($item['OurBranchID']);
+
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row, $item['AsOfDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $item['Branch']);
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$row, $item['Center']);
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$row, $item['ClientID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$row, $item['FileNo']);
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$row, $item['ClientName']);
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$row, $item['LOSType']);
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$row, $item['BRNETClientID']);
+
+
+                $row++;
+            }
+
+            $filename = "BMV PENDING Report of ".$branchcode." AS OF ".date("M d, Y").'.xls';
+            $objPHPExcel->getActiveSheet()->setTitle("BMV_PENDING_REPORT");
+            header('Content-type:application/
+                        vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="'.$filename.'"');
+            header('Cache-Control: max-age=0');
+
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+            ob_end_clean();
+
+            $writer->save('php://output');
+
+            exit;
         }
 
         public function report_kyc_today()
@@ -769,6 +918,96 @@
             exit;
         }
 
+        public function report_bmv_pending()
+        {
+
+            ini_set('memory_limit', '-1');
+            set_time_limit(0);
+
+            $this->load->model("Operations_model");
+            $data["query"] = $this->Operations_model->get_bmv_pending();
+
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel.php');
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+            $objPHPExcel = new PHPExcel();
+
+            $objPHPExcel->getProperties()->setCreator($this->session->emp_name);
+            $objPHPExcel->getProperties()->setLastModifiedBy("");
+            $objPHPExcel->getProperties()->setTitle("");
+            $objPHPExcel->getProperties()->setSubject("");
+            $objPHPExcel->getProperties()->setDescription("");
+
+            $objPHPExcel->setActiveSheetIndex(0);
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A1','AS OF DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('B1','BRANCH');
+            $objPHPExcel->getActiveSheet()->setCellValue('C1','CENTER');
+            $objPHPExcel->getActiveSheet()->setCellValue('D1','CLIENT ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('E1','FILE NO');
+            $objPHPExcel->getActiveSheet()->setCellValue('F1','CLIENT NAME');
+            $objPHPExcel->getActiveSheet()->setCellValue('G1','LOS TYPE');
+            $objPHPExcel->getActiveSheet()->setCellValue('H1','BRNET CLIENT ID');
+
+            $objPHPExcel->getActiveSheet()->getStyle('A1:I1')->getFont()->setBold(true);
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A1:I1')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+            $objPHPExcel->getActiveSheet()->freezePane('A2');
+
+            for($col = 'A'; $col !== 'I'; $col++)
+            {
+                $objPHPExcel->getActiveSheet()
+                    ->getColumnDimension($col)
+                    ->setAutoSize(true);
+            }
+
+            $row = 2;
+
+//            echo "<pre>";
+//            print_r ($data['query']);
+//            echo "</pre>";
+
+            foreach ($data["query"] as $item)
+            {
+                //var_dump($item['OurBranchID']);
+
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row, $item['AsOfDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $item['Branch']);
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$row, $item['Center']);
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$row, $item['ClientID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$row, $item['FileNo']);
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$row, $item['ClientName']);
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$row, $item['LOSType']);
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$row, $item['BRNETClientID']);
+
+
+                $row++;
+            }
+
+            $filename = "BMV PENDING Report ".date("M d, Y").'.xls';
+            $objPHPExcel->getActiveSheet()->setTitle("BMV_PENDING_REPORT");
+            header('Content-type:application/
+                        vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="'.$filename.'"');
+            header('Cache-Control: max-age=0');
+
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+            ob_end_clean();
+
+            $writer->save('php://output');
+
+            exit;
+        }
+
         public function report_qa_productivity()
         {
 
@@ -945,7 +1184,7 @@
                 $row++;
             }
 
-            $filename = "ALAF Report ".date("M-d-Y").'.xls';
+            $filename = "ALAF Report ".date("M d, Y").'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("ALAF_REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
@@ -1043,6 +1282,107 @@
 
             $filename = "TC Report ".$sdate."".'.xls';
             $objPHPExcel->getActiveSheet()->setTitle("TC_REPORT");
+            header('Content-type:application/
+                        vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="'.$filename.'"');
+            header('Cache-Control: max-age=0');
+
+            $writer = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+            ob_end_clean();
+
+            $writer->save('php://output');
+
+            exit;
+        }
+
+        public function report_sanction()
+        {
+
+            ini_set('memory_limit', '-1');
+            set_time_limit(0);
+
+            $this->load->model("Operations_model");
+            $data["query"] = $this->Operations_model->get_sanction_report();
+
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel.php');
+            require (APPPATH.'third_party/PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+            $objPHPExcel = new PHPExcel();
+
+            $objPHPExcel->getProperties()->setCreator($this->session->emp_name);
+            $objPHPExcel->getProperties()->setLastModifiedBy("");
+            $objPHPExcel->getProperties()->setTitle("");
+            $objPHPExcel->getProperties()->setSubject("");
+            $objPHPExcel->getProperties()->setDescription("");
+
+            $objPHPExcel->setActiveSheetIndex(0);
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A1','AS OF DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('B1','BRANCH');
+            $objPHPExcel->getActiveSheet()->setCellValue('C1','CLIENT ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('D1','CLIENT NAME');
+            $objPHPExcel->getActiveSheet()->setCellValue('E1','BRNET CLIENT ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('F1','OUTSTANDING PRINCIPAL');
+            $objPHPExcel->getActiveSheet()->setCellValue('G1','MATURITY DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('H1','CLOSED DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('I1','FILE NO');
+            $objPHPExcel->getActiveSheet()->setCellValue('J1','GROUP ID');
+            $objPHPExcel->getActiveSheet()->setCellValue('K1','LOAN TYPE');
+            $objPHPExcel->getActiveSheet()->setCellValue('L1','APPLIED LOAN AMOUNT');
+            $objPHPExcel->getActiveSheet()->setCellValue('M1','APPLICATION DATE');
+            $objPHPExcel->getActiveSheet()->setCellValue('N1','LOAN AGE');
+
+            $objPHPExcel->getActiveSheet()->getStyle('A1:O1')->getFont()->setBold(true);
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A1:O1')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+
+            $objPHPExcel->getActiveSheet();$objPHPExcel->getActiveSheet()
+            ->getStyle('A')
+            ->getAlignment()
+            ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_RIGHT);
+            $objPHPExcel->getActiveSheet()->freezePane('A2');
+
+            for($col = 'A'; $col !== 'O'; $col++)
+            {
+                $objPHPExcel->getActiveSheet()
+                    ->getColumnDimension($col)
+                    ->setAutoSize(true);
+            }
+
+            $row = 2;
+
+//            echo "<pre>";
+//            print_r ($data['query']);
+//            echo "</pre>";
+
+            foreach ($data["query"] as $item)
+            {
+                //var_dump($item['OurBranchID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$row, $item['AsOfDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$row, $item['OurBranchID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$row, $item['ClientID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$row, $item['ClientName']);
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$row, $item['BRNETClientID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$row, $item['OutstandingPrincipal']);
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$row, $item['MaturityDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$row, $item['ClosedDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$row, $item['FileNo']);
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$row, $item['GroupID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$row, $item['LOSLoanTypeID']);
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$row, $item['AppliedLoanAmount']);
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$row, $item['ApplicationDate']);
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$row, $item['LoanAge']);
+
+
+                $row++;
+            }
+
+            $filename = "Sanction Report AS of ".date("M d, Y").'.xls';
+            $objPHPExcel->getActiveSheet()->setTitle("SANCTION REPORT");
             header('Content-type:application/
                         vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="'.$filename.'"');

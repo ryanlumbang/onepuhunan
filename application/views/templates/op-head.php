@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/select.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/jquery.modal.css">
-    <link rel="stylesheet" href="<?=base_url()?>css/onepuhunan/css/validate-error.css">
-
+    <link rel="stylesheet" href="<?=base_url()?>css/sweetalert.css">
 
     <?php
     //        if (basename($_SERVER['REQUEST_URI']) !== "opslogin.php" AND basename($_SERVER['REQUEST_URI']) !== "index.php") {
@@ -30,7 +29,7 @@
     ?>
 
     <!-- jquery -->
-    <script src="<?=base_url()?>js/jquery-3.1.1.min.js"></script>
+    <script src="<?=base_url()?>js/jquery-3.2.1.min.js"></script>
     <script src="<?=base_url()?>js/uikit.min.js"></script>
     <script src="<?=base_url()?>js/components/tooltip.min.js"></script>
     <script src="<?=base_url()?>js/components/accordion.min.js"></script>
@@ -39,7 +38,6 @@
     <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
     <script src="<?=base_url()?>js/jquery.modal.js"></script>
     <script src="<?=base_url()?>js/custom.js"></script>
+    <script src="<?=base_url()?>js/sweetalert.min.js"></script>
     <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
-    <script src="<?=base_url()?>js/onepuhunan/required_fields.js"></script>
-
 </head>

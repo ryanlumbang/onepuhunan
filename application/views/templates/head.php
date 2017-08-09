@@ -9,9 +9,11 @@
    <link rel="stylesheet" href="<?=base_url()?>css/components/tooltip.gradient.min.css">
    <link rel="stylesheet" href="<?=base_url()?>css/components/accordion.gradient.min.css">
    <link rel="stylesheet" href="<?=base_url()?>css/components/datepicker.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/sweetalert.css">
    
    <link rel="stylesheet" href="<?=base_url()?>css/custom.css">
    <link rel="stylesheet" href="<?=base_url()?>css/general.css">
+   <link rel="stylesheet" href="<?=base_url()?>css/onepuhunan/css/validate-error.css">
    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
        
@@ -27,13 +29,15 @@
    ?>
 
    <!-- jquery -->
-   <script src="<?=base_url()?>js/jquery-3.1.1.min.js"></script>
+   <script src="<?=base_url()?>js/jquery-3.2.1.min.js"></script>
    <script src="<?=base_url()?>js/uikit.min.js"></script>
    <script src="<?=base_url()?>js/components/tooltip.min.js"></script>
    <script src="<?=base_url()?>js/components/accordion.min.js"></script>
    <script src="<?=base_url()?>js/components/datepicker.js"></script>
-   
+    <script src="<?=base_url()?>js/jquery.validate.min.js"></script>
+    <script src="<?=base_url()?>js/onepuhunan/required_fields.js"></script>
    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="<?=base_url()?>js/sweetalert.min.js"></script>
    <script src="<?=base_url()?>js/custom.js"></script>
 
 </head>

@@ -1,0 +1,8 @@
+body{background: #004886; padding-bottom: 0}
+form{
+    width: 70%;
+    margin: 0px auto;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5%;
+}

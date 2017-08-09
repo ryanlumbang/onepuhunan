@@ -191,6 +191,24 @@
             return $query->result_array();
         }
 
+        public function get_bmv_pending() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_pending()");
+            return $query->result_array();
+        }
+
+        public function get_bmv_pending_qa() {
+            $los_db = $this->load->database("LOS", true);
+            $branchcode = $this->input->post("branch_code");
+            $loan_type = $this->input->post("loan_type");
+            $input = array(
+                "branchcode" =>  $branchcode,
+                "loan_type" => $loan_type
+            );
+            $query = $los_db->query("SELECT * FROM sp_report_bmv_pending_qa( ?, ?)", $input);
+            return $query->result_array();
+        }
+
         public function get_qa_productivity() {
             $los_db = $this->load->database("LOS", true);
             $sdate = $this->input->post("select_date_qa");
@@ -216,6 +234,13 @@
             $query = $los_db->query("SELECT * FROM sp_report_tc_call( ?)", $input);
             return $query->result_array();
         }
+
+        public function get_sanction_report() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_report_sanction_pending()");
+            return $query->result_array();
+        }
+
 
         public function get_kyc_rvrt() {
             $los_db = $this->load->database("LOS", true);
@@ -253,6 +278,23 @@
         function get_branchCode()
         {
             $query = $this->db->query('SELECT * FROM "t_Branch"');
+            return $query->result_array();
+        }
+
+        public function get_asg_branch() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_usr_emp_branch(?)" , $this->session->emp_id);
+            return $query->result_array();
+        }
+
+        public function update_sanction_waive($data){
+            $los_db = $this->load->database("LOS", true);
+            $los_db->insert('"t_Sanction_Waive"', $data);
+        }
+
+        public function get_sanction_waive() {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query('SELECT * FROM "t_Sanction_Waive"');
             return $query->result_array();
         }
 

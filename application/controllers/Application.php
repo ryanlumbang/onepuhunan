@@ -48,7 +48,7 @@ class Application extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
             //$this->load->view("main");
-            $this->load->view("onepuhunan/login");
+            $this->load->view("default/login");
         } else {
             $input = array(
                 "emp_id"      => $this->input->post("u_empid"),
@@ -71,7 +71,7 @@ class Application extends CI_Controller {
                 $this->session->set_userdata($session);
             }
 
-            $this->load->view("onepuhunan/login", $data);
+            $this->load->view("default/login", $data);
         }
     }
 
@@ -127,7 +127,7 @@ class Application extends CI_Controller {
 
         if($this->form_validation->run() == FALSE) {
             //$this->load->view("main");
-            $this->load->view("forgot_password");
+            $this->load->view("default/forgot_password");
         } else {
             $input = array(
                 "email"      => $this->input->post("email"),
@@ -144,9 +144,9 @@ class Application extends CI_Controller {
                 // send notifications
                 $this->send_mail_fgot($session);
 
-                $this->load->view("forgot_password", $data);
+                $this->load->view("default/forgot_password", $data);
             } else {
-                $this->load->view("forgot_password", $data);
+                $this->load->view("default/forgot_password", $data);
             }
         }
     }
@@ -171,10 +171,48 @@ class Application extends CI_Controller {
 
     public function dashboard() {
         $this->load->model("Application_model");
+        $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
+        $count_pending = array();
+        $new_array =  array();
+
+        foreach ($getBranch as $list){
+            $input= array(
+                '_emp_id' => $this->session->emp_id,
+                '_branch_id' => $list['BranchCode']);
+            $count = $this->Application_model->get_sp_usr_pending_branch($input);
+            $count_pending[] = $count;
+        }
+
+
+        foreach ($count_pending  as $pendingCount) {
+            foreach ($pendingCount as $key => $byBranch) {
+                $str = strtoupper($this->session->role_id);
+                if($str != $byBranch['destprocess'] ){
+                    if($str == 'QA'){
+                        if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
+                            array_push($new_array, $byBranch);
+                        }
+                    }elseif($str == 'BM'){
+                        if($byBranch['destprocess'] == 'BMV'){
+                            array_push($new_array, $byBranch);
+                        }
+                    }
+
+                }elseif($str == $byBranch['destprocess']){
+                    array_push($new_array, $byBranch);
+                }
+            }
+        }
+        $sum = array_reduce($new_array, function ($a, $b) {
+            isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
+            return $a;
+        });
+
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
-            "count"       => $this->Application_model->get_pending_count($this->session->emp_id),
-            "user_branch"       => $this->Application_model->get_user_branch($this->session->emp_id)
+            "count"       => $sum,
+            "user_branch"       => $getBranch,
+            "count_branch_pending"       => $new_array
         );
         $this->load->view("onepuhunan/dashboard", $data);
     }
@@ -222,10 +260,9 @@ class Application extends CI_Controller {
             array(
                 "field" => "email",
                 "label" => "Email Address",
-                "rules" => "trim|required|valid_email",
+                "rules" => "trim|required",
                 "errors" => array(
-                    "required" => "The <b>\"%s\"</b> field is required.",
-                    "valid_email" => "The <b>\"%s\"</b> field must contain a valid email address."
+                    "required" => "The <b>\"%s\"</b> field is required."
                 )
             ),
             array(
@@ -280,14 +317,14 @@ class Application extends CI_Controller {
         $this->form_validation->set_rules($config);
 
         if($this->form_validation->run() == FALSE) {
-            $this->load->view("signup", $data);
+            $this->load->view("default/signup", $data);
         } else {
             $input = array(
                 "emp_id"      => $this->input->post("emp_id"),
                 "last_name"   => $this->input->post("lname"),
                 "first_name"  => $this->input->post("fname"),
                 "middle_name" => $this->input->post("mname"),
-                "email"       => $this->input->post("email"),
+                "email"       => $this->input->post("email").$this->input->post("email_extension"),
                 "job_title"   => $this->input->post("job_title"),
                 "dept_id"     => $this->input->post("dept"),
                 "password"    => $this->merge_between($this->input->post("emp_id"), $this->input->post("password"))
@@ -299,7 +336,7 @@ class Application extends CI_Controller {
                 $session = array(
                     "emp_id" => $this->input->post("emp_id"),
                     "name"   => $this->input->post("fname"). " " . $this->input->post("lname"),
-                    "email"  => $this->input->post("email")
+                    "email"  => $this->input->post("email").$this->input->post("email_extension")
                 );
 
                 $this->session->set_userdata($session);
@@ -308,9 +345,9 @@ class Application extends CI_Controller {
                 $this->send_mail($session);
                 $this->send_mail_admin($session);
 
-                $this->load->view("signup", $data);
+                $this->load->view("default/signup", $data);
             } else {
-                $this->load->view("signup", $data);
+                $this->load->view("default/signup", $data);
             }
         }
     }

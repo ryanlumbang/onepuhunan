@@ -166,6 +166,11 @@
             $header = "Role ID Successfully Update!";
             $content = "You have successfully changed Role ID of ".$employee_name;
 
+            $data = array(
+                "ln_rolename"       => $this->System_model->get_roleID(),
+            );
+
+
             $config = array(
                 array(
                     "field" => "role",
@@ -181,7 +186,7 @@
             $this->form_validation->set_rules($config);
 
             if($this->form_validation->run() == FALSE) {
-                $this->load->view("templates/update_role_id");
+                $this->load->view("templates/update_role_id", $data);
             } else {
                 $input = array(
                     "role"  => $this->input->post("role")
