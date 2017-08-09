@@ -286,10 +286,10 @@
                                     <span class="uk-text-bold">Debt Burden Ratio 2</span>
                                     <span><b>
                                         <?php
-                                        if($cl_info['DBR2'] > 40) {
-                                            echo $cl_info['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
+                                        if($cl_dbr2['DBR2'] > 40) {
+                                            echo $cl_dbr2['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
                                         } else {
-                                            echo $cl_info['DBR2'] . '%';
+                                            echo $cl_dbr2['DBR2'] . '%';
                                         }
                                         ?>
                                     </b></span>

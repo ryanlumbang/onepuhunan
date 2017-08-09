@@ -64,7 +64,13 @@
             $query = $los_db->query("SELECT * FROM sp_los_laf_details(?)", $input);
             return $query->row_array();
         }
-        
+
+        public function get_los_laf_dbr2($input) {
+            $los_db = $this->load->database("LOS", true);
+            $query = $los_db->query("SELECT * FROM sp_los_laf_dbr2(?)", $input);
+            return $query->row_array();
+        }
+
         public function get_los_laf_asset_liabilities($input) {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_los_laf_asset_liabilities(?)", $input);
