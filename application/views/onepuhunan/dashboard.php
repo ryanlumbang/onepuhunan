@@ -43,24 +43,24 @@
                                          </div>
 
                                      <?php } ?>
-                                <?php } elseif ($this->session->role_id == 'bm'){ ?>
-                                    <?php if($total['destprocess'] == 'BMV'){ ?>
-                                         <div class="col-md-6 col-xs-12">
-                                             <div class="widget widget-nopad">
-                                                 <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                     <h3>TOTAL BMV</h3>
-                                                 </div>
-                                                 <div class="widget-content">
-                                                     <div class="text-center default-margin row">
-                                                         <div class="col-xs-12">
-                                                             <h2><?=$total['destprocess'] ?></h2>
-                                                             <h1 class="value"><?=$total['sum'] ?></h1>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                    <?php } ?>
+<!--                                --><?php //} elseif ($this->session->role_id == 'bm'){ ?>
+<!--                                    --><?php //if($total['destprocess'] == 'BMV'){ ?>
+<!--                                         <div class="col-md-6 col-xs-12">-->
+<!--                                             <div class="widget widget-nopad">-->
+<!--                                                 <div class="widget-header"> <i class="icon-list-alt"></i>-->
+<!--                                                     <h3>TOTAL BMV</h3>-->
+<!--                                                 </div>-->
+<!--                                                 <div class="widget-content">-->
+<!--                                                     <div class="text-center default-margin row">-->
+<!--                                                         <div class="col-xs-12">-->
+<!--                                                             <h2>--><?//=$total['destprocess'] ?><!--</h2>-->
+<!--                                                             <h1 class="value">--><?//=$total['sum'] ?><!--</h1>-->
+<!--                                                         </div>-->
+<!--                                                     </div>-->
+<!--                                                 </div>-->
+<!--                                             </div>-->
+<!--                                         </div>-->
+<!--                                    --><?php //} ?>
                                 <?php } elseif ($this->session->role_id == 'tc'){ ?>
                                     <?php if($total['destprocess'] == 'TC'){ ?>
                                          <div class="col-md-6 col-xs-12">
