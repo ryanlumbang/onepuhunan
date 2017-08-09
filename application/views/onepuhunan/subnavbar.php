@@ -94,10 +94,6 @@
                     <li><a href="<?php echo site_url("operations/report"); ?>"><i class="icon-file"></i><span> LOS Generate Report</span> </a> </li>
 
                 </ul>
-                <a href="/" class="pull-right" style="margin-top: 10px">
-                    <i class="icon-chevron-left"></i>
-                    Back to Homepage
-                </a>
             <?php } ?>
             <?php
             if($this->session->role_id == 'bm') { ?>
@@ -105,10 +101,7 @@
                     <li class="active"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
                 </ul>
-                <a href="/" class="pull-right" style="margin-top: 10px">
-                    <i class="icon-chevron-left"></i>
-                    Back to Homepage
-                </a>
+           
             <?php } ?>
             <?php
             if($this->session->role_id == 'tc') { ?>
@@ -120,10 +113,7 @@
                     <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                     <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                 </ul>
-                <a href="/" class="pull-right" style="margin-top: 10px">
-                    <i class="icon-chevron-left"></i>
-                    Back to Homepage
-                </a>
+
             <?php } ?>
             <?php
             if($this->session->role_id == 'cpu') { ?>
@@ -135,10 +125,7 @@
                     <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                     <li><a href="<?php echo site_url("operations/client_upload"); ?>"><i class="icon-upload-alt"></i><span> LOS Upload</span> </a> </li>
                 </ul>
-                <a href="/" class="pull-right" style="margin-top: 10px">
-                    <i class="icon-chevron-left"></i>
-                    Back to Homepage
-                </a>
+
             <?php } ?>
             <?php
             if($this->session->role_id == 'aud') { ?>
@@ -157,10 +144,7 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="/" class="pull-right" style="margin-top: 10px">
-                    <i class="icon-chevron-left"></i>
-                    Back to Homepage
-                </a>
+
             <?php } ?>
 
         </div>
