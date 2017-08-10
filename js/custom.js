@@ -771,7 +771,13 @@ $(document).ready(function() {
         window.location.reload();
         $(".add_form modal").hide();
     });
-    $('#c_rejected, #c_sanction_waive').DataTable();
+    $('#c_rejected, #c_sanction_waive, #c_catalog').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'iDisplayLength': 100,
+        'paging': false,
+        "bInfo" : false,
+        'dom': '<"toolbar">frtip'
+    });
     $('#c_search').dataTable( {
         "searching": false,
         "lengthChange": false

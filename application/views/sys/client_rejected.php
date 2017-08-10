@@ -1,40 +1,25 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page">
-<div id="page-wrapper">
-    <?php $this->load->view("templates/op-header"); ?>
-    <?php $this->load->view("templates/subheader"); ?>
-    <div class="header-bg">
-        <div class="header-banner">
-            <div class="uk-container op-container">
-                <h2>OPERATIONS</h2>
-            </div>
-        </div>
-    </div>
-    <section id="main-section">
-
-        <div class="uk-container table-wrap op-container tc-container">  <!-- Modal HTML embedded directly into document -->
-
-            <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE CLIENT REJECTED</h1></div>
+<?php $this->load->view("onepuhunan/header",$data); ?>
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <h1> MANAGE CLIENT REJECTED</h1>
 
             <!-- Trigger/Open The Modal -->
 
-            <table id="c_rejected" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
+            <table id="c_rejected" class="table table-striped" cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th class="dt-center">BRANCH ID</th>
-                    <th class="dt-center">FILE NO</th>
-                    <th class="uk-text-left"> CLIENT NAME</th>
-                    <th class="uk-text-left"> PROCESSOR</th>
-                    <th class="uk-text-left"> DATE PROCESSED</th>
+                    <th class="text-center">BRANCH ID</th>
+                    <th class="text-center">FILE NO</th>
+                    <th class="text-left"> CLIENT NAME</th>
+                    <th class="text-left"> PROCESSOR</th>
+                    <th class="text-left"> DATE PROCESSED</th>
                     <?php
                     if($this->session->role_id == 'super' OR $this->session->role_id == 'sa') { ?>
-                    <th class="dt-center">ACTION</th>
+                    <th class="text-center">ACTION</th>
                     <?php } ?>
                 </tr>
                 </thead>
@@ -42,13 +27,14 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 <?php
                     foreach((array) $query as $item) {
                     $result = "<tr>"
-                        . "<td class=\"dt-center\">" . $item["ourbranchid"] . "</td>"
-                        . "<td class=\"dt-center\">" . $item["fileno"] . "</td>"
-                        . "<td class=\"uk-text-left\">" . $item["clientid"] . " - " .$item["clientname"]."</td>"
-                        . "<td class=\"uk-text-left\">" . $item["processor"] . "</td>"
-                        . "<td class=\"uk-text-left\">" . $item["dateprocessed"] . "</td>";
+                        . "<td class=\"text-center\">" . $item["ourbranchid"] . "</td>"
+                        . "<td class=\"text-center\">" . $item["fileno"] . "</td>"
+                        . "<td class=\"text-left\">" . $item["clientid"] . " - " .$item["clientname"]."</td>"
+                        . "<td class=\"text-left\">" . $item["processor"] . "</td>"
+                        . "<td class=\"text-left\">" . $item["dateprocessed"] . "</td>";
                         if($this->session->role_id == 'super' OR $this->session->role_id == 'sa') {
-                        $result = $result . "<td class=\"dt-center\">" . "<a onclick=\"return confirm('Are you sure you want to reprocess this record?')\" class=\"uk-button uk-button-small\" href='../sys/reprocess_user/" . $item["fileno"] . "'>Reprocess</a>" . "</td>";
+                        $result = $result . "<td class=\"text-center\">" .
+                            "<a onclick=\"return confirm('Are you sure you want to reprocess this record?')\" class=\"uk-button uk-button-small\" href='../sys/reprocess_user/" . $item["fileno"] . "'>Reprocess</a>" . "</td>";
                         }
                         $result = $result. "</tr>";
                     echo $result;
@@ -58,11 +44,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </tbody>
             </table>
         </div>
-    </section>
-    <?php $this->load->view("templates/footer"); ?>
-    <?php $this->load->view("templates/modal"); ?>
+    </div>
 </div>
-</div>
-<div id="loading"></div>
-</body>
-</html>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>

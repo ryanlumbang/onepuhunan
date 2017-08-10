@@ -163,12 +163,19 @@ select.year {
     position: absolute;
     z-index: -1;
 }
-.input-file + .js-labelFile {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding: 0 10px;
-    cursor: pointer;
+/*.input-file + .js-labelFile {*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*white-space: nowrap;*/
+    /*padding: 0 10px;*/
+    /*cursor: pointer;*/
+/*}*/
+.form-input-file {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
 }
 .input-file + .js-labelFile .icon:before {
     content: "\f093";
