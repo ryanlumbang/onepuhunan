@@ -67,12 +67,13 @@
                                                     }
                                                     
                                                     /* bmv */
-                                                    if($this->session->role_id === 'bm') {
+                                                    if($this->session->role_id === 'bm' OR $this->session->role_id == 'ci' ) {
                                                         $result = $result . '<td class="uk-text-center highlight">' . $status['BMV'] . '</td>';
                                                     } else {
                                                         $result = $result . '<td class="uk-text-center">' . $status['BMV'] . '</td>';
                                                     }
-                                                    
+
+
                                                     /* alaf */
                                                     if($this->session->role_id === 'qa'  OR $this->session->role_id == 'qa_new' OR $this->session->role_id == 'qa_rpt') {
                                                         $result = $result . '<td class="uk-text-center highlight-2">' . $status['ALAF'] . '</td>';
