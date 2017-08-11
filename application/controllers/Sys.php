@@ -168,7 +168,7 @@
                 );
 
                 if($_POST["rolename"] != 'rsg' ){
-                    $this->System_model->update_role_id($input);
+                    $this->System_model->update_role_resign_id($input);
                 } else {
                     $this->System_model->update_resign_id($input);
                 }
