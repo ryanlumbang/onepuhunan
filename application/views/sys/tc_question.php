@@ -9,7 +9,7 @@
 
             <!-- Trigger/Open The Modal -->
             <a href="<?php echo site_url("sys/tc_question/add"); ?>">
-                <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="uk-icon-plus"></i> ADD QUESTION</span></button>
+                <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD QUESTION</span></button>
             </a>
 
             <table id="tbl_tc" class="table table-striped" cellspacing="0" width="100%">
