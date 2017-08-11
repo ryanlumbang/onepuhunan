@@ -96,6 +96,17 @@
                 </ul>
             <?php } ?>
             <?php
+            if($this->session->role_id == 'ci') { ?>
+                <ul class="mainnav">
+                    <li class="active"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                    <li><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
+                    <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                    <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
+                    <li><a href="<?php echo site_url("operations/report"); ?>"><i class="icon-file"></i><span> LOS Generate Report</span> </a> </li>
+
+                </ul>
+            <?php } ?>
+            <?php
             if($this->session->role_id == 'bm') { ?>
                 <ul class="mainnav">
                     <li class="active"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
