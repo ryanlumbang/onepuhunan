@@ -72,16 +72,16 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 <label class="uk-form-label uk-text-small uk-text-bold">Employee ID<span class="tm-required-label">*</span></label>
                 <div class="uk-form-controls">
                     <?php
-                    $employee_id =  array(
-                        "id" => "employee_id",
-                        "name" => "employee_id",
+                    $emp_id =  array(
+                        "id" => "emp_id",
+                        "name" => "emp_id",
                         "value" =>  $_GET["emp_id"],
                         "class" => "uk-width-large uk-form-small",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
                     );
-                    echo form_input($employee_id);
+                    echo form_input($emp_id);
                     ?>
                 </div>
             </div>
@@ -132,6 +132,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                             "id" => "role",
                             "name" => "role",
                             "value" =>  $_GET["role"],
+                            "readonly" => "true",
                             "class" => "uk-width-large uk-form-small",
                             "style"=>"background-color: #faffbd; border: 1px solid #ddd"
                         );

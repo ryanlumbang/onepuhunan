@@ -122,11 +122,11 @@
 
         public function update_role_id() {
 
-            $employee_id = $this->input->post("employee_id");
+            $employee_id = $this->input->post("emp_id");
             $role = $this->input->post("role");
 
             $input = array(
-                "employee_id" => $employee_id,
+                "emp_id" => $employee_id,
                 "role" =>  $role
             );
 
