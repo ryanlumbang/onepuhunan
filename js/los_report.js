@@ -248,3 +248,14 @@ function datePicker_tc_report()
 
     document.getElementById("tc_input").value = tc_date;
 }
+
+$(document).ready(function () {
+    $('.datepicker').datetimepicker({
+        pickTime: false,
+        format: 'yyyy-mm-dd',
+        startView: 'month',
+        minView: 'month',
+        autoclose: true,
+        orientation: "auto"
+    });
+});

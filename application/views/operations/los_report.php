@@ -1,42 +1,25 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page">
-    <div id="page-wrapper">
-        <?php $this->load->view("templates/op-header"); ?>
-        <?php $this->load->view("templates/subheader"); ?>
-        <!--    <link rel="stylesheet" href="--><?//=base_url()?><!--css/audit_extract.css">-->
-        <script src="<?=base_url()?>js/los_report.js"></script>
-        <link rel="stylesheet" href="<?=base_url()?>css/components/datepicker.css">
-        <script src="<?=base_url()?>js/components/datepicker.js"></script>
-        <div class="header-bg">
-            <div class="header-banner">
-                <div class="uk-container op-container">
-                    <h2>LOAN ORIGINATION SYSTEM REPORT</h2>
-                </div>
-            </div>
-        </div>
-        <section id="main-section">
+
+<?php $this->load->view("onepuhunan/header",$data); ?>
+<div class="main">
+    <div class="main-inner">
 
 
-            <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
+            <div class="container">
 
-                <div class="op-title"><h1><i class="uk-icon-tags"></i> EXTRACTION OF REPORT</h1></div>
-                <br/>
-                <div class="uk-form-row tm-label">
-                    <label class="uk-text-small">
-                        Choose what TYPE OF REPORT you want to generate.<br>
-                        After you chose what REPORT TYPE click, <b>"EXTRACT REPORT"</b>.
-                    </label>
-                </div>
+                <div class="form-width-small">
+                    <h1>EXTRACTION OF REPORT</h1>
+                    <div class="form-group">
+                        <label>
+                            Choose what TYPE OF REPORT you want to generate.<br>
+                            After you chose what REPORT TYPE click, <b>"EXTRACT REPORT"</b>.
+                        </label>
+                    </div>
 
-                <div class="uk-form-row uk-margin-small-bottom">
-                    <div class="uk-form uk-form-horizontals">
-                        <select class="uk-width-large uk-form-small" id="form_report" name="form_report" onchange="toggleReport()">
+                    <div class="form-group">
+                        <select class="form-control input-lg" id="form_report" name="form_report" onchange="toggleReport()">
                             <option value="" disabled selected hidden>Type of Report</option>
                             <option value="01">KYC Today</option>
                             <option value="02">KYC Pending</option>
@@ -50,236 +33,247 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                             <option value="10">Sanction Report</option>
                         </select>
                     </div>
-                </div>
-                <div style="text-align: center;">
-                    <hr style="box-sizing: content-box; height: 0; margin: auto; border: 0; border-top: 1px solid #ddd; margin-top: 3%; margin-bottom: 2%; " width="80%">
-                 </div>
+                    <div>
+                        <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button" id="buts">Cancel</a>
+                    </div>
 
-                <!--KYC TODAY-->
-                <form class="uk-form uk-form-horizontal"  id="form_kyc_today" name="form_kyc_today" method="post" action="<?php echo site_url("operations/report_kyc_today"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">KYC TODAY</label>
+
+                    <!--KYC TODAY-->
+                    <form id="form_kyc_today" name="form_kyc_today" method="post" action="<?php echo site_url("operations/report_kyc_today"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">KYC TODAY</h3 class="text-center">
                         </div>
-                            <label class="uk-form-label uk-text-small uk-text-bold">Select Date<span class="tm-required-label">*</span></label>
-                            <div class="uk-form-controls">
-                                <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
-                                <input type="text" style="display: none" name="hidden_date" id="kyc_today_input" placeholder="" value="">
+                        <div class="form-group">
+                            <label>Select Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="form-control input-lg datepicker" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
+                            <input type="hidden" name="hidden_date" id="kyc_today_input" placeholder="" value="">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_today" id="kyc_today">Extract Report</button>
                             </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_kyc_today" id="kyc_today">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!--KYC PENDING-->
-                <form class="uk-form uk-form-horizontal"  id="form_kyc_pending" name="form_kyc_pending" method="post" action="<?php echo site_url("operations/report_kyc_pending"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">KYC PENDING</label>
+                    <!--KYC PENDING-->
+                    <form id="form_kyc_pending" name="form_kyc_pending" method="post" action="<?php echo site_url("operations/report_kyc_pending"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">KYC PENDING</h3 class="text-center">
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Start Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
-                        </div>
-                    </div>
+                        <div class="form-group">
+                            <label>Start Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
 
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">End Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
+                        </div>
 
-                            <input type="text" style="display: none"  name="start_date" id="kyc_pending_start_input" placeholder="" value="">
-                            <input type="text" style="display: none" name="end_date" id="kyc_pending_end_input" placeholder="" value="">
-                        </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label>End Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
 
-                <!--KYC Remarks-->
-                <form class="uk-form uk-form-horizontal"  id="form_kyc_remarks" name="form_kyc_remarks" method="post" action="<?php echo site_url("operations/report_kyc_remarks"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">KYC REMARKS</label>
+                            <input type="hidden"  name="start_date" id="kyc_pending_start_input" placeholder="" value="">
+                            <input type="hidden" name="end_date" id="kyc_pending_end_input" placeholder="" value="">
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Start Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_remarks()">
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">End Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_remarks_end()">
+                    </form>
 
-                            <input type="text" style="display: none"  name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
-                            <input type="text" style="display: none"  name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
+                    <!--KYC Remarks-->
+                    <form id="form_kyc_remarks" name="form_kyc_remarks" method="post" action="<?php echo site_url("operations/report_kyc_remarks"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">KYC REMARKS</h3 class="text-center">
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label>Start Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_remarks()">
+                        </div>
+                        <div class="form-group">
+                            <label>End Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_remarks_end()">
 
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Loan Type<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <select class="uk-width-large uk-form-small" id="loan_type" name="loan_type">
+                            <input type="hidden" name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
+                            <input type="hidden" name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Loan Type<span class="tm-required-label">*</span></label>
+                            <select class="form-control input-lg" id="loan_type" name="loan_type">
                                 <option value="" disabled selected hidden>Loan Type</option>
                                 <option value="N">New Loan</option>
                                 <option value="R">Repeat Loan</option>
                             </select>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
 
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                    <!--KYC Revert-->
+                    <form id="form_kyc_revert" name="form_kyc_revert" method="post" action="<?php echo site_url("operations/report_kyc_reverted"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">KYC REVERTED APPLICATION</h3 class="text-center">
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label>Start Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_revert_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_revert()">
 
-                <!--KYC Revert-->
-                <form class="uk-form uk-form-horizontal"  id="form_kyc_revert" name="form_kyc_revert" method="post" action="<?php echo site_url("operations/report_kyc_reverted"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">KYC REVERTED APPLICATION</label>
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Start Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_revert_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_revert()">
-                        </div>
-                    </div>
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">End Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="kyc_revert_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_revert_end()">
+                        <div class="form-group">
+                            <label>End Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="kyc_revert_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_revert_end()">
 
-                            <input type="text" style="display: none"  name="start_date_rvrt" id="kyc_revert_start_input" placeholder="" value="">
-                            <input type="text" style="display: none"  name="end_date_rvrt" id="kyc_revert_end_input" placeholder="" value="">
+                            <input type="hidden" name="start_date_rvrt" id="kyc_revert_start_input" placeholder="" value="">
+                            <input type="hidden" name="end_date_rvrt" id="kyc_revert_end_input" placeholder="" value="">
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
-                    </div>
-                </form>
 
-                <!--BMV Remarks-->
-                <form class="uk-form uk-form-horizontal"  id="form_bmv_remarks" name="form_bmv_remarks" method="post" action="<?php echo site_url("operations/report_bmv_remarks"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">BMV REMARKS</label>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Start Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="bmv_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_bmv_remarks()">
-                        </div>
-                    </div>
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">End Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="bmv_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_bmv_remarks_end()">
+                    </form>
 
-                            <input type="text" style="display: none"  name="start_date_bmv_remarks" id="bmv_remarks_start_input" placeholder="" value="">
-                            <input type="text" style="display: none"  name="end_date_bmv_remarks" id="bmv_remarks_end_input" placeholder="" value="">
+                    <!--BMV Remarks-->
+                    <form id="form_bmv_remarks" name="form_bmv_remarks" method="post" action="<?php echo site_url("operations/report_bmv_remarks"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">BMV REMARKS</h3 class="text-center">
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                        <div class="form-group">
+                            <label>Start Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="bmv_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_bmv_remarks()">
                         </div>
-                    </div>
-                </form>
+                        <div class="form-group">
+                            <label>End Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="bmv_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_bmv_remarks_end()">
 
-                <!--BMV PENDING-->
-                <form class="uk-form uk-form-horizontal" id="form_bmv_pending" name="form_bmv_pending" method="post" action="<?php echo site_url("operations/report_bmv_pending"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">BMV PENDING REPORT</label>
+                            <input type="hidden" style="display: none"  name="start_date_bmv_remarks" id="bmv_remarks_start_input" placeholder="" value="">
+                            <input type="hidden" style="display: none"  name="end_date_bmv_remarks" id="bmv_remarks_end_input" placeholder="" value="">
                         </div>
-                        <div  style="font-size: 13px; text-align: center;">
-                            All data from BMV PENDING REPORT will be EXTRACTED. <br/>
-                            Click <b>Generate Report</b> to generate EXCEL File.
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_bmv_pending" id="bmv_pending">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!--QA PRODUCTIVITY-->
-                <form class="uk-form uk-form-horizontal"  id="form_qa_productivity" name="form_qa_productivity" method="post" action="<?php echo site_url("operations/report_qa_productivity"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">KYC PRODUCTIVITY</label>
+                    <!--BMV PENDING-->
+                    <form id="form_bmv_pending" name="form_bmv_pending" method="post" action="<?php echo site_url("operations/report_bmv_pending"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">BMV PENDING REPORT</h3 class="text-center">
+                            <p class="text-center">
+                                All data from BMV PENDING REPORT will be EXTRACTED. <br/>
+                                Click <b>Generate Report</b> to generate EXCEL File.
+                            </p>
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Select Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small" data-uk-datepicker="{format:'YYYY-MM-DD'}" id="qa_productivity_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_qa_productivity()">
-                            <input type="text" style="display: none" name="select_date_qa" id="qa_input" placeholder="" value="">
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_bmv_pending" id="bmv_pending">Generate Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_qa_productivity" id="qa">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!--ALAF REPORT-->
-                <form class="uk-form uk-form-horizontal" id="form_alaf_report" name="form_alaf_report" method="post" action="<?php echo site_url("operations/report_alaf"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">ALAF REPORT</label>
+                    <!--QA PRODUCTIVITY-->
+                    <form id="form_qa_productivity" name="form_qa_productivity" method="post" action="<?php echo site_url("operations/report_qa_productivity"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">KYC PRODUCTIVITY</h3 class="text-center">
                         </div>
-                        <div  style="font-size: 13px; text-align: center;">
-                            All data from ALAF REPORT will be EXTRACTED. <br/>
-                            Click <b>Generate Report</b> to generate EXCEL File.
+                        <div class="form-group">
+                            <label>Select Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="qa_productivity_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_qa_productivity()">
+                            <input type="hidden" name="select_date_qa" id="qa_input" placeholder="" value="">
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_alaf_report" id="alaf">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_qa_productivity" id="qa">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!--TC REPORT-->
-                <form class="uk-form uk-form-horizontal"  id="form_tc_report" name="form_tc_report" method="post" action="<?php echo site_url("operations/report_tc"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">TELECALLER REPORT</label>
+                    <!--ALAF REPORT-->
+                    <form id="form_alaf_report" name="form_alaf_report" method="post" action="<?php echo site_url("operations/report_alaf"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">ALAF REPORT</h3 class="text-center">
+                            <p class="text-center">
+                                All data from ALAF REPORT will be EXTRACTED. <br/>
+                                Click <b>Generate Report</b> to generate EXCEL File.
+                            </p>
                         </div>
-                        <label class="uk-form-label uk-text-small uk-text-bold">Select Date<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input type="text" class="uk-width-large uk-form-small"data-uk-datepicker="{format:'YYYY-MM-DD'}" id="tc_report_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_tc_report()">
-                            <input type="text" style="display: none" name="select_date_tc" id="tc_input" placeholder="" value="">
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_alaf_report" id="alaf">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_tc_report" id="tc">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
 
-                <!--SANCTION REPORT-->
-                <form class="uk-form uk-form-horizontal" id="form_sanction_report" name="form_sanction_report" method="post" action="<?php echo site_url("operations/report_sanction"); ?>" target="_blank">
-                    <div class="uk-form-row">
-                        <div class="uk-width-large" style="text-align: center; padding-bottom: 2%">
-                            <label style="font-size: 20px; font-weight: bold;">SANCTION REPORT</label>
+                    <!--TC REPORT-->
+                    <form id="form_tc_report" name="form_tc_report" method="post" action="<?php echo site_url("operations/report_tc"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">TELECALLER REPORT</h3 class="text-center">
                         </div>
-                        <div  style="font-size: 13px; text-align: center;">
-                            All data from SANCTION REPORT will be EXTRACTED. <br/>
-                            Click <b>Generate Report</b> to generate EXCEL File.
+                        <div class="form-group">
+                            <label>Select Date<span class="tm-required-label">*</span></label>
+                            <input type="text" class="datepicker form-control input-lg" id="tc_report_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_tc_report()">
+                            <input type="hidden" name="select_date_tc" id="tc_input" placeholder="" value="">
                         </div>
-                        <div class="uk-form-row uk-text-center uk-margin-large-bottom" style="margin-top: 15px;">
-                            <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" form="form_sanction_report" id="sanction">Extract Report</button>
-                            <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_tc_report" id="tc">Extract Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
 
-                <div style="text-align: center;">
-                    <a href="<?php echo site_url("dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10" id="buts">Cancel</a>
+                    <!--SANCTION REPORT-->
+                    <form id="form_sanction_report" name="form_sanction_report" method="post" action="<?php echo site_url("operations/report_sanction"); ?>" target="_blank">
+                        <div class="form-group">
+                            <h3 class="text-center">SANCTION REPORT</h3 class="text-center">
+                            <p class="text-center">
+                                All data from SANCTION REPORT will be EXTRACTED. <br/>
+                                Click <b>Generate Report</b> to generate EXCEL File.
+                            </p>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-xs-6">
+                                <button type="submit" class="input-lg form-control global-button" form="form_sanction_report" id="sanction">Generate Report</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
 
@@ -289,30 +283,9 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                 }
             </style>
 
-        </section>
-        <?php $this->load->view("templates/footer"); ?>
     </div>
 </div>
-<div id="loading"></div>
-</body>
-</html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
+<script src="<?=base_url()?>js/los_report.js"></script>

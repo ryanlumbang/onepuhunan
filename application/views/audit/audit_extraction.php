@@ -1,7 +1,6 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
 ?>
-<script src="<?=base_url()?>js/audit_extract.js"></script>
 
 <?php $this->load->view("onepuhunan/header",$data); ?>
 <div class="main">
@@ -141,21 +140,4 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
 </div>
 <?php $this->load->view("onepuhunan/copyright"); ?>
 <?php $this->load->view("onepuhunan/footer"); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script src="<?=base_url()?>js/audit_extract.js"></script>

@@ -46,8 +46,8 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Uploading of Sampling';
                 </form>
 
         </div>
-        <script src="<?=base_url()?>js/audit_extract.js"></script>
     </div>
 </div>
 <?php $this->load->view("onepuhunan/copyright"); ?>
 <?php $this->load->view("onepuhunan/footer"); ?>
+<script src="<?=base_url()?>js/audit_extract.js"></script>

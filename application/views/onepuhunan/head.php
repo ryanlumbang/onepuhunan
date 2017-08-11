@@ -13,7 +13,7 @@
     <link href="<?=base_url()?>css/general.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/jquery.dataTables.min.css">
     <link rel="stylesheet" href="<?=base_url()?>css/datatable/select.dataTables.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>css/components/datepicker.css">
+    <link rel="stylesheet" href="<?=base_url()?>css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="<?=base_url()?>css/onepuhunan/css/dashboard.css">
     <link rel="stylesheet" href="<?=base_url()?>css/onepuhunan/css/validate-error.css">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
