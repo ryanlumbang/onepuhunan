@@ -1,4 +1,7 @@
-<?php $this->load->view("onepuhunan/header"); ?>
+<?php
+$data['title'] = 'OnePuhunan';
+?>
+<?php $this->load->view("onepuhunan/header", $data); ?>
     <div class="main">
         <div class="main-inner">
             <div class="container">

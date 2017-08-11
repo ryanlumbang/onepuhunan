@@ -21,5 +21,6 @@ $(document).ready(function() {
     } );
     $('div.dataTables_filter ').addClass('op-search-box');
     $('div.dataTables_filter label').addClass('uk-icon-search');
+    $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
 } );

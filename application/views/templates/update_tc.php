@@ -1,188 +1,172 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page-wrapper">
-    <?php $this->load->view("templates/op-header"); ?>
-    <?php $this->load->view("templates/subheader"); ?>
-    <div class="header-bg">
-        <div class="header-banner">
-            <div class="uk-container op-container">
-                <h2>SYSTEM SETTINGS</h2>
-            </div>
-        </div>
-    </div>
-    <section id="main-section">
+<?php $this->load->view("onepuhunan/header",$data); ?>
+    <div class="main">
+        <div class="main-inner">
+            <div class="container">
 
-
-        <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
-
-            <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
-            <div class="op-title"><h1><i class="uk-icon-tags"></i> UPDATE TELLECALLER QUESTIONS</h1></div>
-            <?php echo validation_errors(); ?>
-            <?php
-            if ( isset($sp_tc_update) ) {
-                switch( $sp_tc_update) {
-                    case 1:
-                        echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
-                            . "      <span>"
-                            .           "<big class='uk-text-bold'>Authentication Failed</big><br>"
-                            .           "Sorry, we couldn't find an account with that Employee ID. "
-                            . "      </span>"
-                            . "   </div>";
-                        break;
-                    default:
-                        redirect(base_url()."sys/tc_question");
-                        break;
+                <?=form_open("", array("class" => "form-width-small"));?>
+                <h1>UPDATE TELLECALLER QUESTIONS</h1>
+                <?php echo validation_errors(); ?>
+                <?php
+                if ( isset($sp_tc_update) ) {
+                    switch( $sp_tc_update) {
+                        case 1:
+                            echo "<div class='alert alert-danger fade in alert-dismissable'>"
+                                ."<a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\" title=\"close\">&times;</a>"
+                                ."<strong>Authentication Failed</strong><br/>Sorry, we couldn't find an account with that Employee ID."
+                                ."</div>";
+                            break;
+                        default:
+                            redirect(base_url()."sys/tc_question");
+                            break;
+                    }
                 }
-            }
-            ?>
-            <br/>
-            <div class="uk-form-row tm-label">
-                <label class="uk-text-small">
-                    Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
-                    Once completed, please select the <b>"Update"</b> button.
-                </label>
-            </div>
-            <?php
-            $question =  array(
-                "id" => "question_no",
-                "name" => "question_no",
-                "value" =>  $_GET["quest1"],
-                "class" => "uk-width-large uk-form-small",
-                "placeholder" => "Please enter a question",
-                "type" => "hidden",
-            );
-            echo form_input($question);
-            ?>
+                ?>
+                <br/>
+                <div class="form-group">
+                    <label>
+                        Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
+                        Once completed, please select the <b>"Update"</b> button.
+                    </label>
+                    <?php
+                    $question =  array(
+                        "id" => "question_no",
+                        "name" => "question_no",
+                        "value" =>  $_GET["quest1"],
+                        "class" => "form-control input-lg",
+                        "placeholder" => "Please enter a question",
+                        "type" => "hidden",
+                    );
+                    echo form_input($question);
+                    ?>
+                </div>
 
-            <div class="uk-form-row">
-                <label class="uk-form-label uk-text-small uk-text-bold">Question<span class="tm-required-label">*</span></label>
-                <div class="uk-form-controls">
+                <div class="form-group">
+                    <label>Question<span class="tm-required-label">*</span></label>
                     <?php
                     $question =  array(
                         "id" => "question",
                         "name" => "question",
                         "value" =>  $_GET["quest"],
-                        "class" => "uk-width-large uk-form-small",
+                        "class" => "form-control input-lg",
                         "placeholder" => "Please enter a question"
                     );
                     echo form_input($question);
                     ?>
                 </div>
-            </div>
-            <p class="op-check">
-                <label>
-                    <input type="hidden" name="is_new" value="0" />
-                    <?php
-                    $new = array(
-                        "id" => "is_new",
-                        "name" => "checkme",
-                        "value" =>  $_GET["new"],
-                        "type" => "checkbox"
-                    );
-                    echo form_input($new);
-                    ?>
-                    New Loan
-                </label>
-                <label>
-                    <input type="hidden" name="is_repeat" value="0" />
-                    <?php
-                    $repeat = array(
-                        "id" => "is_repeat",
-                        "name" => "checkme",
-                        "value" =>  $_GET["repeat"],
-                        "type" => "checkbox"
-                    );
-                    echo form_input($repeat);
-                    ?>
-                    Repeat Loan
-                </label>
-                <label>
-                    <input type="hidden" name="is_set" value="0" />
-                    <?php
-                    $set = array(
-                        "id" => "is_set",
-                        "name" => "checkme",
-                        "value" =>  $_GET["set"],
-                        "type" => "checkbox"
-                    );
-                    echo form_input($set);
-                    ?>Set for TC
-                </label>
-            </p>
-            <input type="text" name="new" id="new" style="display: none"/>
-            <input type="text" name="rep" id="rep" style="display: none"/>
-            <input type="text" name="set" id="set" style="display: none"/>
-            <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
-                <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-            </div>
-            <?=form_close();?>
+                <p class="op-check">
+                    <label>
+                        <input type="hidden" name="is_new" value="0" />
+                        <?php
+                        $new = array(
+                            "id" => "is_new",
+                            "name" => "checkme",
+                            "value" =>  $_GET["new"],
+                            "type" => "checkbox"
+                        );
+                        echo form_input($new);
+                        ?>
+                        New Loan
+                    </label>
+                    <label>
+                        <input type="hidden" name="is_repeat" value="0" />
+                        <?php
+                        $repeat = array(
+                            "id" => "is_repeat",
+                            "name" => "checkme",
+                            "value" =>  $_GET["repeat"],
+                            "type" => "checkbox"
+                        );
+                        echo form_input($repeat);
+                        ?>
+                        Repeat Loan
+                    </label>
+                    <label>
+                        <input type="hidden" name="is_set" value="0" />
+                        <?php
+                        $set = array(
+                            "id" => "is_set",
+                            "name" => "checkme",
+                            "value" =>  $_GET["set"],
+                            "type" => "checkbox"
+                        );
+                        echo form_input($set);
+                        ?>Set for TC
+                    </label>
+                </p>
+                <input type="text" name="new" id="new" style="display: none"/>
+                <input type="text" name="rep" id="rep" style="display: none"/>
+                <input type="text" name="set" id="set" style="display: none"/>
+                <div class="form-group row">
+                    <div class="col-xs-6">
+                        <button type="submit" class="input-lg form-control global-button">Update</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    </div>
+                </div>
+                <?=form_close();?>
 
+            </div>
+
+            </section>
+
+            <script>
+                $(document).ready(function(){
+
+                    $("#is_new").val(function() {
+                        if($(this).prop("checked")) {
+                            $("#new").val(1);
+                        } else {
+                            $("#new").val(0);
+                        }
+                    });
+
+                    $("#is_repeat").val(function() {
+                        if($(this).prop("checked")) {
+                            $("#rep").val(1);
+                        } else {
+                            $("#rep").val(0);
+                        }
+                    });
+
+                    $("#is_set").val(function() {
+                        if($(this).prop("checked")) {
+                            $("#set").val(1);
+                        } else {
+                            $("#set").val(0);
+                        }
+                    });
+
+                });
+
+                $("#is_new").change(function() {
+                    if($(this).prop("checked")) {
+                        $("#new").val(1);
+                    } else {
+                        $("#new").val(0);
+                    }
+                });
+
+                $("#is_repeat").change(function() {
+                    if($(this).prop("checked")) {
+                        $("#rep").val(1);
+                    } else {
+                        $("#rep").val(0);
+                    }
+                });
+
+                $("#is_set").change(function() {
+                    if($(this).prop("checked")) {
+                        $("#set").val(1);
+                    } else {
+                        $("#set").val(0);
+                    }
+                });
+            </script>
         </div>
-
-    </section>
-
-    <script>
-        $(document).ready(function(){
-
-            $("#is_new").val(function() {
-                if($(this).prop("checked")) {
-                    $("#new").val(1);
-                } else {
-                    $("#new").val(0);
-                }
-            });
-
-            $("#is_repeat").val(function() {
-                if($(this).prop("checked")) {
-                    $("#rep").val(1);
-                } else {
-                    $("#rep").val(0);
-                }
-            });
-
-            $("#is_set").val(function() {
-                if($(this).prop("checked")) {
-                    $("#set").val(1);
-                } else {
-                    $("#set").val(0);
-                }
-            });
-
-        });
-
-        $("#is_new").change(function() {
-            if($(this).prop("checked")) {
-                $("#new").val(1);
-            } else {
-                $("#new").val(0);
-            }
-        });
-
-        $("#is_repeat").change(function() {
-            if($(this).prop("checked")) {
-                $("#rep").val(1);
-            } else {
-                $("#rep").val(0);
-            }
-        });
-
-        $("#is_set").change(function() {
-            if($(this).prop("checked")) {
-               $("#set").val(1);
-            } else {
-                $("#set").val(0);
-            }
-        });
-    </script>
-
-    <?php $this->load->view("templates/footer"); ?>
-    <?php $this->load->view("templates/modal"); ?>
-</div>
-</body>
-</html>
+    </div>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>

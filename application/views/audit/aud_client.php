@@ -1,93 +1,72 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage Client';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
+<?php $this->load->view("onepuhunan/header",$data); ?>
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <div class="form-width-small">
+                <h1>DATA ENTRY</h1>
+                <div class="form-group">
+                    <label>
+                        Select BRANCH ID to show the CLIENT TO AUDIT. All Client will be show.
+                        Click the <b>AUDIT</b> to consolidate the data.
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Select Branch<span class="tm-required-label">*</span></label>
+                    <?php
+                    $branchID = array(
+                        "id" => "branchcode",
+                        "name" => "branchcode",
+                        "class" => "form-control input-lg branchcode",
+                        "onchange" => "branch_list()"
+                    );
+                    foreach((array) $ln_branch as $row) {
+                        $options[$row["BranchCode"]] = $row["BranchCode"];
+                    }
 
-<script>
-    $(document).ready(function() {
-        $('#branchcode').change(function() {
-            $brnchID = $(this).val();
+                    echo form_dropdown("branchcode", $options, set_value("branchcode"), $branchID);
+                    ?>
+                </div>
 
-            $.ajax({
-                url: "<?=base_url()?>/audit/client/"+ $brnchID,
-                data: {
-                    //txtsearch:
-                },
-                type: "GET",
-                dataType: "html",
-                success: function (data) {
-
-                    $('#brnchContainer').html(data);
-                },
-                error: function (xhr, status) {
-                    $('#brnchContainer').html(data);
-                },
-                complete: function (xhr, status) {
-                    //$('#showresults').slideDown('slow')
-                }
-            });
-        })
-    })
-</script>
-<body id="losbody">
-<div id="page">
-    <div id="page-wrapper">
-        <?php $this->load->view("templates/op-header"); ?>
-        <?php $this->load->view("templates/subheader"); ?>
-        <div class="header-bg">
-            <div class="header-banner">
-                <div class="uk-container op-container">
-                    <h2>DATA ENTRY</h2>
+                <div class="form-group">
+                    <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
                 </div>
             </div>
-        </div>
-        <section id="main-section">
-            <div class="uk-container table-wrap op-container tc-container">
 
-                <div class="op-title"><h1><i class="uk-icon-tags"></i> DATA ENTRY</h1></div>
-                <div class="uk-container uk-width-5-10 uk-container-center">
-                    <div class="uk-form-row tm-label">
-                        <label class="uk-text-small">
-                            Select BRANCH ID to show the CLIENT TO AUDIT. All Client will be show.<br>
-                            Click the <b>AUDIT</b> to consolidate the data.
-                        </label>
-                    </div>
-                    <div class="uk-form-row uk-margin-small-bottom">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Select Branch<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
+            <div id="brnchContainer">
 
-                            <?php
-                            $branchID = array(
-                                "id" => "branchcode",
-                                "name" => "branchcode",
-                                "class" => "uk-width-large uk-form-small branchcode",
-                                "onchange" => "branch_list()"
-                            );
-                            foreach((array) $ln_branch as $row) {
-                                $options[$row["BranchCode"]] = $row["BranchCode"];
+            </div>
+
+            <script>
+                $(document).ready(function() {
+                    $('#branchcode').change(function() {
+                        $brnchID = $(this).val();
+
+                        $.ajax({
+                            url: "<?=base_url()?>/audit/client/"+ $brnchID,
+                            data: {
+                                //txtsearch:
+                            },
+                            type: "GET",
+                            dataType: "html",
+                            success: function (data) {
+
+                                $('#brnchContainer').html(data);
+                            },
+                            error: function (xhr, status) {
+                                $('#brnchContainer').html(data);
+                            },
+                            complete: function (xhr, status) {
+                                //$('#showresults').slideDown('slow')
                             }
-
-                            echo form_dropdown("branchcode", $options, set_value("branchcode"), $branchID);
-                            ?>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div id="brnchContainer">
-
-            </div>
-
-                <div class="uk-form-row uk-text-center uk-margin-small-top uk-margin-small-bottom">
-                    <a href="<?php echo site_url("aud_dashboard"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                </div>
-
-        </section>
-        <?php $this->load->view("templates/footer"); ?>
+                        });
+                    })
+                })
+            </script>
+        </div>
     </div>
 </div>
-<div id="loading"></div>
-</body>
-</html>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
