@@ -93,7 +93,12 @@ $data['title'] = 'OnePuhunan';
 
                                         <div class="widget-content">
                                             <div class="text-center default-margin row">
-
+                                                <?php if (count($count_branch_pending) == 0) { ?>
+                                                    <div class="col-xs-12">
+                                                        <h2>Total</h2>
+                                                        <h1 class="value">0</h1>
+                                                    </div>
+                                                <?php } ?>
                                                 <?php foreach ($count_branch_pending as $key => $pendingCount){ ?>
                                                     <?php if($pendingCount['ourbranchid'] == $branchList["BranchCode"] ){ ?>
 
