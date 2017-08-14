@@ -2,7 +2,7 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 ?>
-<?php $this->load->view("onepuhunan/header"); ?>
+<?php $this->load->view("onepuhunan/header", $data); ?>
 <div class="main">
     <div class="main-inner">
         <div class="container">

@@ -1,33 +1,17 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page">
-<div id="page-wrapper">
-    <?php $this->load->view("templates/op-header"); ?>
-    <?php $this->load->view("templates/subheader"); ?>
-    <div class="header-bg">
-        <div class="header-banner">
-            <div class="uk-container op-container">
-                <h2>SYSTEM SETTINGS</h2>
-            </div>
-        </div>
-    </div>
-    <section id="main-section">
+<?php $this->load->view("onepuhunan/header", $data); ?>
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
 
-
-        <div class="uk-container table-wrap op-container tc-container">
-
-            <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE ROLE ID</h1></div>
-
+            <h1>MANAGE ROLE ID</h1>
             <?php
             $msg = $this->session->flashdata('message');
             if( !$msg == '' ) {
-                $flashdata = '<div class="uk-alert uk-alert-success los-alert" data-uk-alert>'
-                    . '<p class="uk-margin-bottom-remove">' . $msg . '</p>'
+                $flashdata = '<div class="alert alert-success">'
+                    . '<span>' . $msg . '</span>'
                     . '</div>';
                 echo $flashdata;
             }
@@ -36,7 +20,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
             <script>
                 $(document).ready(function(){
                     setTimeout(function() {
-                        $('.uk-alert').fadeOut('fast');
+                        $('.alert-success').fadeOut('fast');
                     }, 10000); // <-- time in milliseconds
                 });
             </script>
@@ -49,8 +33,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 </a>
             </div>
 
-            <table id="tbl_rid" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">
-                <thead class="css3gradient">
+            <table id="tbl_rid" class="table table-striped" cellspacing="0" width="100%">
+                <thead class="">
                 <tr>
                     <th>EMPLOYEE ID</th>
                     <th>NAME</th>
@@ -76,10 +60,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         <td> <?php echo $row['date_approve'] ?> </td>
                         <td>
                             <a href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" >
-                                <i class="uk-icon-edit"></i> EDIT </a> &nbsp;&nbsp;&nbsp;
+                                <i class="glyphicon glyphicon-pencil"></i> EDIT </a> &nbsp;&nbsp;&nbsp;
 
                             <a href="<?php echo site_url("sys/assign_role_id/manage_resign?emp_id=".$row['emp_id'].""); ?>" >
-                                <i class="uk-icon-edit"></i> MANAGE RESIGN </a>
+                                <i class="glyphicon glyphicon-pencil"></i> MANAGE RESIGN </a>
                         </td>
                     </tr>
                 <?php   }
@@ -88,11 +72,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
             </table>
         </div>
-    </section>
-    <?php $this->load->view("templates/footer"); ?>
-    <?php $this->load->view("templates/modal"); ?>
+    </div>
 </div>
-</div>
-<div id="loading"></div>
-</body>
-</html>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>

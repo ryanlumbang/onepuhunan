@@ -523,10 +523,10 @@ $(document).ready(function() {
     });
 
     // expand all accordion headers.
-    var accordion = UIkit.accordion(UIkit.$('#los-accordion'), {collapse:false, showfirst: false});
-    accordion.find('[data-wrapper]').each(function () {
-        accordion.toggleItem(UIkit.$(this), true, false);
-    });
+    // var accordion1 = UIkit.accordion(UIkit.$('#los-accordion'), {collapse:false, showfirst: false});
+    // accordion1.find('[data-wrapper]').each(function () {
+    //     accordion1.toggleItem(UIkit.$(this), true, false);
+    // });
 
     // initialize tellecaller table
     $('input[name="checkme"][value="1"]').attr('checked','checked');

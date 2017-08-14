@@ -256,6 +256,6 @@ $(document).ready(function () {
         startView: 'month',
         minView: 'month',
         autoclose: true,
-        orientation: "auto"
+        orientation: 'auto'
     });
 });

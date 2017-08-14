@@ -17,7 +17,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                     echo "<div class='alert alert-warning'>"
                         . "      <span>"
                         .           "<strong>Authentication Failed</strong><br>"
-                        .           "Sorry, we couldn't find an account with that employee id. "
+                        .           "Sorry, we couldn't find an account with that Employee ID. "
                         . "      </span>"
                         . "   </div>";
                     break;

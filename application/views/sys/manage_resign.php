@@ -1,162 +1,144 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page">
-    <div id="page-wrapper">
-        <?php $this->load->view("templates/op-header"); ?>
-        <?php $this->load->view("templates/subheader"); ?>
-        <div class="header-bg">
-            <div class="header-banner">
-                <div class="uk-container op-container">
-                    <h2>SYSTEM SETTINGS</h2>
+<?php $this->load->view("onepuhunan/header",$data); ?>
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <?=form_open("", array("class" => "form-width-small"));?>
+            <h1>MANAGE RESIGN</h1>
+            <?php echo validation_errors(); ?>
+            <?php
+            if ( isset($sp_upd_role_id) ) {
+                switch( $sp_upd_role_id) {
+                    case 1:
+                        echo "<div class='alert alert-warning'>"
+                            . "      <span>"
+                            .           "<strong>Authentication Failed</strong><br>"
+                            .           "Sorry, we couldn't find an account with that Employee ID. "
+                            . "      </span>"
+                            . "   </div>";
+                        break;
+                    default:
+                        redirect(base_url()."sys/assign_role_id");
+                        break;
+                }
+            }
+            ?>
+
+
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Employee ID:</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="default_emp_id" type="hidden" name="default_emp_id" value="<?php echo $emp_id ?>" />
+                    <?php
+                    $employee_id =  array(
+                        "id" => "employee_id",
+                        "name" => "employee_id",
+                        "value" =>  $emp_id,
+                        "class" => "form-control input-lg",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
+
+                    );
+                    echo form_input($employee_id);
+                    ?>
                 </div>
             </div>
-        </div>
-        <section id="main-section">
 
-
-            <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
-                <?=form_open("", array("class" => "uk-form uk-form-horizontal"));?>
-                <div class="op-title"><h1><i class="uk-icon-tags"></i> MANAGE RESIGN</h1></div>
-                <?php echo validation_errors(); ?>
-                <?php
-                if ( isset($sp_upd_role_id) ) {
-                    switch( $sp_upd_role_id) {
-                        case 1:
-                            echo "<div class='uk-alert uk-alert-danger uk-text-small uk-text-justify' data-uk-alert>"
-                                . "      <span>"
-                                .           "<big class='uk-text-bold'>Authentication Failed</big><br>"
-                                .           "Sorry, we couldn't find an account with that Employee ID. "
-                                . "      </span>"
-                                . "   </div>";
-                            break;
-                        default:
-                            redirect(base_url()."sys/assign_role_id");
-                            break;
-                    }
-                }
-                ?>
-                <br/>
-<!--                <div class="uk-form-row tm-label">-->
-<!--                    <label class="uk-text-small">-->
-<!--                        Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>-->
-<!--                        Once completed, please select the <b>"Update"</b> button.-->
-<!--                    </label>-->
-<!--                </div>-->
-                <div class="uk-form-row">
-
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Employee ID<span class="tm-required-label">*</span></label>
-                        <div class="uk-form-controls">
-                            <input id="default_emp_id" type="hidden" name="default_emp_id" value="<?php echo $emp_id ?>" />
-                            <?php
-                            $employee_id =  array(
-                                "id" => "employee_id",
-                                "name" => "employee_id",
-                                "value" =>  $emp_id,
-                                "class" => "uk-width-large uk-form-small",
-                                "readonly" => "true",
-                                "style"=>"background-color: #faffbd; border: 1px solid #ddd"
-
-                            );
-                            echo form_input($employee_id);
-                            ?>
-                        </div>
-                    </div>
-
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Employee Name</label>
-                        <div class="uk-form-controls">
-                            <?php
-                            $employee_name =  array(
-                                "id" => "employee_name",
-                                "name" => "employee_name",
-                                "value" =>  $full_name,
-                                "class" => "uk-width-large uk-form-small",
-                                "readonly" => "true",
-                                "style"=>"background-color: #faffbd; border: 1px solid #ddd"
-
-                            );
-                            echo form_input($employee_name);
-                            ?>
-                        </div>
-                    </div>
-
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Email</label>
-                        <div class="uk-form-controls">
-                            <input id="default_emp_email" type="hidden" name="default_emp_email" value="<?php echo $email ?>" />
-                            <?php
-                            $employee_email =  array(
-                                "id" => "employee_email",
-                                "name" => "employee_email",
-                                "value" =>  $email,
-                                "readonly" => "true",
-                                "style"=>"background-color: #faffbd; border: 1px solid #ddd",
-                                "class" => "uk-width-large uk-form-small",
-
-                            );
-                            echo form_input($employee_email);
-                            ?>
-                        </div>
-                    </div>
-
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Job Title</label>
-                        <div class="uk-form-controls">
-                            <?php
-                            $job_title =  array(
-                                "id" => "job_title",
-                                "name" => "job_title",
-                                "value" =>  $job_title,
-                                "class" => "uk-width-large uk-form-small",
-                                "readonly" => "true",
-                                "style"=>"background-color: #faffbd; border: 1px solid #ddd"
-
-                            );
-                            echo form_input($job_title);
-                            ?>
-                        </div>
-                    </div>
-
-
-
-                    <div class="uk-form-row">
-                        <label class="uk-form-label uk-text-small uk-text-bold">Select Role:</label>
-                        <div class="uk-form-controls">
-                            <select name="rolename" id="getRoleID" class = "uk-width-large uk-form-small branchcode">
-<!--                                <option value="" disabled selected hidden></option>-->
-                                <?php  foreach($ln_rolename as $row): ?>
-                                    <?php if($row['role_id'] == $role_id){ ?>
-                                        <option selected value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
-
-                                    <?php } else { ?>
-                                        <option value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
-                                    <?php } ?>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                        <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10">Update</button>
-                        <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
-                    </div>
-                    <?=form_close();?>
-
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Employee Name:</label>
                 </div>
+                <div class="col-md-9">
+                    <?php
+                    $employee_name =  array(
+                        "id" => "employee_name",
+                        "name" => "employee_name",
+                        "value" =>  $full_name,
+                        "class" => "form-control input-lg",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
-        </section>
+                    );
+                    echo form_input($employee_name);
+                    ?>
+                </div>
+            </div>
 
-        <?php $this->load->view("templates/footer"); ?>
-        <?php $this->load->view("templates/modal"); ?>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Email:</label>
+                </div>
+                <div class="col-md-9">
+                    <input id="default_emp_email" type="hidden" name="default_emp_email" value="<?php echo $email ?>" />
+                    <?php
+                    $employee_email =  array(
+                        "id" => "employee_email",
+                        "name" => "employee_email",
+                        "value" =>  $email,
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd",
+                        "class" => "form-control input-lg",
+
+                    );
+                    echo form_input($employee_email);
+                    ?>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Job Title:</label>
+                </div>
+                <div class="col-md-9">
+                    <?php
+                    $job_title =  array(
+                        "id" => "job_title",
+                        "name" => "job_title",
+                        "value" =>  $job_title,
+                        "class" => "form-control input-lg",
+                        "readonly" => "true",
+                        "style"=>"background-color: #faffbd; border: 1px solid #ddd"
+
+                    );
+                    echo form_input($job_title);
+                    ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>Select Role:</label>
+                </div>
+                <div class="col-md-9">
+                    <select name="rolename" id="getRoleID" class = "form-control input-lg branchcode">
+                        <!--                                <option value="" disabled selected hidden></option>-->
+                        <?php  foreach($ln_rolename as $row): ?>
+                            <?php if($row['role_id'] == $role_id){ ?>
+                                <option selected value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
+
+                            <?php } else { ?>
+                                <option value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
+                            <?php } ?>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <button type="submit" class="input-lg form-control global-button">Update</button>
+                </div>
+                <div class="col-xs-6">
+                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                </div>
+            </div>
+            <?=form_close();?>
+
+        </div>
     </div>
 </div>
-<div id="loading"></div>
-
-</body>
-</html>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
