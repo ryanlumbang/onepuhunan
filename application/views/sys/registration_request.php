@@ -44,7 +44,7 @@
                                 . "<td class=\"uk-table-middle\">" . $item["email"] . "</td>"
                                 . "<td class=\"uk-table-middle\">" . $item["job_title"] . "</td>"
                                 . "<td class=\"uk-table-middle\">" . $item["dept_name"] . "</td>"
-                                . "<td class=\"\">" . "<a class=\"\" href='../sys/approve_user/" . dechex($item["emp_id"]) . "'><i class='glyphicon glyphicon-ok'></i>    Approve</a>" . "</td>"
+                                . "<td class=\"\">" . "<a class=\"btn global-btn-blue\" href='../sys/approve_user/" . dechex($item["emp_id"]) . "'><i class='glyphicon glyphicon-ok'></i>    Approve</a>" . "</td>"
                                 . "</tr>";
                         echo $result;
                     }

@@ -114,6 +114,19 @@ form button.form-control:hover {
     padding: 10px 15px;
     transition-duration: 0.25s;
 }
+.global-btn-blue, .global-btn-blue:hover, .global-btn-blue:focus{
+    background: #1e5eb5;
+    color: #fff;
+}
+.global-btn-red, .global-btn-red:hover, .global-btn-red:focus{
+    background: #ED1C24;
+    color: #fff;
+}
+.global-btn-add , .global-btn-add:hover, .global-btn-add:focus{
+    background: #838383;
+    color: #fff;
+    font-family: inherit;
+}
 .table > thead > tr > th {
     background: #004886 none repeat scroll 0 0;
     color: #fff;

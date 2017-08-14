@@ -43,7 +43,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Branch Handle';
                 </script>
 
                 <div>
-                    <a href="<?php echo site_url("audit/add"); ?>"> <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD NEW EMPLOYEE</span></button> </a>
+                    <a href="<?php echo site_url("audit/add"); ?>"> <button class="btn global-btn-add add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD NEW EMPLOYEE</span></button> </a>
                 </div>
 
                 <table id="tbl_aud_assign_branch" class="uk-text-center stripe hover op-table E1 tc-table" cellspacing="0" width="100%">

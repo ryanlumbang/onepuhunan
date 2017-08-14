@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
 <body class="login_body">
     <div class="wrapper">
         <div class="container">
-            <img  src="<?=base_url()?>img/logo/onepuhunan_logo.png" alt="OnePuhunan" title="OnePuhunan" class="login-image">
+            <img  src="<?=base_url()?>img/logo/logo-serviceportal.png" alt="OnePuhunan" title="OnePuhunan" class="login-image">
             <?=form_open("", array("class" => "uk-form uk-margin-left uk-margin-right tm-box-shadow tm-form", "style" => "padding: 30px 25px;"));?>
             <?php echo validation_errors(); ?>
             <?php

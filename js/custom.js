@@ -177,19 +177,6 @@ $(document).ready(function() {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
                     }
                 }
-                //  if (role_id === 'bm' && group === 'BMV') {
-                //     $(rows).eq(i).find("input, button").attr("disabled", false);
-                // } else if (role_id === 'qa' && group === 'KYC') {
-                //     $(rows).eq(i).find("input, button").attr("disabled", false);
-                // } else if (role_id === 'qa' && group === 'ALAF') {
-                //     $(rows).eq(i).find("input, button").attr("disabled", false);
-                // } else if (role_id === 'tc' && group === 'TC') {
-                //     $(rows).eq(i).find("input, button").attr("disabled", false);
-                // } else if (role_id === 'cpu' && group === 'SANCTION') {
-                //     $(rows).eq(i).find("input, button").attr("disabled", false);
-                // } else {
-                //     $(rows).eq(i).find("input, button").attr("disabled", true);
-                // }
             });
         },
         'bSort': false,
@@ -642,13 +629,13 @@ $(document).ready(function() {
                 aTargets: [ -1,-2 ,-3,-4]
             },
             { sWidth: '10%', targets: 0 },
-            { sWidth: '14%', targets: 1 },
-            { sWidth: '14%', targets: 2 },
+            { sWidth: '12%', targets: 1 },
+            { sWidth: '12%', targets: 2 },
             { sWidth: '12%', targets: 3 },
             { sWidth: '10%', targets: 4 },
             { sWidth: '10%', targets: 5 },
             { sWidth: '12%', targets: 6 },
-            { sWidth: '18%', targets: 7 }
+            { sWidth: '22%', targets: 7 }
         ],
         order: [[ 0, 'asc' ]],
     });
@@ -773,8 +760,8 @@ $(document).ready(function() {
     });
     $('#c_rejected, #c_sanction_waive, #c_catalog').DataTable({
         "oLanguage": { "sSearch": "" },
-        'iDisplayLength': 100,
-        'paging': false,
+        'iDisplayLength': 10,
+        // 'paging': false,
         "bInfo" : false,
         'dom': '<"toolbar">frtip'
     });

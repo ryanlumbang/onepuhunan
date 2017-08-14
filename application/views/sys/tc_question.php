@@ -9,7 +9,7 @@
 
             <!-- Trigger/Open The Modal -->
             <a href="<?php echo site_url("sys/tc_question/add"); ?>">
-                <button class="uk-button add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD QUESTION</span></button>
+                <button class="btn global-btn-add add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD QUESTION</span></button>
             </a>
 
             <table id="tbl_tc" class="table table-striped" cellspacing="0" width="100%">
@@ -36,7 +36,7 @@
                         <td>
                             <a href="<?php echo site_url("sys/tc_question/update?quest1=".$row['question_no']."&quest=".$row['question']."&new=".$row['is_new']."&repeat=".$row['is_repeat']."&set=".$row['is_set'].""); ?>"
                                data-question="<?php echo $row['question'] ?>" data-new="<?php echo $row['is_new'] ?>" data-repeat="<?php echo $row['is_repeat'] ?>"
-                               data-set="<?php echo $row['is_set'] ?>" class="open-AddBookDialog" id="editbtn"  data-seq="1">
+                               data-set="<?php echo $row['is_set'] ?>" class="open-AddBookDialog btn global-btn-blue" id="editbtn"  data-seq="1">
                                 <i class="glyphicon glyphicon-pencil"></i> EDIT </a>
                         </td>
                     </tr>

@@ -27,7 +27,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
             <div>
                 <a href="<?php echo site_url("sys/add_role_id"); ?>">
-                    <button class="uk-button add-btn" type="button">
+                    <button class="btn global-btn-add add-btn" type="button">
                         <span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD NEW ROLE</span>
                     </button>
                 </a>
@@ -59,10 +59,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         <td> <?php echo $row['approved_by'] ?> </td>
                         <td> <?php echo $row['date_approve'] ?> </td>
                         <td>
-                            <a href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" >
+                            <a class="btn global-btn-blue" href="<?php echo site_url("sys/assign_role_id/update_role_id?emp_id=".$row['emp_id']."&role=".$row['role_id']."&fullname=".$row['fullname']."&job_title=".$row['job_title'].""); ?>" >
                                 <i class="glyphicon glyphicon-pencil"></i> EDIT </a> &nbsp;&nbsp;&nbsp;
 
-                            <a href="<?php echo site_url("sys/assign_role_id/manage_resign?emp_id=".$row['emp_id'].""); ?>" >
+                            <a class="btn global-btn-red" href="<?php echo site_url("sys/assign_role_id/manage_resign?emp_id=".$row['emp_id'].""); ?>" >
                                 <i class="glyphicon glyphicon-pencil"></i> MANAGE RESIGN </a>
                         </td>
                     </tr>

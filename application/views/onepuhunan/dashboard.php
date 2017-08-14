@@ -88,7 +88,7 @@ $data['title'] = 'OnePuhunan';
                                     <!-- sanction counter -->
                                     <div class="widget widget-nopad">
                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                            <h3><?=$branchList['BranchName']?></h3>
+                                            <h3><?=$branchList['BranchName']?><?= $this->session->role_id ?></h3>
                                         </div>
 
                                         <div class="widget-content">
