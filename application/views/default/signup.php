@@ -33,7 +33,7 @@ $data['title'] = 'OnePuhunan Service Portal | Sign Up';
     }
     ?>
     <?=form_open("", array("class" => "uk-form uk-form-horizontal", "id" => "sign_up_form"));?>
-    <img  src="<?=base_url()?>img/logo/logo-serviceportal.png" alt="OnePuhunan" title="OnePuhunan" style="width:15em; display: block; margin: 0 auto">
+    <img  src="<?=base_url()?>img/logo/onepuhunan_logo.png" alt="OnePuhunan" title="OnePuhunan" style="width:15em; display: block; margin: 0 auto">
     <h1 class="text-center">REGISTRATION</h1>
     <p>
         Please complete the form below, all field name's followed by a <span class="field-required">*</span> indicate that an input is required.

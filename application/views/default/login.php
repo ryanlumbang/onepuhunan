@@ -8,7 +8,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
 <div class="d-table wrapper">
     <div class="d-table-cell align-middle">
         <?=form_open("", array("class" => "uk-form uk-margin-left uk-margin-right tm-box-shadow tm-form", "style" => "padding: 30px 25px;"));?>
-        <img  src="<?=base_url()?>img/logo/logo-serviceportal.png" alt="OnePuhunan" title="OnePuhunan" class="login-image">
+        <img  src="<?=base_url()?>img/logo/onepuhunan_logo.png" alt="OnePuhunan" title="OnePuhunan" class="login-image">
         <?php echo validation_errors(); ?>
         <?php
         if ( isset($sp_ua_login_validation) ) {

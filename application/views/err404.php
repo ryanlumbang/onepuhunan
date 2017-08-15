@@ -11,7 +11,7 @@ $data['title'] = '404 Page not found';
 <body>
 <div class="wrapper">
     <div>
-        <img  src="<?=base_url()?>img/opsp.png" alt="OnePuhunan" title="OnePuhunan" class="company-logo">
+        <img  src="<?=base_url()?>img/logo/logo-serviceportal.png" alt="OnePuhunan" title="OnePuhunan" class="company-logo">
         <h1>Whoops! Looks like you're lost.</h1>
         <p>Unfortunately, this page does not exist. Please check your URL or return to the
             <a href="<?= base_url() ?>"> Homepage </a></p>
