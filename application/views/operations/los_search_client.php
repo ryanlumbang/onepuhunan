@@ -8,9 +8,9 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
         <div class="container">
             <!-- Trigger/Open The Modal -->
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1>LOS Client Search</h1>
+            <h1 class="text-center">LOS Client Search</h1>
             <div class="form-group">
-                <label>Enter client's name or part of a name, and client id.</label>
+                <label class="text-center">Enter client's name or part of a name, and client id.</label>
                 <input type="text" id="c_name" name="c_name" class="form-control input-lg">
             </div>
             <div class="form-group row">

@@ -7,7 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
         <div class="container">
             <div class="row">
                 <?=form_open("", array("class" => "form-width-small", "id" => "branch_form"));?>
-                <h1>BRANCH HANDLE</h1>
+                <h1 class="text-center">BRANCH HANDLE</h1>
                 <?php echo validation_errors(); ?>
                 <?php
                 if ( isset($sp_upd_emp_branch) ) {
@@ -25,7 +25,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 }
                 ?>
                 <div class="form-group">
-                    <label>
+                    <label class="text-center">
                         Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
                         Once completed, please select the <b>"Update"</b> button.
                     </label>

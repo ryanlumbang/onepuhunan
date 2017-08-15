@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <?=form_open("", array("class" => "form-width-small"));?>
-                    <h1>CLIENT CATALOG SEARCH</h1>
-                    <div class="form-group">
+                    <h1 class="text-center">CLIENT CATALOG SEARCH</h1>
+                    <div class="form-group text-center">
                         <label>Enter client's name or part of a name, client id, and date of birth(<i>yyyy-MM-dd</i>)</label>
                         <input type="text" id="c_name" name="c_name" class="form-control input-lg">
                         <input type="checkbox" name="chk-spouse" class="tm-chkbox" value="true" <?php if(filter_input(INPUT_POST, 'chk-spouse')) { echo "checked='checked'"; } ?>>

@@ -31,9 +31,9 @@
                 }
              ?>
             <?=form_open("", array("class" => "form-width-small"));?>
-                <h1>MY PROFILE</h1>
+                <h1 class="text-center">MY PROFILE</h1>
                 <div class="form-group">
-                    <label>
+                    <label class="text-center">
                         Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required.
                         Once completed, please select the <b>"Submit"</b> button.
                     </label>

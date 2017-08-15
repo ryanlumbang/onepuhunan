@@ -7,7 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             <div class="container">
 
                 <?=form_open("", array("class" => "form-width-small"));?>
-                <h1>UPDATE TELLECALLER QUESTIONS</h1>
+                <h1 class="text-center">UPDATE TELLECALLER QUESTIONS</h1>
                 <?php echo validation_errors(); ?>
                 <?php
                 if ( isset($sp_tc_update) ) {
@@ -26,7 +26,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 ?>
                 <br/>
                 <div class="form-group">
-                    <label>
+                    <label class="text-center">
                         Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
                         Once completed, please select the <b>"Update"</b> button.
                     </label>

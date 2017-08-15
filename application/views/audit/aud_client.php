@@ -6,9 +6,9 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Client';
     <div class="main-inner">
         <div class="container">
             <div class="form-width-small">
-                <h1>DATA ENTRY</h1>
+                <h1 class="text-center">DATA ENTRY</h1>
                 <div class="form-group">
-                    <label>
+                    <label class="text-center">
                         Select BRANCH ID to show the CLIENT TO AUDIT. All Client will be show.
                         Click the <b>AUDIT</b> to consolidate the data.
                     </label>

@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1>UPDATE ROLE ID</h1>
+            <h1 class="text-center">UPDATE ROLE ID</h1>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_upd_role_id) ) {
@@ -26,7 +26,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
             }
             ?>
             <div class="form-group">
-                <label>
+                <label class="text-center">
                     Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
                     Once completed, please select the <b>"Update"</b> button.
                 </label>
