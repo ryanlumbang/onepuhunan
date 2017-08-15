@@ -162,6 +162,13 @@ form button.form-control:hover {
     font-weight: bold;
     margin: 0;
 }
+.form-input-file {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+}
 input[type="search"]{
     background-color: #fff;
     background-image: none;
