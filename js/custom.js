@@ -29,11 +29,11 @@ $(document).ready(function() {
     var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
     /* datatables customer toolbar tools */
-    var approve = '<button id="btn_approve" class="uk-button uk-button-small" disabled><i class="uk-icon-check"></i> Approve</button>';
-    var reject  = '<button id="btn_reject"  class="uk-button uk-button-small" disabled><i class="uk-icon-times"></i> Reject</button>';
-    var revert  = '<button id="btn_revert"  class="uk-button uk-button-small" disabled><i class="uk-icon-level-down"></i> Revert</button>';
-    var all = '<button id="btn_all" class="uk-button uk-button-small" disabled> Select All</button>';
-    var des = '<button id="btn_des" class="uk-button uk-button-small" disabled> Deselect All</button>';
+    var approve = '<button id="btn_approve" class="btn global-btn-add default-margin-right" disabled><i class="glyphicon glyphicon-ok"></i> Approve</button>';
+    var reject  = '<button id="btn_reject"  class="btn global-btn-add default-margin-right" disabled><i class="glyphicon glyphicon-remove"></i> Reject</button>';
+    var revert  = '<button id="btn_revert"  class="btn global-btn-add default-margin-right" disabled><i class="glyphicon glyphicon-repeat"></i> Revert</button>';
+    var all = '<button id="btn_all" class="btn global-btn-add default-margin-right" disabled><i class="glyphicon glyphicon-check"></i> Select All</button>';
+    var des = '<button id="btn_des" class="btn global-btn-add default-margin-right" disabled><i class="glyphicon glyphicon-unchecked"></i> Deselect All</button>';
 
     /* for enabling/disabling of button */
     var counterChecked = 0;
@@ -105,17 +105,17 @@ $(document).ready(function() {
             {'width': '3%', 'className': 'dt-center', 'data': 'OurBranchID'},
             {'width': '3%', 'className': 'dt-center', 'data': 'GroupID'},
             {'width': '3%', 'className': 'dt-center', 'data': 'FileNo'},
-            {'width': '12%', 'data': 'ClientName'},
+            {'width': '10%', 'data': 'ClientName'},
             {'width': '3%', 'className': 'dt-center', 'data': 'ClientID'},
             {'width': '4%', 'className': 'dt-center', 'data': 'BRNETClientID'},
-            {'width': '3%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
+            {'width': '5%', 'className': 'dt-center', 'data': 'LOSLoanTypeID'},
             {'visible': false, 'data': 'ProcessValue'},
             {'width': '2%', 'className': 'dt-center uk-text-bold', 'data': 'Age'},
             {'width': '3%', 'className': 'dt-center uk-text-bold', 'data': 'DestProcess'},
             {
                 'width': '2%',
                 'data': null,
-                'defaultContent':  '<button class="uk-button uk-button-small uk-button-primary">View</button>'
+                'defaultContent':  '<button class="btn global-btn-blue">View</button>'
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],

@@ -174,7 +174,6 @@ class Application extends CI_Controller {
         $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
         $count_pending = array();
         $new_array =  array();
-
         foreach ($getBranch as $list){
             $input= array(
                 '_emp_id' => $this->session->emp_id,

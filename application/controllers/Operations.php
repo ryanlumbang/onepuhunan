@@ -111,6 +111,21 @@
            
            $this->load->view("operations/los_dashboard", $arraydata);  
         }
+
+        public function branch_centers() {
+            $this->load->model("Operations_model");
+            $arraydata= array(
+                'centerlist' => $this->Operations_model->get_los_laf_status($this->input->get('branch_code')),
+                'branch_code' => $this->input->get('branch_code')
+            );
+//            echo "<pre>";
+//            var_dump($arraydata);
+//           foreach((array) $arraydata['ln_branch'] as $key => $value) {
+//               $arraydata['ln_branch'][$key]['ln_status'] = $this->Operations_model->get_los_laf_status($value['BranchCode']);
+//           }
+//
+           $this->load->view("operations/branch_centers", $arraydata);
+        }
                 
         public function los_pending($dateData, $branchId, $groupId) {
             $session = array(

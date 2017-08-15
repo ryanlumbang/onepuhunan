@@ -45,14 +45,11 @@
         }
         
         public function get_ln_branch() {
-            //$query = $this->db->query("SELECT * FROM sp_ln_branch() LIMIT 5");
-            //return $query->result_array();
-            
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_usr_emp_branch(?)", $this->session->emp_id);
             return $query->result_array();
         }
-
+        
         public function get_laf_pending($input) {
             $los_db = $this->load->database("LOS", true);
             $query = $los_db->query("SELECT * FROM sp_los_laf_pending_rev_2(?, ?, ?, ?)", $input);

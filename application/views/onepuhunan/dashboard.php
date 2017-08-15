@@ -88,7 +88,7 @@ $data['title'] = 'OnePuhunan';
                                     <!-- sanction counter -->
                                     <div class="widget widget-nopad">
                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                            <h3><?=$branchList['BranchName']?></h3>
+                                            <a href="<?php echo site_url("operations/branch_centers?branch_code=".$branchList['BranchCode'].""); ?>"><h3> <?=$branchList['BranchName']?></h3></a>
                                         </div>
 
                                         <div class="widget-content">
@@ -432,5 +432,5 @@ $data['title'] = 'OnePuhunan';
             </div>
         </div>
     </div>
-    <?php $this->load->view("onepuhunan/copyright"); ?>
-    <?php $this->load->view("onepuhunan/footer"); ?>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
