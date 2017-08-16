@@ -173,13 +173,17 @@ class Application extends CI_Controller {
         $this->load->model("Application_model");
         $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
         $count_pending = array();
+        $countQA_pending = array();
         $new_array =  array();
+        $newQA_array =  array();
         foreach ($getBranch as $list){
             $input= array(
                 '_emp_id' => $this->session->emp_id,
                 '_branch_id' => $list['BranchCode']);
             $count = $this->Application_model->get_sp_usr_pending_branch($input);
+            $countQA = $this->Application_model->get_sp_usr_pending_qa($input);
             $count_pending[] = $count;
+            $countQA_pending[] = $countQA;
         }
 
         foreach ($count_pending  as $pendingCount) {
@@ -190,7 +194,8 @@ class Application extends CI_Controller {
                         if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
                             array_push($new_array, $byBranch);
                         }
-                    }elseif($str == 'BM' || $str == 'CI'){
+                    }else
+                    if($str == 'BM' || $str == 'CI'){
                         if($byBranch['destprocess'] == 'BMV'){
                             array_push($new_array, $byBranch);
                         }
@@ -201,17 +206,39 @@ class Application extends CI_Controller {
                 }
             }
         }
+
+        foreach ($countQA_pending  as $pendingCountQa) {
+            foreach ($pendingCountQa as $key => $byBranchQa) {
+                $str = strtoupper($this->session->role_id);
+                if($str != $byBranchQa['destprocess'] ){
+                    if($str == 'QA'){
+                        if($byBranchQa['destprocess'] == 'KYC' || $byBranchQa['destprocess'] == 'ALAF'){
+                            array_push($newQA_array, $byBranchQa);
+                        }
+                    }
+                }
+            }
+        }
         $sum = array_reduce($new_array, function ($a, $b) {
             isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
+            return $a;
+        });
+        $sumQA = array_reduce($newQA_array, function ($a, $b) {
+            isset($a[$b['new_destprocess']])   ? $a[$b['new_destprocess']]['sum'] += $b['sum'] : $a[$b['new_destprocess']] = $b;
             return $a;
         });
 
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
             "count"       => $sum,
+            "count_qa"       => $sumQA,
             "user_branch"       => $getBranch,
+            "count_qa_pending"       => $newQA_array,
             "count_branch_pending"       => $new_array
         );
+
+//        echo "<pre>";
+//        var_dump($sumQA);
         $this->load->view("onepuhunan/dashboard", $data);
     }
 

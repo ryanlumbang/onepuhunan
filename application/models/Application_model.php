@@ -131,5 +131,14 @@ class Application_model extends CI_Model {
         $query = $los_db->query("SELECT ourbranchid,destprocess,SUM(count) FROM sp_usr_pending_branch( ?, ?) GROUP BY ourbranchid,destprocess", $input);
         return $query->result_array();
     }
+
+    public function get_sp_usr_pending_qa($input) {
+        $los_db = $this->load->database("LOS", true);
+        $query = $los_db->query("SELECT losloantypeid,ourbranchid,destprocess,branchname,SUM(count),losloantypeid || '-' || destprocess AS new_destprocess
+                                  FROM sp_usr_pending_branch( ?, ?) 
+                                  GROUP BY losloantypeid,ourbranchid,destprocess,branchname,new_destprocess
+                                  ORDER BY ourbranchid, destprocess,losloantypeid", $input);
+        return $query->result_array();
+    }
 }
 
