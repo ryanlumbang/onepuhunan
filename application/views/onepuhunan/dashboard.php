@@ -106,6 +106,7 @@ $data['title'] = 'OnePuhunan';
                     </div>
                 <?php } ?>
                 <?php if($this->session->role_id == 'qa') { ?>
+                <br/>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
@@ -159,8 +160,8 @@ $data['title'] = 'OnePuhunan';
                             </tbody>
                         </table>
                     </div>
+                    <?php } ?>
                 </div>
-                <?php } ?>
 
                 <?php
                 if($this->session->role_id == 'super') { ?>
