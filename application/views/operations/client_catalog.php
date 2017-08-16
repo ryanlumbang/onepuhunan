@@ -30,7 +30,7 @@
                 <?php
                     if(filter_input_array(INPUT_POST)) {
                         if($number_of_rows > 0) {
-                            $table = "<table id='c_catalog' class=\"table table-striped\">"
+                            $table = "<table id='c_catalog' class=\"table table-striped op-table E1\">"
                                    . "<caption>See below for search results close to your request, or try a new search. <br/><br/> "
                                    . " You searched for <b> \"". filter_input(INPUT_POST, "c_name") . "\" </b><br/> "
                                    . "(" . $number_of_rows . " rows retrieved)</caption>"
