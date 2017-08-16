@@ -35,14 +35,14 @@
                         </ul>
                     </li>
                     <li class="dropdown
-                    <?php echo (current_url() == site_url("operations/client_catalog")
+                    <?php echo (current_url() == site_url("operations/client-catalog")
                         || current_url() == site_url("operations/client_rejected")
                         || current_url() == site_url("operations/client_search")
 
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                            <li><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                             <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                         </ul>
@@ -58,14 +58,14 @@
                         </ul>
                     </li>
                     <li class="dropdown
-                    <?php echo (current_url() == site_url("operations/branch_handle")
+                    <?php echo (current_url() == site_url("operations/branch-handle")
                         || current_url() == site_url("sys/tc_question")
                         || current_url() == site_url("operations/los-report")
                         || current_url() == site_url("operations/processor-pending")
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i> <i class="icon-long-arrow-down"></i><span>LOS Settings</span> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> Branch Assignment</a></li>
+                            <li><a href="<?php echo site_url("operations/branch-handle"); ?>"><i class="icon-align-justify"></i> Branch Assignment</a></li>
                             <li><a href="<?php echo site_url("sys/tc_question"); ?>"><i class="icon-tasks "></i> TelleCaller Questions<span></a></li>
                             <li><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> LOS Report<span></a></li>
                             <li><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> Processor Pending<span></a></li>
@@ -78,19 +78,19 @@
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="dropdown
-                    <?php echo (current_url() == site_url("operations/client_catalog")
+                    <?php echo (current_url() == site_url("operations/client-catalog")
                         || current_url() == site_url("operations/client_rejected")
                         || current_url() == site_url("operations/client_search")
 
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                            <li><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                             <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                         </ul>
                     </li>
-                    <li class="<?php echo (current_url() == site_url("operations/branch_handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/branch-handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch-handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
                     <li class="<?php echo (current_url() == site_url("operations/los-report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
                     <li class="<?php echo (current_url() == site_url("operations/processor-pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
                 </ul>
@@ -100,19 +100,19 @@
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="dropdown
-                    <?php echo (current_url() == site_url("operations/client_catalog")
+                    <?php echo (current_url() == site_url("operations/client-catalog")
                         || current_url() == site_url("operations/client_rejected")
                         || current_url() == site_url("operations/client_search")
 
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
                         <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                            <li><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                             <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                             <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                         </ul>
                     </li>
-                    <li class="<?php echo (current_url() == site_url("operations/branch_handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/branch-handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch-handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
                     <li class="<?php echo (current_url() == site_url("sys/tc_question")) ? 'active' : '' ?>"><a href="<?php echo site_url("sys/tc_question"); ?>"><i class="icon-tasks "></i> <span>TelleCaller Questions<span></a></li>
                     <li class="<?php echo (current_url() == site_url("operations/-")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
                     <li class="<?php echo (current_url() == site_url("operations/processor-pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
@@ -123,7 +123,7 @@
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/los")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/client_catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/client-catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client_rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/report"); ?>"><i class="icon-file"></i><span> LOS Generate Report</span> </a> </li>
 
@@ -134,7 +134,7 @@
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/los")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/client_catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/client-catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client_rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
 
                 </ul>
@@ -153,7 +153,7 @@
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/los")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("sys/tc_question")) ? 'active' : '' ?>"><a href="<?php echo site_url("sys/tc_question"); ?>"><i class="icon-tasks "></i> <span>TelleCaller Questions<span></a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/client_catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/client-catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client_rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/client_search")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                 </ul>
@@ -164,7 +164,7 @@
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/los")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/client_catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/client-catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client_rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/client_search")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/client_upload")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client_upload"); ?>"><i class="icon-upload-alt"></i><span> LOS Upload</span> </a> </li>

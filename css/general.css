@@ -90,3 +90,6 @@ table.dataTable.no-footer {
     border-bottom: 1pt solid #999;
 }
 
+table {
+    width: 100%;
+}
