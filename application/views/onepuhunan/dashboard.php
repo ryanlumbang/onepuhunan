@@ -5,48 +5,12 @@ $data['title'] = 'OnePuhunan';
     <div class="main">
         <div class="main-inner">
             <div class="container">
-                <div class="row">
-                    <br/>
-                    <?php if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu') {?>
+                <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu') {?>
+                    <div class="row">
+                        <br/>
                         <?php if((array)$count || (array)$user_branch) {?>
                             <?php foreach ((array)$count as $total)
-                                 if($this->session->role_id == 'qa'){
-                                     if($total['destprocess'] == 'KYC'){ ?>
-                                        <div class="col-md-6 col-xs-12">
-                                            <div class="widget widget-nopad">
-                                                <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                    <h3>TOTAL KYC</h3>
-                                                </div>
-                                                <div class="widget-content">
-                                                    <div class="text-center default-margin row">
-                                                        <div class="col-xs-12">
-                                                            <h2><?=$total['destprocess'] ?></h2>
-                                                            <h1 class="value"><?=$total['sum'] ?></h1>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                     <?php } elseif($total['destprocess'] == 'ALAF') { ?>
-                                         <div class="col-md-6 col-xs-12">
-                                             <div class="widget widget-nopad">
-                                                 <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                     <h3>TOTAL ALAF</h3>
-                                                 </div>
-                                                 <div class="widget-content">
-                                                     <div class="text-center default-margin row">
-                                                         <div class="col-xs-12">
-                                                             <h2><?=$total['destprocess'] ?></h2>
-                                                             <h1 class="value"><?=$total['sum'] ?></h1>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-
-                                     <?php } ?>
-                                <?php } elseif ($this->session->role_id == 'ci'){ ?>
+                                 if ($this->session->role_id == 'ci'){ ?>
                                     <?php if($total['destprocess'] == 'BMV'){ ?>
                                          <div class="col-md-6 col-xs-12">
                                              <div class="widget widget-nopad">
@@ -88,7 +52,7 @@ $data['title'] = 'OnePuhunan';
                                     <!-- sanction counter -->
                                     <div class="widget widget-nopad">
                                         <div class="widget-header"> <i class="icon-list-alt"></i>
-                                            <a href="<?php echo site_url("operations/branch_centers?branch_code=".$branchList['BranchCode'].""); ?>"><h3> <?=$branchList['BranchName']?></h3></a>
+                                            <a href="<?php echo site_url("operations/branch_centers?branch_code=".$branchList['BranchCode'].""); ?>"><h3> <?=$branchList['BranchName']?></h3>
                                         </div>
 
                                         <div class="widget-content">
@@ -139,13 +103,69 @@ $data['title'] = 'OnePuhunan';
                             </div>
                         <?php } ?>
 
-                    <?php } ?>
+                    </div>
+                <?php } ?>
+                <?php if($this->session->role_id == 'qa') { ?>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <?php foreach ((array)$count_qa as $total){
+                                if($total['destprocess'] == 'KYC' OR $total['destprocess'] == 'ALAF') {?>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div class="widget widget-nopad">
+                                            <div class="widget-header"> <i class="icon-list-alt"></i>
+                                                <h3>Total</h3>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="text-center default-margin row">
+
+                                                    <div class="col-xs-12">
+                                                        <h2><?= $total['destprocess']  ?><?php echo($total['losloantypeid'] == 'R' ? ' Repeat ' : ' New ') ?>Loan</h2>
+                                                        <h1 class="value"><?=$total['sum'] ?></h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Branch</th>
+                                    <th>ALAF New</th>
+                                    <th>ALAF Repeat</th>
+                                    <th>KYC New</th>
+                                    <th>KYC Repeat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php if((array)$user_branch) {?>
+                                <?php foreach ((array)$user_branch as $id => $branchList){  ?>
+                                    <tr>
+
+                                        <td><?=($branchList['BranchName'])?></td>
+                                        <?php foreach ($count_qa_pending as $pendingCount){ ?>
+                                            <?php if($branchList['BranchCode'] == $pendingCount['ourbranchid']){ ?>
+                                            <td><?=$pendingCount['sum'] ?></td>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </tr>
+                                <?php } ?>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                <?php } ?>
 
                 <?php
                 if($this->session->role_id == 'super') { ?>
                     <div class="row">
-                        <br>
+                        <br/>
                         <div class="col-md-6 col-xs-12">
                             <!--total update-->
                             <div class="widget widget-nopad">
@@ -234,7 +254,7 @@ $data['title'] = 'OnePuhunan';
                 <?php
                 if($this->session->role_id == 'ssuper') { ?>
                     <div class="row">
-                        <br>
+                        <br/>
                         <div class="col-md-6 col-xs-12">
                             <!--total update-->
                             <div class="widget widget-nopad">
@@ -322,8 +342,6 @@ $data['title'] = 'OnePuhunan';
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'qa_sup') { ?>
-                    <h1></h1>
-
                     <div class="row">
                         <br>
                         <div class="col-md-6 col-xs-12">
@@ -432,5 +450,5 @@ $data['title'] = 'OnePuhunan';
             </div>
         </div>
     </div>
-<?php $this->load->view("onepuhunan/copyright"); ?>
-<?php $this->load->view("onepuhunan/footer"); ?>
+    <?php $this->load->view("onepuhunan/copyright"); ?>
+    <?php $this->load->view("onepuhunan/footer"); ?>
