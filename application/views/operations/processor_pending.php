@@ -10,23 +10,23 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             <div class="sub-container">
             <h2><i class="glyphicon glyphicon-tag"></i> QA OPERATORS</h2>
             <!-- Trigger/Open The Modal -->
-            <table id="tbl_pp" class="table table-striped" cellspacing="0" width="100%">
+            <table id="tbl_pp" class="table table-striped op-table E1 " cellspacing="0" width="100%">
                 <thead>
                 <tr>
-                    <th>DATE</th>
-                    <th>EMPLOYEE ID</th>
-                    <th  class="uk-text-left">NAME</th>
-                    <th>PENDING</th>
+                    <th class="text-center" width="20%">DATE</th>
+                    <th class="text-center" width="25%">EMPLOYEE ID</th>
+                    <th  class="uk-text-left" width="30%">NAME</th>
+                    <th class="text-center" width="25%">PENDING</th>
                 </tr>
                 </thead>
 
                 <?php
                 foreach((array) $pro_pending_qa as $row) { ?>
                     <tr class="modal-update">
-                        <td class="match"><?php echo $row['as_of_date'] ?></td>
-                        <td><?php echo $row['emp_id'] ?></td>
+                        <td class="match text-center"><?php echo $row['as_of_date'] ?></td>
+                        <td class="text-center"><?php echo $row['emp_id'] ?></td>
                         <td  class="uk-text-left"><?php echo $row['first_name'] ?> <?php echo $row['last_name'] ?></td>
-                        <td><?php echo $row['count'] ?></td>
+                        <td class="text-center"><?php echo $row['count'] ?></td>
                     </tr>
                 <?php   }
 
