@@ -131,8 +131,9 @@ form button.form-control:hover {
     margin-right: 15px;
 }
 .table > thead > tr > th {
-    background: #004886 none repeat scroll 0 0;
-    color: #fff;
+    background: #B3CBD6 none repeat scroll 0 0;
+    color: #000;
+    border-bottom: 1px solid #4695bb
 }
 .highlight {
     font-weight: bold;

@@ -39,3 +39,26 @@ a.back-to-top {
 a:hover.back-to-top {
     background-color: #000;
 }
+
+.sub-container {
+    background: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.sub-container h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background: #066482;
+    margin-top: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #B3CBD6;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+table.dataTable.no-footer {
+    border-bottom: 1px solid #4695bb !important;
+}
