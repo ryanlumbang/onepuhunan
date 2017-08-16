@@ -5,11 +5,12 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <h1> MANAGE CLIENT REJECTED</h1>
+            <div class="sub-container">
+            <h2> MANAGE CLIENT REJECTED</h2>
 
             <!-- Trigger/Open The Modal -->
 
-            <table id="c_rejected" class="table table-striped" cellspacing="0" width="100%">
+            <table id="c_rejected" class="table table-striped op-table E1" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th class="text-center">BRANCH ID</th>
@@ -43,6 +44,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 ?>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </div>
