@@ -60,28 +60,50 @@
                     <li class="dropdown
                     <?php echo (current_url() == site_url("operations/branch_handle")
                         || current_url() == site_url("sys/tc_question")
-                        || current_url() == site_url("operations/los_report")
-                        || current_url() == site_url("operations/processor_pending")
+                        || current_url() == site_url("operations/los-report")
+                        || current_url() == site_url("operations/processor-pending")
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-list-alt"></i> <i class="icon-long-arrow-down"></i><span>LOS Settings</span> </a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> Branch Assignment</a></li>
                             <li><a href="<?php echo site_url("sys/tc_question"); ?>"><i class="icon-tasks "></i> TelleCaller Questions<span></a></li>
-                            <li><a href="<?php echo site_url("operations/los_report"); ?>"><i class="icon-list-alt"></i> LOS Report<span></a></li>
-                            <li><a href="<?php echo site_url("operations/processor_pending"); ?>"><i class="icon-list "></i> Processor Pending<span></a></li>
+                            <li><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> LOS Report<span></a></li>
+                            <li><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> Processor Pending<span></a></li>
                         </ul>
                     </li>
                 </ul>
             <?php } ?>
             <?php
-            if($this->session->role_id == 'ssuper') { ?>
+            if($this->session->role_id == 'qa_sup') { ?>
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
                     <li class="dropdown
-                    <?php echo (current_url() == site_url("dashboard")
-                    || current_url() == site_url("operations/client_catalog")
-                    || current_url() == site_url("operations/client_rejected")
-                    || current_url() == site_url("operations/client_search")
+                    <?php echo (current_url() == site_url("operations/client_catalog")
+                        || current_url() == site_url("operations/client_rejected")
+                        || current_url() == site_url("operations/client_search")
+
+                    ) ? 'active' : '' ?>
+                    "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                            <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
+                            <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
+                        </ul>
+                    </li>
+                    <li class="<?php echo (current_url() == site_url("operations/branch_handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/los-report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/processor-pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
+                </ul>
+            <?php } ?>
+            <?php
+            if($this->session->role_id == 'tc_sup') { ?>
+                <ul class="mainnav">
+                    <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                    <li class="dropdown
+                    <?php echo (current_url() == site_url("operations/client_catalog")
+                        || current_url() == site_url("operations/client_rejected")
+                        || current_url() == site_url("operations/client_search")
+
                     ) ? 'active' : '' ?>
                     "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
                         <ul class="dropdown-menu">
@@ -92,24 +114,8 @@
                     </li>
                     <li class="<?php echo (current_url() == site_url("operations/branch_handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
                     <li class="<?php echo (current_url() == site_url("sys/tc_question")) ? 'active' : '' ?>"><a href="<?php echo site_url("sys/tc_question"); ?>"><i class="icon-tasks "></i> <span>TelleCaller Questions<span></a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/los_report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los_report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
-                    <li class="<?php echo (current_url() == site_url("operations/processor_pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor_pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
-                </ul>
-            <?php } ?>
-            <?php
-            if($this->session->role_id == 'qa_sup') { ?>
-                <ul class="mainnav">
-                    <li class="active"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-                    <li class="dropdown"><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo site_url("operations/client_catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
-                            <li><a href="<?php echo site_url("operations/client_rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
-                            <li><a href="<?php echo site_url("operations/client_search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
-                        </ul>
-                    </li>
-                    <li><a href="<?php echo site_url("operations/branch_handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
-                    <li><a href="<?php echo site_url("operations/los_report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
-                    <li><a href="<?php echo site_url("operations/processor_pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/-")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/processor-pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
                 </ul>
             <?php } ?>
             <?php

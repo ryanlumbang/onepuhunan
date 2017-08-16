@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@import url(https://fonts.googleapis.com/css?family=Helvetica-Neue:200,300);
 * {
     box-sizing: border-box;
     margin: 0;
@@ -40,6 +40,9 @@ h1.value{
     font-size: 45px;
     font-weight: bold;
     line-height: 1em;
+}
+.container {
+    padding: 0px;
 }
 .nav > li > a:focus, .nav > li > a:hover,
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
@@ -130,10 +133,10 @@ form button.form-control:hover {
 .default-margin-right{
     margin-right: 15px;
 }
-.table > thead > tr > th {
-    background: #004886 none repeat scroll 0 0;
-    color: #fff;
-}
+/*.table > thead > tr > th {*/
+    /*background: #004886 none repeat scroll 0 0;*/
+    /*color: #fff;*/
+/*}*/
 .highlight {
     font-weight: bold;
     background: #606c88; /* Old browsers */

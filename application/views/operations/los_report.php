@@ -12,15 +12,17 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                 <div class="form-width-small">
                     <h1 class="text-center">EXTRACTION OF REPORT</h1>
                     <div class="form-group">
-                        <label class="text-center">
+                        <p class="text-center">
                             Choose what TYPE OF REPORT you want to generate.<br>
                             After you chose what REPORT TYPE click, <b>"EXTRACT REPORT"</b>.
-                        </label>
+                        </p>
                     </div>
 
                     <div class="form-group">
                         <select class="form-control input-lg" id="form_report" name="form_report" onchange="toggleReport()">
                             <option value="" disabled selected hidden>Type of Report</option>
+                            <?php
+                            if($this->session->role_id == 'qa_sup') { ?>
                             <option value="01">KYC Today</option>
                             <option value="02">KYC Pending</option>
                             <option value="03">KYC Remarks</option>
@@ -29,14 +31,17 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                             <option value="06">BMV Pending</option>
                             <option value="07">QA Productivity</option>
                             <option value="08">ALAF Report</option>
+                            <?php } ?>
+                            <?php
+                            if($this->session->role_id == 'tc_sup') { ?>
                             <option value="09">TC Report</option>
+                            <?php } ?>
+                            <?php
+                            if($this->session->role_id == 'cpu_sup') { ?>
                             <option value="10">Sanction Report</option>
+                            <?php } ?>
                         </select>
                     </div>
-                    <div>
-                        <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button" id="buts">Cancel</a>
-                    </div>
-
 
                     <!--KYC TODAY-->
                     <form id="form_kyc_today" name="form_kyc_today" method="post" action="<?php echo site_url("operations/report_kyc_today"); ?>" target="_blank">
