@@ -4,7 +4,6 @@ $data['title'] = 'OnePuhunan';
 <?php $this->load->view("onepuhunan/header", $data); ?>
     <div class="main">
         <div class="main-inner">
-            <div class="container">
                 <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup') {?>
                     <div class="row">
                         <br/>
@@ -107,6 +106,7 @@ $data['title'] = 'OnePuhunan';
                 <?php } ?>
                 <?php if($this->session->role_id == 'qa') { ?>
                 <br/>
+                <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="row">
@@ -162,9 +162,10 @@ $data['title'] = 'OnePuhunan';
                     </div>
                     <?php } ?>
                 </div>
-
+                </div>
                 <?php
                 if($this->session->role_id == 'super') { ?>
+                 <div class="container">
                     <div class="row">
                         <br/>
                         <div class="col-md-6 col-xs-12">
@@ -251,9 +252,11 @@ $data['title'] = 'OnePuhunan';
                             </div>
                         </div>
                     </div>
+                 </div>
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'ssuper') { ?>
+                <div class="container">
                     <div class="row">
                         <br/>
                         <div class="col-md-6 col-xs-12">
@@ -340,9 +343,11 @@ $data['title'] = 'OnePuhunan';
                             </div>
                         </div>
                     </div>
+                </div>
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'qa_sup') { ?>
+               <div class="container">
                     <div class="row">
                         <br>
                         <div class="col-md-6 col-xs-12">
@@ -402,13 +407,16 @@ $data['title'] = 'OnePuhunan';
                         </div>
                         
                     </div>
+               </div>
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'cpu') { ?>
+                <div class="container">
                     <div class="row">
                         <br>
                         <h1 style="text-align: center">UNDER CONSTRUCTION...</h1>
                     </div>
+                </div>
                 <?php } ?>
                 <?php
                 if($this->session->role_id == 'aud') { ?>
@@ -421,7 +429,6 @@ $data['title'] = 'OnePuhunan';
                 <?php
                 if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'qa_sup')?>
 
-            </div>
         </div>
     </div>
     <?php $this->load->view("onepuhunan/copyright"); ?>

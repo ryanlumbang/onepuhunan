@@ -107,7 +107,7 @@ form button.form-control:hover {
 }
 .global-button{
     background-color: white;
-    border: 0 none;
+    border: 1px solid #004886;
     color: #004886;
     cursor: pointer;
     font-family:inherit;
@@ -116,6 +116,22 @@ form button.form-control:hover {
     outline: 0 none;
     padding: 10px 15px;
     transition-duration: 0.25s;
+}
+.global-button-success{
+    background-color: #004886;
+    border: 1px solid #004886;
+    color: #fff;
+    cursor: pointer;
+    font-family:inherit;
+    font-size: 18px;
+    font-weight: bold;
+    outline: 0 none;
+    padding: 10px 15px;
+    transition-duration: 0.25s;
+}
+.global-button-success:hover{
+    background-color: #fff;
+    color: #004886;
 }
 .global-btn-blue, .global-btn-blue:hover, .global-btn-blue:focus{
     background: #1e5eb5;

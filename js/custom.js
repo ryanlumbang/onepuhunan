@@ -739,17 +739,29 @@ $(document).ready(function() {
         "oLanguage": { "sSearch": "" },
         'searching': true,
     });
+    var c_rejected = $('#c_rejected').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true
+    });
+    var c_catalog = $('#c_catalog').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': false,
+        'iDisplayLength': 10,
+        // 'paging': false,
+        "bInfo" : false,
+        'dom': '<"toolbar">frtip'
+    });
     var tbl_pbm = $('#tbl_pbm').DataTable({
         "oLanguage": { "sSearch": "" },
-        'searching': true,
+        'searching': true
     });
     var tbl_ptc = $('#tbl_ptc').DataTable({
         "oLanguage": { "sSearch": "" },
-        'searching': true,
+        'searching': true
     });
     var tbl_ps = $('#tbl_ps').DataTable({
         "oLanguage": { "sSearch": "" },
-        'searching': true,
+        'searching': true
     });
 
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
@@ -758,7 +770,7 @@ $(document).ready(function() {
         window.location.reload();
         $(".add_form modal").hide();
     });
-    $('#c_rejected, #c_sanction_waive, #c_catalog').DataTable({
+    $('#c_sanction_waive').DataTable({
         "oLanguage": { "sSearch": "" },
         'iDisplayLength': 10,
         // 'paging': false,

@@ -7,8 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
         <div class="container">
             <?php
             if($this->session->role_id == 'qa_sup') { ?>
-            <div class="sub-container">
-            <h2><i class="glyphicon glyphicon-tag"></i> QA OPERATORS</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> QA OPERATORS</h2>
             <!-- Trigger/Open The Modal -->
             <table id="tbl_pp" class="table table-striped op-table E1 " cellspacing="0" width="100%">
                 <thead>
@@ -34,9 +33,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
 
             </table>
-            </div>
             <?php } ?>
-<!--            <div class="sub-container">-->
 <!--            <h2><i class="glyphicon glyphicon-tag"></i> BMV OPERATORS</h2>-->
 <!---->
 <!--            <!-- Trigger/Open The Modal -->
@@ -64,11 +61,9 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 <!---->
 <!---->
 <!--            </table>-->
-<!--            </div>-->
             <?php
             if($this->session->role_id == 'tc_sup') { ?>
-            <div class="sub-container">
-            <h2><i class="glyphicon glyphicon-tag"></i> TC OPERATORS</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> TC OPERATORS</h2>
 
             <!-- Trigger/Open The Modal -->
             <table id="tbl_ptc" class="table table-striped" cellspacing="0" width="100%">
@@ -93,12 +88,11 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
                 ?>
             </table>
-            </div>
+
             <?php } ?>
             <?php
             if($this->session->role_id == 'cpu_sup') { ?>
-            <div class="sub-container">
-            <h2><i class="glyphicon glyphicon-tag"></i> SANCTION OPERATORS</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> SANCTION OPERATORS</h2>
 
             <!-- Trigger/Open The Modal -->
             <table id="tbl_ps" class="table table-striped" cellspacing="0" width="100%">
@@ -125,7 +119,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
 
             </table>
-            </div>
+
             <?php } ?>
             </div>
     </div>
