@@ -27,7 +27,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 <?php
                 if(filter_input_array(INPUT_POST)) {
                     if($number_of_rows > 0) {
-                        $table = "<table id=\"c_search\" class=\"table table-striped\" cellspacing=\"0\" width=\"100%\">"
+                        $table = "<table id=\"c_search\" class=\"table table-striped op-table E1 \" cellspacing=\"0\" width=\"100%\">"
                             . "<caption>See below for search results close to your request, or try a new search. <br/><br/> "
                             . " You searched for <b> \"". filter_input(INPUT_POST, "c_name") . "\" </b><br/> "
                             . "(" . $number_of_rows . " rows retrieved)<br/></caption>"

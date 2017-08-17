@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
     <div class="main-inner">
         <div class="container">
             <div class="sub-container">
-            <h2> MANAGE CLIENT REJECTED</h2>
+            <h2><i class="glyphicon glyphicon-tag"></i> MANAGE CLIENT REJECTED</h2>
 
             <!-- Trigger/Open The Modal -->
 

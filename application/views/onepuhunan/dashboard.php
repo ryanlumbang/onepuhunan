@@ -5,7 +5,7 @@ $data['title'] = 'OnePuhunan';
     <div class="main">
         <div class="main-inner">
             <div class="container">
-                <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu') {?>
+                <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup') {?>
                     <div class="row">
                         <br/>
                         <?php if((array)$count || (array)$user_branch) {?>
@@ -399,34 +399,7 @@ $data['title'] = 'OnePuhunan';
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xs-12">
-                            <!-- tc counter -->
-                            <div class="widget widget-nopad">
-                                <div class="widget-header"> <i class="icon-list-alt"></i>
-                                    <h3>TC COUNTER</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="text-center default-margin row">
-                                        <div class="col-md-6 col-xs-12"> <h2>New Loan</h2><h1 class="value"><?=$dashboard['TCNew']?></h1> </div>
-                                        <div class="col-md-6 col-xs-12"> <h2>Repeat Loan</h2><h1 class="value"><?=$dashboard['TCRepeat']?></h1> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12">
-                            <!-- sanction counter -->
-                            <div class="widget widget-nopad">
-                                <div class="widget-header"> <i class="icon-list-alt"></i>
-                                    <h3>SANCTION COUNTER</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="text-center default-margin row">
-                                        <div class="col-md-6 col-xs-12"> <h2>New Loan</h2><h1 class="value"><?=$dashboard['SanctionNew']?></h1> </div>
-                                        <div class="col-md-6 col-xs-12"> <h2>Repeat Loan</h2><h1 class="value"><?=$dashboard['SanctionRepeat']?></h1> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 <?php } ?>
                 <?php
@@ -445,7 +418,7 @@ $data['title'] = 'OnePuhunan';
                 <?php } ?>
                 <!-- /row -->
                 <?php
-                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper')?>
+                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'qa_sup')?>
 
             </div>
         </div>
