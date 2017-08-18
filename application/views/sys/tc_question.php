@@ -5,14 +5,14 @@
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <h1>MANAGE TELLECALLER QUESTIONS</h1>
+            <h2 class="title">MANAGE TELLECALLER QUESTIONS</h2>
 
             <!-- Trigger/Open The Modal -->
             <a href="<?php echo site_url("sys/tc_question/add"); ?>">
                 <button class="btn global-btn-add add-btn" type="button"><span class="op-btn"><i class="glyphicon glyphicon-plus"></i> ADD QUESTION</span></button>
             </a>
 
-            <table id="tbl_tc" class="table table-striped" cellspacing="0" width="100%">
+            <table id="tbl_tc" class="table table-striped op-table E1" cellspacing="0" width="100%">
                 <thead class="css3gradient">
                 <tr>
                     <th>ID</th>

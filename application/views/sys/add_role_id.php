@@ -76,7 +76,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button">ADD Role</button>
+                    <button type="submit" class="input-lg form-control global-button-success">ADD Role</button>
                 </div>
                 <div class="col-xs-6">
                     <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>

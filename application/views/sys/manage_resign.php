@@ -129,7 +129,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button">Update</button>
+                    <button type="submit" class="input-lg form-control global-button-success">Update</button>
                 </div>
                 <div class="col-xs-6">
                     <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>

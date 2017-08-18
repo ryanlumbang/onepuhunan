@@ -233,7 +233,7 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button">Submit</button>
+                        <button type="submit" class="input-lg form-control global-button-success">Submit</button>
                     </div>
                     <div class="col-xs-6">
                         <a class="btn input-lg form-control global-button" href="<?php echo site_url("index.php"); ?>">Back</a>

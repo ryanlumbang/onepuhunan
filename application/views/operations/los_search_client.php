@@ -15,7 +15,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button">Search</button>
+                    <button type="submit" class="input-lg form-control global-button-success">Search</button>
                 </div>
                 <div class="col-xs-6">
                     <button type="reset" class="input-lg form-control global-button">Clear</button>
