@@ -119,6 +119,28 @@
                 </ul>
             <?php } ?>
             <?php
+            if($this->session->role_id == 'cpu_sup') { ?>
+                <ul class="mainnav">
+                    <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
+                    <li class="dropdown
+                    <?php echo (current_url() == site_url("operations/client-catalog")
+                        || current_url() == site_url("operations/client-rejected")
+                        || current_url() == site_url("operations/client-search")
+
+                    ) ? 'active' : '' ?>
+                    "><a href="<?php echo site_url("dashboard"); ?>" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-group"></i> <i class="icon-long-arrow-down"></i><span>Operations</span> </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
+                            <li><a href="<?php echo site_url("operations/client-rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
+                            <li><a href="<?php echo site_url("operations/client-search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
+                        </ul>
+                    </li>
+                    <li class="<?php echo (current_url() == site_url("operations/branch-handle")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/branch-handle"); ?>"><i class="icon-align-justify"></i> <span>Branch Assignment<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/los-report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los-report"); ?>"><i class="icon-list-alt"></i> <span>LOS Report<span></a></li>
+                    <li class="<?php echo (current_url() == site_url("operations/processor-pending")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/processor-pending"); ?>"><i class="icon-list "></i> <span>Processor Pending<span></a></li>
+                </ul>
+            <?php } ?>
+            <?php
             if($this->session->role_id == 'qa') { ?>
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>

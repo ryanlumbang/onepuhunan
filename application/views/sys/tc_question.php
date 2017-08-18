@@ -5,7 +5,7 @@
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <h2 class="title">MANAGE TELLECALLER QUESTIONS</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> MANAGE TELLECALLER QUESTIONS</h2>
 
             <!-- Trigger/Open The Modal -->
             <a href="<?php echo site_url("sys/tc_question/add"); ?>">

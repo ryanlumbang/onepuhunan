@@ -4,7 +4,7 @@ $data['title'] = 'OnePuhunan';
 <?php $this->load->view("onepuhunan/header", $data); ?>
     <div class="main">
         <div class="main-inner">
-                <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup') {?>
+                <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup') {?>
                     <div class="row">
                         <br/>
                         <?php if((array)$count || (array)$user_branch) {?>
@@ -410,6 +410,86 @@ $data['title'] = 'OnePuhunan';
                </div>
                 <?php } ?>
                 <?php
+                if($this->session->role_id == 'tc_sup') { ?>
+                    <div class="container">
+                        <div class="row">
+                            <br/>
+                            <div class="col-md-6 col-xs-12">
+                                <!--total update-->
+                                <div class="widget widget-nopad">
+                                    <div class="widget-header"> <i class="icon-list-alt"></i>
+                                        <h3>TOTAL UPDATE</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="text-center default-margin">
+                                            <h3>New Records <br class="br-hide" /> (
+                                                <span class="date"></span><span id="daymonth"></span> ,
+                                                <span id="year"></span>)
+                                            </h3>
+                                            <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <!-- tc counter -->
+                                <div class="widget widget-nopad">
+                                    <div class="widget-header"> <i class="icon-list-alt"></i>
+                                        <h3>TC COUNTER</h3>
+                                    </div>
+                                    <div class="widget-content">
+                                        <div class="text-center default-margin row">
+                                            <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
+                                            <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+                 <?php
+                 if($this->session->role_id == 'cpu_sup') { ?>
+                <div class="container">
+                    <div class="row">
+                        <br/>
+                        <div class="col-md-6 col-xs-12">
+                            <!--total update-->
+                            <div class="widget widget-nopad">
+                                <div class="widget-header"> <i class="icon-list-alt"></i>
+                                    <h3>TOTAL UPDATE</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="text-center default-margin">
+                                        <h3>New Records <br class="br-hide" /> (
+                                            <span class="date"></span><span id="daymonth"></span> ,
+                                            <span id="year"></span>)
+                                        </h3>
+                                        <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <!-- sanction counter -->
+                            <div class="widget widget-nopad">
+                                <div class="widget-header"> <i class="icon-list-alt"></i>
+                                    <h3>SANCTION COUNTER</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="text-center default-margin row">
+                                        <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
+                                        <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+                <?php
                 if($this->session->role_id == 'cpu') { ?>
                 <div class="container">
                     <div class="row">
@@ -427,7 +507,7 @@ $data['title'] = 'OnePuhunan';
                 <?php } ?>
                 <!-- /row -->
                 <?php
-                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'qa_sup')?>
+                if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup')?>
 
         </div>
     </div>

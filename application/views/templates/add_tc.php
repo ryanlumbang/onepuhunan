@@ -31,14 +31,14 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     Once completed, please select the <b>"Add"</b> button.
                 </label>
             </div>
-            <div class="form-group">
+            <div class="form-group text-left">
                 <label>Question<span class="tm-required-label">*</span></label>
                 <?php
                 $question =  array(
                     "id" => "question",
                     "name" => "question",
                     "value" => set_value("question"),
-                    "class" => "form-control global-button",
+                    "class" => "form-control input-lg",
                     "placeholder" => "Please enter a question"
                 );
                 echo form_input($question);
@@ -86,10 +86,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="form-control global-button" id="add_tc">Add</button>
+                    <button type="submit" class="input-lg form-control global-button-success" id="add_tc">Add</button>
                 </div>
                 <div class="col-xs-6">
-                    <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("sys/tc_question"); ?>" class="input-lg form-control global-button">Cancel</a>
                 </div>
 
             </div>
