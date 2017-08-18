@@ -33,10 +33,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </div>
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" name="import" id="submit" class="form-control global-button-success">Upload</button>
+                        <button type="submit" name="import" id="submit" class="form-control input-lg global-button-success">Upload</button>
                     </div>
                     <div class="col-xs-6">
-                        <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn form-control global-button">Cancel</a>
+                        <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn form-control input-lg global-button">Cancel</a>
                     </div>
                 </div>
             </form>

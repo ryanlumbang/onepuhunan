@@ -58,7 +58,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                 ?>
             </div>
             <div class="form-group">
-                <button type="submit" class="form-control global-button">Confirm</button>
+                <button type="submit" class="form-control global-button input-lg">Confirm</button>
             </div>
             <?=form_close();?>
         </div>
