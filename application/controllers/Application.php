@@ -194,8 +194,7 @@ class Application extends CI_Controller {
                         if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
                             array_push($new_array, $byBranch);
                         }
-                    }else
-                    if($str == 'BM' || $str == 'CI'){
+                    }elseif ($str == 'BM' || $str == 'CI'){
                         if($byBranch['destprocess'] == 'BMV'){
                             array_push($new_array, $byBranch);
                         }
@@ -238,7 +237,7 @@ class Application extends CI_Controller {
         );
 
 //        echo "<pre>";
-//        var_dump($sumQA);
+//        var_dump($newQA_array);
         $this->load->view("onepuhunan/dashboard", $data);
     }
 
