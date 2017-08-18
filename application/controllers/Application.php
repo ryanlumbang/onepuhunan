@@ -206,8 +206,23 @@ class Application extends CI_Controller {
             }
         }
 
-        foreach ($countQA_pending  as $pendingCountQa) {
-            foreach ($pendingCountQa as $key => $byBranchQa) {
+        function multi_array_search($search_for, $search_in) {
+            foreach ($search_in as $element) {
+                if ( ($element === $search_for) ){
+                    return true;
+                }elseif(is_array($element)){
+                    $result = multi_array_search($search_for, $element);
+                    if($result == true)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        $check_dest = array('N-ALAF', 'R-ALAF','N-KYC','R-KYC');
+
+        foreach ($countQA_pending as $key => $pendingCountQa) {
+            foreach ($pendingCountQa as $byBranchQa) {
                 $str = strtoupper($this->session->role_id);
                 if($str != $byBranchQa['destprocess'] ){
                     if($str == 'QA'){
@@ -217,7 +232,20 @@ class Application extends CI_Controller {
                     }
                 }
             }
+
+            foreach ($check_dest as $id => $insert_dest){
+                $mrg_arry = array(
+                    'losloantypeid' => substr($check_dest[$id],0,1),
+                    'ourbranchid' => $byBranchQa['ourbranchid'],
+                    'destprocess' => substr($check_dest[$id],2),
+                    'branchname' => $byBranchQa['branchname'],
+                    'sum' => '0',
+                    'new_destprocess' => $check_dest[$id],
+                );
+                multi_array_search($insert_dest, $pendingCountQa) ? '': array_push($newQA_array,$mrg_arry);
+            }
         }
+
         $sum = array_reduce($new_array, function ($a, $b) {
             isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
             return $a;
@@ -226,7 +254,6 @@ class Application extends CI_Controller {
             isset($a[$b['new_destprocess']])   ? $a[$b['new_destprocess']]['sum'] += $b['sum'] : $a[$b['new_destprocess']] = $b;
             return $a;
         });
-
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
             "count"       => $sum,
@@ -236,11 +263,8 @@ class Application extends CI_Controller {
             "count_branch_pending"       => $new_array
         );
 
-//        echo "<pre>";
-//        var_dump($newQA_array);
         $this->load->view("onepuhunan/dashboard", $data);
     }
-
     public function audDashboard() {
         $this->load->view("aud_dashboard");
     }
