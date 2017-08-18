@@ -55,7 +55,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_today" id="kyc_today">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_today" id="kyc_today">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -83,7 +83,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -119,7 +119,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -147,7 +147,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -173,7 +173,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -192,7 +192,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_bmv_pending" id="bmv_pending">Generate Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_bmv_pending" id="bmv_pending">Generate Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -212,7 +212,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_qa_productivity" id="qa">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_qa_productivity" id="qa">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -231,7 +231,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_alaf_report" id="alaf">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_alaf_report" id="alaf">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
@@ -251,7 +251,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_tc_report" id="tc">Extract Report</button>
+                                <button type="submit" class="input-lg form-control global-button-success" form="form_tc_report" id="tc">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>

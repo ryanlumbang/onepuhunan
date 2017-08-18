@@ -101,7 +101,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 <input type="text" name="set" id="set" style="display: none"/>
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button">Update</button>
+                        <button type="submit" class="input-lg form-control global-button-success">Update</button>
                     </div>
                     <div class="col-xs-6">
                         <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn input-lg form-control global-button">Cancel</a>

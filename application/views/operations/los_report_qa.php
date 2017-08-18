@@ -43,7 +43,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <button type="submit" class="btn form-control global-button" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
+                            <button type="submit" class="btn form-control global-button-success" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
                         </div>
                         <div class="col-xs-6">
                             <a href="<?php echo site_url("dashboard"); ?>" class="btn form-control global-button">Cancel</a>
