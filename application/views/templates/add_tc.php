@@ -1,27 +1,12 @@
 <?php
 $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<?php $this->load->view("templates/op-head", $data); ?>
-<body id="losbody">
-<div id="page-wrapper">
-    <?php $this->load->view("templates/op-header"); ?>
-    <?php $this->load->view("templates/subheader"); ?>
-    <div class="header-bg">
-        <div class="header-banner">
-            <div class="uk-container op-container">
-                <h2>SYSTEM SETTINGS</h2>
-            </div>
-        </div>
-    </div>
-    <section id="main-section">
-
-
-        <div id="tm-container" class="uk-container uk-width-5-10 uk-container-center">
-
-            <?=form_open("", array("id" => "add_form" ,"class" => "uk-form uk-form-horizontal"));?>
-            <div class="op-title"><h1><i class="uk-icon-tags"></i> ADD TELLECALLER QUESTIONS</h1></div>
+<?php $this->load->view("onepuhunan/header",$data); ?>
+<div class="main">
+    <div class="main-inner">
+        <div class="container">
+            <?=form_open("", array("id" => "add_form" ,"class" => "form-width-small text-center"));?>
+            <h1><i class="uk-icon-tags "></i> ADD TELLECALLER QUESTIONS</h1>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_tc_add) ) {
@@ -40,29 +25,26 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 }
             }
             ?>
-            <br/>
-            <div class="uk-form-row tm-label">
-                <label class="uk-text-small">
+            <div class="form-group">
+                <label>
                     Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
                     Once completed, please select the <b>"Add"</b> button.
                 </label>
             </div>
-            <div class="uk-form-row">
-                <label class="uk-form-label uk-text-small uk-text-bold">Question<span class="tm-required-label">*</span></label>
-                <div class="uk-form-controls">
-                    <?php
-                    $question =  array(
-                        "id" => "question",
-                        "name" => "question",
-                        "value" => set_value("question"),
-                        "class" => "uk-width-large uk-form-small",
-                        "placeholder" => "Please enter a question"
-                    );
-                    echo form_input($question);
-                    ?>
-                </div>
+            <div class="form-group">
+                <label>Question<span class="tm-required-label">*</span></label>
+                <?php
+                $question =  array(
+                    "id" => "question",
+                    "name" => "question",
+                    "value" => set_value("question"),
+                    "class" => "form-control global-button",
+                    "placeholder" => "Please enter a question"
+                );
+                echo form_input($question);
+                ?>
             </div>
-            <p class="op-check">
+            <div class="form-group">
                 <label>
                     <input type="hidden" name="is_new" value="0" />
                     <?php
@@ -101,16 +83,19 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     echo form_input($set);
                     ?>Set for TC
                 </label>
-            </p>
-            <div class="uk-form-row uk-text-center uk-margin-large-bottom">
-                <button type="submit" class="uk-button uk-button-primary uk-button-small uk-width-2-10" id="add_tc">Add</button>
-                <a href="<?php echo site_url("sys/tc_question"); ?>" class="uk-button uk-button-small uk-width-2-10">Cancel</a>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-6">
+                    <button type="submit" class="form-control global-button" id="add_tc">Add</button>
+                </div>
+                <div class="col-xs-6">
+                    <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn form-control global-button">Cancel</a>
+                </div>
+
             </div>
             <?=form_close();?>
         </div>
-    </section>
-    <?php $this->load->view("templates/footer"); ?>
-    <?php $this->load->view("templates/modal"); ?>
+    </div>
 </div>
-</body>
-</html>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
