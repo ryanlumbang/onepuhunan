@@ -95,7 +95,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             <h2 class="title"><i class="glyphicon glyphicon-tag"></i> SANCTION OPERATORS</h2>
 
             <!-- Trigger/Open The Modal -->
-            <table id="tbl_ps" class="table table-striped" cellspacing="0" width="100%">
+            <table id="tbl_ps" class="table table-striped op-table E1" cellspacing="0" width="100%">
                 <thead class="css3gradient">
                 <tr>
                     <th>DATE</th>
