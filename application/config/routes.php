@@ -96,7 +96,7 @@ $route['sys/assign_role_id/manage_resign/update_resigned_user']    = "sys/update
 $route['sys/add_role_id']    = "sys/add_role_id";
 $route['sys/telle']    = "sys/tc_question";
 $route['sys/assign_role_id']    = "sys/assign_roles";
-//$route['sys/approver_user'] = "sys/approver_user";
+$route['sys/approver_user'] = "sys/approver_user";
 
 
 /* audit */
