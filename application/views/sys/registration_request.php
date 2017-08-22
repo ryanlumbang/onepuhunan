@@ -22,7 +22,7 @@
             <?=form_close();?>
             <?php
                 if($number_of_rows > 0) {
-                    $table = "<table class = \"table table-striped\">"
+                    $table = "<table class = \"table table-striped op-table E1\">"
                            . "<caption>" . $number_of_rows . " Pending Registration Approval(s)</caption>"
                            . "<thead>"
                            . "<tr>"

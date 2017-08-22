@@ -607,7 +607,7 @@ $(document).ready(function() {
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': false
-            },
+            }
         ],
 
         "oLanguage": { "sSearch": "" },
@@ -622,22 +622,7 @@ $(document).ready(function() {
             orderable: false,
             targets:   0
 
-        }],
-        aoColumnDefs: [
-            {
-                bSortable: false,
-                aTargets: [ -1,-2 ,-3,-4]
-            },
-            { sWidth: '10%', targets: 0 },
-            { sWidth: '12%', targets: 1 },
-            { sWidth: '12%', targets: 2 },
-            { sWidth: '12%', targets: 3 },
-            { sWidth: '10%', targets: 4 },
-            { sWidth: '10%', targets: 5 },
-            { sWidth: '12%', targets: 6 },
-            { sWidth: '22%', targets: 7 }
-        ],
-        order: [[ 0, 'asc' ]],
+        }]
     });
 
     var tbl_aud_assign_branch = $('#tbl_aud_assign_branch').DataTable({

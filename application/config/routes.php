@@ -87,7 +87,7 @@ $route['operations/processor-pending']    = "operations/get_processor_pending";
 $route['operations/client-rejected']    = "sys/client_rejected";
 
 /* system settings */
-$route['sys/registration_request'] = "sys/index";
+$route['sys/registration-request'] = "sys/index";
 $route['sys/tc_question/add']    = "sys/add_tc_questions";
 $route['sys/tc_question/update']    = "sys/update_tc_questions";
 $route['sys/assign_role_id/update_role_id']    = "sys/update_role_id";

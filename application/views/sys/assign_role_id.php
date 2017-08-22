@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <div class="main-inner">
         <div class="container">
 
-            <h1>MANAGE ROLE ID</h1>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i>MANAGE ROLE ID</h2>
             <?php
             $msg = $this->session->flashdata('message');
             if( !$msg == '' ) {
@@ -33,7 +33,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 </a>
             </div>
 
-            <table id="tbl_rid" class="table table-striped" cellspacing="0" width="100%">
+            <table id="tbl_rid" class="table table-striped op-table E1" cellspacing="0" width="100%">
                 <thead class="">
                 <tr>
                     <th>EMPLOYEE ID</th>

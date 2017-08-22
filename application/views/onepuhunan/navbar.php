@@ -26,7 +26,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo site_url("profile/userinfo"); ?>"> Update Profile</a></li>
-                            <li><a href="javascript:;"> Change Password</a></li>
+                            <li><a href="<?php echo site_url("profile/changepass"); ?>"> Change Password</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

@@ -22,7 +22,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         <select class="form-control input-lg" id="form_report" name="form_report" onchange="toggleReport()">
                             <option value="" disabled selected hidden>Type of Report</option>
                             <?php
-                            if($this->session->role_id == 'qa_sup') { ?>
+                            if($this->session->role_id == 'qa_sup' OR $this->session->role_id == 'ssuper' OR $this->session->role_id == 'super') { ?>
                             <option value="01">KYC Today</option>
                             <option value="02">KYC Pending</option>
                             <option value="03">KYC Remarks</option>
@@ -33,11 +33,11 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                             <option value="08">ALAF Report</option>
                             <?php } ?>
                             <?php
-                            if($this->session->role_id == 'tc_sup') { ?>
+                            if($this->session->role_id == 'tc_sup' OR $this->session->role_id == 'ssuper' OR $this->session->role_id == 'super') { ?>
                             <option value="09">TC Report</option>
                             <?php } ?>
                             <?php
-                            if($this->session->role_id == 'cpu_sup') { ?>
+                            if($this->session->role_id == 'cpu_sup' OR $this->session->role_id == 'ssuper' OR $this->session->role_id == 'super') { ?>
                             <option value="10">Sanction Report</option>
                             <?php } ?>
                         </select>
