@@ -165,9 +165,9 @@
             if($this->session->role_id == 'qa') { ?>
                 <ul class="mainnav">
                     <li class="<?php echo (current_url() == site_url("dashboard")) ? 'active' : '' ?>"><a href="<?php echo site_url("dashboard"); ?>"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-                    <li class="<?php echo (current_url() == site_url("operations/los")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/los"); ?>"><i class="icon-tasks"></i><span> Loan Origination System</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client-catalog")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-catalog"); ?>"><i class="icon-group"></i><span> Client's Catalog</span> </a></li>
                     <li class="<?php echo (current_url() == site_url("operations/client-rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-rejected"); ?>"><i class="icon-remove-sign"></i><span> Client's Rejected</span> </a> </li>
+                    <li class="<?php echo (current_url() == site_url("operations/client-rejected")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/client-search"); ?>"><i class="icon-eye-open"></i><span> LOS Client Search</span> </a> </li>
                     <li class="<?php echo (current_url() == site_url("operations/report")) ? 'active' : '' ?>"><a href="<?php echo site_url("operations/report"); ?>"><i class="icon-file"></i><span> LOS Generate Report</span> </a> </li>
 
                 </ul>
