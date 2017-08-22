@@ -41,7 +41,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </div>
             </form>
 
-            <table id="c_sanction_waive" class="table table-striped E1 tc-table" cellspacing="0" width="100%">
+            <table id="c_sanction_waive" class="table table-striped  tc-table op-table E1" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th class="text-center">FILE NO</th>
