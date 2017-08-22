@@ -756,6 +756,11 @@ $(document).ready(function() {
         "oLanguage": { "sSearch": "" },
         'searching': true
     });
+    var tb_center = $('#tb_center').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+        'iDisplayLength': 10
+    });
 
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
