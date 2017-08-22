@@ -75,7 +75,7 @@ $route['profile/changepass'] = "profile/changepass";
 
 /* operations */
 $route['operations/client-catalog'] = "operations/index";
-$route['operations/client_info']    = "operations/client_info";
+$route['operations/client-info']    = "operations/client_info";
 $route['operations/branch-handle']    = "operations/branch_handle";
 $route['operations/success_branch_assign']    = "operations/success_branch_assign";
 $route['operations/los-report']    = "operations/los_report";

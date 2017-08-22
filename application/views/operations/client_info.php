@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div>
-                    <h3>PERSONAL INFORMATION</h3>
+                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>PERSONAL INFORMATION</h2>
                     <hr>
                     <table class="table table-striped">
                         <tbody>
@@ -60,7 +60,7 @@
                     </table>
                 </div>
                 <div>
-                    <h3>BUSINESS INFORMATION</h3>
+                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>BUSINESS INFORMATION</h2>
                     <hr>
                     <table class="table table-striped">
                         <tbody>
@@ -92,7 +92,7 @@
                     </table>
                 </div>
                 <div>
-                    <h3>ACCOUNT HISTORY</h3>
+                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>ACCOUNT HISTORY</h2>
                     <hr>
                     <ul class="nav nav-tabs">
                         <?php
