@@ -172,8 +172,10 @@ $data['title'] = 'OnePuhunan';
                             <thead>
                             <tr class="tr-content box-header-bottom">
                                 <th>Branch</th>
-                                <th class="text-center">CPU NEW</th>
-                                <th class="text-center">CPU REPEAT</th>
+                                <th class="text-center">KYC NEW</th>
+                                <th class="text-center">KYC REPEAT</th>
+                                <th class="text-center">ALAF NEW</th>
+                                <th class="text-center">ALAF REPEAT</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -182,8 +184,10 @@ $data['title'] = 'OnePuhunan';
                             foreach((array) $pending_branch as $row) {
                                 $result = '<tr>'
                                     . '<td>' . $row['branchname'] . '</td>'
-                                    . '<td class="text-center">' . $row['cpu_new'] . '</td>'
-                                    . '<td class="text-center">' . $row['cpu_repeat'] . '</td>'
+                                    . '<td class="text-center">' . $row['kyc_new'] . '</td>'
+                                    . '<td class="text-center">' . $row['kyc_repeat'] . '</td>'
+                                    . '<td class="text-center">' . $row['alaf_new'] . '</td>'
+                                    . '<td class="text-center">' . $row['alaf_repeat'] . '</td>'
                                     . '</tr>';
                                 echo $result;
                             }
@@ -202,7 +206,7 @@ $data['title'] = 'OnePuhunan';
                     <div class="col-md-6">
                         <div class="row">
                             <?php foreach ((array)$count_qa as $total){
-                                if($total['destprocess'] == 'KYC' OR $total['destprocess'] == 'ALAF') {?>
+                                if($total['destprocess'] == 'KYC') {?>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="widget widget-nopad">
                                             <div class="widget-header"> <i class="icon-list-alt"></i>
@@ -229,10 +233,8 @@ $data['title'] = 'OnePuhunan';
                             <thead>
                             <tr class="tr-content box-header-bottom">
                                 <th>Branch</th>
-                                <th class="text-center">KYC NEW</th>
-                                <th class="text-center">KYC REPEAT</th>
-                                <th class="text-center">ALAF NEW</th>
-                                <th class="text-center">ALAF REPEAT</th>
+                                <th class="text-center">CPU NEW</th>
+                                <th class="text-center">CPU REPEAT</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -241,10 +243,8 @@ $data['title'] = 'OnePuhunan';
                             foreach((array) $pending_branch as $row) {
                                 $result = '<tr>'
                                     . '<td>' . $row['branchname'] . '</td>'
-                                    . '<td class="text-center">' . $row['kyc_new'] . '</td>'
-                                    . '<td class="text-center">' . $row['kyc_repeat'] . '</td>'
-                                    . '<td class="text-center">' . $row['alaf_new'] . '</td>'
-                                    . '<td class="text-center">' . $row['alaf_repeat'] . '</td>'
+                                    . '<td class="text-center">' . $row['cpu_new'] . '</td>'
+                                    . '<td class="text-center">' . $row['cpu_repeat'] . '</td>'
                                     . '</tr>';
                                 echo $result;
                             }
@@ -582,6 +582,7 @@ $data['title'] = 'OnePuhunan';
                     </div>
                 </div>
             <?php } ?>
+
                 <?php
                 if($this->session->role_id == 'aud') { ?>
                     <div class="row">
