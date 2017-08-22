@@ -142,31 +142,68 @@ $data['title'] = 'OnePuhunan';
                 <br/>
                 <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="row">
-                            <?php foreach ((array)$count_qa as $total){
-                                if($total['destprocess'] == 'KYC' OR $total['destprocess'] == 'ALAF') {?>
                                     <div class="col-md-6 col-xs-12">
                                         <div class="widget widget-nopad">
-                                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                <h3>Total</h3>
+                                            <div class="widget-header text-center">
+                                                <h3>Total KYC NEW </h3>
                                             </div>
                                             <div class="widget-content">
                                                 <div class="text-center default-margin row">
 
                                                     <div class="col-xs-12">
-                                                        <h3><?= $total['destprocess']  ?><?php echo($total['losloantypeid'] == 'R' ? ' Repeat ' : ' New ') ?>Loan</h3>
-                                                        <h2 class="value"><?=$total['sum'] ?></h2>
+                                                        <h2 class="value"><?=$pending_total['sum_kyc_new'] ?></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget widget-nopad">
+                                            <div class="widget-header text-center">
+                                                <h3>Total ALAF NEW </h3>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="text-center default-margin row">
+
+                                                    <div class="col-xs-12">
+                                                        <h2 class="value"><?=$pending_total['sum_alaf_new'] ?></h2>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
-                            <?php } ?>
+                                    <div class="col-md-6 col-xs-12">
+                                        <div class="widget widget-nopad">
+                                            <div class="widget-header text-center">
+                                                <h3>Total KYC REPEAT </h3>
+                                            </div>
+                                            <div class="widget-content">
+                                                <div class="text-center default-margin row">
+
+                                                    <div class="col-xs-12">
+                                                        <h2 class="value"><?=$pending_total['sum_kyc_repeat'] ?></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="widget widget-nopad">
+                                            <div class="widget-header text-center">
+                                                <h3>Total ALAF REPEAT </h3>
+                                            </div>
+                                            <div class="widget-content text-center">
+                                                <div class="text-center default-margin row">
+
+                                                    <div class="col-xs-12">
+                                                        <h2 class="value"><?=$pending_total['sum_alaf_repeat'] ?></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
 
                         <table class="table table-striped op-table E1">
                             <thead>
@@ -183,7 +220,7 @@ $data['title'] = 'OnePuhunan';
                             <?php
                                 foreach((array) $pending_branch as $row) {
                                     $result = '<tr>'
-                                        . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> ' . $row['branchname'] . '</a></td>'
+                                        . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] . '</a></td>'
                                         . '<td class="text-center">' . $row['kyc_new'] . '</td>'
                                         . '<td class="text-center">' . $row['kyc_repeat'] . '</td>'
                                         . '<td class="text-center">' . $row['alaf_new'] . '</td>'

@@ -136,7 +136,11 @@ class Application_model extends CI_Model {
         $query = $los_db->query("SELECT * FROM sp_los_laf_usr_branch(?)", $input );
         return $query->result_array();
     }
-
+    public function get_user_branch_total($input) {
+        $los_db = $this->load->database("LOS", true);
+        $query = $los_db->query("SELECT * FROM sp_los_laf_sum_branch(?)", $input );
+        return $query->row_array();
+    }
     public function get_sp_usr_pending_qa($input) {
         $los_db = $this->load->database("LOS", true);
         $query = $los_db->query("SELECT losloantypeid,ourbranchid,destprocess,branchname,SUM(count),losloantypeid || '-' || destprocess AS new_destprocess

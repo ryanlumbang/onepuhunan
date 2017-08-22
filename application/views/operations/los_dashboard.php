@@ -12,7 +12,7 @@
                     <h3><?=$row['BranchName']?> </h3>
                 </div>
                 <div id="demo-<?=$key?>" class="collapse <?php echo($key==0 ? 'in' : '')?>">
-                    <table class="table table-striped">
+                    <table class="table table-striped op-table E1">
                         <thead>
                             <tr>
                                 <th>CENTER NAME</th>

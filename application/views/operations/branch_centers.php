@@ -7,7 +7,7 @@ ini_set('max_execution_time', 0)
     <div class="main-inner">
         <div class="container">
             <br/>
-            <table class="table table-striped">
+            <table class="table table-striped op-table E1">
                     <thead>
                     <tr>
                         <th>CENTER NAME</th>
