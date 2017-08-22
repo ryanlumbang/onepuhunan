@@ -761,6 +761,11 @@ $(document).ready(function() {
         'searching': true,
         'iDisplayLength': 10
     });
+    var c_sanction_waive = $('#c_sanction_waive').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+        'iDisplayLength': 10
+    });
 
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
@@ -768,13 +773,7 @@ $(document).ready(function() {
         window.location.reload();
         $(".add_form modal").hide();
     });
-    $('#c_sanction_waive').DataTable({
-        "oLanguage": { "sSearch": "" },
-        'iDisplayLength': 10,
-        // 'paging': false,
-        "bInfo" : false,
-        'dom': '<"toolbar">frtip'
-    });
+
     $('#c_search').dataTable( {
         "searching": false,
         "lengthChange": false
