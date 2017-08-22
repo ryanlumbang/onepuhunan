@@ -256,6 +256,7 @@ class Application extends CI_Controller {
         });
         $data = array (
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
+            "pending_branch"       => $this->Application_model->get_user_branch_pending($this->session->emp_id),
             "count"       => $sum,
             "count_qa"       => $sumQA,
             "user_branch"       => $getBranch,
