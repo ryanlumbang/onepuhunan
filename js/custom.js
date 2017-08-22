@@ -579,31 +579,39 @@ $(document).ready(function() {
 
         'columns': [
             {
+                'width': '10%',
                 'className': 'dt-center'
             },
             {
+                'width': '10%',
                 'className': 'uk-text-left'
             },
             {
+                'width': '10%',
                 'className': 'dt-center'
             },
             {
+                'width': '10%',
                 'className': 'uk-text-left'
             },
             {
+                'width': '7%',
                 'className': 'dt-center'
             },
             {
+                'width': '13%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': false
             },
             {
+                'width': '15%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': true
             },
             {
+                'width': '25%',
                 'className': 'dt-center',
                 'searchable': false,
                 'orderable': false
