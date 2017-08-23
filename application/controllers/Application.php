@@ -173,17 +173,13 @@ class Application extends CI_Controller {
         $this->load->model("Application_model");
         $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
         $count_pending = array();
-        $countQA_pending = array();
         $new_array =  array();
-        $newQA_array =  array();
         foreach ($getBranch as $list){
             $input= array(
                 '_emp_id' => $this->session->emp_id,
                 '_branch_id' => $list['BranchCode']);
             $count = $this->Application_model->get_sp_usr_pending_branch($input);
-            $countQA = $this->Application_model->get_sp_usr_pending_qa($input);
             $count_pending[] = $count;
-            $countQA_pending[] = $countQA;
         }
 
         foreach ($count_pending  as $pendingCount) {
@@ -206,52 +202,8 @@ class Application extends CI_Controller {
             }
         }
 
-        function multi_array_search($search_for, $search_in) {
-            foreach ($search_in as $element) {
-                if ( ($element === $search_for) ){
-                    return true;
-                }elseif(is_array($element)){
-                    $result = multi_array_search($search_for, $element);
-                    if($result == true)
-                        return true;
-                }
-            }
-            return false;
-        }
-
-        $check_dest = array('N-ALAF', 'R-ALAF','N-KYC','R-KYC');
-
-        foreach ($countQA_pending as $key => $pendingCountQa) {
-            foreach ($pendingCountQa as $byBranchQa) {
-                $str = strtoupper($this->session->role_id);
-                if($str != $byBranchQa['destprocess'] ){
-                    if($str == 'QA'){
-                        if($byBranchQa['destprocess'] == 'KYC' || $byBranchQa['destprocess'] == 'ALAF'){
-                            array_push($newQA_array, $byBranchQa);
-                        }
-                    }
-                }
-            }
-
-            foreach ($check_dest as $id => $insert_dest){
-                $mrg_arry = array(
-                    'losloantypeid' => substr($check_dest[$id],0,1),
-                    'ourbranchid' => $byBranchQa['ourbranchid'],
-                    'destprocess' => substr($check_dest[$id],2),
-                    'branchname' => $byBranchQa['branchname'],
-                    'sum' => '0',
-                    'new_destprocess' => $check_dest[$id],
-                );
-                multi_array_search($insert_dest, $pendingCountQa) ? '': array_push($newQA_array,$mrg_arry);
-            }
-        }
-
         $sum = array_reduce($new_array, function ($a, $b) {
             isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
-            return $a;
-        });
-        $sumQA = array_reduce($newQA_array, function ($a, $b) {
-            isset($a[$b['new_destprocess']])   ? $a[$b['new_destprocess']]['sum'] += $b['sum'] : $a[$b['new_destprocess']] = $b;
             return $a;
         });
         $data = array (
@@ -259,9 +211,7 @@ class Application extends CI_Controller {
             "pending_branch"       => $this->Application_model->get_user_branch_pending($this->session->emp_id),
             "pending_total"       => $this->Application_model->get_user_branch_total($this->session->emp_id),
             "count"       => $sum,
-            "count_qa"       => $sumQA,
             "user_branch"       => $getBranch,
-            "count_qa_pending"       => $newQA_array,
             "count_branch_pending"       => $new_array
         );
 

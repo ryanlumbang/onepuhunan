@@ -7,7 +7,7 @@ ini_set('max_execution_time', 0)
     <div class="main-inner">
         <div class="container">
             <br/>
-            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Center</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  Branch Center</h2>
             <table id="tb_center" class="table table-striped op-table E1">
                     <thead>
                     <tr>

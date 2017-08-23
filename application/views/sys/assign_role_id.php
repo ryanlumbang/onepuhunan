@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <div class="main-inner">
         <div class="container">
 
-            <h2 class="title"><i class="glyphicon glyphicon-tag"></i>MANAGE ROLE ID</h2>
+            <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  MANAGE ROLE ID</h2>
             <?php
             $msg = $this->session->flashdata('message');
             if( !$msg == '' ) {
@@ -63,7 +63,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                                 <i class="glyphicon glyphicon-pencil"></i> EDIT </a> &nbsp;&nbsp;&nbsp;
 
                             <a class="btn global-btn-red" href="<?php echo site_url("sys/assign_role_id/manage_resign?emp_id=".$row['emp_id'].""); ?>" >
-                                <i class="glyphicon glyphicon-pencil"></i> MANAGE RESIGN </a>
+                                <i class="glyphicon glyphicon-pencil"></i> RESIGN </a>
                         </td>
                     </tr>
                 <?php   }
