@@ -75,7 +75,7 @@ $data['title'] = 'OnePuhunan';
                                              <?php
                                                  foreach((array) $pending_branch as $row) {
                                                      $result = '<tr>'
-                                                         . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
+                                                         . '<td><a target="_blank" href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
                                                          . '<td class="text-center">' . $row['tc_new'] . '</td>'
                                                          . '<td class="text-center">' . $row['tc_repeat'] . '</td>'
                                                          . '</tr>';
@@ -177,7 +177,7 @@ $data['title'] = 'OnePuhunan';
                             <?php
                                 foreach((array) $pending_branch as $row) {
                                     $result = '<tr>'
-                                        . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] . '</a></td>'
+                                        . '<td><a  target="_blank" href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] . '</a></td>'
                                         . '<td class="text-center">' . $row['kyc_new'] . '</td>'
                                         . '<td class="text-center">' . $row['kyc_repeat'] . '</td>'
                                         . '<td class="text-center">' . $row['alaf_new'] . '</td>'
@@ -240,7 +240,7 @@ $data['title'] = 'OnePuhunan';
                         <?php
                             foreach((array) $pending_branch as $row) {
                                 $result = '<tr>'
-                                    . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> ' . $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
+                                    . '<td><a target="_blank"  href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> ' . $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
                                     . '<td class="text-center">' . $row['cpu_new'] . '</td>'
                                     . '<td class="text-center">' . $row['cpu_repeat'] . '</td>'
                                     . '</tr>';

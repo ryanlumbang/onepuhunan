@@ -26,7 +26,7 @@ ini_set('max_execution_time', 0)
                     if(count($centerlist) > 0) {
                         foreach((array) $centerlist as $status) {
                             $result = '<tr>'
-                                . '<td><a  href="los/' . base64_encode('X') . '/' . $branch_code . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
+                                . '<td><a  target="_blank" href="los/' . base64_encode('X') . '/' . $branch_code . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
                                 . '<td class="text-center">' .  '</td>';
 
                             /* kyc */

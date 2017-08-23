@@ -11,7 +11,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             if( !$msg == '' ) {
                 $flashdata = '<div class=\'alert alert-success\'>'
                     . '<span>' . $msg . '</span>'
-                    . '<a href="' . site_url("operations/los") . '">[Back to Operations Dashboard]</a>'
+                    . '<a href="' . site_url("dashboard") . '">[Back to Operations Dashboard]</a>'
                     . '</div>';
                 echo $flashdata;
             }
