@@ -37,7 +37,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         <?php } ?>
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h2>
                     <div class="form-group">
-                        <table class="table table-striped">
+                        <table class="table table-striped op-table E1">
                             <thead>
                             <tr>
                                 <th width="10%">LAF</th>
@@ -295,7 +295,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- liabilities and assets -->
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  LIABILITIES AND ASSETS</h2>
                     <div class="form-group">
-                            <table class="table table-striped">
+                            <table class="table table-striped op-table E1">
                                 <thead>
                                 <tr>
                                     <th width="33.4%">Name of Creditor</th>
@@ -326,7 +326,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- beneficiary's details -->
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  BENEFICIARY'S DETAILS</h2>
                     <div class="form-group">
-                            <table class="table table-striped">
+                            <table class="table table-striped op-table E1">
                                 <thead>
                                 <tr>
                                     <th width="33.4%">Name</th>
@@ -349,7 +349,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
                         <form id="los_tc_form" class="uk-form" method="post" action="<?=$cl_info['LAF']?>/submit">
-                            <table class="table table-striped table-fix">
+                            <table class="table table-striped table-fix op-table E1">
                                 <thead>
                                 <tr>
                                     <th>Questions</th>
@@ -379,7 +379,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <?php if($this->session->role_id == 'cpu' && count($cl_tc_display) > 0) { ?>
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
-                        <table class="table table-striped table-fix">
+                        <table class="table table-striped table-fix op-table E1">
                             <thead>
                             <tr>
                                 <th width="10%">Date Processed</th>
@@ -409,7 +409,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  REMARKS/ COMMENTS</h2>
                     <?php if (count($cl_remarks) > 0) { ?>
                         <div class="form-group">
-                            <table class="table table-striped table-fix">
+                            <table class="table table-striped table-fix op-table E1">
                                 <thead>
                                 <tr>
                                     <th width="5%">#</th>
