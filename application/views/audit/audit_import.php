@@ -6,7 +6,6 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Uploading of Sampling';
 <div class="main">
     <div class="main-inner">
         <div class="container">
-
             <?php if($this->session->flashdata('message')){?>
                 <div align="center" class="alert alert-success">
                     <?php echo $this->session->flashdata('message')?>
@@ -44,7 +43,6 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Uploading of Sampling';
                         </div>
                     </div>
                 </form>
-
         </div>
     </div>
 </div>

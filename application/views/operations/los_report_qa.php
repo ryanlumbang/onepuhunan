@@ -5,7 +5,6 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 <div class="main">
     <div class="main-inner">
         <div id="tm-container" class="container">
-
                 <!--BMV PENDING-->
                 <form class="form-width-small" id="form_bmv_pending_qa" name="form_bmv_pending_qa" method="post" action="<?php echo site_url("operations/report_bmv_pending_qa"); ?>" target="_blank">
                     <h1 class="text-center">EXTRACTION OF REPORT</h1>

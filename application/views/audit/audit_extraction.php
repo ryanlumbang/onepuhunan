@@ -6,7 +6,6 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
 <div class="main">
     <div class="main-inner">
         <div class="container">
-
             <form class="form-width-small"  method="post" action="<?php echo site_url("audit/csv"); ?>" target="_blank">
                 <h1 class="text-center">EXTRACT OF RAW DATA</h1>
                 <div class="form-group">
@@ -90,10 +89,7 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
                     </div>
                 </div>
             </form>
-
         </div>
-
-
         <script>
             $(document).ready(function () {
                 var branch = document.getElementById("branchcode").value;

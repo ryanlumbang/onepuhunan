@@ -41,9 +41,9 @@ h1.value{
     font-weight: bold;
     line-height: 1em;
 }
-.container {
-    padding: 0px;
-}
+/*.container {*/
+    /*padding: 0px;*/
+/*}*/
 .nav > li > a:focus, .nav > li > a:hover,
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover{
     background-color: transparent;
