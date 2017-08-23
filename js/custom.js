@@ -115,7 +115,7 @@ $(document).ready(function() {
             {
                 'width': '2%',
                 'data': null,
-                'defaultContent':  '<a target="_blank" class="btn global-btn-blue">View</a>'
+                'defaultContent':  '<button class="btn global-btn-blue">View</button>'
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
@@ -149,7 +149,8 @@ $(document).ready(function() {
             api.column(10, { page : 'current'}).data().each( function(group, i) {
                 if(role_id === 'tc'){
                     if(group === 'TC'){
-                        $(rows).eq(i).find("input, button").attr("disabled", false);
+                        $(rows).eq(i).find("input").attr("disabled", false);
+                        $(rows).eq(i).find("button").attr("disabled", false);
                     } else {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
                     }
