@@ -170,7 +170,7 @@ form button.form-control:hover {
 }
 
 .client-bg {
-    background-image: url("../../../img/thumb.php.jpg");
+    background-image: url("../../../img/bg.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: 100% 30vh;
