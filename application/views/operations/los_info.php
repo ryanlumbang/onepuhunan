@@ -68,7 +68,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-4">Account ID</div>
+                                <div class="col-md-4 text-bold">Account ID</div>
                                 <div class="col-md-8">
                                     <span><?=$cl_repeat['AccountID']?></span>
                                     <span class="font-weight-bold">Attendance Ratio</span>
@@ -85,7 +85,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">No. of Arrear Days</div>
+                                <div class="col-md-4 text-bold">No. of Arrear Days</div>
                                 <div class="col-md-8">
                                     <span><?=$cl_repeat['NoOfArrearDays']?></span>
                                     <span class="font-weight-bold">Attendance Count</span>
@@ -93,7 +93,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">Delayed Payments</div>
+                                <div class="col-md-4 text-bold">Delayed Payments</div>
                                 <div class="col-md-8">
                                     <span><?=$cl_repeat['DelayedPymnt']?></span>
                                     <span class="font-weight-bold">Meetings</span>
@@ -101,14 +101,14 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">Past Due Amount</div>
+                                <div class="col-md-4 text-bold">Past Due Amount</div>
                                 <div class="col-md-8"><span>&#8369; <?=number_format($cl_repeat['PrinArrearAmount'], 2, '.', ',')?></span>
                                     <span class="font-weight-bold">Outstanding Principal</span>
                                     <span>&#8369; <?=number_format($cl_repeat['OutstandingPrincipal'], 2, '.', ',')?></span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4">Maturity Date</div>
+                                <div class="col-md-4 text-bold">Maturity Date</div>
                                 <div class="col-md-8">
                                     <span><?=$cl_repeat['MaturityDate']?></span>
                                     <span class="font-weight-bold">Closed Date</span>
@@ -121,19 +121,19 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- personal details -->
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
                     <div class="row">
-                        <div class="col-md-4">Name</div>
+                        <div class="col-md-4 text-bold">Name</div>
                         <div class="col-md-8"><?=$cl_info['C_Name']?></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">Present Address</div>
+                        <div class="col-md-4 text-bold">Present Address</div>
                         <div class="col-md-8"><?=$cl_info['C_PresentAdd']?></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">Permanent Address</div>
+                        <div class="col-md-4 text-bold">Permanent Address</div>
                         <div class="col-md-8"><?=$cl_info['C_PermanentAdd']?></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">BirthDate</div>
+                        <div class="col-md-4 text-bold">BirthDate</div>
                         <div class="col-md-8">
                             <span><?=$cl_info['C_DOB']?></span>
                             <span class="font-weight-bold">Age</span>
@@ -151,7 +151,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">Contact Number</div>
+                        <div class="col-md-4 text-bold">Contact Number</div>
                         <div class="col-md-8">
                             <span>
                                 <?php
@@ -171,11 +171,11 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4">Co-Borrower Name</div>
+                            <div class="col-md-4 text-bold">Co-Borrower Name</div>
                             <div class="col-md-8"><?=$cl_info['B_Name']?></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Co-Borrower Birthdate</div>
+                            <div class="col-md-4 text-bold">Co-Borrower Birthdate</div>
                             <div class="col-md-8">
                                 <span><?=$cl_info['B_DOB']?></span>
                                 <span class="font-weight-bold">Age</span>
@@ -193,15 +193,15 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Employer / Business Name</div>
+                            <div class="col-md-4 text-bold">Employer / Business Name</div>
                             <div class="col-md-8"><?=$cl_info['B_EmployerName']?></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Work / Business Address</div>
+                            <div class="col-md-4 text-bold">Work / Business Address</div>
                             <div class="col-md-8"><?=$cl_info['B_BusinessAdd']?></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Contact Number</div>
+                            <div class="col-md-4 text-bold">Contact Number</div>
                             <div class="col-md-8">
                                 <?php
                                 if (strlen($cl_info['B_ContactNo']) < 11) {
@@ -218,15 +218,15 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4">Name of Business</div>
+                            <div class="col-md-4 text-bold">Name of Business</div>
                             <div class="col-md-8"><?=$cl_info['BusinessName']?></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Business Address</div>
+                            <div class="col-md-4 text-bold">Business Address</div>
                             <div class="col-md-8"><?=$cl_info['BusinessAdd']?></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Business Type</div>
+                            <div class="col-md-4 text-bold">Business Type</div>
                             <div class="col-md-8">
                                 <span><?=$cl_info['BusinessType']?></span>
                                 <span class="font-weight-bold">Contact Number</span>
@@ -234,7 +234,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Business Size</div>
+                            <div class="col-md-4 text-bold">Business Size</div>
                             <div class="col-md-8">
                                 <span><?=$cl_info['BusinessSize']?></span>
                                 <span class="font-weight-bold">Years in Business</span>
@@ -255,7 +255,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4">Gross Sales</div>
+                            <div class="col-md-4 text-bold">Gross Sales</div>
                             <div class="col-md-8">
                                 <span>&#8369; <?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></span>
                                 <span class="font-weight-bold">Loan Installment</span>
@@ -263,7 +263,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4">Net Business Income</div>
+                            <div class="col-md-4 text-bold">Net Business Income</div>
                             <div class="col-md-8">
                                 <span>&#8369; <?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></span>
                                 <span class="font-weight-bold">Debt Burden Ratio</span>
