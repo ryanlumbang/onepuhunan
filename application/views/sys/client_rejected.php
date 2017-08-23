@@ -9,7 +9,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
 
             <!-- Trigger/Open The Modal -->
 
-            <table id="c_rejected" class="table table-striped op-table E1" cellspacing="0" width="100%">
+            <table id="tbl_rejected" class="table table-striped op-table E1" cellspacing="0" width="100%">
                 <thead>
                 <tr>
                     <th class="text-center">BRANCH ID</th>
