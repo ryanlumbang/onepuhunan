@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <?=form_open("", array("class" => "form-width-small"));?>
-                    <h1 class="text-center">CLIENT CATALOG SEARCH</h1>
+                    <h2 class="text-center">CLIENT CATALOG SEARCH</h2>
                     <div class="form-group text-center">
                         <label>Enter client's name or part of a name, client id, and date of birth(<i>yyyy-MM-dd</i>)</label>
                         <input type="text" id="c_name" name="c_name" class="form-control input-lg">

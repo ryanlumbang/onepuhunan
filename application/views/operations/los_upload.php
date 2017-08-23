@@ -12,7 +12,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </div>
             <?php } ?>
             <form class="form-width-small"  method="post" action="<?php echo site_url("operations/client_upload"); ?>" method="post" name="upload_excel" enctype="multipart/form-data">
-                <h1 class="text-center"> UPLOADING OF RAW DATA</h1>
+                <h2 class="text-center"> UPLOADING OF RAW DATA</h2>
                 <div class="form-group">
                     <label class="text-center">
                         Please click the Choose A File to upload a file, CSV File Type only Accepting.<br>
