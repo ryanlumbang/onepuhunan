@@ -115,7 +115,7 @@ $(document).ready(function() {
             {
                 'width': '2%',
                 'data': null,
-                'defaultContent':  '<button class="btn global-btn-blue">View</button>'
+                'defaultContent':  '<a target="_blank" class="btn global-btn-blue">View</a>'
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
