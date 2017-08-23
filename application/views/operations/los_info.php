@@ -315,7 +315,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                         echo $result;
                                     }
                                 }  else {
-                                    $result = '<tr><td colspan="3" class="text-center">--- Nothing ---</td></tr>';
+                                    $result = '<tr><td colspan="3" class="text-center">No data</td></tr>';
                                     echo $result;
                                 }
                                 ?>
@@ -463,14 +463,14 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- controls -->
                     <div class="form-group text-center">
                             <?php if($cl_tags['ProcessValue'] !== 'REJ') { ?>
-                                <input type="submit" name="btn_approve" value="Approve" id="BtnApprove" class="btn global-btn-blue btn-min-width input-lg" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                                <input type="submit" name="btn_approve" value="Approve" id="BtnApprove" class="btn global-btn-blue btn-min-width " form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php } else { ?>
-                                <input type="submit" name="btn_approve" value="Approve"   id="BtnApprove" class="btn global-btn-blue btn-min-width input-lg" form="los_form" disabled />
+                                <input type="submit" name="btn_approve" value="Approve"   id="BtnApprove" class="btn global-btn-blue btn-min-width " form="los_form" disabled />
                             <?php } ?>
 
-                            <input type="submit" name="btn_reject"  value="Reject"  id="BtnReject"  class="btn global-btn-red btn-min-width input-lg" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                            <input type="submit" name="btn_reject"  value="Reject"  id="BtnReject"  class="btn global-btn-red btn-min-width " form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
                             <?php if(($this->session->role_id != 'qa') || ($cl_tags['DestProcess'] != 'KYC')) { ?>
-                                <input type="submit" name="btn_revert"  value="Revert"  id="BtnRevert" class="btn global-btn-grey btn-min-width input-lg" form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
+                                <input type="submit" name="btn_revert"  value="Revert"  id="BtnRevert" class="btn global-btn-grey btn-min-width " form="<?=($this->session->role_id != 'tc' ? "los_form" : "los_tc_form");?>" />
 
                             <?php } ?>
                     </div>

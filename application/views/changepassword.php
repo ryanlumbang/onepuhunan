@@ -51,14 +51,14 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                     "id"    => "emp_id",
                     "name"  => "emp_id",
                     "value" => set_value("emp_id"),
-                    "class" => "form-control input-lg",
+                    "class" => "form-control",
                     "placeholder" => "Employee Id"
                 );
                 echo form_input($email);
                 ?>
             </div>
             <div class="form-group">
-                <button type="submit" class="form-control global-button input-lg">Confirm</button>
+                <button type="submit" class="form-control global-button">Confirm</button>
             </div>
             <?=form_close();?>
         </div>

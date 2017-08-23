@@ -82,10 +82,10 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
                 <input type="text" name="branch_code" id="branch_code" placeholder="" style="display: none;">
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button">Extract</button>
+                        <button type="submit" class="form-control global-button">Extract</button>
                     </div>
                     <div class="col-xs-6">
-                        <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                        <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn form-control global-button">Cancel</a>
                     </div>
                 </div>
             </form>

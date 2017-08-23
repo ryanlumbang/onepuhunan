@@ -19,7 +19,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
 
                     <div class="form-group">
-                        <select class="form-control input-lg" id="form_report" name="form_report" onchange="toggleReport()">
+                        <select class="form-control " id="form_report" name="form_report" onchange="toggleReport()">
                             <option value="" disabled selected hidden>Type of Report</option>
                             <?php
                             if($this->session->role_id == 'qa_sup' OR $this->session->role_id == 'ssuper' OR $this->session->role_id == 'super') { ?>
@@ -50,15 +50,15 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Select Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="form-control input-lg datepicker" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
+                            <input type="text" class="form-control  datepicker" id="kyc_today_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_kyc_today()">
                             <input type="hidden" name="hidden_date" id="kyc_today_input" placeholder="" value="">
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_today" id="kyc_today">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_kyc_today" id="kyc_today">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -70,23 +70,23 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Start Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
+                            <input type="text" class="datepicker form-control " id="kyc_pending_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_pending()">
 
                         </div>
 
                         <div class="form-group">
                             <label>End Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
+                            <input type="text" class="datepicker form-control " id="kyc_pending_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_pending_end()">
 
                             <input type="hidden"  name="start_date" id="kyc_pending_start_input" placeholder="" value="">
                             <input type="hidden" name="end_date" id="kyc_pending_end_input" placeholder="" value="">
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_kyc_pending" id="kyc_pending">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -98,11 +98,11 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Start Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_remarks()">
+                            <input type="text" class="datepicker form-control " id="kyc_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_remarks()">
                         </div>
                         <div class="form-group">
                             <label>End Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_remarks_end()">
+                            <input type="text" class="datepicker form-control " id="kyc_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_remarks_end()">
 
                             <input type="hidden" name="start_date_remarks" id="kyc_remarks_start_input" placeholder="" value="">
                             <input type="hidden" name="end_date_remarks" id="kyc_remarks_end_input" placeholder="" value="">
@@ -110,7 +110,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group">
                             <label>Loan Type<span class="tm-required-label">*</span></label>
-                            <select class="form-control input-lg" id="loan_type" name="loan_type">
+                            <select class="form-control " id="loan_type" name="loan_type">
                                 <option value="" disabled selected hidden>Loan Type</option>
                                 <option value="N">New Loan</option>
                                 <option value="R">Repeat Loan</option>
@@ -119,10 +119,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_kyc_remarks" id="kyc_remarks">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -134,12 +134,12 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Start Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_revert_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_revert()">
+                            <input type="text" class="datepicker form-control " id="kyc_revert_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_kyc_revert()">
 
                         </div>
                         <div class="form-group">
                             <label>End Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="kyc_revert_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_revert_end()">
+                            <input type="text" class="datepicker form-control " id="kyc_revert_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_kyc_revert_end()">
 
                             <input type="hidden" name="start_date_rvrt" id="kyc_revert_start_input" placeholder="" value="">
                             <input type="hidden" name="end_date_rvrt" id="kyc_revert_end_input" placeholder="" value="">
@@ -147,10 +147,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_kyc_revert" id="kyc_revert">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -162,21 +162,21 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Start Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="bmv_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_bmv_remarks()">
+                            <input type="text" class="datepicker form-control " id="bmv_remarks_start_date" readonly="readonly" placeholder="Start Date" onchange="datePicker_bmv_remarks()">
                         </div>
                         <div class="form-group">
                             <label>End Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="bmv_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_bmv_remarks_end()">
+                            <input type="text" class="datepicker form-control " id="bmv_remarks_end_date" readonly="readonly" placeholder="End Date" onchange="datePicker_bmv_remarks_end()">
 
                             <input type="hidden" style="display: none"  name="start_date_bmv_remarks" id="bmv_remarks_start_input" placeholder="" value="">
                             <input type="hidden" style="display: none"  name="end_date_bmv_remarks" id="bmv_remarks_end_input" placeholder="" value="">
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_bmv_remarks" id="bmv_remarks">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -192,10 +192,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_bmv_pending" id="bmv_pending">Generate Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_bmv_pending" id="bmv_pending">Generate Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -207,15 +207,15 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Select Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="qa_productivity_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_qa_productivity()">
+                            <input type="text" class="datepicker form-control " id="qa_productivity_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_qa_productivity()">
                             <input type="hidden" name="select_date_qa" id="qa_input" placeholder="" value="">
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_qa_productivity" id="qa">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_qa_productivity" id="qa">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -231,10 +231,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_alaf_report" id="alaf">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_alaf_report" id="alaf">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -246,15 +246,15 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         </div>
                         <div class="form-group">
                             <label>Select Date<span class="tm-required-label">*</span></label>
-                            <input type="text" class="datepicker form-control input-lg" id="tc_report_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_tc_report()">
+                            <input type="text" class="datepicker form-control " id="tc_report_date" readonly="readonly" placeholder="Select Date" onchange="datePicker_tc_report()">
                             <input type="hidden" name="select_date_tc" id="tc_input" placeholder="" value="">
                         </div>
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button-success" form="form_tc_report" id="tc">Extract Report</button>
+                                <button type="submit" class=" form-control global-button-success" form="form_tc_report" id="tc">Extract Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>
@@ -271,10 +271,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class="input-lg form-control global-button" form="form_sanction_report" id="sanction">Generate Report</button>
+                                <button type="submit" class=" form-control global-button" form="form_sanction_report" id="sanction">Generate Report</button>
                             </div>
                             <div class="col-xs-6">
-                                <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                                <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                             </div>
                         </div>
                     </form>

@@ -9,14 +9,14 @@
             <?=form_open("", array("class" => "form-width-small"));?>
                 <h1 class="text-center"><b>NEW USER</b> REGISTRATION APPROVAL</h1>
                 <div class="form-group">
-                    <input type="text" id="reg_name" name="reg_name" class="form-control input-lg">
+                    <input type="text" id="reg_name" name="reg_name" class="form-control ">
                 </div>
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button-success">Search</button>
+                        <button type="submit" class=" form-control global-button-success">Search</button>
                     </div>
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button">Show All</button>
+                        <button type="submit" class=" form-control global-button">Show All</button>
                     </div>
                 </div>
             <?=form_close();?>

@@ -10,7 +10,7 @@ $data['title'] = 'OnePuhunan Service Portal | Registration Successful';
                 <i class="glyphicon glyphicon-ok"></i> BRANCH ASSIGN SUCCESSFUL!
             </h2>
             <div class="form-group default-margin">
-                <a class="btn input-lg global-button" href="<?php echo site_url("dashboard"); ?>">GO TO DASHBOARD PAGE</a>
+                <a class="btn  global-button" href="<?php echo site_url("dashboard"); ?>">GO TO DASHBOARD PAGE</a>
             </div>
             <?=form_close();?>
         </div>

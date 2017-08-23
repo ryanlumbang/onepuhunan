@@ -111,10 +111,11 @@ form button.form-control:hover {
     color: #004886;
     cursor: pointer;
     font-family:inherit;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    height:40px;
     outline: 0 none;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
     transition-duration: 0.25s;
 }
 .global-button-success{
@@ -123,10 +124,11 @@ form button.form-control:hover {
     color: #fff;
     cursor: pointer;
     font-family:inherit;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    height:40px;
     outline: 0 none;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
     transition-duration: 0.25s;
 }
 .global-button-success:hover{

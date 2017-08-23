@@ -11,16 +11,16 @@
                     <h2 class="text-center">CLIENT CATALOG SEARCH</h2>
                     <div class="form-group text-center">
                         <label>Enter client's name or part of a name, client id, and date of birth(<i>yyyy-MM-dd</i>)</label>
-                        <input type="text" id="c_name" name="c_name" class="form-control input-lg">
+                        <input type="text" id="c_name" name="c_name" class="form-control ">
                         <input type="checkbox" name="chk-spouse" class="tm-chkbox" value="true" <?php if(filter_input(INPUT_POST, 'chk-spouse')) { echo "checked='checked'"; } ?>>
                         <label>Include borrower's spouse name to search criteria.</label>
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <button type="submit" class="input-lg form-control global-button-success">Search</button>
+                            <button type="submit" class=" form-control global-button-success">Search</button>
                         </div>
                         <div class="col-xs-6">
-                            <button type="reset" class="input-lg form-control global-button">Clear</button>
+                            <button type="reset" class=" form-control global-button">Clear</button>
                         </div>
                     </div>
                     <?=form_close();?>

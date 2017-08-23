@@ -20,7 +20,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                         $branchID = array(
                             "id" => "branchcode",
                             "name" => "branchcode",
-                            "class" => "form-control input-lg branchcode",
+                            "class" => "form-control  branchcode",
                             "onchange" => "branch_list()"
                         );
                         foreach((array) $ln_branch as $row) {
@@ -34,7 +34,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                     <div class="form-group">
                         <label>Loan Type<span class="tm-required-label">*</span></label>
-                        <select class="form-control input-lg" id="loan_type" name="loan_type">
+                        <select class="form-control " id="loan_type" name="loan_type">
                             <option value="" disabled selected hidden>Loan Type</option>
                             <option value="N">New Loan</option>
                             <option value="R">Repeat Loan</option>
@@ -42,10 +42,10 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <button type="submit" class="btn form-control input-lg global-button-success" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
+                            <button type="submit" class="btn form-control  global-button-success" form="form_bmv_pending_qa" id="bmv_pending_qa">Extract Report</button>
                         </div>
                         <div class="col-xs-6">
-                            <a href="<?php echo site_url("dashboard"); ?>" class="btn form-control input-lg global-button">Cancel</a>
+                            <a href="<?php echo site_url("dashboard"); ?>" class="btn form-control  global-button">Cancel</a>
                         </div>
                     </div>
                 </form>

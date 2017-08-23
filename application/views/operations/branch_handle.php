@@ -36,7 +36,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     "id" => "emp_id",
                     "name" => "emp_id",
                     "value" => set_value("emp_id"),
-                    "class" => "form-control input-lg",
+                    "class" => "form-control ",
                     "placeholder" => "Please enter employee id."
                 );
                 echo form_input($emp_id);
@@ -49,7 +49,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     "id" => "branch_ids",
                     "name" => "branch_ids",
                     "value" => set_value("branch_ids"),
-                    "class" => "form-control input-lg",
+                    "class" => "form-control ",
                     "placeholder" => "Please enter branch id's."
                 );
                 echo form_input($branch_ids);
@@ -57,10 +57,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button-success">Update</button>
+                    <button type="submit" class=" form-control global-button-success">Update</button>
                 </div>
                 <div class="col-xs-6">
-                    <a href="<?php echo site_url("dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>
                 </div>
             </div>
             <?=form_close();?>

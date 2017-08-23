@@ -11,14 +11,14 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             <h2 class="text-center">LOS Client Search</h2>
             <div class="form-group">
                 <label class="text-center">Enter client's name or part of a name, and client id.</label>
-                <input type="text" id="c_name" name="c_name" class="form-control input-lg">
+                <input type="text" id="c_name" name="c_name" class="form-control ">
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button-success">Search</button>
+                    <button type="submit" class=" form-control global-button-success">Search</button>
                 </div>
                 <div class="col-xs-6">
-                    <button type="reset" class="input-lg form-control global-button">Clear</button>
+                    <button type="reset" class=" form-control global-button">Clear</button>
                 </div>
             </div>
             <?=form_close();?>

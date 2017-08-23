@@ -36,10 +36,10 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Uploading of Sampling';
 
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <button type="submit" name="import" id="submit" class="input-lg form-control global-button">Upload</button>
+                            <button type="submit" name="import" id="submit" class="form-control global-button">Upload</button>
                         </div>
                         <div class="col-xs-6">
-                            <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                            <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn form-control global-button">Cancel</a>
                         </div>
                     </div>
                 </form>

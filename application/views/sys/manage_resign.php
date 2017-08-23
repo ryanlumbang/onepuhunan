@@ -38,7 +38,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "employee_id",
                         "name" => "employee_id",
                         "value" =>  $emp_id,
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -58,7 +58,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "employee_name",
                         "name" => "employee_name",
                         "value" =>  $full_name,
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -81,7 +81,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "value" =>  $email,
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd",
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
 
                     );
                     echo form_input($employee_email);
@@ -99,7 +99,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "job_title",
                         "name" => "job_title",
                         "value" =>  $job_title,
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -113,14 +113,11 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                     <label>Select Role:</label>
                 </div>
                 <div class="col-md-9">
-                    <select name="rolename" id="getRoleID" class = "form-control input-lg branchcode">
+                    <select name="rolename" id="getRoleID" class = "form-control  branchcode">
                         <!--                                <option value="" disabled selected hidden></option>-->
                         <?php  foreach($ln_rolename as $row): ?>
-                            <?php if($row['role_id'] == $role_id){ ?>
-                                <option selected value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
-
-                            <?php } else { ?>
-                                <option value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
+                            <?php if($row['role_id'] == $role_id || $row['role_id'] == 'rsg') {?>
+                            <option <?php echo ($row['role_id'] == $role_id) ? 'selected':''?> value="<?php echo $row['role_id'] ;?>" data-role_name="<?php echo $row['role_name'];?>"><?php echo $row['role_name'];?></option>
                             <?php } ?>
                         <?php endforeach; ?>
                     </select>
@@ -129,10 +126,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
 
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button-success">Update</button>
+                    <button type="submit" class=" form-control global-button-success">Update</button>
                 </div>
                 <div class="col-xs-6">
-                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn  form-control global-button">Cancel</a>
                 </div>
             </div>
             <?=form_close();?>
