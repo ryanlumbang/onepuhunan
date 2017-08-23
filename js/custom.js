@@ -119,11 +119,9 @@ $(document).ready(function() {
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
         ],
-        'iDisplayLength': 25,
-        'oLanguage': {
-            'sSearch': '',
-            'sEmptyTable': 'No pending application'
-        },
+        "oLanguage": { "sSearch": "" },
+        'searching': true,
+        'iDisplayLength': 10,
         'deferRender': true,
         //'stateSave': true,
         'drawCallback' : function () {
@@ -732,7 +730,7 @@ $(document).ready(function() {
         "oLanguage": { "sSearch": "" },
         'searching': true,
     });
-    var c_rejected = $('#c_rejected').DataTable({
+    var tbl_rejected = $('#tbl_rejected').DataTable({
         "oLanguage": { "sSearch": "" },
         'searching': true
     });

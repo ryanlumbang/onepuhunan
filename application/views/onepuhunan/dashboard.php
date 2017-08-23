@@ -61,6 +61,7 @@ $data['title'] = 'OnePuhunan';
                                          </div>
                                      </div>
                                      <div class="col-md-12 col-xs-12">
+                                         <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
                                          <table class="table table-striped op-table E1">
                                              <thead>
                                              <tr class="tr-content box-header-bottom">
@@ -160,6 +161,7 @@ $data['title'] = 'OnePuhunan';
                         </div>
                     </div>
                     <div class="col-md-12">
+                        <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
                         <table class="table table-striped op-table E1">
                             <thead>
                             <tr class="tr-content box-header-bottom">
@@ -224,7 +226,7 @@ $data['title'] = 'OnePuhunan';
                     </div>
                 </div>
                 <div class="col-md-12">
-
+                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
                     <table class="table table-striped op-table E1">
                         <thead>
                         <tr class="tr-content box-header-bottom">
@@ -251,7 +253,7 @@ $data['title'] = 'OnePuhunan';
                 </div>
             </div>
             <?php } ?>
-            <?php if($this->session->role_id == 'super') { ?>
+            <?php if($this->session->role_id == 'super' OR $this->session->role_id == 'ssuper') { ?>
             <div class="row">
                 <br/>
                 <div class="col-md-6 col-xs-12">
@@ -338,94 +340,6 @@ $data['title'] = 'OnePuhunan';
                     </div>
                 </div>
             </div>
-            <?php } ?>
-            <?php if($this->session->role_id == 'ssuper') { ?>
-                <div class="row">
-                    <br/>
-                    <div class="col-md-6 col-xs-12">
-                        <!--total update-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>TOTAL UPDATE</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin">
-                                    <h3>New Records <br class="br-hide" /> (
-                                        <span class="date"></span><span id="daymonth"></span> ,
-                                        <span id="year"></span>)
-                                    </h3>
-                                    <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--kyc counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>KYC COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['KYCNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['KYCRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!--bmv counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>BMV COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin">
-                                    <h3>Loan</h3><h2 class="value"><?=$dashboard['BMV']?></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!--alaf counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>ALAF COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['ALAFNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['ALAFRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!-- tc counter -->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>TC COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!-- sanction counter -->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>SANCTION COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             <?php } ?>
             <?php if($this->session->role_id == 'qa_sup') { ?>
                 <div class="row">
