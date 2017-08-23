@@ -4,11 +4,10 @@ $data['title'] = 'OnePuhunan';
 <?php $this->load->view("onepuhunan/header", $data); ?>
     <div class="main">
         <div class="main-inner">
-            <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup') {?>
-            <br/>
             <div class="container">
+            <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup') {?>
+                <br/>
                 <div class="row">
-                    <br/>
                     <?php if((array)$count || (array)$user_branch) {?>
                         <?php foreach ((array)$count as $total)
                              if ($this->session->role_id == 'ci'){ ?>
@@ -62,7 +61,6 @@ $data['title'] = 'OnePuhunan';
                                          </div>
                                      </div>
                                      <div class="col-md-12 col-xs-12">
-
                                          <table class="table table-striped op-table E1">
                                              <thead>
                                              <tr class="tr-content box-header-bottom">
@@ -96,11 +94,9 @@ $data['title'] = 'OnePuhunan';
                     <?php } ?>
 
                 </div>
-            </div>
             <?php } ?>
             <?php if($this->session->role_id == 'qa') { ?>
             <br/>
-            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
@@ -164,7 +160,6 @@ $data['title'] = 'OnePuhunan';
                         </div>
                     </div>
                     <div class="col-md-12">
-
                         <table class="table table-striped op-table E1">
                             <thead>
                             <tr class="tr-content box-header-bottom">
@@ -193,164 +188,158 @@ $data['title'] = 'OnePuhunan';
                             </tbody>
                         </table>
                     </div>
-                    <?php } ?>
                 </div>
-            </div>
+            <?php } ?>
             <?php if($this->session->role_id == 'cpu') { ?>
             <br/>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-xs-12">
-                        <div class="widget widget-nopad">
-                            <div class="widget-header text-center">
-                                <h3>Total CPU NEW </h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="widget widget-nopad">
+                        <div class="widget-header text-center">
+                            <h3>Total CPU NEW </h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
 
-                                    <div class="col-xs-12">
-                                        <h2 class="value"><?=$pending_total['sum_cpu_new'] ?></h2>
-                                    </div>
+                                <div class="col-xs-12">
+                                    <h2 class="value"><?=$pending_total['sum_cpu_new'] ?></h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xs-12">
-                        <div class="widget widget-nopad">
-                            <div class="widget-header text-center">
-                                <h3>Total CPU REPEAT </h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="widget widget-nopad">
+                        <div class="widget-header text-center">
+                            <h3>Total CPU REPEAT </h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
 
-                                    <div class="col-xs-12">
-                                        <h2 class="value"><?=$pending_total['sum_cpu_repeat'] ?></h2>
-                                    </div>
+                                <div class="col-xs-12">
+                                    <h2 class="value"><?=$pending_total['sum_cpu_repeat'] ?></h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                </div>
+                <div class="col-md-12">
 
-                        <table class="table table-striped op-table E1">
-                            <thead>
-                            <tr class="tr-content box-header-bottom">
-                                <th>Branch</th>
-                                <th class="text-center">CPU NEW</th>
-                                <th class="text-center">CPU REPEAT</th>
-                            </tr>
-                            </thead>
-                            <tbody>
+                    <table class="table table-striped op-table E1">
+                        <thead>
+                        <tr class="tr-content box-header-bottom">
+                            <th>Branch</th>
+                            <th class="text-center">CPU NEW</th>
+                            <th class="text-center">CPU REPEAT</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                            <?php
-                                foreach((array) $pending_branch as $row) {
-                                    $result = '<tr>'
-                                        . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> ' . $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
-                                        . '<td class="text-center">' . $row['cpu_new'] . '</td>'
-                                        . '<td class="text-center">' . $row['cpu_repeat'] . '</td>'
-                                        . '</tr>';
-                                    echo $result;
-                                }
-                            ?>
+                        <?php
+                            foreach((array) $pending_branch as $row) {
+                                $result = '<tr>'
+                                    . '<td><a href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> ' . $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
+                                    . '<td class="text-center">' . $row['cpu_new'] . '</td>'
+                                    . '<td class="text-center">' . $row['cpu_repeat'] . '</td>'
+                                    . '</tr>';
+                                echo $result;
+                            }
+                        ?>
 
-                            </tbody>
-                        </table>
-                    </div>
-                    <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <?php } ?>
             <?php if($this->session->role_id == 'super') { ?>
-             <div class="container">
-                <div class="row">
-                    <br/>
-                    <div class="col-md-6 col-xs-12">
-                        <!--total update-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>TOTAL UPDATE</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin">
-                                    <h3>New Records <br class="br-hide" /> (
-                                        <span class="date"></span><span id="daymonth"></span> ,
-                                        <span id="year"></span>)
-                                    </h3>
-                                    <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
-                                </div>
+            <div class="row">
+                <br/>
+                <div class="col-md-6 col-xs-12">
+                    <!--total update-->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>TOTAL UPDATE</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin">
+                                <h3>New Records <br class="br-hide" /> (
+                                    <span class="date"></span><span id="daymonth"></span> ,
+                                    <span id="year"></span>)
+                                </h3>
+                                <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
                             </div>
                         </div>
+                    </div>
 
-                        <!--kyc counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>KYC COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['KYCNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['KYCRepeat']?></h2> </div>
-                                </div>
-                            </div>
+                    <!--kyc counter-->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>KYC COUNTER</h3>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!--bmv counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>BMV COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin">
-                                    <h3>Loan</h3><h2 class="value"><?=$dashboard['BMV']?></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <!--alaf counter-->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>ALAF COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['ALAFNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['ALAFRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!-- tc counter -->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>TC COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <!-- sanction counter -->
-                        <div class="widget widget-nopad">
-                            <div class="widget-header"> <i class="icon-list-alt"></i>
-                                <h3>SANCTION COUNTER</h3>
-                            </div>
-                            <div class="widget-content">
-                                <div class="text-center default-margin row">
-                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
-                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
-                                </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
+                                <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['KYCNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['KYCRepeat']?></h2> </div>
                             </div>
                         </div>
                     </div>
                 </div>
-             </div>
+                <div class="col-md-6 col-xs-12">
+                    <!--bmv counter-->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>BMV COUNTER</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin">
+                                <h3>Loan</h3><h2 class="value"><?=$dashboard['BMV']?></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!--alaf counter-->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>ALAF COUNTER</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
+                                <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['ALAFNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['ALAFRepeat']?></h2> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <!-- tc counter -->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>TC COUNTER</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
+                                <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <!-- sanction counter -->
+                    <div class="widget widget-nopad">
+                        <div class="widget-header"> <i class="icon-list-alt"></i>
+                            <h3>SANCTION COUNTER</h3>
+                        </div>
+                        <div class="widget-content">
+                            <div class="text-center default-margin row">
+                                <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php } ?>
             <?php if($this->session->role_id == 'ssuper') { ?>
-            <div class="container">
                 <div class="row">
                     <br/>
                     <div class="col-md-6 col-xs-12">
@@ -437,10 +426,8 @@ $data['title'] = 'OnePuhunan';
                         </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
             <?php if($this->session->role_id == 'qa_sup') { ?>
-           <div class="container">
                 <div class="row">
                     <br>
                     <div class="col-md-6 col-xs-12">
@@ -498,43 +485,39 @@ $data['title'] = 'OnePuhunan';
                             </div>
                         </div>
                     </div>
-
                 </div>
-           </div>
             <?php } ?>
             <?php if($this->session->role_id == 'tc_sup') { ?>
-                <div class="container">
-                    <div class="row">
-                        <br/>
-                        <div class="col-md-6 col-xs-12">
-                            <!--total update-->
-                            <div class="widget widget-nopad">
-                                <div class="widget-header"> <i class="icon-list-alt"></i>
-                                    <h3>TOTAL UPDATE</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="text-center default-margin">
-                                        <h3>New Records <br class="br-hide" /> (
-                                            <span class="date"></span><span id="daymonth"></span> ,
-                                            <span id="year"></span>)
-                                        </h3>
-                                        <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
-                                    </div>
+                <div class="row">
+                    <br/>
+                    <div class="col-md-6 col-xs-12">
+                        <!--total update-->
+                        <div class="widget widget-nopad">
+                            <div class="widget-header"> <i class="icon-list-alt"></i>
+                                <h3>TOTAL UPDATE</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="text-center default-margin">
+                                    <h3>New Records <br class="br-hide" /> (
+                                        <span class="date"></span><span id="daymonth"></span> ,
+                                        <span id="year"></span>)
+                                    </h3>
+                                    <h2 class="value"> <b><?=$dashboard['NewRecords']?></b></h2>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="col-md-6 col-xs-12">
-                            <!-- tc counter -->
-                            <div class="widget widget-nopad">
-                                <div class="widget-header"> <i class="icon-list-alt"></i>
-                                    <h3>TC COUNTER</h3>
-                                </div>
-                                <div class="widget-content">
-                                    <div class="text-center default-margin row">
-                                        <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
-                                        <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
-                                    </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <!-- tc counter -->
+                        <div class="widget widget-nopad">
+                            <div class="widget-header"> <i class="icon-list-alt"></i>
+                                <h3>TC COUNTER</h3>
+                            </div>
+                            <div class="widget-content">
+                                <div class="text-center default-margin row">
+                                    <div class="col-md-6 col-xs-12"> <h3>New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
+                                    <div class="col-md-6 col-xs-12"> <h3>Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
                                 </div>
                             </div>
                         </div>
@@ -542,7 +525,6 @@ $data['title'] = 'OnePuhunan';
                 </div>
             <?php } ?>
             <?php if($this->session->role_id == 'cpu_sup') { ?>
-            <div class="container">
                 <div class="row">
                     <br/>
                     <div class="col-md-6 col-xs-12">
@@ -578,7 +560,6 @@ $data['title'] = 'OnePuhunan';
                         </div>
                     </div>
                 </div>
-            </div>
             <?php } ?>
 
             <?php
@@ -588,11 +569,8 @@ $data['title'] = 'OnePuhunan';
                     <h2 style="text-align: center">UNDER CONSTRUCTION...</h2>
                 </div>
             <?php } ?>
-            <!-- /row -->
-            <?php
-            if($this->session->role_id != 'super' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup')?>
-
-        </div>
+          </div>
     </div>
-    <?php $this->load->view("onepuhunan/copyright"); ?>
-    <?php $this->load->view("onepuhunan/footer"); ?>
+</div>
+<?php $this->load->view("onepuhunan/copyright"); ?>
+<?php $this->load->view("onepuhunan/footer"); ?>
