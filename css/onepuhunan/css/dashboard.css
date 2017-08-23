@@ -143,10 +143,21 @@ form button.form-control:hover {
     color: #fff;
     padding: 2px 18px;
 }
+.global-btn-grey, .global-btn-grey:hover, .global-btn-grey:focus{
+    background: #838383;
+    color: #fff;
+    padding: 2px 18px;
+}
 .global-btn-add , .global-btn-add:hover, .global-btn-add:focus{
     background: #838383;
     color: #fff;
     font-family: inherit;
+}
+.row-even{
+    background-color: #adc9d4;
+}
+.btn-min-width{
+    width: 150px;
 }
 .default-margin-right{
     margin-right: 15px;
@@ -154,10 +165,14 @@ form button.form-control:hover {
 .title i{
     margin-right: 5px;
 }
-/*.table > thead > tr > th {*/
-    /*background: #004886 none repeat scroll 0 0;*/
-    /*color: #fff;*/
-/*}*/
+
+.client-bg {
+    background-image: url("../../../img/thumb.php.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% 30vh;
+    width: auto;
+}
 .highlight {
     font-weight: bold;
     background: #606c88; /* Old browsers */
@@ -210,6 +225,15 @@ input[type="search"]{
     width: 100%;
 }
 h1{font-weight: bold}
+
+/*client page*/
+.client-container{
+    padding-top: 100px;
+}
+
+.client-container > *{
+    color: #fff;
+}
 @media screen and (max-width: 767px){
     .navbar-nav .open .dropdown-menu{
         background: #fff;
