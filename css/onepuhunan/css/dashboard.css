@@ -156,6 +156,9 @@ form button.form-control:hover {
 .row-even{
     background-color: #adc9d4;
 }
+.text-bold{
+    font-weight: bold;
+}
 .btn-min-width{
     width: 150px;
 }
