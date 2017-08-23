@@ -725,7 +725,7 @@ $(document).ready(function() {
                 aTargets: [ -1,-2 ,-3,-4]
             }
         ],
-        order: [[ 0, 'asc' ]],
+        order: [[ 0, 'asc' ]]
     });
 
     var tbl_pp = $('#tbl_pp').DataTable({

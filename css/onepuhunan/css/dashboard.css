@@ -151,6 +151,9 @@ form button.form-control:hover {
 .default-margin-right{
     margin-right: 15px;
 }
+.title i{
+    margin-right: 5px;
+}
 /*.table > thead > tr > th {*/
     /*background: #004886 none repeat scroll 0 0;*/
     /*color: #fff;*/
