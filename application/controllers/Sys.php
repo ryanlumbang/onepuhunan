@@ -35,7 +35,7 @@
                 "_emp_id"   => (string)hexdec($input),
                 "_approver" => $this->session->emp_id
             );
-           
+
             $this->System_model->approve_request($var);
             
             $data["query"] = $this->System_model->get_employee_name((string)hexdec($input));
@@ -47,7 +47,7 @@
             
             $this->send_mail($session);
             //$this->index();
-            redirect(base_url()."sys/registration_request");
+            redirect(base_url()."sys/registration-request");
         }
 
         public function client_rejected() {

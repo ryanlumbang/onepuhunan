@@ -8,28 +8,24 @@ $data['title'] = 'OnePuhunan';
             <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup') {?>
                 <br/>
                 <div class="row">
-                    <?php if((array)$count || (array)$user_branch) {?>
-                        <?php foreach ((array)$count as $total)
-                             if ($this->session->role_id == 'ci'){ ?>
-                                <?php if($total['destprocess'] == 'BMV'){ ?>
-                                     <div class="col-md-6 col-xs-12">
-                                         <div class="widget widget-nopad">
-                                             <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                 <h3>TOTAL BMV</h3>
-                                             </div>
-                                             <div class="widget-content">
-                                                 <div class="text-center default-margin row">
-                                                     <div class="col-xs-12">
-                                                         <h3><?=$total['destprocess'] ?></h3>
-                                                         <h2 class="value"><?=$total['sum'] ?></h2>
-                                                     </div>
+                    <?php if((array)$user_branch) {?>
+                        <?php if ($this->session->role_id == 'ci'){ ?>
+                                 <div class="col-md-6 col-xs-12">
+                                     <div class="widget widget-nopad">
+                                         <div class="widget-header"> <i class="icon-list-alt"></i>
+                                             <h3>TOTAL BMV</h3>
+                                         </div>
+                                         <div class="widget-content">
+                                             <div class="text-center default-margin row">
+                                                 <div class="col-xs-12">
+                                                     <h3><?=$total['destprocess'] ?></h3>
+                                                     <h2 class="value"><?=$total['sum'] ?></h2>
                                                  </div>
                                              </div>
                                          </div>
                                      </div>
-                                <?php } ?>
+                                 </div>
                             <?php } elseif ($this->session->role_id == 'tc'){ ?>
-                                <?php if($total['destprocess'] == 'TC'){ ?>
                                      <div class="col-md-6 col-xs-12">
                                          <div class="widget widget-nopad">
                                              <div class="widget-header text-center">
@@ -86,14 +82,8 @@ $data['title'] = 'OnePuhunan';
                                              </tbody>
                                          </table>
                                      </div>
-                                <?php } ?>
                         <?php } ?>
-                    <?php } else { ?>
-                        <div class="col-xs-12 text-center">
-                            <h2>No data available</h2>
-                        </div>
                     <?php } ?>
-
                 </div>
             <?php } ?>
             <?php if($this->session->role_id == 'qa') { ?>
