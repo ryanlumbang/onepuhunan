@@ -5,97 +5,72 @@ $data['title'] = 'OnePuhunan';
     <div class="main">
         <div class="main-inner">
             <div class="container">
-            <?php if($this->session->role_id != 'super' && $this->session->role_id != 'qa' && $this->session->role_id != 'ssuper' && $this->session->role_id != 'usr' && $this->session->role_id != 'cpu' && $this->session->role_id != 'qa_sup' && $this->session->role_id != 'tc_sup' && $this->session->role_id != 'cpu_sup') {?>
-                <br/>
-                <div class="row">
-                    <?php if((array)$count || (array)$user_branch) {?>
-                        <?php foreach ((array)$count as $total)
-                             if ($this->session->role_id == 'ci'){ ?>
-                                <?php if($total['destprocess'] == 'BMV'){ ?>
-                                     <div class="col-md-6 col-xs-12">
-                                         <div class="widget widget-nopad">
-                                             <div class="widget-header"> <i class="icon-list-alt"></i>
-                                                 <h3>TOTAL BMV</h3>
-                                             </div>
-                                             <div class="widget-content">
-                                                 <div class="text-center default-margin row">
-                                                     <div class="col-xs-12">
-                                                         <h3><?=$total['destprocess'] ?></h3>
-                                                         <h2 class="value"><?=$total['sum'] ?></h2>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                <?php } ?>
-                            <?php } elseif ($this->session->role_id == 'tc'){ ?>
-                                <?php if($total['destprocess'] == 'TC'){ ?>
-                                     <div class="col-md-6 col-xs-12">
-                                         <div class="widget widget-nopad">
-                                             <div class="widget-header text-center">
-                                                 <h3>Total TC NEW </h3>
-                                             </div>
-                                             <div class="widget-content">
-                                                 <div class="text-center default-margin row">
+                <?php if($this->session->role_id == 'tc') { ?>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="widget widget-nopad">
+                                        <div class="widget-header text-center">
+                                            <h3>Total TC NEW </h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div class="text-center default-margin row">
 
-                                                     <div class="col-xs-12">
-                                                         <h2 class="value"><?=$pending_total['sum_tc_new'] ?></h2>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="col-md-6 col-xs-12">
-                                         <div class="widget widget-nopad">
-                                             <div class="widget-header text-center">
-                                                 <h3>Total TC REPEAT </h3>
-                                             </div>
-                                             <div class="widget-content">
-                                                 <div class="text-center default-margin row">
+                                                <div class="col-xs-12">
+                                                    <h2 class="value"><?=$pending_total['sum_tc_new'] ?></h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="widget widget-nopad">
+                                        <div class="widget-header text-center">
+                                            <h3>Total TC REPEAT </h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div class="text-center default-margin row">
 
-                                                     <div class="col-xs-12">
-                                                         <h2 class="value"><?=$pending_total['sum_tc_repeat'] ?></h2>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="col-md-12 col-xs-12">
-                                         <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
-                                         <table class="table table-striped op-table E1">
-                                             <thead>
-                                             <tr class="tr-content box-header-bottom">
-                                                 <th>Branch</th>
-                                                 <th class="text-center">TC NEW</th>
-                                                 <th class="text-center">TC REPEAT</th>
-                                             </tr>
-                                             </thead>
-                                             <tbody>
+                                                <div class="col-xs-12">
+                                                    <h2 class="value"><?=$pending_total['sum_tc_repeat'] ?></h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-xs-12">
+                                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
+                                    <table class="table table-striped op-table E1">
+                                        <thead>
+                                        <tr class="tr-content box-header-bottom">
+                                            <th>Branch</th>
+                                            <th class="text-center">TC NEW</th>
+                                            <th class="text-center">TC REPEAT</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
 
-                                             <?php
-                                                 foreach((array) $pending_branch as $row) {
-                                                     $result = '<tr>'
-                                                         . '<td><a target="_blank" href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
-                                                         . '<td class="text-center">' . $row['tc_new'] . '</td>'
-                                                         . '<td class="text-center">' . $row['tc_repeat'] . '</td>'
-                                                         . '</tr>';
-                                                     echo $result;
-                                                 }
-                                             ?>
+                                        <?php
+                                        foreach((array) $pending_branch as $row) {
+                                            $result = '<tr>'
+                                                . '<td><a target="_blank" href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] .'</a></td>'
+                                                . '<td class="text-center">' . $row['tc_new'] . '</td>'
+                                                . '<td class="text-center">' . $row['tc_repeat'] . '</td>'
+                                                . '</tr>';
+                                            echo $result;
+                                        }
+                                        ?>
 
-                                             </tbody>
-                                         </table>
-                                     </div>
-                                <?php } ?>
-                        <?php } ?>
-                    <?php } else { ?>
-                        <div class="col-xs-12 text-center">
-                            <h2>No data available</h2>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
                         </div>
-                    <?php } ?>
-
-                </div>
-            <?php } ?>
+                    </div>
+                <?php } ?>
             <?php if($this->session->role_id == 'qa') { ?>
             <br/>
                 <div class="row">
@@ -475,7 +450,6 @@ $data['title'] = 'OnePuhunan';
                     </div>
                 </div>
             <?php } ?>
-
             <?php
             if($this->session->role_id == 'aud') { ?>
                 <div class="row">
