@@ -111,10 +111,11 @@ form button.form-control:hover {
     color: #004886;
     cursor: pointer;
     font-family:inherit;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    height:40px;
     outline: 0 none;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
     transition-duration: 0.25s;
 }
 .global-button-success{
@@ -123,10 +124,11 @@ form button.form-control:hover {
     color: #fff;
     cursor: pointer;
     font-family:inherit;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    height:40px;
     outline: 0 none;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
     transition-duration: 0.25s;
 }
 .global-button-success:hover{
@@ -262,5 +264,70 @@ h1{font-weight: bold}
     }
     .form-width-small{
         width:100%;
+    }
+}
+
+
+
+.ret {
+    color:#313131;
+    -webkit-animation:colorchange 5s infinite alternate;
+
+
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+
+        color: blue;
+    }
+
+    10% {
+
+        color: #294fad;
+    }
+
+    20% {
+
+        color: #3c6fbc;
+    }
+
+    30% {
+
+        color: #2d94d3;
+    }
+
+    40% {
+
+        color: #543eff;
+    }
+
+    50% {
+
+        color: #0f105e;
+    }
+
+    60% {
+
+        color: #7c8fff;
+    }
+
+    70% {
+
+        color: #295db9;
+    }
+    80% {
+
+        color: #577cf1;
+    }
+
+    90% {
+
+        color: #0f69b9;
+    }
+
+    100% {
+
+        color: #522eff;
     }
 }

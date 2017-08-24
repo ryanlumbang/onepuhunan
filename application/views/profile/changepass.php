@@ -77,10 +77,10 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-xs-6">
-                            <button type="submit" class="form-control global-button input-lg">Submit</button>
+                            <button type="submit" class="form-control global-button ">Submit</button>
                         </div>
                         <div class="col-xs-6">
-                            <a class="form-control btn global-button input-lg" href="<?php echo site_url("index.php"); ?>">Back</a>
+                            <a class="form-control btn global-button " href="<?php echo site_url("index.php"); ?>">Back</a>
                         </div>
                     </div>
                 <?=form_close();?>

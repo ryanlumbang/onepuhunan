@@ -41,7 +41,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "employee_name",
                         "name" => "employee_name",
                         "value" =>  $_GET["fullname"],
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -60,7 +60,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "emp_id",
                         "name" => "emp_id",
                         "value" =>  $_GET["emp_id"],
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -79,7 +79,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "id" => "job_title",
                         "name" => "job_title",
                         "value" =>  $_GET["job_title"],
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "readonly" => "true",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
 
@@ -93,7 +93,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                     <label>Select Role:</label>
                 </div>
                 <div class="col-md-9">
-                    <select name="rolename" id="getRoleID" class = "form-control input-lg branchcode">
+                    <select name="rolename" id="getRoleID" class = "form-control  branchcode">
                         <option value="" disabled selected hidden></option>
                         <?php  foreach($ln_rolename as $row): ?>
                             <option value="<?php echo $row['role_name'];?> " data-emp_id="<?php echo $row['role_id'];?>"><?php echo $row['role_name'];?></option>
@@ -113,7 +113,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                         "name" => "role",
                         "value" =>  $_GET["role"],
                         "readonly" => "true",
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "style"=>"background-color: #faffbd; border: 1px solid #ddd"
                     );
                     echo form_input($role);
@@ -122,10 +122,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button-success">Update</button>
+                    <button type="submit" class=" form-control global-button-success">Update</button>
                 </div>
                 <div class="col-xs-6">
-                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn  form-control global-button">Cancel</a>
                 </div>
             </div>
             <?=form_close();?>

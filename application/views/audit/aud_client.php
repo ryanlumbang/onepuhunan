@@ -19,7 +19,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Client';
                     $branchID = array(
                         "id" => "branchcode",
                         "name" => "branchcode",
-                        "class" => "form-control input-lg branchcode",
+                        "class" => "form-control branchcode",
                         "onchange" => "branch_list()"
                     );
                     foreach((array) $ln_branch as $row) {
@@ -31,7 +31,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Client';
                 </div>
 
                 <div class="form-group">
-                    <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("aud_dashboard"); ?>" class="btn form-control global-button">Cancel</a>
                 </div>
             </div>
 

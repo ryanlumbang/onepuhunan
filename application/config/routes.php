@@ -123,3 +123,6 @@ $route['operations/los/(:any)/(:any)/(:any)/(:any)'] = 'operations/los_info/$1/$
 
 $route['operations/los/(:any)/(:any)/(:any)/(:any)/submit'] = "operations/los_laf_approval";
 
+
+$route['get_los_laf_repeat_display/(:any)'] = 'Operations/get_los_laf_repeat_display/$1';
+$route['get_los_laf_err/(:any)'] = 'Operations/get_los_laf_err/$1';

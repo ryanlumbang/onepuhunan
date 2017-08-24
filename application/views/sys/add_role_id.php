@@ -30,7 +30,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
             <div class="form-group">
                 <label class="text-center">
                     Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>
-                    Once completed, please select the <b>"ADD Role"</b> button.
+                    Once completed, please select the <b>"Add Role"</b> button.
                 </label>
             </div>
 
@@ -41,7 +41,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
                     "id" => "role_id",
                     "name" => "role_id",
                     "value" => "",
-                    "class" => "form-control input-lg",
+                    "class" => "form-control ",
                     "placeholder" => "Role ID"
                 );
                 echo form_input($role_id);
@@ -54,7 +54,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
                     "id" => "role_name",
                     "name" => "role_name",
                     "value" => "",
-                    "class" => "form-control input-lg",
+                    "class" => "form-control ",
                     "placeholder" => "Role Name"
                 );
                 echo form_input($role_name);
@@ -67,7 +67,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
                     "id" => "date_added",
                     "name" => "date_added",
                     "value" => date("Y-m-d"),
-                    "class" => "form-control input-lg",
+                    "class" => "form-control ",
                     "readonly" => "true",
                     "style"=>"background-color: #faffbd; border: 1px solid #ddd"
                 );
@@ -76,10 +76,10 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
             </div>
             <div class="form-group row">
                 <div class="col-xs-6">
-                    <button type="submit" class="input-lg form-control global-button-success">ADD Role</button>
+                    <button type="submit" class=" form-control global-button-success">Add Role</button>
                 </div>
                 <div class="col-xs-6">
-                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                    <a href="<?php echo site_url("sys/assign_role_id"); ?>" class="btn  form-control global-button">Cancel</a>
                 </div>
             </div>
             <?=form_close();?>

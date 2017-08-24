@@ -35,7 +35,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         "id" => "question_no",
                         "name" => "question_no",
                         "value" =>  $_GET["quest1"],
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "placeholder" => "Please enter a question",
                         "type" => "hidden",
                     );
@@ -50,7 +50,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         "id" => "question",
                         "name" => "question",
                         "value" =>  $_GET["quest"],
-                        "class" => "form-control input-lg",
+                        "class" => "form-control ",
                         "placeholder" => "Please enter a question"
                     );
                     echo form_input($question);
@@ -101,10 +101,10 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 <input type="text" name="set" id="set" style="display: none"/>
                 <div class="form-group row">
                     <div class="col-xs-6">
-                        <button type="submit" class="input-lg form-control global-button-success">Update</button>
+                        <button type="submit" class=" form-control global-button-success">Update</button>
                     </div>
                     <div class="col-xs-6">
-                        <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn input-lg form-control global-button">Cancel</a>
+                        <a href="<?php echo site_url("sys/tc_question"); ?>" class="btn  form-control global-button">Cancel</a>
                     </div>
                 </div>
                 <?=form_close();?>
