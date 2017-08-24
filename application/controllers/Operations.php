@@ -152,9 +152,29 @@
                 "cl_tags"       => $this->Operations_model->get_los_laf_tags($input),
                 "cl_tc"         => $this->Operations_model->get_los_laf_tc_questions($input),
                 "cl_tc_display" => $this->Operations_model->get_los_laf_tc_display($input),
-                "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input)
+                "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input),
+                "input"         => $input
             );
             $this->load->view("operations/los_info", $data);
+        }
+
+        public function get_los_laf_repeat_display($input){
+            $this->load->model("Operations_model");
+
+            $data = array(
+                "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input),
+            );
+            $this->load->view("operations/ajax/get_los_laf_repeat_display", $data);
+        }
+
+        public function get_los_laf_err($input){
+            $this->load->model("Operations_model");
+
+            $data = array(
+                "cl_info"       => $this->Operations_model->get_los_laf_details($input),
+                "cl_error"      => $this->Operations_model->get_los_laf_err($input),
+            );
+            $this->load->view("operations/ajax/get_los_laf_err", $data);
         }
                 
         /* for individual approving/rejecting/reverting of accounts */

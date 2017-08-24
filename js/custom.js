@@ -737,11 +737,8 @@ $(document).ready(function() {
     });
     var c_catalog = $('#c_catalog').DataTable({
         "oLanguage": { "sSearch": "" },
-        'searching': false,
-        'iDisplayLength': 10,
-        // 'paging': false,
-        "bInfo" : false,
-        'dom': '<"toolbar">frtip'
+        'searching': true,
+        'iDisplayLength': 10
     });
     var tbl_pbm = $('#tbl_pbm').DataTable({
         "oLanguage": { "sSearch": "" },

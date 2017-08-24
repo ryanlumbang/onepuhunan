@@ -266,3 +266,68 @@ h1{font-weight: bold}
         width:100%;
     }
 }
+
+
+
+.ret {
+    color:#313131;
+    -webkit-animation:colorchange 5s infinite alternate;
+
+
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+
+        color: blue;
+    }
+
+    10% {
+
+        color: #294fad;
+    }
+
+    20% {
+
+        color: #3c6fbc;
+    }
+
+    30% {
+
+        color: #2d94d3;
+    }
+
+    40% {
+
+        color: #543eff;
+    }
+
+    50% {
+
+        color: #0f105e;
+    }
+
+    60% {
+
+        color: #7c8fff;
+    }
+
+    70% {
+
+        color: #295db9;
+    }
+    80% {
+
+        color: #577cf1;
+    }
+
+    90% {
+
+        color: #0f69b9;
+    }
+
+    100% {
+
+        color: #522eff;
+    }
+}

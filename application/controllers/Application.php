@@ -171,51 +171,13 @@ class Application extends CI_Controller {
 
     public function dashboard() {
         $this->load->model("Application_model");
-        $getBranch = $this->Application_model->get_user_branch($this->session->emp_id);
-        $count_pending = array();
-        $new_array =  array();
-        foreach ($getBranch as $list){
-            $input= array(
-                '_emp_id' => $this->session->emp_id,
-                '_branch_id' => $list['BranchCode']);
-            $count = $this->Application_model->get_sp_usr_pending_branch($input);
-            $count_pending[] = $count;
-        }
 
-        foreach ($count_pending  as $pendingCount) {
-            foreach ($pendingCount as $key => $byBranch) {
-                $str = strtoupper($this->session->role_id);
-                if($str != $byBranch['destprocess'] ){
-                    if($str == 'QA'){
-                        if($byBranch['destprocess'] == 'KYC' || $byBranch['destprocess'] == 'ALAF'){
-                            array_push($new_array, $byBranch);
-                        }
-                    }elseif ($str == 'BM' || $str == 'CI'){
-                        if($byBranch['destprocess'] == 'BMV'){
-                            array_push($new_array, $byBranch);
-                        }
-                    }
-
-                }elseif($str == $byBranch['destprocess']){
-                    array_push($new_array, $byBranch);
-                }
-            }
-        }
-
-        $sum = array_reduce($new_array, function ($a, $b) {
-            isset($a[$b['destprocess']]) ? $a[$b['destprocess']]['sum'] += $b['sum'] : $a[$b['destprocess']] = $b;
-            return $a;
-        });
-        $data = array (
+        $data = array(
             "dashboard"       => $this->Application_model->get_dashboard_general(date("Y-m-d")),
-            "pending_branch"       => $this->Application_model->get_user_branch_pending($this->session->emp_id),
-            "pending_total"       => $this->Application_model->get_user_branch_total($this->session->emp_id),
-            "count"       => $sum,
-            "user_branch"       => $getBranch,
-            "count_branch_pending"       => $new_array
+            "pending_branch"  => $this->Application_model->get_user_branch_pending($this->session->emp_id),
+            "pending_total"   => $this->Application_model->get_user_branch_total($this->session->emp_id)
         );
-
-        $this->load->view("onepuhunan/dashboard", $data);
+        $this->load->view("onepuhunan/dashboard",$data);
     }
     public function audDashboard() {
         $this->load->view("aud_dashboard");
