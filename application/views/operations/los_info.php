@@ -13,7 +13,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     </div>
                     <div class="col-md-9">
                         <h1 id="hrtitle"><?=$cl_info['C_Name']?></h1>
-                        <h4 class="badge"><?=$cl_tags['DestProcess']?></h4>
+                        <h2 class="badge" style="font-size:2em"> <?=$cl_tags['DestProcess']?></h2>
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
 
                     <!-- client's snapshot -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h2>
                     <div class="form-group">
                         <table class="table table-striped op-table E1">
                             <thead>
@@ -59,114 +59,96 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
                 <div id="get_los_laf_repeat_display">
                     <!-- repeat loan details  -->
-                        <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
+                        <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
                         <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-4 text-bold">Account ID</div>
-                                <div class="col-md-8">
-                                    <span><div class="ret">Retrieving..</div></span>
-                                    <span class="font-weight-bold">Attendance Ratio</span>
-                                    <span>
-                                   <div class="ret">Retrieving..</div>
-                                    </span>
-                                </div>
+                            <div class="row bordered">
+                                <div class="col-md-3 text-bold dd-even">Account ID</div>
+                                <div class="col-md-3 dd-even"><div class="ret">Retrieving..</div></div>
+                                <div class="col-md-3 text-bold">Attendance Ratio</div>
+                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 text-bold">No. of Arrear Days</div>
-                                <div class="col-md-8">
-                                    <span><div class="ret">Retrieving..</div></span>
-                                    <span class="font-weight-bold">Attendance Count</span>
-                                    <span><div class="ret">Retrieving..</div></span>
-                                </div>
+                                <div class="col-md-3 text-bold">No. of Arrear Days</div>
+                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
+                                <div class="col-md-3 text-bold">Attendance Count</div>
+                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 text-bold">Delayed Payments</div>
-                                <div class="col-md-8">
-                                    <span><div class="ret">Retrieving..</div></span>
-                                    <span class="font-weight-bold">Meetings</span>
-                                    <span><div class="ret">Retrieving..</div></span>
-                                </div>
+                                <div class="col-md-3 text-bold">Delayed Payments</div>
+                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
+                                <div class="col-md-3 text-bold">Meetings</div>
+                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 text-bold">Past Due Amount</div>
-                                <div class="col-md-8"><span>&#8369; <div class="ret">Retrieving..</div></span>
-                                    <span class="font-weight-bold">Outstanding Principal</span>
-                                    <span>&#8369; <div class="ret">Retrieving..</div></span>
-                                </div>
+                                <div class="col-md-3 text-bold">Past Due Amount</div>
+                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
+                                <div class="col-md-3 text-bold">Outstanding Principal</div>
+                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-4 text-bold">Maturity Date</div>
-                                <div class="col-md-8">
-                                    <span><div class="ret">Retrieving..</div></span>
-                                    <span class="font-weight-bold">Closed Date</span>
-                                    <span><div class="ret">Retrieving..</div></span>
-                                </div>
+                                <div class="col-md-3 text-bold">Maturity Date</div>
+                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
+                                <div class="col-md-3 text-bold">Closed Date</div>
+                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
                             </div>
                         </div>
                 </div>
 
                     <!-- personal details -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
                     <div class="row">
-                        <div class="col-md-4 text-bold">Name</div>
-                        <div class="col-md-8"><?=$cl_info['C_Name']?></div>
+                        <div class="col-md-3 text-bold">Name</div>
+                        <div class="col-md-9"><mark><?=$cl_info['C_Name']?></mark></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 text-bold">Present Address</div>
-                        <div class="col-md-8"><?=$cl_info['C_PresentAdd']?></div>
+                        <div class="col-md-3 text-bold">Present Address</div>
+                        <div class="col-md-9"><mark><?=$cl_info['C_PresentAdd']?></mark></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 text-bold">Permanent Address</div>
-                        <div class="col-md-8"><?=$cl_info['C_PermanentAdd']?></div>
+                        <div class="col-md-3 text-bold">Permanent Address</div>
+                        <div class="col-md-9"><mark><?=$cl_info['C_PermanentAdd']?></mark></div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 text-bold">BirthDate</div>
-                        <div class="col-md-8">
-                            <span><?=$cl_info['C_DOB']?></span>
-                            <span class="font-weight-bold">Age</span>
-                            <span>
-                                <?php
-                                if ($cl_info['C_Age'] > 65) {
-                                    echo $cl_info['C_Age'] . $err . 'Borrower is over the age of 65">!</div>';
-                                } else if ($cl_info['C_Age'] < 18) {
-                                    echo $cl_info['C_Age'] . $err . 'Borrower is under the age of 18">!</div>';
-                                } else {
-                                    echo $cl_info['C_Age'];
-                                }
-                                ?>
-                            </span>
-                        </div>
+                        <div class="col-md-3 text-bold">BirthDate</div>
+                        <div class="col-md-3 "><mark><?=$cl_info['C_DOB']?></mark></div>
+                        <div class="col-md-3 text-bold">Age</div>
+                        <div class="col-md-3 "><mark>
+                            <?php
+                            if ($cl_info['C_Age'] > 65) {
+                                echo $cl_info['C_Age'] . $err . 'Borrower is over the age of 65">!</div>';
+                            } else if ($cl_info['C_Age'] < 18) {
+                                echo $cl_info['C_Age'] . $err . 'Borrower is under the age of 18">!</div>';
+                            } else {
+                                echo $cl_info['C_Age'];
+                            }
+                            ?></mark></div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-4 text-bold">Contact Number</div>
-                        <div class="col-md-8">
-                            <span>
-                                <?php
-                                if (strlen($cl_info['C_ContactNo']) < 11) {
-                                    echo $cl_info['C_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
-                                } else {
-                                    echo $cl_info['C_ContactNo'];
-                                }
-                                ?>
-                            </span>
-                            <span class="font-weight-bold">Residence Ownership</span>
-                            <span><?=$cl_info['ResidenceOwnership']?></span>
-                        </div>
-                    </div>
+                <div class="row">
+                    <div class="col-md-3 text-bold">Contact Number</div>
+                    <div class="col-md-3 "><mark> <?php
+                            if (strlen($cl_info['C_ContactNo']) < 11) {
+                                echo $cl_info['C_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
+                            } else {
+                                echo $cl_info['C_ContactNo'];
+                            }
+                            ?></mark></div>
+                    <div class="col-md-3 text-bold">Residence Ownership</div>
+                    <div class="col-md-3 "><mark><?=$cl_info['ResidenceOwnership']?></mark></div>
+                </div>
 
                     <!-- co-borrower details -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4 text-bold">Co-Borrower Name</div>
-                            <div class="col-md-8"><?=$cl_info['B_Name']?></div>
+                            <div class="col-md-3 text-bold">Co-Borrower Name</div>
+                            <div class="col-md-9"><mark><?=$cl_info['B_Name']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Co-Borrower Birthdate</div>
-                            <div class="col-md-8">
-                                <span><?=$cl_info['B_DOB']?></span>
-                                <span class="font-weight-bold">Age</span>
-                                <span>
+                            <div class="col-md-3 text-bold">Co-Borrower Birthdate</div>
+                            <div class="col-md-3 "><mark><?=$cl_info['B_DOB']?></mark></div>
+                            <div class="col-md-3 text-bold">Age</div>
+                            <div class="col-md-3">
+                                <mark>
                                     <?php
                                     if ($cl_info['B_Age'] > 65) {
                                         echo $cl_info['B_Age'] . $err . 'Co-Borrower is over the age of 65"">!</div>';
@@ -176,20 +158,21 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                         echo $cl_info['B_Age'];
                                     }
                                     ?>
-                                </span>
+                                </mark>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Employer / Business Name</div>
-                            <div class="col-md-8"><?=$cl_info['B_EmployerName']?></div>
+                            <div class="col-md-3 text-bold">Employer / Business Name</div>
+                            <div class="col-md-9"><mark><?=$cl_info['B_EmployerName']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Work / Business Address</div>
-                            <div class="col-md-8"><?=$cl_info['B_BusinessAdd']?></div>
+                            <div class="col-md-3 text-bold">Work / Business Address</div>
+                            <div class="col-md-9"><mark><?=$cl_info['B_BusinessAdd']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Contact Number</div>
-                            <div class="col-md-8">
+                            <div class="col-md-3 text-bold">Contact Number</div>
+                            <div class="col-md-9">
+                                <mark>
                                 <?php
                                 if (strlen($cl_info['B_ContactNo']) < 11) {
                                     echo $cl_info['B_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
@@ -197,90 +180,81 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                     echo $cl_info['B_ContactNo'];
                                 }
                                 ?>
+                                </mark>
                             </div>
                         </div>
                     </div>
 
                     <!-- business information -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4 text-bold">Name of Business</div>
-                            <div class="col-md-8"><?=$cl_info['BusinessName']?></div>
+                            <div class="col-md-3 text-bold">Name of Business</div>
+                            <div class="col-md-9"><mark><?=$cl_info['BusinessName']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Business Address</div>
-                            <div class="col-md-8"><?=$cl_info['BusinessAdd']?></div>
+                            <div class="col-md-3 text-bold">Business Address</div>
+                            <div class="col-md-9"><mark><?=$cl_info['BusinessAdd']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Business Type</div>
-                            <div class="col-md-8">
-                                <span><?=$cl_info['BusinessType']?></span>
-                                <span class="font-weight-bold">Contact Number</span>
-                                <span><?=$cl_info['BusinessContactNo']?></span>
-                            </div>
+                            <div class="col-md-3 text-bold">Business Type</div>
+                            <div class="col-md-3 "><mark><?=$cl_info['BusinessType']?></mark></div>
+                            <div class="col-md-3 text-bold">Contact Number</div>
+                            <div class="col-md-3 "><mark><?=$cl_info['BusinessContactNo']?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Business Size</div>
-                            <div class="col-md-8">
-                                <span><?=$cl_info['BusinessSize']?></span>
-                                <span class="font-weight-bold">Years in Business</span>
-                                <span id="txt_dbr" name="txt_dbr">
-                                        <?php
-                                        if($cl_info['YrsInBusiness'] < 1) {
-                                            echo $cl_info['YrsInBusiness'] . $err . 'Business must be at least 1 year older">!</div>';
-                                        } else {
-                                            echo $cl_info['YrsInBusiness'];
-                                        }
-                                        ?>
-                                    </span>
-                            </div>
+                            <div class="col-md-3 text-bold">Business Size</div>
+                            <div class="col-md-3 "><mark><?=$cl_info['BusinessSize']?></mark></div>
+                            <div class="col-md-3 text-bold">Years in Business</div>
+                            <div class="col-md-3 "><mark>
+                                    <?php
+                                    if($cl_info['YrsInBusiness'] < 1) {
+                                        echo $cl_info['YrsInBusiness'] . $err . 'Business must be at least 1 year older">!</div>';
+                                    } else {
+                                        echo $cl_info['YrsInBusiness'];
+                                    }
+                                    ?></mark></div>
+
                         </div>
                     </div>
 
                     <!-- cashflow assessment (monthly) -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-4 text-bold">Gross Sales</div>
-                            <div class="col-md-8">
-                                <span>&#8369; <?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></span>
-                                <span class="font-weight-bold">Loan Installment</span>
-                                <span>&#8369; <?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></span>
-                            </div>
+                            <div class="col-md-3 text-bold">Gross Sales</div>
+                            <div class="col-md-3 "><mark><?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></mark></div>
+                            <div class="col-md-3 text-bold">Loan Installment</div>
+                            <div class="col-md-3 "><mark> <?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></mark></div>
                         </div>
                         <div class="row">
-                            <div class="col-md-4 text-bold">Net Business Income</div>
-                            <div class="col-md-8">
-                                <span>&#8369; <?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></span>
-                                <span class="font-weight-bold">Debt Burden Ratio</span>
-                                <span><b>
-                                        <?php
-                                        if($cl_info['DBR'] > 40) {
-                                            echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
-                                        } else {
-                                            echo $cl_info['DBR'] . '%';
-                                        }
-                                        ?>
-
-                                </b></span><br/>
-                                <span></span>
-                                <span class="font-weight-bold">Debt Burden Ratio 2</span>
-                                <span><b>
-                                        <?php
-                                        if($cl_dbr2['DBR2'] > 40) {
-                                            echo $cl_dbr2['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
-                                        } else {
-                                            echo $cl_dbr2['DBR2'] . '%';
-                                        }
-                                        ?>
-                                    </b></span>
+                            <div class="col-md-3 text-bold">Net Business Income</div>
+                            <div class="col-md-3 "><mark><?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></mark></div>
+                            <div class="col-md-3 text-bold">Debt Burden Ratio</div>
+                            <div class="col-md-3 "> <mark><?php
+                                if($cl_info['DBR'] > 40) {
+                                    echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
+                                } else {
+                                    echo $cl_info['DBR'] . '%';
+                                }
+                                    ?></mark></div>
+                            <div class="col-md-3 text-bold"></div>
+                            <div class="col-md-3 "></div>
+                            <div class="col-md-3 text-bold">Debt Burden Ratio 2</div>
+                            <div class="col-md-3 "><mark>
+                                <?php
+                                if($cl_dbr2['DBR2'] > 40) {
+                                    echo $cl_dbr2['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
+                                } else {
+                                    echo $cl_dbr2['DBR2'] . '%';
+                                }
+                                ?></mark>
                             </div>
                         </div>
                     </div>
 
                     <!-- liabilities and assets -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  LIABILITIES AND ASSETS</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  LIABILITIES AND ASSETS</h2>
                     <div class="form-group">
                             <table class="table table-striped op-table E1">
                                 <thead>
@@ -311,7 +285,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </div>
 
                     <!-- beneficiary's details -->
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  BENEFICIARY'S DETAILS</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BENEFICIARY'S DETAILS</h2>
                     <div class="form-group">
                             <table class="table table-striped op-table E1">
                                 <thead>
@@ -333,7 +307,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
                     <!-- tellecaller question -->
                     <?php if($this->session->role_id == 'tc') { ?>
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
                         <form id="los_tc_form" class="uk-form" method="post" action="<?=$cl_info['LAF']?>/submit">
                             <table class="table table-striped table-fix op-table E1">
@@ -364,7 +338,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
                     <!-- sanction (cpu) -->
                     <?php if($this->session->role_id == 'cpu' && count($cl_tc_display) > 0) { ?>
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
                         <table class="table table-striped table-fix op-table E1">
                             <thead>
@@ -393,7 +367,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <?php } ?>
 
 
-                    <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  REMARKS/ COMMENTS</h2>
+                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  REMARKS/ COMMENTS</h2>
                     <?php if (count($cl_remarks) > 0) { ?>
                         <div class="form-group">
                             <table class="table table-striped table-fix op-table E1">

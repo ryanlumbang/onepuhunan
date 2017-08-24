@@ -58,6 +58,22 @@ a:hover.back-to-top {
     border: 1px solid #ddd;
     margin-bottom: 20px;
 }
+
+.title_los {
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    padding: 0.5em;
+    border-bottom: 1px solid #B3CBD6;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+    height: 40px;
+    background: rgba(95, 107, 97, 1);
+    box-shadow: 1px 3px 0px #6e7174;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
 table.dataTable.no-footer {
     border-bottom: 1px solid #4695bb !important;
 }
