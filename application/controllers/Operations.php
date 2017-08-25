@@ -147,12 +147,12 @@
                 "cl_info"       => $this->Operations_model->get_los_laf_details($input),
                 "cl_dbr2"       => $this->Operations_model->get_los_laf_dbr2($input),
                 "cl_asset"      => $this->Operations_model->get_los_laf_asset_liabilities($input),
-                "cl_error"      => $this->Operations_model->get_los_laf_err($input),
+                "cl_error"      => null,//$this->Operations_model->get_los_laf_err($input),
                 "cl_remarks"    => $this->Operations_model->get_los_laf_hist_remarks($input),
                 "cl_tags"       => $this->Operations_model->get_los_laf_tags($input),
                 "cl_tc"         => $this->Operations_model->get_los_laf_tc_questions($input),
                 "cl_tc_display" => $this->Operations_model->get_los_laf_tc_display($input),
-                "cl_repeat"     => $this->Operations_model->get_los_laf_repeat_display($input),
+                "cl_repeat"     => null,//$this->Operations_model->get_los_laf_repeat_display($input),
                 "input"         => $input
             );
             $this->load->view("operations/los_info", $data);
