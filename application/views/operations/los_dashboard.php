@@ -6,13 +6,10 @@
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <br/>  
             <?php foreach((array) $ln_branch as $key => $row) { ?>
-                <div class="global-toggle-head" data-toggle="collapse" data-target="#demo-<?=$key?>">
-                    <h3><?=$row['BranchName']?> </h3>
-                </div>
+                <h2 class="title"><i class="glyphicon glyphicon-tag"></i><?=$row['BranchName']?> </h2>
                 <div id="demo-<?=$key?>" class="collapse <?php echo($key==0 ? 'in' : '')?>">
-                    <table class="table table-striped op-table E1">
+                    <table id="tb_center" class="table table-striped op-table E1">
                         <thead>
                             <tr>
                                 <th>CENTER NAME</th>

@@ -5,6 +5,38 @@ $data['title'] = 'OnePuhunan';
     <div class="main">
         <div class="main-inner">
             <div class="container">
+             <?php if($this->session->role_id == 'bm') { ?>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="widget widget-nopad">
+                                        <div class="widget-header text-center">
+                                           <h3>Total Pending</h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div class="text-center default-margin row">
+
+                                                <div class="col-xs-12">
+                                                        <?php
+                                                        foreach((array) $pending_branch as $row) {
+                                                            $result = '<h2 class="value">'
+                                                                . '<span>' . $row['bmv'] . '</span>'
+                                                                . '</h2>';
+                                                            echo $result;
+                                                        }
+                                                        ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
                 <?php if($this->session->role_id == 'tc') { ?>
                     <br/>
                     <div class="row">
