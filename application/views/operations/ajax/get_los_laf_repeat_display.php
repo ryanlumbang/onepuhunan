@@ -8,7 +8,8 @@
             <div class="col-md-3 text-bold">Attendance Ratio</div>
             <div class="col-md-3 ">   <?php
                 if($cl_repeat['MeetingCnt'] != 0 ) {
-                    echo ($cl_repeat['AttendanceCnt'] / $cl_repeat['MeetingCnt']) * 100;
+                    $ans = ($cl_repeat['AttendanceCnt'] / $cl_repeat['MeetingCnt']) * 100;
+                    echo round($ans,2);
                 } else {
                     echo 0;
                 }

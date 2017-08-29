@@ -8,11 +8,10 @@ ini_set('max_execution_time', 0)
         <div class="container">
             <br/>
             <h2 class="title"><i class="glyphicon glyphicon-tag"></i>  Branch Center</h2>
-            <table id="tb_center" class="table table-striped op-table E1">
+            <table id="tb_center" class="table table-striped cell-border op-table E1">
                     <thead>
                     <tr>
-                        <th>CENTER NAME</th>
-                        <th class="text-center" width="15%"></th>
+                        <th width="40%">CENTER NAME</th>
                         <th class="text-center" width="10%">KYC</th>
                         <th class="text-center" width="10%">BMV</th>
                         <th class="text-center" width="10%">ALAF</th>
@@ -26,8 +25,7 @@ ini_set('max_execution_time', 0)
                     if(count($centerlist) > 0) {
                         foreach((array) $centerlist as $status) {
                             $result = '<tr>'
-                                . '<td><a  target="_blank" href="los/' . base64_encode('X') . '/' . $branch_code . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>'
-                                . '<td class="text-center">' .  '</td>';
+                                . '<td><a  target="_blank" href="los/' . base64_encode('X') . '/' . $branch_code . '/' . $status['GroupID'] . '">' . $status['Group'] . '</a></td>';
 
                             /* kyc */
                             if($this->session->role_id === 'qa'  OR $this->session->role_id == 'qa_new' OR $this->session->role_id == 'qa_rpt') {

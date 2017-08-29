@@ -271,7 +271,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
 
                         <div class="form-group row">
                             <div class="col-xs-6">
-                                <button type="submit" class=" form-control global-button" form="form_sanction_report" id="sanction">Generate Report</button>
+                                <button type="submit" class=" form-control global-button global-button-success" form="form_sanction_report" id="sanction">Generate Report</button>
                             </div>
                             <div class="col-xs-6">
                                 <a href="<?php echo site_url("dashboard"); ?>" class="btn  form-control global-button">Cancel</a>

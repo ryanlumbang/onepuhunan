@@ -94,12 +94,13 @@ table.dataTable.no-footer {
 }
 
 
-.table-striped>tbody>tr:nth-of-type(odd) {
+.table-striped>tbody>tr:nth-of-type(even) {
     background-color: #adc9d4;
 }
 
 .E1 tr:not(:last-child) td {
     border-bottom: 1pt solid #999;
+
 }
 
 table {
@@ -107,4 +108,11 @@ table {
 }
 .dropdown-menu > li > a:hover {
     color: #fff;
+}
+h3.sup{
+    color: #a94442 !important;
+    font-weight: 800 !important;
+}
+td{
+    vertical-align: middle !important;
 }

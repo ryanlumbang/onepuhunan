@@ -81,7 +81,8 @@ textarea {
 }
 
 .table td {
-	vertical-align: middle;
+	vertical-align: middle !important;
+	border-right: 1px solid #ddd !important;
 }
 
 .table-bordered th {
@@ -1343,5 +1344,4 @@ color: #333;
 	color: white;
 	*background-color: #458B74;
 }
-
 
