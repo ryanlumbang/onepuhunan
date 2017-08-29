@@ -1,33 +1,38 @@
-@import url(https://fonts.googleapis.com/css?family=Helvetica-Neue:200,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:200,300);
 * {
     box-sizing: border-box;
     margin: 0;
     font-weight: 300;
 }
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: "Roboto";
     font-weight: 300;
 }
 body ::-webkit-input-placeholder {
     /* WebKit browsers */
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: "Roboto";
     font-weight: 300;
 }
 body :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: "Roboto";
     opacity: 1;
     font-weight: 300;
 }
 body ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: "Roboto";
     opacity: 1;
     font-weight: 300;
 }
 body :-ms-input-placeholder {
     /* Internet Explorer 10+ */
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: "Roboto";
     font-weight: 300;
 }
 .no-margin{margin: 0}

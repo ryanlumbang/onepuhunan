@@ -160,7 +160,7 @@ $data['title'] = 'OnePuhunan';
                             <div class="col-md-6 col-xs-12">
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total KYC NEW </h3>
+                                        <i class="icon-list-alt"></i><h3>Total KYC NEW </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -173,7 +173,7 @@ $data['title'] = 'OnePuhunan';
                                 </div>
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total ALAF NEW </h3>
+                                        <i class="icon-list-alt"></i> <h3>Total ALAF NEW </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -188,7 +188,7 @@ $data['title'] = 'OnePuhunan';
                             <div class="col-md-6 col-xs-12">
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total KYC REPEAT </h3>
+                                        <i class="icon-list-alt"></i><h3>Total KYC REPEAT </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -201,7 +201,7 @@ $data['title'] = 'OnePuhunan';
                                 </div>
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total ALAF REPEAT </h3>
+                                        <i class="icon-list-alt"></i><h3>Total ALAF REPEAT </h3>
                                     </div>
                                     <div class="widget-content text-center">
                                         <div class="text-center default-margin row">
