@@ -30,9 +30,9 @@
                     <tr class="modal-update">
                         <td> <?php echo $row['question_no'] ?> </td>
                         <td> <?php echo $row['question'] ?> </td>
-                        <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_new'] ?>"></td>
-                        <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_repeat'] ?>"></td>
-                        <td> <input type="hidden" name="checkme" value="0"><input type="checkbox" name="checkme" value="<?php echo $row['is_set'] ?>"></td>
+                        <td> <input type="hidden" name="checkme" value="0"><input disabled type="checkbox" name="checkme" value="<?php echo $row['is_new'] ?>"></td>
+                        <td> <input type="hidden" name="checkme" value="0"><input disabled type="checkbox" name="checkme" value="<?php echo $row['is_repeat'] ?>"></td>
+                        <td> <input type="hidden" name="checkme" value="0"><input disabled type="checkbox" name="checkme" value="<?php echo $row['is_set'] ?>"></td>
                         <td>
                             <a href="<?php echo site_url("sys/tc_question/update?quest1=".$row['question_no']."&quest=".$row['question']."&new=".$row['is_new']."&repeat=".$row['is_repeat']."&set=".$row['is_set'].""); ?>"
                                data-question="<?php echo $row['question'] ?>" data-new="<?php echo $row['is_new'] ?>" data-repeat="<?php echo $row['is_repeat'] ?>"
