@@ -156,21 +156,21 @@ $(document).ready(function() {
                     }
                 } else if(role_id === 'qa'){
                     if(group == 'KYC' || group == 'ALAF'){
-                        $(rows).eq(i).find("input").attr("disabled", false);
+                        $(rows).eq(i).find("input").attr("disabled", true);
                         $(rows).eq(i).find("button").attr("disabled", false);
                     } else {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
                     }
                 } else if(role_id === 'cpu'){
                     if(group == 'SANCTION'){
-                        $(rows).eq(i).find("input").attr("disabled", false);
+                        $(rows).eq(i).find("input").attr("disabled", true);
                         $(rows).eq(i).find("button").attr("disabled", false);
                     } else {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
                     }
                 } else if(role_id === 'bm'){
                     if(group == 'BMV'){
-                        $(rows).eq(i).find("input").attr("disabled", false);
+                        $(rows).eq(i).find("input").attr("disabled", true);
                         $(rows).eq(i).find("button").attr("disabled", false);
                     } else {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
@@ -178,7 +178,6 @@ $(document).ready(function() {
                 }
             });
         },
-        'bSort': false,
         'dom': '<"toolbar">frtip'
     });
     tbl_los.order( [ 11, 'desc' ] ).draw();

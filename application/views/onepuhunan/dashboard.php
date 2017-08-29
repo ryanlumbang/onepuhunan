@@ -217,7 +217,7 @@ $data['title'] = 'OnePuhunan';
                     </div>
                     <div class="col-md-12">
                         <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
-                        <table class="table table-striped op-table E1">
+                        <table class="table table-striped cell-border op-table E1">
                             <thead>
                             <tr class="tr-content box-header-bottom">
                                 <th>Branch</th>
