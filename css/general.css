@@ -108,3 +108,7 @@ table {
 .dropdown-menu > li > a:hover {
     color: #fff;
 }
+h3.sup{
+    color: #a94442 !important;
+    font-weight: 800 !important;
+}
