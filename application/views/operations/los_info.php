@@ -13,7 +13,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     </div>
                     <div class="col-md-9">
                         <h1 id="hrtitle"><?=$cl_info['C_Name']?></h1>
-                        <h2 class="badge" style="font-size:2em"> <?=$cl_tags['DestProcess']?></h2>
+                        <h2  style="font-size:2em; font-weight: bold">" <?=$cl_tags['DestProcess']?> "</h2>
                     </div>
                 </div>
 
@@ -33,24 +33,24 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         <table class="table table-striped op-table E1">
                             <thead>
                             <tr>
-                                <th width="10%">LAF</th>
-                                <th width="12%">Applied Loan Amount</th>
-                                <th width="12%">Application Date</th>
-                                <th width="12%">Client ID</th>
-                                <th width="12%">BRNET Client ID</th>
-                                <th width="12%">Branch ID</th>
-                                <th width="16.7%">Branch Name</th>
+                                <th width="10%" class="text-center">LAF</th>
+                                <th width="12%" class="text-center">Applied Loan Amount</th>
+                                <th width="12%" class="text-center">Application Date</th>
+                                <th width="12%" class="text-center">Client ID</th>
+                                <th width="12%" class="text-center">BRNET Client ID</th>
+                                <th width="12%" class="text-center">Branch ID</th>
+                                <th width="16.7%" class="text-center">Branch Name</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><?=$cl_info['LAF']?></td>
-                                <td>&#8369; <?=number_format($cl_info['AppliedLoanAmount'], 2, '.', ',')?></td>
-                                <td><?=$cl_info['ApplicationDate']?></td>
-                                <td><?=$cl_info['ClientID']?></td>
-                                <td><?=$cl_info['BRNETClientID']?></td>
-                                <td><?=$cl_info['BranchID']?></td>
-                                <td><?=$cl_info['BranchName']?> </td>
+                                <td class="text-center"><?=$cl_info['LAF']?></td>
+                                <td class="text-center">&#8369; <?=number_format($cl_info['AppliedLoanAmount'], 2, '.', ',')?></td>
+                                <td class="text-center"><?=$cl_info['ApplicationDate']?></td>
+                                <td class="text-center"><?=$cl_info['ClientID']?></td>
+                                <td class="text-center"><?=$cl_info['BRNETClientID']?></td>
+                                <td class="text-center"><?=$cl_info['BranchID']?></td>
+                                <td class="text-center"><?=$cl_info['BranchName']?> </td>
                             </tr>
                             </tbody>
                         </table>
@@ -61,118 +61,158 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- repeat loan details  -->
                         <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
                         <div class="form-group">
-                            <div class="row bordered">
-                                <div class="col-md-3 text-bold dd-even">Account ID</div>
-                                <div class="col-md-3 dd-even"><div class="ret">Retrieving..</div></div>
-                                <div class="col-md-3 text-bold">Attendance Ratio</div>
-                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 text-bold">No. of Arrear Days</div>
-                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
-                                <div class="col-md-3 text-bold">Attendance Count</div>
-                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 text-bold">Delayed Payments</div>
-                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
-                                <div class="col-md-3 text-bold">Meetings</div>
-                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 text-bold">Past Due Amount</div>
-                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
-                                <div class="col-md-3 text-bold">Outstanding Principal</div>
-                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 text-bold">Maturity Date</div>
-                                <div class="col-md-3 "><spa><div class="ret">Retrieving..</div></spa></div>
-                                <div class="col-md-3 text-bold">Closed Date</div>
-                                <div class="col-md-3 "><div class="ret">Retrieving..</div></div>
-                            </div>
+                            <table class="table table-striped op-table E1">
+                                <thead>
+                                <tr>
+                                    <th width="10%" class="text-center">Account ID</th>
+                                    <th width="12%" class="text-center">Attendance Ratio</th>
+                                    <th width="12%" class="text-center">No. of Arrear Days</th>
+                                    <th width="12%" class="text-center">Attendance Count</th>
+                                    <th width="12%" class="text-center">Delayed Payments</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-striped op-table E1">
+                                <thead>
+                                <tr>
+                                    <th width="10%" class="text-center">Meetings</th>
+                                    <th width="12%" class="text-center">Past Due Amount</th>
+                                    <th width="12%" class="text-center">Outstanding Principal</th>
+                                    <th width="12%" class="text-center">Maturity Date</th>
+                                    <th width="12%" class="text-center">Closed Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                    <td class="text-center"><div class="ret">Retrieving..</div></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                 </div>
 
                     <!-- personal details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
-                    <div class="row">
-                        <div class="col-md-3 text-bold">Name</div>
-                        <div class="col-md-9"><?=$cl_info['C_Name']?></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 text-bold">Present Address</div>
-                        <div class="col-md-9"><?=$cl_info['C_PresentAdd']?></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 text-bold">Permanent Address</div>
-                        <div class="col-md-9"><?=$cl_info['C_PermanentAdd']?></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 text-bold">BirthDate</div>
-                        <div class="col-md-3 "><?=$cl_info['C_DOB']?></div>
-                        <div class="col-md-3 text-bold">Age</div>
-                        <div class="col-md-3 ">
-                            <?php
-                            if ($cl_info['C_Age'] > 65) {
-                                echo $cl_info['C_Age'] . $err . 'Borrower is over the age of 65">!</div>';
-                            } else if ($cl_info['C_Age'] < 18) {
-                                echo $cl_info['C_Age'] . $err . 'Borrower is under the age of 18">!</div>';
-                            } else {
-                                echo $cl_info['C_Age'];
-                            }
-                            ?></div>
-                    </div>
-                <div class="row">
-                    <div class="col-md-3 text-bold">Contact Number</div>
-                    <div class="col-md-3 "> <?php
-                            if (strlen($cl_info['C_ContactNo']) < 11) {
-                                echo $cl_info['C_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
-                            } else {
-                                echo $cl_info['C_ContactNo'];
-                            }
-                            ?></div>
-                    <div class="col-md-3 text-bold">Residence Ownership</div>
-                    <div class="col-md-3 "><?=$cl_info['ResidenceOwnership']?></div>
-                </div>
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="60%" class="text-center">Name</th>
+                            <th width="40%" class="text-center">Age</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=$cl_info['C_Name']?></td>
+                            <td class="text-center">
+                                <?php
+                                if ($cl_info['C_Age'] > 65) {
+                                    echo $cl_info['C_Age'] . $err . 'Borrower is over the age of 65">!</div>';
+                                } else if ($cl_info['C_Age'] < 18) {
+                                    echo $cl_info['C_Age'] . $err . 'Borrower is under the age of 18">!</div>';
+                                } else {
+                                    echo $cl_info['C_Age'];
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="35%" class="text-center">BirthDate</th>
+                            <th width="35%" class="text-center">Contact Number</th>
+                            <th width="30%" class="text-center">Residence Ownership</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=$cl_info['C_DOB']?></td>
+                            <td class="text-center">
+                                <?php
+                                if (strlen($cl_info['C_ContactNo']) < 11) {
+                                    echo $cl_info['C_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
+                                } else {
+                                    echo $cl_info['C_ContactNo'];
+                                }
+                                ?>
+                            </td>
+                            <td class="text-center"><?=$cl_info['ResidenceOwnership']?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="50%" class="text-center">Present Address</th>
+                            <th width="50%" class="text-center">Permanent Address</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=$cl_info['C_PresentAdd']?></td>
+                            <td class="text-center">
+                                <?=$cl_info['C_PermanentAdd']?>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                     <!-- co-borrower details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Co-Borrower Name</div>
-                            <div class="col-md-9"><?=$cl_info['B_Name']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Co-Borrower Birthdate</div>
-                            <div class="col-md-3 "><?=$cl_info['B_DOB']?></div>
-                            <div class="col-md-3 text-bold">Age</div>
-                            <div class="col-md-3">
-                                
-                                    <?php
-                                    if ($cl_info['B_Age'] > 65) {
-                                        echo $cl_info['B_Age'] . $err . 'Co-Borrower is over the age of 65"">!</div>';
-                                    } else if ($cl_info['B_Age'] < 18) {
-                                        echo $cl_info['B_Age'] . $err . 'Co-Borrower is under the age of 18">!</div>';
-                                    } else {
-                                        echo $cl_info['B_Age'];
-                                    }
-                                    ?>
-                                
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Employer / Business Name</div>
-                            <div class="col-md-9"><?=$cl_info['B_EmployerName']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Work / Business Address</div>
-                            <div class="col-md-9"><?=$cl_info['B_BusinessAdd']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Contact Number</div>
-                            <div class="col-md-9">
-                                
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="60%" class="text-center">Co-Borrower Name</th>
+                            <th width="20%" class="text-center">Co-Borrower Birthdate</th>
+                            <th width="20%" class="text-center">Age</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=$cl_info['B_Name']?></td>
+                            <td class="text-center"><?=$cl_info['B_DOB']?></td>
+                            <td class="text-center">
+                                <?php
+                                if ($cl_info['B_Age'] > 65) {
+                                    echo $cl_info['B_Age'] . $err . 'Co-Borrower is over the age of 65"">!</div>';
+                                } else if ($cl_info['B_Age'] < 18) {
+                                    echo $cl_info['B_Age'] . $err . 'Co-Borrower is under the age of 18">!</div>';
+                                } else {
+                                    echo $cl_info['B_Age'];
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="40%" class="text-center">Employer / Business Name</th>
+                            <th width="40%" class="text-center">Work / Business Address</th>
+                            <th width="20%" class="text-center">Contact Number</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=$cl_info['B_EmployerName']?></td>
+                            <td class="text-center"><?=$cl_info['B_BusinessAdd']?></td>
+                            <td class="text-center">
+
                                 <?php
                                 if (strlen($cl_info['B_ContactNo']) < 11) {
                                     echo $cl_info['B_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
@@ -180,10 +220,11 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                     echo $cl_info['B_ContactNo'];
                                 }
                                 ?>
-                                
-                            </div>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
 
                     <!-- business information -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>

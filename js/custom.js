@@ -132,7 +132,7 @@ $(document).ready(function() {
 
             api.column(12, { page : 'current' }).data().each( function(group, i) {
                 if (last !== group) {
-                    $(rows).eq(i).before('<tr class="group uk-text-bold" style="background:#dce6f0; color:#908686"><td colspan="12">' + group + '</td></tr>');
+                    $(rows).eq(i).before('<tr class="group uk-text-bold" style="background:#e9eef9"><td colspan="12">' + group + '</td></tr>');
                     last = group;
                 }
             });
