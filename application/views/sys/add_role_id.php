@@ -7,7 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | ADD Role ID';
         <div class="container">
 
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1 class="text-center">ADD ROLE ID</h1>
+            <h2 class="text-center">ADD ROLE ID</h2>
             <?php echo validation_errors(); ?>
             <?php
 

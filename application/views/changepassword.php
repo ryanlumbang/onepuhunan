@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1>CONFIRMATION</h1>
+            <h2>CONFIRMATION</h2>
             <label>Enter the Employee ID to confirm.</label>
             <?php echo validation_errors(); ?>
             <?php

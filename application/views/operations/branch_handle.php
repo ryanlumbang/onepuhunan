@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small", "id" => "branch_form"));?>
-            <h1 class="text-center">BRANCH HANDLE</h1>
+            <h2 class="text-center">BRANCH HANDLE</h2>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_upd_emp_branch) ) {
