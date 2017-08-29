@@ -4,8 +4,8 @@
     //Date   : November 04, 2016
 
     class Profile extends CI_Controller {
-        public function _construct() {
-            parent:: _construct();
+        public function __construct() {
+            parent:: __construct();
         }
         
         public function index() {

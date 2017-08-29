@@ -1,6 +1,12 @@
 <?php
 $data['title'] = 'OnePuhunan';
 ?>
+<?php var_dump($this->session->set_userdata['logged_in']);
+if ($this->session->set_userdata['logged_in'] != 1)
+{
+    redirect(site_url());
+}
+?>
 <?php $this->load->view("onepuhunan/header", $data); ?>
     <div class="main">
         <div class="main-inner">
