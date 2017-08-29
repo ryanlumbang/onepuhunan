@@ -87,14 +87,14 @@ table.dataTable.no-footer {
 
 .op-table thead {
     color: #fff;
-    background-color: #044a65;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr= #044a65, endColorstr=#5e9dc8);
-    background-image: -moz-linear-gradient(top, #044a65 0%, #5e9dc8 100%);
-    background-image: -webkit-linear-gradient(top, #044a65 0%, #5e9dc8 100%);
-    background-image: -ms-linear-gradient(top, #044a65 0%, #5e9dc8 100%);
-    background-image: linear-gradient(top, #044a65 0%, #5e9dc8 100%);
-    background-image: -o-linear-gradient(top, #044a65 0%, #5e9dc8 100%);
-    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #044a65), color-stop(100%,#5e9dc8));
+    background-color: #004886;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr= #004886, endColorstr=#5e9dc8);
+    background-image: -moz-linear-gradient(top, #004886 0%, #5e9dc8 100%);
+    background-image: -webkit-linear-gradient(top, #004886 0%, #5e9dc8 100%);
+    background-image: -ms-linear-gradient(top, #004886 0%, #5e9dc8 100%);
+    background-image: linear-gradient(top, #004886 0%, #5e9dc8 100%);
+    background-image: -o-linear-gradient(top, #004886 0%, #5e9dc8 100%);
+    background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #004886), color-stop(100%,#5e9dc8));
 }
 
 

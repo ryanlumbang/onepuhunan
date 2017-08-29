@@ -35,6 +35,9 @@ body :-ms-input-placeholder {
     font-family: "Roboto";
     font-weight: 300;
 }
+a{
+    color: #004886;
+}
 .no-margin{margin: 0}
 .default-margin{margin: 25px 0}
 .br-hide{
