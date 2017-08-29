@@ -37,6 +37,55 @@ $data['title'] = 'OnePuhunan';
                         </div>
                     </div>
                 <?php } ?>
+                <?php if($this->session->role_id == 'ci') { ?>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="widget widget-nopad">
+                                        <div class="widget-header text-center">
+                                            <h3>Total Pending</h3>
+                                        </div>
+                                        <div class="widget-content">
+                                            <div class="text-center default-margin row">
+
+                                                <div class="col-xs-12">
+                                                    <h2 class="value"><?=$pending_total['sum_bmv'] ?></h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="title"><i class="glyphicon glyphicon-tag"></i> Branch Assigned</h2>
+                            <table class="table table-striped op-table E1">
+                                <thead>
+                                <tr class="tr-content box-header-bottom">
+                                    <th>Branch</th>
+                                    <th class="text-center">Pending</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <?php
+                                foreach((array) $pending_branch as $row) {
+                                    $result = '<tr>'
+                                        . '<td><a  target="_blank" href="'.site_url("operations/branch_centers?branch_code=".$row['ourbranchid']."").'"> '. $row['ourbranchid'] .' - ' . $row['branchname'] . '</a></td>'
+                                        . '<td class="text-center">' . $row['bmv'] . '</td>'
+                                        . '</tr>';
+                                    echo $result;
+                                }
+                                ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <?php } ?>
                 <?php if($this->session->role_id == 'tc') { ?>
                     <br/>
                     <div class="row">
@@ -111,7 +160,7 @@ $data['title'] = 'OnePuhunan';
                             <div class="col-md-6 col-xs-12">
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total KYC NEW </h3>
+                                        <i class="icon-list-alt"></i><h3>Total KYC NEW </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -124,7 +173,7 @@ $data['title'] = 'OnePuhunan';
                                 </div>
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total ALAF NEW </h3>
+                                        <i class="icon-list-alt"></i> <h3>Total ALAF NEW </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -139,7 +188,7 @@ $data['title'] = 'OnePuhunan';
                             <div class="col-md-6 col-xs-12">
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total KYC REPEAT </h3>
+                                        <i class="icon-list-alt"></i><h3>Total KYC REPEAT </h3>
                                     </div>
                                     <div class="widget-content">
                                         <div class="text-center default-margin row">
@@ -152,7 +201,7 @@ $data['title'] = 'OnePuhunan';
                                 </div>
                                 <div class="widget widget-nopad">
                                     <div class="widget-header text-center">
-                                        <h3>Total ALAF REPEAT </h3>
+                                        <i class="icon-list-alt"></i><h3>Total ALAF REPEAT </h3>
                                     </div>
                                     <div class="widget-content text-center">
                                         <div class="text-center default-margin row">

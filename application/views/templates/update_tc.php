@@ -58,47 +58,18 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                 </div>
                 <p class="op-check">
                     <label>
-                        <input type="hidden" name="is_new" value="0" />
-                        <?php
-                        $new = array(
-                            "id" => "is_new",
-                            "name" => "checkme",
-                            "value" =>  $_GET["new"],
-                            "type" => "checkbox"
-                        );
-                        echo form_input($new);
-                        ?>
+                        <input <?php echo ($_GET["new"] ==1) ? 'checked' : '' ?> id="is_new" type="checkbox" name="is_new" value="<?php echo $_GET["new"] ?>">
                         New Loan
                     </label>
                     <label>
-                        <input type="hidden" name="is_repeat" value="0" />
-                        <?php
-                        $repeat = array(
-                            "id" => "is_repeat",
-                            "name" => "checkme",
-                            "value" =>  $_GET["repeat"],
-                            "type" => "checkbox"
-                        );
-                        echo form_input($repeat);
-                        ?>
+                        <input <?php echo ($_GET["repeat"] ==1) ? 'checked' : '' ?> id="is_repeat" type="checkbox" name="is_repeat" value="<?php echo $_GET["repeat"] ?>">
                         Repeat Loan
                     </label>
                     <label>
-                        <input type="hidden" name="is_set" value="0" />
-                        <?php
-                        $set = array(
-                            "id" => "is_set",
-                            "name" => "checkme",
-                            "value" =>  $_GET["set"],
-                            "type" => "checkbox"
-                        );
-                        echo form_input($set);
-                        ?>Set for TC
+                        <input <?php echo ($_GET["set"] ==1) ? 'checked' : '' ?> id="is_set" type="checkbox" name="is_set" value="<?php echo $_GET["set"] ?>">
+                        Set for TC
                     </label>
                 </p>
-                <input type="text" name="new" id="new" style="display: none"/>
-                <input type="text" name="rep" id="rep" style="display: none"/>
-                <input type="text" name="set" id="set" style="display: none"/>
                 <div class="form-group row">
                     <div class="col-xs-6">
                         <button type="submit" class=" form-control global-button-success">Update</button>
@@ -112,61 +83,36 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
             </div>
 
             </section>
-
-            <script>
-                $(document).ready(function(){
-
-                    $("#is_new").val(function() {
-                        if($(this).prop("checked")) {
-                            $("#new").val(1);
-                        } else {
-                            $("#new").val(0);
-                        }
-                    });
-
-                    $("#is_repeat").val(function() {
-                        if($(this).prop("checked")) {
-                            $("#rep").val(1);
-                        } else {
-                            $("#rep").val(0);
-                        }
-                    });
-
-                    $("#is_set").val(function() {
-                        if($(this).prop("checked")) {
-                            $("#set").val(1);
-                        } else {
-                            $("#set").val(0);
-                        }
-                    });
-
-                });
-
-                $("#is_new").change(function() {
-                    if($(this).prop("checked")) {
-                        $("#new").val(1);
-                    } else {
-                        $("#new").val(0);
-                    }
-                });
-
-                $("#is_repeat").change(function() {
-                    if($(this).prop("checked")) {
-                        $("#rep").val(1);
-                    } else {
-                        $("#rep").val(0);
-                    }
-                });
-
-                $("#is_set").change(function() {
-                    if($(this).prop("checked")) {
-                        $("#set").val(1);
-                    } else {
-                        $("#set").val(0);
-                    }
-                });
-            </script>
         </div>
     </div>
 <?php $this->load->view("onepuhunan/copyright"); ?>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#is_new").change(function() {
+                if($(this).prop("checked")) {
+                    $(this).val(1);
+                } else {
+                    $(this).val(0);
+                }
+            });
+
+            $("#is_repeat").change(function() {
+                if($(this).prop("checked")) {
+                    $(this).val(1);
+                } else {
+                    $(this).val(0);
+                }
+            });
+
+            $("#is_set").change(function() {
+                if($(this).prop("checked")) {
+                    $(this).val(1);
+                } else {
+                    $(this).val(0);
+                }
+            });
+        });
+    </script>
 <?php $this->load->view("onepuhunan/footer"); ?>

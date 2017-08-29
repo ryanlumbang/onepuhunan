@@ -7,7 +7,7 @@
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
-                <h1 class="text-center"><b>NEW USER</b> REGISTRATION APPROVAL</h1>
+                <h2 class="text-center">NEW USER REGISTRATION APPROVAL</h2>
                 <div class="form-group">
                     <input type="text" id="reg_name" name="reg_name" class="form-control input-lg">
                 </div>
