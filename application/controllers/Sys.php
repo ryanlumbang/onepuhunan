@@ -139,11 +139,10 @@
                 $input = array(
                     "question_no"  => $this->input->post("question_no"),
                     "question"  => $this->input->post("question"),
-                    "is_new"  => $this->input->post("is_new"),
-                    "is_repeat"  => $this->input->post("is_repeat"),
-                    "is_set"  => $this->input->post("is_set"),
+                    "is_new"  => ($this->input->post("is_new")) ? $this->input->post("is_new") : '0',
+                    "is_repeat"  => ($this->input->post("is_repeat")) ? $this->input->post("is_repeat") : '0',
+                    "is_set"  => ($this->input->post("is_set")) ? $this->input->post("is_set") : '0',
                 );
-
                 $data["sp_tc_update"] = $this->System_model->update_tc_qt($input);
                 $this->load->view("templates/update_tc", $data);
             }
