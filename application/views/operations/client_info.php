@@ -5,10 +5,10 @@
 <div class="main">
     <div class="main-inner">
         <div class="container">
-            <div class="form-width-small">
+            <div class="form-group default-margin">
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="img-rounded align-middle" src="<?=base_url()?>img/system_png/placeholder_200x200.svg" height="120" width="120">
+                        <img class="img-rounded align-middle" src="<?=base_url()?>img/system_png/placeholder_200x200.svg" >
                     </div>
                     <div class="col-md-8">
                         <h4><?=$result["Name"]?></h4>

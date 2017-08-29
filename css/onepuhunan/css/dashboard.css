@@ -115,7 +115,7 @@ form button.form-control:hover {
     font-weight: bold;
     height:40px;
     outline: 0 none;
-    /*padding: 10px 15px;*/
+    padding: 8px 12px;
     transition-duration: 0.25s;
 }
 .global-button-success{

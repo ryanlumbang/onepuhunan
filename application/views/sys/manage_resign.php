@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1 class="text-center">MANAGE RESIGN</h1>
+            <h2 class="text-center">MANAGE RESIGN</h2>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_upd_role_id) ) {

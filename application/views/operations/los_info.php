@@ -98,21 +98,21 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
                     <div class="row">
                         <div class="col-md-3 text-bold">Name</div>
-                        <div class="col-md-9"><mark><?=$cl_info['C_Name']?></mark></div>
+                        <div class="col-md-9"><?=$cl_info['C_Name']?></div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 text-bold">Present Address</div>
-                        <div class="col-md-9"><mark><?=$cl_info['C_PresentAdd']?></mark></div>
+                        <div class="col-md-9"><?=$cl_info['C_PresentAdd']?></div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 text-bold">Permanent Address</div>
-                        <div class="col-md-9"><mark><?=$cl_info['C_PermanentAdd']?></mark></div>
+                        <div class="col-md-9"><?=$cl_info['C_PermanentAdd']?></div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 text-bold">BirthDate</div>
-                        <div class="col-md-3 "><mark><?=$cl_info['C_DOB']?></mark></div>
+                        <div class="col-md-3 "><?=$cl_info['C_DOB']?></div>
                         <div class="col-md-3 text-bold">Age</div>
-                        <div class="col-md-3 "><mark>
+                        <div class="col-md-3 ">
                             <?php
                             if ($cl_info['C_Age'] > 65) {
                                 echo $cl_info['C_Age'] . $err . 'Borrower is over the age of 65">!</div>';
@@ -121,19 +121,19 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             } else {
                                 echo $cl_info['C_Age'];
                             }
-                            ?></mark></div>
+                            ?></div>
                     </div>
                 <div class="row">
                     <div class="col-md-3 text-bold">Contact Number</div>
-                    <div class="col-md-3 "><mark> <?php
+                    <div class="col-md-3 "> <?php
                             if (strlen($cl_info['C_ContactNo']) < 11) {
                                 echo $cl_info['C_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
                             } else {
                                 echo $cl_info['C_ContactNo'];
                             }
-                            ?></mark></div>
+                            ?></div>
                     <div class="col-md-3 text-bold">Residence Ownership</div>
-                    <div class="col-md-3 "><mark><?=$cl_info['ResidenceOwnership']?></mark></div>
+                    <div class="col-md-3 "><?=$cl_info['ResidenceOwnership']?></div>
                 </div>
 
                     <!-- co-borrower details -->
@@ -141,14 +141,14 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3 text-bold">Co-Borrower Name</div>
-                            <div class="col-md-9"><mark><?=$cl_info['B_Name']?></mark></div>
+                            <div class="col-md-9"><?=$cl_info['B_Name']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Co-Borrower Birthdate</div>
-                            <div class="col-md-3 "><mark><?=$cl_info['B_DOB']?></mark></div>
+                            <div class="col-md-3 "><?=$cl_info['B_DOB']?></div>
                             <div class="col-md-3 text-bold">Age</div>
                             <div class="col-md-3">
-                                <mark>
+                                
                                     <?php
                                     if ($cl_info['B_Age'] > 65) {
                                         echo $cl_info['B_Age'] . $err . 'Co-Borrower is over the age of 65"">!</div>';
@@ -158,21 +158,21 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                         echo $cl_info['B_Age'];
                                     }
                                     ?>
-                                </mark>
+                                
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Employer / Business Name</div>
-                            <div class="col-md-9"><mark><?=$cl_info['B_EmployerName']?></mark></div>
+                            <div class="col-md-9"><?=$cl_info['B_EmployerName']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Work / Business Address</div>
-                            <div class="col-md-9"><mark><?=$cl_info['B_BusinessAdd']?></mark></div>
+                            <div class="col-md-9"><?=$cl_info['B_BusinessAdd']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Contact Number</div>
                             <div class="col-md-9">
-                                <mark>
+                                
                                 <?php
                                 if (strlen($cl_info['B_ContactNo']) < 11) {
                                     echo $cl_info['B_ContactNo'] . $err . 'Contact number must be at least 11 characters long">!</div>';
@@ -180,7 +180,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                     echo $cl_info['B_ContactNo'];
                                 }
                                 ?>
-                                </mark>
+                                
                             </div>
                         </div>
                     </div>
@@ -190,30 +190,30 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3 text-bold">Name of Business</div>
-                            <div class="col-md-9"><mark><?=$cl_info['BusinessName']?></mark></div>
+                            <div class="col-md-9"><?=$cl_info['BusinessName']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Business Address</div>
-                            <div class="col-md-9"><mark><?=$cl_info['BusinessAdd']?></mark></div>
+                            <div class="col-md-9"><?=$cl_info['BusinessAdd']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Business Type</div>
-                            <div class="col-md-3 "><mark><?=$cl_info['BusinessType']?></mark></div>
+                            <div class="col-md-3 "><?=$cl_info['BusinessType']?></div>
                             <div class="col-md-3 text-bold">Contact Number</div>
-                            <div class="col-md-3 "><mark><?=$cl_info['BusinessContactNo']?></mark></div>
+                            <div class="col-md-3 "><?=$cl_info['BusinessContactNo']?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Business Size</div>
-                            <div class="col-md-3 "><mark><?=$cl_info['BusinessSize']?></mark></div>
+                            <div class="col-md-3 "><?=$cl_info['BusinessSize']?></div>
                             <div class="col-md-3 text-bold">Years in Business</div>
-                            <div class="col-md-3 "><mark>
+                            <div class="col-md-3 ">
                                     <?php
                                     if($cl_info['YrsInBusiness'] < 1) {
                                         echo $cl_info['YrsInBusiness'] . $err . 'Business must be at least 1 year older">!</div>';
                                     } else {
                                         echo $cl_info['YrsInBusiness'];
                                     }
-                                    ?></mark></div>
+                                    ?></div>
 
                         </div>
                     </div>
@@ -223,32 +223,32 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-3 text-bold">Gross Sales</div>
-                            <div class="col-md-3 "><mark><?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></mark></div>
+                            <div class="col-md-3 "><?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></div>
                             <div class="col-md-3 text-bold">Loan Installment</div>
-                            <div class="col-md-3 "><mark> <?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></mark></div>
+                            <div class="col-md-3 "> <?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></div>
                         </div>
                         <div class="row">
                             <div class="col-md-3 text-bold">Net Business Income</div>
-                            <div class="col-md-3 "><mark><?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></mark></div>
+                            <div class="col-md-3 "><?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></div>
                             <div class="col-md-3 text-bold">Debt Burden Ratio</div>
-                            <div class="col-md-3 "> <mark><?php
+                            <div class="col-md-3 "> <?php
                                 if($cl_info['DBR'] > 40) {
                                     echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
                                 } else {
                                     echo $cl_info['DBR'] . '%';
                                 }
-                                    ?></mark></div>
+                                    ?></div>
                             <div class="col-md-3 text-bold"></div>
                             <div class="col-md-3 "></div>
                             <div class="col-md-3 text-bold">Debt Burden Ratio 2</div>
-                            <div class="col-md-3 "><mark>
+                            <div class="col-md-3 ">
                                 <?php
                                 if($cl_dbr2['DBR2'] > 40) {
                                     echo $cl_dbr2['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
                                 } else {
                                     echo $cl_dbr2['DBR2'] . '%';
                                 }
-                                ?></mark>
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -440,16 +440,15 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
         </div>
     </div>
 <?php $this->load->view("onepuhunan/copyright"); ?>
+    <script>
+        $(document).ready(function(){
+            $.get( "<?php echo base_url(); ?>/get_los_laf_repeat_display/<?php echo $input; ?>", function( data ) {
+                $( "#get_los_laf_repeat_display" ).html( data );
+            });
 
- <script>
-    $(document).ready(function(){
-        $.get( "<?php echo base_url(); ?>/get_los_laf_repeat_display/<?php echo $input; ?>", function( data ) {
-            $( "#get_los_laf_repeat_display" ).html( data );
+            $.get( "<?php echo base_url(); ?>/get_los_laf_err/<?php echo $input; ?>", function( data ) {
+                $( "#get_los_laf_err" ).html( data );
+            });
         });
-
-        $.get( "<?php echo base_url(); ?>/get_los_laf_err/<?php echo $input; ?>", function( data ) {
-            $( "#get_los_laf_err" ).html( data );
-        });
-    });
-</script>
+    </script>
 <?php $this->load->view("onepuhunan/footer"); ?>

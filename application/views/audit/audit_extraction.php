@@ -7,7 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Audit Extraction of Raw Data';
     <div class="main-inner">
         <div class="container">
             <form class="form-width-small"  method="post" action="<?php echo site_url("audit/csv"); ?>" target="_blank">
-                <h1 class="text-center">EXTRACT OF RAW DATA</h1>
+                <h2 class="text-center">EXTRACT OF RAW DATA</h2>
                 <div class="form-group">
                     <label class="text-center">
                         Please complete the form below, all field name's followed by a <span class="tm-required-label">*</span> indicate that an input is required. <br>

@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("id" => "add_form" ,"class" => "form-width-small text-center"));?>
-            <h1><i class="uk-icon-tags "></i> ADD TELLECALLER QUESTIONS</h1>
+            <h2><i class="uk-icon-tags "></i> ADD TELLECALLER QUESTIONS</h2>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_tc_add) ) {

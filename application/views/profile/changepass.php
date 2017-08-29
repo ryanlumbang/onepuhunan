@@ -26,7 +26,7 @@
                     }
                 }
                 ?>
-                    <h1 class="text-center">CHANGE PASSWORD</h1>
+                    <h2 class="text-center">CHANGE PASSWORD</h2>
                     <div class="form-group">
                         <strong>Password complexity requirements:</strong>
 

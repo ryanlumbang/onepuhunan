@@ -6,7 +6,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
     <div class="main-inner">
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
-            <h1 class="text-center">UPDATE ROLE ID</h1>
+            <h2 class="text-center">UPDATE ROLE ID</h2>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_upd_role_id) ) {
@@ -94,9 +94,8 @@ $data['title'] = 'OnePuhunan Service Portal | Manage Role ID';
                 </div>
                 <div class="col-md-9">
                     <select name="rolename" id="getRoleID" class = "form-control  branchcode">
-                        <option value="" disabled selected hidden></option>
                         <?php  foreach($ln_rolename as $row): ?>
-                            <option value="<?php echo $row['role_name'];?> " data-emp_id="<?php echo $row['role_id'];?>"><?php echo $row['role_name'];?></option>
+                            <option <?php echo ($row['role_id'] == $_GET["role"]) ? 'selected' : ''?> value="<?php echo $row['role_name'];?> " data-emp_id="<?php echo $row['role_id'];?>"><?php echo $row['role_name'];?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

@@ -10,7 +10,7 @@ $data['title'] = 'OnePuhunan Service Portal | LOS Report';
             <div class="container">
 
                 <div class="form-width-small">
-                    <h1 class="text-center">EXTRACTION OF REPORT</h1>
+                    <h2 class="text-center">EXTRACTION OF REPORT</h2>
                     <div class="form-group">
                         <p class="text-center">
                             Choose what TYPE OF REPORT you want to generate.<br>
