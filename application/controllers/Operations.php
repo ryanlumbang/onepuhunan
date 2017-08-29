@@ -4,7 +4,7 @@
     //Date   : October 21, 2016
 
     class Operations extends CI_Controller {
-        public function _construct() {
+        public function __construct() {
             parent::__construct();
         }
         

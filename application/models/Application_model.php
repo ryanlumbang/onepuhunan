@@ -4,8 +4,8 @@
 //Date   : October 21, 2016
 
 class Application_model extends CI_Model {
-    public function _construct() {
-        parent:: _construct();
+    public function __construct() {
+        parent:: __construct();
     }
 
     public function get_dept_list() {

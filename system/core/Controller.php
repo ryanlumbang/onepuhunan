@@ -79,8 +79,7 @@ class CI_Controller {
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
 	}
-
-	// --------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
 	/**
 	 * Get the CI singleton
