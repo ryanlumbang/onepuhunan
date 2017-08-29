@@ -79,6 +79,7 @@ table.dataTable.no-footer {
 }
 .op-table {
     font-size: 12px;
+    background: #fff;
 }
 .op-search-box {
     margin-bottom: 15px;
