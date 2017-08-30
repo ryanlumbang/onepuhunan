@@ -280,7 +280,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             </tbody>
                         </table>
                     </div>
-                
+
 
                     <!-- cashflow assessment (monthly) -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
