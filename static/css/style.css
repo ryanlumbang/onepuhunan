@@ -149,6 +149,11 @@ textarea {
 	height: 40px;
 	display: block;
 	display: table-cell;
+	vertical-align: middle;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
 }
 .navbar .brand span {
 	display: table-cell;
