@@ -106,6 +106,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
                     <!-- personal details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
+                <div class="form-group">
                     <table class="table table-striped cell-border op-table E1">
                         <thead>
                         <tr>
@@ -130,6 +131,8 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="form-group">
                     <table class="table table-striped cell-border op-table E1">
                         <thead>
                         <tr>
@@ -154,6 +157,8 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="form-group">
                     <table class="table table-striped cell-border op-table E1">
                         <thead>
                         <tr>
@@ -170,9 +175,10 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </tr>
                         </tbody>
                     </table>
-
+                </div>
                     <!-- co-borrower details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
+                <div class="form-group">
                     <table class="table table-striped cell-border op-table E1">
                         <thead>
                         <tr>
@@ -199,6 +205,8 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="form-group">
                     <table class="table table-striped cell-border op-table E1">
                         <thead>
                         <tr>
@@ -224,40 +232,55 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </tr>
                         </tbody>
                     </table>
-
+                </div>
 
                     <!-- business information -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Name of Business</div>
-                            <div class="col-md-9"><?=$cl_info['BusinessName']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Business Address</div>
-                            <div class="col-md-9"><?=$cl_info['BusinessAdd']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Business Type</div>
-                            <div class="col-md-3 "><?=$cl_info['BusinessType']?></div>
-                            <div class="col-md-3 text-bold">Contact Number</div>
-                            <div class="col-md-3 "><?=$cl_info['BusinessContactNo']?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Business Size</div>
-                            <div class="col-md-3 "><?=$cl_info['BusinessSize']?></div>
-                            <div class="col-md-3 text-bold">Years in Business</div>
-                            <div class="col-md-3 ">
+                        <table class="table table-striped cell-border op-table E1">
+                            <thead>
+                            <tr>
+                                <th width="50%" class="text-center">Name of Business</th>
+                                <th width="50%" class="text-center">Business Address</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><?=$cl_info['BusinessName']?></td>
+                                <td class="text-center"><?=$cl_info['BusinessAdd']?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                        <table class="table table-striped cell-border op-table E1">
+                            <thead>
+                            <tr>
+                                <th width="25%" class="text-center">Business Type</th>
+                                <th width="25%" class="text-center">Contact Number</th>
+                                <th width="25%" class="text-center">Business Size</th>
+                                <th width="25%" class="text-center">Years in Business</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="text-center"><?=$cl_info['BusinessType']?></td>
+                                <td class="text-center"><?=$cl_info['BusinessContactNo']?></td>
+                                <td class="text-center"><?=$cl_info['BusinessSize']?></td>
+                                <td class="text-center">
                                     <?php
                                     if($cl_info['YrsInBusiness'] < 1) {
                                         echo $cl_info['YrsInBusiness'] . $err . 'Business must be at least 1 year older">!</div>';
                                     } else {
                                         echo $cl_info['YrsInBusiness'];
                                     }
-                                    ?></div>
-
-                        </div>
+                                    ?>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
+                
 
                     <!-- cashflow assessment (monthly) -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>

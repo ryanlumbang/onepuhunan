@@ -119,7 +119,7 @@ textarea {
 	padding: 7px 0;
 	
 	/*background: #00ba8b !important;*/
-	background: #004886 !important;
+	background: #113656 !important;
 
 
 
@@ -415,12 +415,14 @@ textarea {
 	
 .widget-header {
 
-	background: #004886 none repeat scroll 0 0;
-	border: 1px solid #004886;
+	background: #163d58 none repeat scroll 0 0;
+	border: 1px solid #ddd;
 	color: #fff;
 	height: 40px;
 	line-height: 40px;
 	position: relative;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 1px 3px 0 #163d58;
 }	
 	
 	.widget-header h3 {

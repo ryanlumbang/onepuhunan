@@ -43,14 +43,13 @@ a:hover.back-to-top {
 
 
 .title {
-    background: rgb(95, 107, 97) none repeat scroll 0 0;
+    background: #163d58 none repeat scroll 0 0;
     border: 1px solid #ddd;
     border-radius: 5px 5px 0 0;
-    box-shadow: 1px 3px 0 #6e7174;
+    box-shadow: 1px 3px 0 #163d58;
     color: #fff;
     font-size: 1.2em;
     font-weight: bold;
-    margin-bottom: 20px;
     padding: 0.5em;
 }
 
@@ -59,13 +58,13 @@ a:hover.back-to-top {
     font-weight: bold;
     color: #fff;
     padding: 0.5em;
-    border-bottom: 1px solid #B3CBD6;
+    border-bottom: 1px solid #163d58;
     -moz-border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     border-radius: 5px 5px 0px 0px;
     height: 40px;
-    background: rgba(95, 107, 97, 1);
-    box-shadow: 1px 3px 0px #6e7174;
+    background: #163d58;
+    box-shadow: 1px 3px 0px #163d58;
     border: 1px solid #ddd;
     margin-bottom: 0;
 }
