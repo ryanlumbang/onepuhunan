@@ -283,29 +283,33 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
 
 
                     <!-- cashflow assessment (monthly) -->
-                    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Gross Sales</div>
-                            <div class="col-md-3 "><?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></div>
-                            <div class="col-md-3 text-bold">Loan Installment</div>
-                            <div class="col-md-3 "> <?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 text-bold">Net Business Income</div>
-                            <div class="col-md-3 "><?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></div>
-                            <div class="col-md-3 text-bold">Debt Burden Ratio</div>
-                            <div class="col-md-3 "> <?php
+                    <h2 class="title_los"> <i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
+                <div class="form-group">
+                    <table class="table table-striped cell-border op-table E1">
+                        <thead>
+                        <tr>
+                            <th width="20%" class="text-center">Gross Sales</th>
+                            <th width="20%" class="text-center">Loan Installment</th>
+                            <th width="20%" class="text-center">Net Business Income</th>
+                            <th width="20%" class="text-center">Debt Burden Ratio</th>
+                            <th width="20%" class="text-center">Debt Burden Ratio 2</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="text-center"><?=number_format($cl_info['GrossSalesAmt'], 2, '.', ',')?></td>
+                            <td class="text-center"><?=number_format($cl_info['LoanInstallmentAmt'], 2, '.', ',')?></td>
+                            <td class="text-center"><?=number_format($cl_info['NetBusinessIncome'], 2, '.', ',')?></td>
+                            <td class="text-center">
+                                <?php
                                 if($cl_info['DBR'] > 40) {
                                     echo $cl_info['DBR'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR) must be less than 40%">!</div>';
                                 } else {
                                     echo $cl_info['DBR'] . '%';
                                 }
-                                    ?></div>
-                            <div class="col-md-3 text-bold"></div>
-                            <div class="col-md-3 "></div>
-                            <div class="col-md-3 text-bold">Debt Burden Ratio 2</div>
-                            <div class="col-md-3 ">
+                                ?>
+                            </td>
+                            <td class="text-center">
                                 <?php
                                 if($cl_dbr2['DBR2'] > 40) {
                                     echo $cl_dbr2['DBR2'] . '%' . $err . 'Calculated Debt Burden Ratio (DBR2) must be less than 40%">!</div>';
@@ -313,9 +317,11 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                     echo $cl_dbr2['DBR2'] . '%';
                                 }
                                 ?>
-                            </div>
-                        </div>
-                    </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                     <!-- liabilities and assets -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  LIABILITIES AND ASSETS</h2>
@@ -323,9 +329,9 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             <table class="table table-striped op-table E1">
                                 <thead>
                                 <tr>
-                                    <th width="33.4%">Name of Creditor</th>
-                                    <th width="33.3%">Loan Amount</th>
-                                    <th width="33.3%">Installment Amount</th>
+                                    <th width="33.4%" class="text-center" >Name of Creditor</th>
+                                    <th width="33.3%" class="text-center" >Loan Amount</th>
+                                    <th width="33.3%" class="text-center" >Installment Amount</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -333,9 +339,9 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                 if (count($cl_asset) > 0) {
                                     foreach((array) $cl_asset as $row) {
                                         $result = '<tr>'
-                                            . '<td>' . $row['InstName'] . '</td>'
-                                            . '<td>&#8369; ' . number_format($row['LoanAmount'], 2, '.', ',') . '</td>'
-                                            . '<td>&#8369; ' . number_format($row['InstallmentAmt'], 2, '.', ',') . '</td>'
+                                            . '<td class="text-center" >' . $row['InstName'] . '</td>'
+                                            . '<td class="text-center" >&#8369; ' . number_format($row['LoanAmount'], 2, '.', ',') . '</td>'
+                                            . '<td class="text-center" >&#8369; ' . number_format($row['InstallmentAmt'], 2, '.', ',') . '</td>'
                                             . '</tr>';
                                         echo $result;
                                     }
@@ -354,16 +360,16 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             <table class="table table-striped op-table E1">
                                 <thead>
                                 <tr>
-                                    <th width="33.4%">Name</th>
-                                    <th width="33.3%">Birthdate</th>
-                                    <th width="33.3%">Relationship</th>
+                                    <th width="33.4%" class="text-center" >Name</th>
+                                    <th width="33.3%" class="text-center" >Birthdate</th>
+                                    <th width="33.3%" class="text-center" >Relationship</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td><?=$cl_info['BN_Name']?></td>
-                                    <td><?=$cl_info['BN_DOB']?></td>
-                                    <td><?=$cl_info['BN_Relationship']?></td>
+                                    <td class="text-center" ><?=$cl_info['BN_Name']?></td>
+                                    <td class="text-center" ><?=$cl_info['BN_DOB']?></td>
+                                    <td class="text-center" ><?=$cl_info['BN_Relationship']?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -377,17 +383,17 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             <table class="table table-striped table-fix op-table E1">
                                 <thead>
                                 <tr>
-                                    <th>Questions</th>
-                                    <th>Answer</th>
+                                    <th class="text-center" >Questions</th>
+                                    <th class="text-center" >Answer</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 foreach((array) $cl_tc as $row) {
                                     $result = '<tr>'
-                                        . '<td>' . $row['question'] . '</td>'
-                                        . '<td class="hidden"><input name="tc_q[]" class="form-control" type="text" value="' . $row['question'] . '"> </td>'
-                                        . '<td>' . '<input name="tc[]" type="text" class="form-control">' . '</td>'
+                                        . '<td class="text-center" >' . $row['question'] . '</td>'
+                                        . '<td  class="text-center" class="hidden"><input name="tc_q[]" class="form-control" type="text" value="' . $row['question'] . '"> </td>'
+                                        . '<td class="text-center" >' . '<input name="tc[]" type="text" class="form-control">' . '</td>'
                                         . '</tr>';
                                     echo $result;
                                 }
@@ -407,20 +413,20 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         <table class="table table-striped table-fix op-table E1">
                             <thead>
                             <tr>
-                                <th width="10%">Date Processed</th>
-                                <th width="30%">Question</th>
-                                <th width="20%">Value</th>
-                                <th width="20%">Processed By</th>
+                                <th width="10%" class="text-center" >Date Processed</th>
+                                <th width="30%" class="text-center" >Question</th>
+                                <th width="20%" class="text-center" >Value</th>
+                                <th width="20%" class="text-center" >Processed By</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
                             foreach((array) $cl_tc_display as $row) {
                                 $result = '<tr>'
-                                    . '<td>' . $row['DateProcessed'] . '</td>'
-                                    . '<td>' . $row['Question'] . '</td>'
-                                    . '<td><i>' . $row['ProcessValue'] . '</i></td>'
-                                    . '<td>' . $row['ProcessedBy'] . '</td>'
+                                    . '<td class="text-center" >' . $row['DateProcessed'] . '</td>'
+                                    . '<td class="text-center" > ' . $row['Question'] . '</td>'
+                                    . '<td class="text-center" ><i>' . $row['ProcessValue'] . '</i></td>'
+                                    . '<td class="text-center" >' . $row['ProcessedBy'] . '</td>'
                                     . '</tr>';
                                 echo $result;
                             }
@@ -437,22 +443,22 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             <table class="table table-striped table-fix op-table E1">
                                 <thead>
                                 <tr>
-                                    <th width="5%">#</th>
-                                    <th width="10%">Date Processed</th>
-                                    <th width="10%">Value</th>
-                                    <th width="40%">Remarks</th>
-                                    <th width="20%">Processed By</th>
+                                    <th width="5%" class="text-center">#</th>
+                                    <th width="10%" class="text-center">Date Processed</th>
+                                    <th width="10%" class="text-center">Value</th>
+                                    <th width="40%" class="text-center">Remarks</th>
+                                    <th width="20%" class="text-center">Processed By</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 foreach((array) $cl_remarks as $row) {
                                     $result = '<tr>'
-                                        . '<td>' . $row['ProcessNo'] . '</td>'
-                                        . '<td>' . $row['DateProcessed'] . '</td>';
+                                        . '<td class="text-center" >' . $row['ProcessNo'] . '</td>'
+                                        . '<td class="text-center" > ' . $row['DateProcessed'] . '</td>';
 
                                     $result = $result
-                                        . '<td>'
+                                        . '<td class="text-center" >'
                                         . '<span class="uk-badge uk-badge-success width-51">' . $row['PrevProcess'] . '</span> ';
 
                                     if($row['ProcessValue'] === 'APR') {
@@ -464,8 +470,8 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                     }
 
                                     $result = $result
-                                        . '<td><i>' . $row['Remarks'] . '</i></td>'
-                                        . '<td>' . $row['Processor'] . '</td>'
+                                        . '<td class="text-center" ><i>' . $row['Remarks'] . '</i></td>'
+                                        . '<td class="text-center" >' . $row['Processor'] . '</td>'
                                         . '</tr>';
 
                                     echo $result;

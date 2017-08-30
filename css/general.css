@@ -83,6 +83,7 @@ table.dataTable.no-footer {
 .op-table thead {
     color: #fff;
     background-color: #004886;
+    font-family: sans-serif;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr= #004886, endColorstr=#5e9dc8);
     background-image: -moz-linear-gradient(top, #004886 0%, #5e9dc8 100%);
     background-image: -webkit-linear-gradient(top, #004886 0%, #5e9dc8 100%);
