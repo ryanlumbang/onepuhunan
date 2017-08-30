@@ -159,9 +159,17 @@ form button.form-control:hover {
     padding: 2px 18px;
 }
 .global-btn-add , .global-btn-add:hover, .global-btn-add:focus{
-    background: #838383;
+    background: #963939;
     color: #fff;
     font-family: inherit;
+    box-shadow: 0px 5px 10px #ddd;
+}
+
+.add-btn{
+    background: #963939;
+    color: #fff;
+    font-family: inherit;
+    box-shadow: 0px 5px 10px #ddd;
 }
 .row-even{
     background-color: #adc9d4;

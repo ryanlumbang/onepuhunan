@@ -175,7 +175,16 @@ $(document).ready(function() {
                     } else {
                         $(rows).eq(i).find("input, button").attr("disabled", true);
                     }
+                } else if(role_id === 'ci'){
+                    if(group == 'BMV'){
+                        $(rows).eq(i).find("input").attr("disabled", true);
+                        $(rows).eq(i).find("button").attr("disabled", false);
+                    } else {
+                        $(rows).eq(i).find("input, button").attr("disabled", true);
+                    }
                 }
+
+
             });
         },
         'dom': '<"toolbar">frtip'
@@ -762,6 +771,7 @@ $(document).ready(function() {
         'iDisplayLength': 10
     });
 
+
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
     $(".cancel-btn").on('click', function () {
@@ -769,9 +779,9 @@ $(document).ready(function() {
         $(".add_form modal").hide();
     });
 
-    $('#c_search').dataTable( {
-        "searching": false,
-        "lengthChange": false
+    var c_search = $('#c_search').DataTable({
+        "oLanguage": { "sSearch": "" },
+        'searching': true
     } );
     tbl_tc.order([0, 'asc']).draw();
     $(".clear-table").on("click", function() {

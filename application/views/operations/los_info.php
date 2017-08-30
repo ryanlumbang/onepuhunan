@@ -383,16 +383,17 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                             <table class="table table-striped table-fix op-table E1">
                                 <thead>
                                 <tr>
-                                    <th class="text-center" >Questions</th>
-                                    <th class="text-center" >Answer</th>
+                                    <th width="50%" >Questions</th>
+                                    <th width="0%" class="hidden" ></th>
+                                    <th width="50%" class="text-center" >Answer</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 foreach((array) $cl_tc as $row) {
                                     $result = '<tr>'
-                                        . '<td class="text-center" >' . $row['question'] . '</td>'
-                                        . '<td  class="text-center" class="hidden"><input name="tc_q[]" class="form-control" type="text" value="' . $row['question'] . '"> </td>'
+                                        . '<td  >' . $row['question'] . '</td>'
+                                        . '<td   class="hidden"><input name="tc_q[]" class="form-control" type="text" value="' . $row['question'] . '"> </td>'
                                         . '<td class="text-center" >' . '<input name="tc[]" type="text" class="form-control">' . '</td>'
                                         . '</tr>';
                                     echo $result;

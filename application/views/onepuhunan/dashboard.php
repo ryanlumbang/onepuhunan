@@ -335,7 +335,7 @@ $data['title'] = 'OnePuhunan';
                         </div>
                         <div class="widget-content">
                             <div class="text-center default-margin row">
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['KYCNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 border-right"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['KYCNew']?></h2> </div>
                                 <div class="col-md-6 col-xs-12"> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['KYCRepeat']?></h2> </div>
                             </div>
                         </div>
@@ -360,8 +360,8 @@ $data['title'] = 'OnePuhunan';
                         </div>
                         <div class="widget-content">
                             <div class="text-center default-margin row">
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['ALAFNew']?></h2> </div>
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['ALAFRepeat']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 border-right"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['ALAFNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 "> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['ALAFRepeat']?></h2> </div>
                             </div>
                         </div>
                     </div>
@@ -374,8 +374,8 @@ $data['title'] = 'OnePuhunan';
                         </div>
                         <div class="widget-content">
                             <div class="text-center default-margin row">
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 border-right"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['TCNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 "> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['TCRepeat']?></h2> </div>
                             </div>
                         </div>
                     </div>
@@ -388,8 +388,8 @@ $data['title'] = 'OnePuhunan';
                         </div>
                         <div class="widget-content">
                             <div class="text-center default-margin row">
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
-                                <div class="col-md-6 col-xs-12"> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 border-right"> <h3 class="sup">New Loan</h3><h2 class="value"><?=$dashboard['SanctionNew']?></h2> </div>
+                                <div class="col-md-6 col-xs-12 "> <h3 class="sup">Repeat Loan</h3><h2 class="value"><?=$dashboard['SanctionRepeat']?></h2> </div>
                             </div>
                         </div>
                     </div>
