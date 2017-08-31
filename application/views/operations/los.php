@@ -34,7 +34,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                     <th></th>
                     <th>Age</th>
                     <th>Dest</th>
-                    <th></th>
+                    <th ></th>
                 </tr>
                 </thead>
             </table>

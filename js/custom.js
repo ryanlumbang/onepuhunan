@@ -115,6 +115,7 @@ $(document).ready(function() {
             {
                 'width': '2%',
                 'data': null,
+                'className': 'dt-center uk-text-bold',
                 'defaultContent':  '<button class="btn global-btn-blue">View</button>'
             },
             {'visible': false, 'targets': 10, 'data': 'AsOfDate'}
@@ -771,7 +772,6 @@ $(document).ready(function() {
         'iDisplayLength': 10
     });
 
-
     $('div.dataTables_filter input').attr('placeholder', 'Search...');
 
     $(".cancel-btn").on('click', function () {
@@ -781,7 +781,8 @@ $(document).ready(function() {
 
     var c_search = $('#c_search').DataTable({
         "oLanguage": { "sSearch": "" },
-        'searching': true
+        'searching': true,
+        'iDisplayLength': 10
     } );
     tbl_tc.order([0, 'asc']).draw();
     $(".clear-table").on("click", function() {
