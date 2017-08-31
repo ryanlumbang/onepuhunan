@@ -22,6 +22,7 @@ $(document).ready(function() {
         show('page', true);
         show('loading', false);
     });
+    var BASE_URL = $('#hdn_base_url').val();
     var amountScrolled = 250;
 
     /* for routing */
@@ -309,6 +310,31 @@ $(document).ready(function() {
                     }else{
                         $('form#los_tc_form').submit();
                     }
+                } else {
+                    $confirmation_nil = false;
+                }
+            });
+    });
+
+    //reprocess client
+    $('.btn-reprocess').click(function () {
+        var fileNo = $(this).data('fileno');
+        swal({
+                title: "REPROCESS CLIENT",
+                text: "Are you sure you want to reprocess this record?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "uk-button uk-button-primary",
+                confirmButtonText: "OK",
+                cancelButtonClass: "uk-button uk-button-danger",
+                cancelButtonText: "CANCEL",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm){
+                    $confirmation_nil = true;
+                    window.location.href = BASE_URL+"sys/reprocess_user/"+fileNo;
                 } else {
                     $confirmation_nil = false;
                 }

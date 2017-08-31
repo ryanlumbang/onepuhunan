@@ -90,7 +90,6 @@ class Application extends CI_Controller {
     }
 
     public function confirmation() {
-        $this->checkSession();
         $this->load->library("form_validation");
         $this->load->model("Application_model");
 
