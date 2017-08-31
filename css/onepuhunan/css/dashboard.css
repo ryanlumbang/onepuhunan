@@ -255,6 +255,9 @@ h1{font-weight: bold}
 .client-container > *{
     color: #fff;
 }
+.footer{
+    color: #fff;
+}
 @media screen and (max-width: 767px){
     .navbar-nav .open .dropdown-menu{
         background: #fff;
