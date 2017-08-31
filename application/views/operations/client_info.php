@@ -101,9 +101,9 @@
                             ($key == 0 ? $active='active' : $active='');
 
                             if($item["LoanAvailmentSeries"] == isset($result["NoOfLoanAvailed"])) {
-                                $result = "<li data-toggle='tab' href='menu-".$key."' class='".$active."'><a href=\"#\">". $item["LoanAvailmentSeries"] . "</a></li>";
+                                $result = "<li data-toggle='tab' class='".$active."'><a href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
                             } else {
-                                $result = "<li data-toggle='tab' href='menu-".$key."' class='".$active."'><a href=\"#\">". $item["LoanAvailmentSeries"] . "</a></li>";
+                                $result = "<li data-toggle='tab' class='".$active."'><a href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
                             }
                             echo $result;
                         }
