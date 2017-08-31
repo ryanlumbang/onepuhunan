@@ -7,6 +7,11 @@ class Application extends CI_Controller {
     public function __construct() {
         parent:: __construct();
 
+
+    }
+
+    public function checkSession(){
+
         $this->load->library('session');
         if(!$this->session->userdata('logged_in')){
             if(current_url() != base_url()){
@@ -25,6 +30,7 @@ class Application extends CI_Controller {
     }
 
     public function opslogin() {
+        $this->checkSession();
         $this->load->library("form_validation");
         $this->load->model("Application_model");
 
@@ -84,6 +90,7 @@ class Application extends CI_Controller {
     }
 
     public function confirmation() {
+        $this->checkSession();
         $this->load->library("form_validation");
         $this->load->model("Application_model");
 
@@ -178,6 +185,7 @@ class Application extends CI_Controller {
     }
 
     public function dashboard() {
+        $this->checkSession();
         $this->load->model("Application_model");
 
         $data = array(
@@ -188,6 +196,7 @@ class Application extends CI_Controller {
         $this->load->view("onepuhunan/dashboard",$data);
     }
     public function audDashboard() {
+        $this->checkSession();
         $this->load->view("aud_dashboard");
     }
 
