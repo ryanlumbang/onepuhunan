@@ -23,6 +23,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <input type="hidden" id="hdn_base_url" value="<?php echo base_url() ?>"/>
 </head>
 
 

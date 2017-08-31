@@ -34,7 +34,7 @@ $data['title'] = 'OnePuhunan Service Portal | Manage TelleCaller Questions';
                         . "<td class=\"text-left\">" . $item["dateprocessed"] . "</td>";
                         if($this->session->role_id == 'super' OR $this->session->role_id == 'sa') {
                         $result = $result . "<td class=\"text-center\">" .
-                            "<a onclick=\"return confirm('Are you sure you want to reprocess this record?')\" class=\"btn global-btn-red\" href='../sys/reprocess_user/" . $item["fileno"] . "'>Reprocess</a>" . "</td>";
+                            "<a data-fileno='" . $item["fileno"] . "' class=\"btn global-btn-red btn-reprocess\" >Reprocess</a>" . "</td>";
                         }
                         $result = $result. "</tr>";
                     echo $result;
