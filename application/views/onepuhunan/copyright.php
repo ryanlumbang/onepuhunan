@@ -2,7 +2,7 @@
     <div class="footer-inner">
         <div class="container">
             <div class="row">
-                <div class="span12">Copyright &copy; 2017 <a href="">MicroVentures Philippines Financing Company, Inc. - Information Technology Department. All Rights Reserved. </a>. </div>
+                <div class="span12">Copyright &copy; 2017 MicroVentures Philippines Financing Company, Inc. - Information Technology Department. All Rights Reserved. </div>
                 <!-- /span12 -->
             </div>
             <!-- /row -->
