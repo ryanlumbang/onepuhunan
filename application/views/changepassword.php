@@ -7,7 +7,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
         <div class="container">
             <?=form_open("", array("class" => "form-width-small"));?>
             <h2>CONFIRMATION</h2>
-            <label>Enter the Employee ID to confirm.</label>
+            <label>Enter the User ID to confirm.</label>
             <?php echo validation_errors(); ?>
             <?php
             if ( isset($sp_ua_confirm_validation) ) {
@@ -33,7 +33,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                         echo "<div class='alert alert-warning'>"
                             . "      <span>"
                             .           "<strong>Authentication Failed</strong><br>"
-                            .           "Invalid Employee ID. "
+                            .           "Invalid User ID. "
                             .           "Please try again."
                             . "      </span>"
                             . "   </div>";
@@ -52,7 +52,7 @@ $data['title'] = 'OnePuhunan Service Portal | Login';
                     "name"  => "emp_id",
                     "value" => set_value("emp_id"),
                     "class" => "form-control",
-                    "placeholder" => "Employee Id"
+                    "placeholder" => "User ID"
                 );
                 echo form_input($email);
                 ?>
