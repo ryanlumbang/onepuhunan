@@ -1,6 +1,4 @@
 <script src="<?=base_url()?>js/bootstrap.min.js"></script>
-<!--<script src="--><?//=base_url()?><!--js/components/tooltip.min.js"></script>-->
-<!--<script src="--><?//=base_url()?><!--js/components/accordion.min.js"></script>-->
 <script src="<?=base_url()?>js/datatable/jquery.dataTables.min.js"></script>
 <script src="<?=base_url()?>js/datatable/dataTables.select.min.js"></script>
 <script src="<?=base_url()?>js/bootstrap-datetimepicker.js"></script>

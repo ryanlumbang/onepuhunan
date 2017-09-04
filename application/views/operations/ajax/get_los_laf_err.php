@@ -17,7 +17,7 @@
 
 <?php } else { ?>
 <?php } ?>
-<h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h2>
+<h3><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h3>
 <div class="form-group">
     <table class="table table-striped op-table E1">
         <thead>

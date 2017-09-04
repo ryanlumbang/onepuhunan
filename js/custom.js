@@ -284,6 +284,13 @@ $(document).ready(function() {
             });
     });
 
+    //remarks count
+    $('#txt_remarks').on('keyup', function () {
+       if($(this).val().length >= 255){
+           swal("You've reach the maximum number of characters!");
+       }
+    });
+
     //remark reject
     $('#BtnReject').click(function () {
         swal({
