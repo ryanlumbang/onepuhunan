@@ -271,6 +271,10 @@ h1{font-weight: bold}
     }
 }
 
+@media screen and (max-width: 767px){
+    .subnavbar .container > ul > li{width: 20%}
+}
+
 @media screen and (max-width: 400px){
     br.br-hide{display: block;}
     .subnavbar .container{padding: 0}
@@ -286,12 +290,12 @@ h1{font-weight: bold}
     .subnavbar .container > ul > li a .caret{
         display: none;
     }
-    .form-width-small{
-        width:100%;
-    }
     .subnavbar{
         margin: 0 auto;
         width: 100%;
+    }
+    .form-width-small{
+        width:100%;
     }
 
     .subnavbar li:last-child .dropdown-menu::before{
