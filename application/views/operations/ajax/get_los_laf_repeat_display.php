@@ -1,6 +1,6 @@
 <!-- repeat loan details  -->
 <?php if($cl_repeat['AccountID'] != NULL) { ?>
-    <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
+    <h3><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h3>
     <div class="form-group"><table class="table table-striped op-table E1">
             <thead>
             <tr>
