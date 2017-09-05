@@ -257,18 +257,23 @@ h1{font-weight: bold}
 }
 .footer{
     color: #838383;
+    margin: 0 auto;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 768px){
     .navbar-nav .open .dropdown-menu{
         background: #fff;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
         border-radius: 0;
     }
+    .border-right{
+        border-right: none;
+    }
 }
 
 @media screen and (max-width: 400px){
     br.br-hide{display: block;}
+    .subnavbar .container{padding: 0}
     .subnavbar .container > ul > li{
         height:auto;
         min-width: unset;
@@ -283,6 +288,20 @@ h1{font-weight: bold}
     }
     .form-width-small{
         width:100%;
+    }
+    .subnavbar{
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .subnavbar li:last-child .dropdown-menu::before{
+        left: 138px;
+    }
+    .subnavbar li:last-child .dropdown-menu::after{
+        left:139px;
+    }
+    .subnavbar li:last-child .dropdown-menu{
+        left:-100px;
     }
 }
 
