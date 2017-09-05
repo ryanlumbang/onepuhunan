@@ -315,6 +315,10 @@ h1{font-weight: bold}
     .subnavbar li:last-child .dropdown-menu{
         left:-100px;
     }
+    .xs-class{
+        margin:0 auto;
+        text-align: center;
+    }
 }
 
 

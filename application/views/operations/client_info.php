@@ -7,10 +7,10 @@
         <div class="container">
             <div class="form-group default-margin">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-sm-4 xs-class">
                         <img class="img-rounded align-middle" src="<?=base_url()?>img/system_png/placeholder_200x200.svg" >
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-sm-8 xs-class">
                         <h4><?=$result["Name"]?></h4>
                         <hr>
                         <table class="table table-striped">

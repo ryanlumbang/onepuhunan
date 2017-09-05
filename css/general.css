@@ -93,6 +93,12 @@ table.dataTable.no-footer {
     background-image: -webkit-gradient(linear, right top, right bottom, color-stop(0%, #004886), color-stop(100%,#163d58));
 }
 
+.op-table-light thead {
+    background-color: #e5eef3;
+    color: #000;
+    font-family: sans-serif;
+}
+
 .border-right{
     border-right: 1px solid #000;
 }

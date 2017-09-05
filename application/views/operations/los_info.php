@@ -30,7 +30,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- client's snapshot -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CLIENT SNAPSHOT</h2>
                     <div class="form-group">
-                        <table class="table table-striped op-table E1">
+                        <table class="table table-striped op-table-light E1">
                             <thead>
                             <tr>
                                 <th width="10%" class="text-center">LAF</th>
@@ -61,7 +61,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- repeat loan details  -->
                         <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PREVIOUS ACCOUNT DETAILS</h2>
                         <div class="form-group">
-                            <table class="table table-striped op-table E1">
+                            <table class="table table-striped op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="10%" class="text-center">Account ID</th>
@@ -81,7 +81,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                                 </tr>
                                 </tbody>
                             </table>
-                            <table class="table table-striped op-table E1">
+                            <table class="table table-striped op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="10%" class="text-center">Meetings</th>
@@ -107,7 +107,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- personal details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  PERSONAL DETAILS</h2>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="60%" class="text-center">Name</th>
@@ -133,7 +133,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     </table>
                 </div>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="35%" class="text-center">BirthDate</th>
@@ -159,7 +159,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     </table>
                 </div>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="50%" class="text-center">Present Address</th>
@@ -179,7 +179,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- co-borrower details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CO-BORROWER DETAILS</h2>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="60%" class="text-center">Co-Borrower Name</th>
@@ -207,7 +207,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     </table>
                 </div>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="40%" class="text-center">Employer / Business Name</th>
@@ -237,7 +237,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- business information -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BUSINESS INFORMATION</h2>
                     <div class="form-group">
-                        <table class="table table-striped cell-border op-table E1">
+                        <table class="table table-striped cell-border op-table-light E1">
                             <thead>
                             <tr>
                                 <th width="50%" class="text-center">Name of Business</th>
@@ -253,7 +253,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                         </table>
                     </div>
                     <div class="form-group">
-                        <table class="table table-striped cell-border op-table E1">
+                        <table class="table table-striped cell-border op-table-light E1">
                             <thead>
                             <tr>
                                 <th width="25%" class="text-center">Business Type</th>
@@ -285,7 +285,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- cashflow assessment (monthly) -->
                 <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  CASHFLOW ASSESSMENT</h2>
                 <div class="form-group">
-                    <table class="table table-striped cell-border op-table E1">
+                    <table class="table table-striped cell-border op-table-light E1">
                         <thead>
                         <tr>
                             <th width="20%" class="text-center">Gross Sales</th>
@@ -326,7 +326,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- liabilities and assets -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  LIABILITIES AND ASSETS</h2>
                     <div class="form-group">
-                            <table class="table table-striped op-table E1">
+                            <table class="table table-striped op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="33.4%" class="text-center" >Name of Creditor</th>
@@ -357,7 +357,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <!-- beneficiary's details -->
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  BENEFICIARY'S DETAILS</h2>
                     <div class="form-group">
-                            <table class="table table-striped op-table E1">
+                            <table class="table table-striped op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="33.4%" class="text-center" >Name</th>
@@ -380,7 +380,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
                         <form id="los_tc_form" class="uk-form" method="post" action="<?=$cl_info['LAF']?>/submit">
-                            <table class="table table-striped table-fix op-table E1">
+                            <table class="table table-striped table-fix op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="50%" >Questions</th>
@@ -411,7 +411,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <?php if($this->session->role_id == 'cpu' && count($cl_tc_display) > 0) { ?>
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  TELLECALLER</h2>
                     <div class="form-group">
-                        <table class="table table-striped table-fix op-table E1">
+                        <table class="table table-striped table-fix op-table-light E1">
                             <thead>
                             <tr>
                                 <th width="10%" class="text-center" >Date Processed</th>
@@ -441,7 +441,7 @@ $err = '&nbsp;&nbsp;<div class="uk-badge uk-badge-danger" data-uk-tooltip="{pos:
                     <h2 class="title_los"><i class="glyphicon glyphicon-tag"></i>  REMARKS/ COMMENTS</h2>
                     <?php if (count($cl_remarks) > 0) { ?>
                         <div class="form-group">
-                            <table class="table table-striped table-fix op-table E1">
+                            <table class="table table-striped table-fix op-table-light E1">
                                 <thead>
                                 <tr>
                                     <th width="5%" class="text-center">#</th>
