@@ -101,20 +101,20 @@
                             ($key == 0 ? $active='active' : $active='');
 
                             if($item["LoanAvailmentSeries"] == isset($result["NoOfLoanAvailed"])) {
-                                $result = "<li data-toggle='tab' class='".$active."'><a href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
+                                $result = "<li data-toggle='tab' class='".$active."'><a data-toggle=\"tab\" href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
                             } else {
-                                $result = "<li data-toggle='tab' class='".$active."'><a href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
+                                $result = "<li data-toggle='tab' class='".$active."'><a data-toggle=\"tab\" href='#menu-".$key."'>". $item["LoanAvailmentSeries"] . "</a></li>";
                             }
                             echo $result;
                         }
                         ?>
                     </ul>
                     <div id="tab-content" class="tab-content">
-                        <?php
-                        foreach((array) $acct_history as $key => $item) {
+                        <?php foreach((array) $acct_history as $key => $item) {
                             $active = '';
-                            ($key == 0 ? $active='in active' : $active=''); ?>
+                            ($key == 0 ? $active=' active in' : $active=''); ?>
                             <div id='menu-<?= $key ?>' class='tab-pane fade <?= $active ?>'>
+
                             <?php $table = "<table class=\"table table-striped\">"
                                 . "<tbody>"
                                 . "<tr>"
@@ -196,9 +196,9 @@
                                 . "</tbody>"
                                 . "</table>";
                             echo $table;
-                        }
-                        ?>
-                        </div>
+                            ?>
+                            </div>
+                        <?php }?>
 
                     </div>
                 </div>
